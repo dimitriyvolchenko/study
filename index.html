@@ -691,6 +691,9 @@ html.lite .lv-pack{box-shadow:none}
 .pk-where.off{background:var(--paper2);color:var(--muted);border-color:var(--line)}
 .pkg-none{color:var(--muted);font-size:14.5px;text-align:center;padding:2px 0 12px}
 .pkgzone .tip{margin-top:4px;font-size:14px;line-height:1.5;color:var(--ink2)}
+/* подпись автора фото под значками из проектов */
+.icredit{margin:10px 2px 0;font-size:12.5px;line-height:1.45}
+.icredit b{font-weight:700}
 /* раздел без историй: кружок N не показываем */
 .tile.nost .ndot{display:none}
 /* строка-инструкция: без отметок, свой цвет кода */
@@ -805,6 +808,7 @@ html.lite .pkg,html.lite .pkg .pk-a .btn{box-shadow:none}
 
     <div class="h-sign"><h2>App icon</h2><span class="ko">아이콘</span><span class="rule"></span></div>
     <div class="icons" id="iconRow"></div>
+    <div class="note icredit" id="iconCredits" style="display:none"></div>
     <div class="h-sign" style="margin-top:18px"><h2>Bunny square</h2><span class="ko">배경색</span><span class="rule"></span></div>
     <div class="colors" id="colorRow"></div>
     <div class="iconbar"><button id="btnIcons">Hide icons</button></div>
@@ -118948,6 +118952,7 @@ var BASE_PACKS   = (typeof PACKS !== "undefined" && PACKS) ? PACKS : {};
 var BASE_ORDER   = (typeof STORY_ORDER !== "undefined" && STORY_ORDER) ? STORY_ORDER.slice() : Object.keys(BASE_STORIES);
 var PKG_MEM  = {};   /* тексты уроков, уже прочитанные в этом сеансе */
 var PKG_CODE = {};   /* код урока -> id проекта, который принес его текст */
+var BASE_ICONSET = ICONSET.slice();   /* значки самой страницы; значки проектов встают перед ними */
 
 function pkgLoadIndex(){
   var d = null;
@@ -119130,16 +119135,25 @@ function pkgNormalize(o){
     if(rows.length) packs[c] = rows;
   });
   var chain = (o.chain && RX_CODE.test(o.chain.after || "")) ? {after:o.chain.after} : null;
-  if(!items.length && !codes.length && !sections.length) throw new Error("The project is empty.");
+  /* значки приложения: картинка 180x180 прямо в описи - она нужна сразу при старте */
+  var icons = [], seenIc = {};
+  (Array.isArray(o.icons) ? o.icons : []).forEach(function(ic){
+    if(!ic || !RX_SID.test(ic.id || "") || seenIc[ic.id]) return;
+    if(typeof ic.img !== "string" || ic.img.length > 400000 ||
+       !/^data:image\/(png|jpeg|gif|webp);base64,[A-Za-z0-9+\/=]+$/.test(ic.img)) return;
+    seenIc[ic.id] = 1;
+    icons.push({id:ic.id, name:pkgStr(ic.name, 14) || ic.id, ko:pkgStr(ic.ko, 8), img:ic.img, credit:pkgStr(ic.credit, 300)});
+  });
+  if(!items.length && !codes.length && !sections.length && !icons.length) throw new Error("The project is empty.");
   return {meta:{id:id, rev:Math.max(1, parseInt(o.rev, 10) || 1), title:pkgStr(o.title, 80) || id,
                 created:pkgStr(o.created, 10), notes:pkgStr(o.notes, 700), profiles:profiles,
-                sections:sections, items:items, codes:codes, stories:stories, packs:packs, chain:chain},
+                sections:sections, items:items, codes:codes, stories:stories, packs:packs, chain:chain, icons:icons},
           lessons:lessons};
 }
 function pkgSerialize(meta, lessons){
   return JSON.stringify({format:"ramyeon-project", version:1, id:meta.id, rev:meta.rev, title:meta.title,
     created:meta.created, notes:meta.notes, profiles:meta.profiles, sections:meta.sections, items:meta.items,
-    lessons:lessons, stories:meta.stories, packs:meta.packs, chain:meta.chain});
+    lessons:lessons, stories:meta.stories, packs:meta.packs, chain:meta.chain, icons:meta.icons || []});
 }
 function pkgCount(p){
   var n = 0;
@@ -119217,6 +119231,20 @@ function pkgCompose(){
   SECTIONS = secs;
   SECBYID = byId;
   pkgComposeStories();
+  pkgComposeIcons();
+}
+/* значки проектов: свежий проект - первым, внутри проекта - в порядке файла */
+function pkgComposeIcons(){
+  var out = [];
+  PKG.list.forEach(function(p){
+    if(!pkgForMe(p) || !p.icons || !p.icons.length) return;
+    out = p.icons.map(function(ic){
+      var key = "pkgicon_" + p.id + "_" + ic.id;
+      IMG[key] = ic.img;
+      return {id:"x-" + p.id + "-" + ic.id, name:ic.name, ko:ic.ko, k:key, credit:ic.credit, pkg:p.id};
+    }).concat(out);
+  });
+  ICONSET = out.concat(BASE_ICONSET);
 }
 /* истории и паки проекта; новые уровни встают в цепочку за последним уровнем своего раздела */
 function pkgComposeStories(){
@@ -119339,6 +119367,8 @@ function pkgInstall(obj, origin, cb){
 }
 function pkgRefresh(){
   pkgCompose();
+  /* выбранный значок ушел вместе с проектом - возвращаем зайца */
+  if(!ICONSET.some(function(o){ return o.id === state.icon; })) setIcon("bunny");
   renderAll();
   var h = location.hash || "#/";
   if(h.indexOf("#/s/") === 0 && !SECBYID[h.slice(4)]) go("#/");
@@ -120035,8 +120065,14 @@ function renderIcons(){
   if(bb) bb.textContent = state.iconsHidden ? "Show icons" : "Hide icons";
   row.innerHTML = ICONSET.map(function(o){
     return '<button class="ic-opt'+(state.icon===o.id?" on":"")+'" data-icon="'+o.id+'">'+
-      '<img src="'+IMG[o.k]+'" alt=""><b>'+o.name+'</b><span class="ko">'+o.ko+'</span></button>';
+      '<img src="'+IMG[o.k]+'" alt=""><b>'+esc(o.name)+'</b><span class="ko">'+esc(o.ko)+'</span></button>';
   }).join("");
+  var cr = document.getElementById("iconCredits");
+  if(cr){
+    var lines = ICONSET.filter(function(o){ return o.credit; }).map(function(o){ return '<b>'+esc(o.name)+'</b>: '+esc(o.credit); });
+    cr.innerHTML = lines.join("<br>");
+    cr.style.display = (lines.length && !state.iconsHidden) ? "" : "none";
+  }
   Array.prototype.forEach.call(document.querySelectorAll("[data-icon]"), function(b){
     b.onclick = function(){ setIcon(b.getAttribute("data-icon")); };
   });
@@ -120060,7 +120096,8 @@ function applyBun(){
 function setBun(id){ state.bun = id; save(); applyBun(); renderIcons(); }
 function setIcon(id){
   state.icon = id; save();
-  var o = ICONSET.filter(function(x){ return x.id===id; })[0] || ICONSET[0];
+  var o = ICONSET.filter(function(x){ return x.id===id; })[0] ||
+          ICONSET.filter(function(x){ return x.id==="bunny"; })[0] || ICONSET[0];
   Array.prototype.forEach.call(document.querySelectorAll('link[rel="apple-touch-icon"], link[rel="icon"]'), function(l){
     l.setAttribute("href", IMG[o.k]);
   });
@@ -120724,7 +120761,9 @@ function pkgWhat(p){
   (p.items || []).forEach(function(it){ if(it.c){ if(it.guide) g++; else n++; } });
   if(n) out.push(n + " " + plural(n, "lesson", "lessons"));
   if(g) out.push(g + " " + plural(g, "guide", "guides"));
-  return out.join(" and ") || "no rows";
+  var ic = (p.icons || []).length;
+  if(ic) out.push(ic + " " + plural(ic, "icon", "icons"));
+  return out.length > 1 ? out.slice(0, -1).join(", ") + " and " + out[out.length - 1] : (out[0] || "nothing");
 }
 function renderPkgPanel(){
   var zone = document.getElementById("pkgZone");
@@ -120796,9 +120835,19 @@ function renderPkgPanel(){
         goBox.innerHTML = added.map(function(s){
           return '<button class="btn sec wide" data-pkgo="'+s.id+'">Open «'+esc(s.title)+'»</button>';
         }).join("");
+        if(meta.icons && meta.icons.length && pkgForMe(meta)){
+          goBox.innerHTML += '<button class="btn sec wide" id="pkgGoIcons">Pick the new icon</button>';
+        }
         Array.prototype.forEach.call(goBox.querySelectorAll("[data-pkgo]"), function(b){
           b.onclick = function(){ goBox.innerHTML = ""; go("#/s/" + b.getAttribute("data-pkgo")); };
         });
+        var gi = document.getElementById("pkgGoIcons");
+        if(gi) gi.onclick = function(){
+          goBox.innerHTML = "";
+          state.iconsHidden = false; save(); renderIcons();
+          var row = document.getElementById("iconRow");
+          if(row) window.scrollTo(0, Math.max(0, row.getBoundingClientRect().top + (window.pageYOffset || 0) - 90));
+        };
         if(pkgKey()){ pkgUpload(meta.id, el, head); return; }
         head.push("It lives on this phone. For the other phones: set up the key in Cloud, then press «Send to all».");
         say(el, head.join("\n"), miss.length ? "err" : "ok");
