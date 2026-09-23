@@ -798,6 +798,22 @@ html.lite .cbtn,html.lite .chk-b .btn{box-shadow:none}
 .whoask{margin-top:12px}
 html.lite .who-b.on{box-shadow:none}
 @media (max-width:360px){ .who-b{padding:9px 2px 7px} .who-b b{font-size:10.5px;letter-spacing:-.02em} }
+/* ---------- светофор детей ---------- */
+.lights{display:flex;flex-wrap:wrap;align-items:stretch;margin-top:12px;background:var(--paper);border:2.5px solid var(--edge);border-radius:18px;padding:10px 10px 4px}
+.kl{display:flex;align-items:center;flex:1 1 140px;min-width:0;margin:0 6px 8px 0}
+.tlight{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;background:#241a16;border-radius:14px;padding:5px 5px 2px;margin-right:9px;border:2px solid #0d0806}
+.tlight i{display:block;width:26px;height:26px;border-radius:50%;margin-bottom:4px;font-style:normal;font-family:var(--ko);font-size:13px;
+  line-height:26px;text-align:center;color:rgba(255,255,255,.35)}
+.tlight .r{background:#4a1c18} .tlight .y{background:#4a3c12} .tlight .g{background:#173a22}
+.tlight .r.on{background:#ff3b30;color:#fff;box-shadow:0 0 10px #ff3b30}
+.tlight .y.on{background:#ffcc00;color:#241a16;box-shadow:0 0 10px #ffcc00}
+.tlight .g.on{background:#34c759;color:#fff;box-shadow:0 0 10px #34c759}
+.kl-t{min-width:0}
+.kl-t b{display:block;font-size:14.5px}
+.kl-t small{display:block;font-size:12.5px;color:var(--muted);line-height:1.3;margin-top:2px}
+.kl-refresh{flex:1 1 100%;height:32px;margin:0 0 8px;border-radius:10px;background:var(--paper2);border:2px solid var(--line);
+  font-family:var(--brand);font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+html.lite .tlight i{box-shadow:none!important}
 </style>
 </head>
 <body>
@@ -933,6 +949,7 @@ html.lite .who-b.on{box-shadow:none}
     <div class="whozone" id="whoZone">
       <div class="h-sign" style="margin-top:26px"><h2>Accounts</h2><span class="ko">사용자</span><span class="rule"></span></div>
       <div class="whos" id="whoBottom"></div>
+      <div class="lights" id="kidLights" style="display:none"></div>
       <div class="field whoask" id="whoAsk" style="display:none">
         <label id="whoLabel">Пароль</label>
         <input id="whoPw" type="password" autocomplete="off" autocapitalize="off" autocorrect="off"
@@ -8028,7 +8045,7 @@ var PROFILES = [
    h:["b4b526cd993dc7140ac56e58304163e74485fc8bc25ebb440d5e00d0b569e57e",
       "e942c5e0884d3e5f43c5ab73ee357d4f19a92cbe8eb0a9d18b438e7aadc1a9db"]},
   {id:"mom",   name:"Мама",      ko:"엄마",   av:"母", col:"#e2afb6", file:"progress_mama.json",
-   secs:["en","ba"],
+   secs:["ba"],          /* английский мамы - только ЕГЭ, раздел приходит проектом mom-ege */
    h:["21e7ee0b1c2817a2539cdd768253c57da16e8247307cc7f50b6e91f87cc7e4a6",
       "b6649a45dc9d08ff5b00bd88dbff94f0592b75607dd30d1671a087c30e3b158a"]},
   {id:"yulia", name:"Юля",       ko:"율랴",   av:"柔", col:"#c4bad6", file:"progress_yulia.json",
@@ -9086,6 +9103,7 @@ function load(){
       state.duo = s.duo||{};
       state.split = s.split||{};
       state.checks = s.checks||{};
+      state.act = s.act||null;
       state.theme = s.theme||"auto";
       state.icon = s.icon||"bunny";
       if(state.icon === "x-icon-singer-singer") state.icon = "singer";   /* значок из проекта теперь вшит */
@@ -9844,6 +9862,7 @@ function openLesson(code){
   $("#rtitle").textContent = it.title;
   $("#rcode").textContent = it.code;
   var seq = ++openSeq;
+  actMark("study");
   reader.classList.add("on");
   document.body.classList.add("reading");
   if(PKG_CODE[code]){
@@ -9894,6 +9913,7 @@ function stopFit(){ if(fitTimer){ clearInterval(fitTimer); fitTimer = null; } }
 function closeLesson(){
   openSeq++;
   if(!reader.classList.contains("on")) return;
+  actLessonCheck();
   stopFit();
   reader.classList.remove("on");
   document.body.classList.remove("reading");
@@ -10032,6 +10052,7 @@ function route(){
     if(state.route === "#/all") nFromAll = true;
     else if(!state.route || state.route.indexOf("#/n/") !== 0) nFromAll = false;
     curStory = h.slice(4);
+    actMark("study");
     var sit = ALL.filter(function(x){ return x.code===curStory; })[0];
     if(!sit || !STORIES[curStory]){ location.hash="#/"; return; }
     curSec = sit.sec;
@@ -10197,7 +10218,7 @@ function mergeNDone(remote){
 }
 function payload(){
   return JSON.stringify({v:3, updated:new Date().toISOString(),
-    marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra}, null, 2);
+    marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra, act:state.act}, null, 2);
 }
 $("#btnPull").onclick = function(){
   var g = syncFields(), el = $("#syncStatus");
@@ -10637,6 +10658,7 @@ function bindAllN(box){
       ck.ok = ck.res.filter(function(x){ return x > 0; }).length;
       if(!state.checks) state.checks = {};
       state.checks[c] = {d:todayISO(), ok:ck.ok, n:rows.length};
+      if(ck.ok >= Math.ceil(rows.length * 0.8)) actMark("check");
       save();
       renderAllN();
     };
@@ -10660,9 +10682,90 @@ function bindAllN(box){
    Четыре значка: нажал на человека, ввел его пароль (или пароль папы) - страница открывается
    под ним. У каждого свои ключи хранения и свой файл прогресса, поэтому ничего не теряется. */
 var whoSel = null;
+/* ================= светофор детей (виден папе) =================
+   Телефон ребенка отмечает за день: open - открыл приложение, study - открыл урок или уровень,
+   check - прошел проверку (урок до конца или проверка C на 80%). Отметка уходит в его файл прогресса
+   на GitHub (нужен ключ на его телефоне). Телефон папы читает файлы progress_yulia.json и
+   progress_seryozha.json: красный 미 - сегодня не учился, желтый 학 - учился, зеленый 완 - прошел проверку. */
+function actMark(kind){
+  if(!PROF) return;
+  var t = todayISO();
+  if(!state.act || state.act.d !== t) state.act = {d:t, open:0, study:0, check:0};
+  if(state.act[kind]) return;
+  state.act[kind] = Date.now();
+  save();
+  if(CURP !== "dad" && pkgKey()) autoSave();
+}
+function actLessonCheck(){
+  try{
+    var pre = "brat2_progress_" + ((CURP && CURP !== "dad") ? CURP + "_" : ""), t = todayISO(), i, k, v;
+    for(i = 0; i < localStorage.length; i++){
+      k = localStorage.key(i);
+      if(!k || k.indexOf(pre) !== 0) continue;
+      if(CURP === "dad" && /^brat2_progress_(mom|yulia|serge)_/.test(k)) continue;
+      v = JSON.parse(localStorage.getItem(k) || "null");
+      if(v && v.quiz && v.quiz.doneAll && v.t){
+        var d = new Date(v.t), iso = d.getFullYear() + "-" + (d.getMonth() < 9 ? "0" : "") + (d.getMonth() + 1) + "-" + (d.getDate() < 10 ? "0" : "") + d.getDate();
+        if(iso === t){ actMark("check"); return; }
+      }
+    }
+  }catch(e){}
+}
+var KIDS = ["yulia", "serge"], LIGHTS = {}, lightsAt = 0;
+function lightOf(d){
+  var a = d && d.act;
+  if(!a || a.d !== todayISO()) return {st:"red", last:(a && a.d) || ""};
+  if(a.check) return {st:"green", t:a.check};
+  if(a.study) return {st:"yellow", t:a.study};
+  return {st:"red", open:a.open};
+}
+function lightsFetch(force){
+  if(CURP !== "dad" || typeof fetch === "undefined") return;
+  if(!force && Date.now() - lightsAt < 60000) return;
+  lightsAt = Date.now();
+  var g = state.gh || {}, api = !!(g.owner && g.repo && g.token);
+  KIDS.forEach(function(id){
+    var p = PBYID[id];
+    if(!api && !/^https?:$/.test(location.protocol)){ LIGHTS[id] = {st:"none"}; return; }
+    var url = api ? apiBase(g) + p.file + "?ref=" + encodeURIComponent(g.branch || "main") : p.file + "?t=" + Date.now();
+    fetch(url, api ? {headers:headers(g, true), cache:"no-store"} : {cache:"no-store"})
+      .then(function(r){ if(r.status === 404) return null; if(!r.ok) throw new Error("http"); return r.json(); })
+      .then(function(j){
+        var d = null;
+        if(j) d = api ? JSON.parse(b64dec(j.content || "")) : j;
+        LIGHTS[id] = d ? lightOf(d) : {st:"red", nofile:true};
+        renderLights();
+      })
+      .catch(function(){ LIGHTS[id] = {st:"none"}; renderLights(); });
+  });
+  renderLights();
+}
+function hhmm(t){ var d = new Date(t); return (d.getHours() < 10 ? "0" : "") + d.getHours() + ":" + (d.getMinutes() < 10 ? "0" : "") + d.getMinutes(); }
+function renderLights(){
+  var box = document.getElementById("kidLights");
+  if(!box) return;
+  if(CURP !== "dad"){ box.style.display = "none"; return; }
+  box.style.display = "";
+  box.innerHTML = KIDS.map(function(id){
+    var p = PBYID[id], L = LIGHTS[id] || {st:"wait"};
+    var note = L.st === "green" ? "проверка пройдена в " + hhmm(L.t)
+             : L.st === "yellow" ? "учится с " + hhmm(L.t)
+             : L.st === "red" ? (L.nofile ? "еще ни разу не сохранялся" : (L.open ? "открыл в " + hhmm(L.open) + ", но не учился" : "сегодня не заходил"))
+             : L.st === "none" ? "нет связи с GitHub" : "смотрю…";
+    return '<div class="kl"><div class="tlight">'+
+        '<i class="r'+(L.st === "red" ? " on" : "")+'">미</i>'+
+        '<i class="y'+(L.st === "yellow" ? " on" : "")+'">학</i>'+
+        '<i class="g'+(L.st === "green" ? " on" : "")+'">완</i></div>'+
+      '<div class="kl-t"><b>'+esc(p.name)+'</b><small>'+esc(note)+'</small></div></div>';
+  }).join("") + '<button class="kl-refresh" id="klRefresh" type="button">Обновить</button>';
+  var rb = document.getElementById("klRefresh");
+  if(rb) rb.onclick = function(){ lightsFetch(true); };
+}
 function renderWho(){
   var row = document.getElementById("whoBottom");
   if(!row) return;
+  renderLights();
+  lightsFetch(false);
   row.innerHTML = PROFILES.map(function(p){
     var me = p.id === CURP;
     return '<button type="button" class="who-b'+(me ? " on" : "")+(whoSel && whoSel.id === p.id ? " sel" : "")+'" data-whob="'+p.id+'">'+
@@ -10828,6 +10931,7 @@ renderAll();
 if(!location.hash && state.route && state.route!=="#/"){ location.hash = state.route; }
 else { route(); }
 if(PROF) autoPull();
+if(PROF) actMark("open");
 if(PROF) pkgSync();
 if(!storeOK){
   var t = document.createElement("div");
