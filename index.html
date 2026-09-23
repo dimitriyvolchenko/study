@@ -690,6 +690,10 @@ html.lite .lv-pack{box-shadow:none}
 .pk-where.on{background:var(--g);color:#fff}
 .pk-where.off{background:var(--paper2);color:var(--muted);border-color:var(--line)}
 .pkg-none{color:var(--muted);font-size:14.5px;text-align:center;padding:2px 0 12px}
+.pk-hide{margin-left:10px;border:2px solid var(--edge);background:var(--paper);color:var(--ink);border-radius:999px;
+  font:800 12px/1 var(--brand);letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;cursor:pointer;flex:none}
+.pk-hide:active{background:var(--paper2)}
+.pk-folded{color:var(--muted);font-size:14px;margin:2px 2px 10px}
 .pkgzone .tip{margin-top:4px;font-size:14px;line-height:1.5;color:var(--ink2)}
 /* подпись автора фото под значками из проектов */
 .icredit{margin:10px 2px 0;font-size:12.5px;line-height:1.45}
@@ -931,19 +935,23 @@ html.lite .tlight i{box-shadow:none!important}
     <div class="tip" style="margin-top:12px">Pick the icon and then add the page to the home screen again:
     iPhone remembers the picture at the moment you add it, so the old shortcut keeps the old icon.</div>
     <div class="pkgzone" id="pkgZone" style="display:none">
-      <div class="h-sign" style="margin-top:26px"><h2>Projects</h2><span class="ko">보따리</span><span class="rule"></span></div>
+      <div class="h-sign" style="margin-top:26px"><h2>Projects</h2><span class="ko">보따리</span><span class="rule"></span>
+        <button class="pk-hide" id="pkgHide" type="button">Hide</button></div>
       <button class="bigbtn" id="btnPkgLoad">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#241a16" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5 12 3 3 7.5v9L12 21l9-4.5Z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg></span>
         <span class="tx"><b>Load project</b><small>A file from the chat: sections, lessons, guides</small></span>
         <span class="ko">새 메뉴</span><span class="chev"></span>
       </button>
       <input type="file" id="pkgInput" style="display:none">
+      <div class="pk-body" id="pkgMore">
       <div class="status" id="pkgStatus"></div>
       <div class="btnrow pk-go" id="pkgGo"></div>
       <div class="pkgs" id="pkgList"></div>
       <div class="tip">A project adds sections and lessons without a new <b>index.html</b>. It stays in the memory
       of this phone and survives page updates. With the key from <b>Cloud</b> it also goes to GitHub, and the other
       phones of the family take it on their next start: each person gets only what is addressed to them.</div>
+      </div>
+      <div class="pk-folded" id="pkgFolded" style="display:none"></div>
     </div>
 
     <div class="whozone" id="whoZone">
@@ -10407,6 +10415,21 @@ function pkgWhat(p){
   if(ic) out.push(ic + " " + plural(ic, "icon", "icons"));
   return out.length > 1 ? out.slice(0, -1).join(", ") + " and " + out[out.length - 1] : (out[0] || "nothing");
 }
+function pkgHideKey(){ return "study_pkg_hide_v1_" + (CURP || "x"); }
+function pkgHidden(){ try{ return localStorage.getItem(pkgHideKey()) === "1"; }catch(e){ return false; } }
+function pkgFold(){
+  var h = pkgHidden(), more = document.getElementById("pkgMore"), f = document.getElementById("pkgFolded"), b = document.getElementById("pkgHide");
+  if(!more || !f || !b) return;
+  more.style.display = h ? "none" : "";
+  b.textContent = h ? "Show" : "Hide";
+  var n = PKG.list.length;
+  f.style.display = h ? "" : "none";
+  f.textContent = n ? n + " " + plural(n, "project", "projects") + " hidden" : "Projects hidden";
+  b.onclick = function(){
+    try{ if(pkgHidden()) localStorage.removeItem(pkgHideKey()); else localStorage.setItem(pkgHideKey(), "1"); }catch(e){}
+    pkgFold();
+  };
+}
 function renderPkgPanel(){
   var zone = document.getElementById("pkgZone");
   if(!zone) return;
@@ -10414,6 +10437,7 @@ function renderPkgPanel(){
   zone.style.display = mine ? "" : "none";
   if(!mine) return;
   var box = document.getElementById("pkgList"), key = pkgKey();
+  pkgFold();
   if(!PKG.list.length){
     box.innerHTML = '<div class="pkg-none">No projects yet. The first one comes from the chat as a .json file.</div>';
     return;
@@ -10452,6 +10476,8 @@ function renderPkgPanel(){
     var f = inp.files && inp.files[0];
     var el = document.getElementById("pkgStatus"), goBox = document.getElementById("pkgGo");
     if(!f) return;
+    try{ localStorage.removeItem(pkgHideKey()); }catch(e){}   /* отчет о загрузке должен быть виден */
+    pkgFold();
     goBox.innerHTML = "";
     say(el, "Reading " + f.name + "…");
     var fr = new FileReader();
