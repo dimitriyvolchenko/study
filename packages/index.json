@@ -39,8 +39,18 @@
    ],
    "created": "2026-09-23",
    "size": 69550
+  },
+  {
+   "id": "yulia-spotlight6",
+   "rev": 1,
+   "title": "Spotlight 6 · Module 2",
+   "profiles": [
+    "yulia"
+   ],
+   "created": "2026-09-23",
+   "size": 210250
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-23T16:21:42.585Z"
+ "updated": "2026-09-23T16:22:11.003Z"
 }
