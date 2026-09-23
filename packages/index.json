@@ -29,8 +29,18 @@
    ],
    "created": "2026-09-23",
    "size": 78529
+  },
+  {
+   "id": "serge-spotlight3",
+   "rev": 1,
+   "title": "Spotlight 3 · Module 2",
+   "profiles": [
+    "serge"
+   ],
+   "created": "2026-09-23",
+   "size": 69550
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-23T16:07:33.391Z"
+ "updated": "2026-09-23T16:21:42.585Z"
 }
