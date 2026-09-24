@@ -1,6 +1,6 @@
 {
   "v": 3,
-  "updated": "2026-09-23T19:39:18.754Z",
+  "updated": "2026-09-24T11:39:30.937Z",
   "marks": {
     "E07": {
       "s": "done",
@@ -227,8 +227,8 @@
       "t": 1790182048860
     },
     "E21.1": {
-      "s": "learn",
-      "t": 1790182050487
+      "s": "done",
+      "t": 1790249969291
     },
     "E20.2": {
       "s": "learn",
@@ -338,9 +338,140 @@
   },
   "extra": [],
   "act": {
-    "d": "2026-09-23",
-    "open": 1790180678324,
-    "study": 1790190373440,
-    "check": 1790190434221
+    "d": "2026-09-24",
+    "open": 1790221537427,
+    "study": 0,
+    "check": 0
+  },
+  "habits": {
+    "t": 0,
+    "groups": [
+      {
+        "id": "g1",
+        "title": "work in forensics",
+        "icon": "🔬",
+        "items": [
+          {
+            "id": "hmufglk4n4j2",
+            "name": "working on Article",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o6kn",
+            "name": "significant amount",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": "g2",
+        "title": "development",
+        "icon": "🎧",
+        "items": [
+          {
+            "id": "hmufglk4o7hu",
+            "name": "🎧 ege Words",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o5tk",
+            "name": "PhDpr.State&Law",
+            "d": {
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o41s",
+            "name": "ListenPhilosophy",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o6hn",
+            "name": "good read in Speechify",
+            "d": {
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o344",
+            "name": "Criminalistics",
+            "d": {
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4of",
+            "name": "⬇️ listenForensicEngB",
+            "d": {
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o5np",
+            "name": "Forensic Expertology",
+            "d": {
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o6g6",
+            "name": "⬆️ Schwartz",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o4v5",
+            "name": "makeOneExpertise",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o7dd",
+            "name": "⬇️ 10p: Guide to Ethics",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o72l",
+            "name": "Max Scheler",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          },
+          {
+            "id": "hmufglk4o1uq",
+            "name": "⬆️🌃 learn ethics",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            }
+          }
+        ]
+      }
+    ]
   }
 }
