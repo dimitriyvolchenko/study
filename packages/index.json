@@ -52,15 +52,15 @@
   },
   {
    "id": "mom-starlight9",
-   "rev": 1,
+   "rev": 2,
    "title": "Starlight 9 · Module 2",
    "profiles": [
     "mom"
    ],
-   "created": "2026-09-23",
-   "size": 76826
+   "created": "2026-09-24",
+   "size": 181365
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-24T20:05:12.532Z"
+ "updated": "2026-09-24T20:05:24.341Z"
 }
