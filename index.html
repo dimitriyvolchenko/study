@@ -694,6 +694,49 @@ html.lite .lv-pack{box-shadow:none}
   font:800 12px/1 var(--brand);letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;cursor:pointer;flex:none}
 .pk-hide:active{background:var(--paper2)}
 .pk-folded{color:var(--muted);font-size:14px;margin:2px 2px 10px}
+.habzone .hb-week{display:flex;align-items:stretch;margin:0 0 14px}
+.hb-nav{flex:none;width:26px;border:0;background:none;color:var(--muted);font-size:22px;line-height:1;cursor:pointer;padding:0}
+.hb-day{flex:1;min-width:0;margin:0 2px;border:0;background:none;border-radius:14px;padding:6px 0 8px;cursor:pointer;color:var(--ink2);
+  font-family:inherit;text-align:center}
+.hb-day small{display:block;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.hb-day b{display:block;font-size:17px;font-weight:700}
+.hb-day.today b{color:var(--r)}
+.hb-day.sel{background:var(--edge);color:#fff}
+.hb-day.sel small{color:#e6dccb}
+.hb-day.sel b{color:#fff}
+.hb-g{background:var(--paper);border:2.5px solid var(--edge);border-radius:22px;padding:12px 12px 6px;margin:0 0 14px}
+.hb-gh{display:flex;align-items:center;margin-bottom:6px}
+.hb-ic{flex:none;font-size:24px;line-height:1;border:0;background:none;padding:0 8px 0 2px;cursor:pointer}
+.hb-gt{flex:1;min-width:0;border:0;background:none;padding:0;text-align:left;cursor:pointer;font:700 19px/1.2 var(--brand);color:var(--ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb-gt span{font-weight:500;font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--muted);margin-left:8px}
+.hb-plus{flex:none;border:0;background:none;color:#7c6cf0;font-size:28px;line-height:1;padding:0 4px;cursor:pointer}
+.hb-cols,.hb-row{display:flex;align-items:center}
+.hb-cols{justify-content:flex-end;margin:4px 0 2px}
+.hb-cols i,.hb-dots i{flex:none;width:18px;height:18px;margin-left:3px;text-align:center;font-style:normal}
+.hb-cols i{font-size:11px;color:var(--muted);height:auto}
+.hb-cols i.sel{color:var(--r);font-weight:800}
+.hb-row{padding:7px 0;border-top:1px solid var(--line)}
+.hb-row:first-of-type{border-top:0}
+.hb-cb{flex:none;width:24px;height:24px;border:2px solid var(--gray-d);border-radius:7px;background:none;margin-right:8px;cursor:pointer;
+  padding:0;color:#fff;font-size:15px;line-height:20px;text-align:center}
+.hb-cb.on{background:#3fcf74;border-color:#3fcf74}
+.hb-nm{flex:1;min-width:0;border:0;background:none;padding:0;text-align:left;cursor:pointer;font-size:16px;color:var(--ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:inherit}
+.hb-row.done .hb-nm{text-decoration:line-through;color:var(--muted)}
+.hb-dots{display:flex;flex:none;margin-left:6px}
+.hb-dots i{border-radius:50%;background:var(--line);cursor:pointer}
+.hb-dots i.on{background:#3fcf74}
+.hb-dots i.fut{opacity:.45;cursor:default}
+.hb-empty{color:var(--muted);font-size:14px;padding:6px 0 10px}
+.hb-addg{display:block;width:100%;border:2px dashed var(--gray-d);background:none;border-radius:16px;padding:11px;color:var(--ink2);
+  font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;margin:0 0 6px}
+@media (max-width:360px){.hb-cols i,.hb-dots i{width:15px;height:15px;margin-left:3px}.hb-cols i{height:auto}.hb-nm{font-size:14.5px}
+  .hb-gt{font-size:17px}.hb-cb{width:22px;height:22px;line-height:18px;margin-right:7px}.hb-g{padding:12px 10px 6px}}
+:root[data-theme="dark"] .hb-day.sel{background:#fff1d6;color:#241a16}
+:root[data-theme="dark"] .hb-day.sel b,:root[data-theme="dark"] .hb-day.sel small{color:#241a16}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hb-day.sel{background:#fff1d6}
+  :root:not([data-theme="light"]) .hb-day.sel b,:root:not([data-theme="light"]) .hb-day.sel small{color:#241a16}}
 .pkgzone .tip{margin-top:4px;font-size:14px;line-height:1.5;color:var(--ink2)}
 /* подпись автора фото под значками из проектов */
 .icredit{margin:10px 2px 0;font-size:12.5px;line-height:1.45}
@@ -952,6 +995,17 @@ html.lite .tlight i{box-shadow:none!important}
       phones of the family take it on their next start: each person gets only what is addressed to them.</div>
       </div>
       <div class="pk-folded" id="pkgFolded" style="display:none"></div>
+    </div>
+
+    <div class="habzone" id="habZone" style="display:none">
+      <div class="h-sign" style="margin-top:26px"><h2>Habits</h2><span class="ko">습관</span><span class="rule"></span>
+        <button class="pk-hide" id="habHide" type="button">Hide</button></div>
+      <div id="habBody">
+        <div class="hb-week" id="habWeek"></div>
+        <div id="habGroups"></div>
+        <button class="hb-addg" id="habAddG" type="button">+ Group</button>
+      </div>
+      <div class="pk-folded" id="habFolded" style="display:none"></div>
     </div>
 
     <div class="whozone" id="whoZone">
@@ -9112,6 +9166,7 @@ function load(){
       state.split = s.split||{};
       state.checks = s.checks||{};
       state.act = s.act||null;
+      state.habits = s.habits||null;
       state.theme = s.theme||"auto";
       state.icon = s.icon||"bunny";
       if(state.icon === "x-icon-singer-singer") state.icon = "singer";   /* значок из проекта теперь вшит */
@@ -9137,7 +9192,7 @@ var MKEY = "study_marks_v3" + PSUF;   /* запасная ячейка: отме
 function keepMarks(){
   try{
     localStorage.setItem(MKEY, JSON.stringify({v:3, t:Date.now(),
-      marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra}));
+      marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra, habits:state.habits}));
   }catch(e){}
 }
 function restoreMarks(){
@@ -9162,6 +9217,7 @@ function restoreMarks(){
       var r = normOne(d.nDone[id]), l = normOne(state.nDone[id]);
       if(r.dates.length && (!l.dates.length || (r.t||0) > (l.t||0))){ state.nDone[id] = r; n++; }
     });
+    n += mergeHabits(d.habits);
     (d.extra||[]).forEach(function(x){
       if(!state.extra.some(function(y){ return y.c===x.c; })){ state.extra.push(x); n++; }
     });
@@ -9756,7 +9812,7 @@ function autoPull(){
     .then(function(j){
       if(!j) return;
       var data = JSON.parse(b64dec(j.content||""));
-      var n = mergeMarks(data.marks||{}) + mergeSecDone(data.secDone||{}) + mergeNDone(data.nDone||{}) + mergeDuo(data.duo||{}) + splitMigrate();
+      var n = mergeMarks(data.marks||{}) + mergeSecDone(data.secDone||{}) + mergeNDone(data.nDone||{}) + mergeDuo(data.duo||{}) + mergeHabits(data.habits) + splitMigrate();
       (data.extra||[]).forEach(function(x){
         if(!state.extra.some(function(y){ return y.c===x.c; })) state.extra.push(x);
       });
@@ -9834,7 +9890,7 @@ function renderSync(){
 function renderAll(){
   rebuild(); renderHome(); if(curSec) renderSec(); renderMarks(); renderRing();
   if(curStory && (location.hash||"").indexOf("#/n/")===0) renderStory(curStory);
-  renderStrip(); renderBoard(); renderIcons(); refreshSaveMark(); reopenPop(); renderPkgPanel(); renderWho();
+  renderStrip(); renderBoard(); renderIcons(); refreshSaveMark(); reopenPop(); renderPkgPanel(); renderHabits(); renderWho();
   if((location.hash||"") === "#/all") renderAllN();
   var nc = document.getElementById("nallCount");
   if(nc){ var na = allCount(); nc.textContent = na ? String(na) : ""; nc.style.display = na ? "" : "none"; }
@@ -10226,7 +10282,7 @@ function mergeNDone(remote){
 }
 function payload(){
   return JSON.stringify({v:3, updated:new Date().toISOString(),
-    marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra, act:state.act}, null, 2);
+    marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra, act:state.act, habits:state.habits}, null, 2);
 }
 $("#btnPull").onclick = function(){
   var g = syncFields(), el = $("#syncStatus");
@@ -10241,7 +10297,7 @@ $("#btnPull").onclick = function(){
     })
     .then(function(j){
       var data = JSON.parse(b64dec(j.content||""));
-      var n = mergeMarks(data.marks||{}) + mergeSecDone(data.secDone||{}) + mergeNDone(data.nDone||{}) + mergeDuo(data.duo||{}) + splitMigrate();
+      var n = mergeMarks(data.marks||{}) + mergeSecDone(data.secDone||{}) + mergeNDone(data.nDone||{}) + mergeDuo(data.duo||{}) + mergeHabits(data.habits) + splitMigrate();
       if(data.extra && data.extra.length){
         data.extra.forEach(function(x){
           if(!state.extra.some(function(y){ return y.c===x.c; })) state.extra.push(x);
@@ -10428,6 +10484,167 @@ function pkgFold(){
   b.onclick = function(){
     try{ if(pkgHidden()) localStorage.removeItem(pkgHideKey()); else localStorage.setItem(pkgHideKey(), "1"); }catch(e){}
     pkgFold();
+  };
+}
+/* ----- трекер привычек (Habits) ----- */
+var HAB_DAYS = ["Mo","Tu","We","Th","Fr","Sa","Su"], HAB_COLS = ["M","T","W","T","F","S","S"], habSel = null;
+function habISO(d){ function p(n){ return (n<10?"0":"")+n; } return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate()); }
+function habDate(iso){ var p = String(iso).split("-"); return new Date(+p[0], +p[1]-1, +p[2], 12); }
+function habWeek(iso){
+  var d = habDate(iso), wd = (d.getDay()+6)%7, out = [], i;
+  d.setDate(d.getDate()-wd);
+  for(i = 0; i < 7; i++){ out.push(habISO(d)); d.setDate(d.getDate()+1); }
+  return out;
+}
+function habId(){ return "h" + Date.now().toString(36) + Math.floor(Math.random()*1e4).toString(36); }
+function habSeed(){
+  function it(name, days){ var d = {}; days.forEach(function(x){ d["2026-09-" + x] = 1; }); return {id:habId(), name:name, d:d}; }
+  var MTW = ["21","22","23"], W = ["23"], TW = ["22","23"];
+  if(CURP !== "dad") return {t:0, groups:[]};
+  return {t:0, groups:[
+    {id:"g1", title:"work in forensics", icon:"🔬", items:[it("working on Article", MTW), it("significant amount", MTW)]},
+    {id:"g2", title:"development", icon:"🎧", items:[
+      it("🎧 ege Words", MTW), it("PhDpr.State&Law", W), it("ListenPhilosophy", MTW), it("good read in Speechify", W),
+      it("Criminalistics", W), it("⬇️ listenForensicEngB", W), it("Forensic Expertology", W), it("⬆️ Schwartz", TW),
+      it("makeOneExpertise", MTW), it("⬇️ 10p: Guide to Ethics", TW), it("Max Scheler", TW), it("⬆️🌃 learn ethics", TW)]}]};
+}
+function habData(){
+  if(!state.habits || !state.habits.groups) state.habits = habSeed();
+  return state.habits;
+}
+function mergeHabits(remote){
+  if(!remote || !remote.groups) return 0;
+  var l = state.habits;
+  if(!l || !l.groups || (remote.t||0) > (l.t||0)){ state.habits = remote; return 1; }
+  return 0;
+}
+function habTouch(){ habData().t = Date.now(); save(); renderHabits(); autoSave(); }
+function habHideKey(){ return "study_hab_hide_v1_" + (CURP || "x"); }
+function habHidden(){ try{ return localStorage.getItem(habHideKey()) === "1"; }catch(e){ return false; } }
+function habFind(gid, iid){
+  var h = habData(), g = null, it = null;
+  h.groups.forEach(function(x){ if(x.id === gid) g = x; });
+  if(g && iid) g.items.forEach(function(x){ if(x.id === iid) it = x; });
+  return {g:g, it:it};
+}
+function renderHabits(){
+  var zone = document.getElementById("habZone");
+  if(!zone) return;
+  zone.style.display = PROF ? "" : "none";
+  if(!PROF) return;
+  var h = habData(), today = todayISO(), hid = habHidden();
+  if(!habSel) habSel = today;
+  var body = document.getElementById("habBody"), fold = document.getElementById("habFolded"), hb = document.getElementById("habHide");
+  body.style.display = hid ? "none" : "";
+  fold.style.display = hid ? "" : "none";
+  hb.textContent = hid ? "Show" : "Hide";
+  var nDone = 0, nAll = 0;
+  h.groups.forEach(function(g){ g.items.forEach(function(it){ nAll++; if(it.d && it.d[today]) nDone++; }); });
+  fold.textContent = nAll ? "Today " + nDone + "/" + nAll + " habits done" : "Habits hidden";
+  hb.onclick = function(){
+    try{ if(habHidden()) localStorage.removeItem(habHideKey()); else localStorage.setItem(habHideKey(), "1"); }catch(e){}
+    renderHabits();
+  };
+  if(hid) return;
+  var week = habWeek(habSel);
+  document.getElementById("habWeek").innerHTML =
+    '<button class="hb-nav" type="button" data-hbw="-7" aria-label="previous week">‹</button>' +
+    week.map(function(iso, i){
+      return '<button class="hb-day' + (iso === habSel ? " sel" : "") + (iso === today ? " today" : "") + '" type="button" data-hbd="' + iso + '">' +
+        '<small>' + HAB_DAYS[i] + '</small><b>' + (+iso.slice(8)) + '</b></button>';
+    }).join("") +
+    '<button class="hb-nav" type="button" data-hbw="7" aria-label="next week">›</button>';
+  var cols = '<div class="hb-cols">' + HAB_COLS.map(function(c, i){ return '<i' + (week[i] === habSel ? ' class="sel"' : '') + '>' + c + '</i>'; }).join("") + '</div>';
+  document.getElementById("habGroups").innerHTML = h.groups.map(function(g){
+    var done = 0;
+    g.items.forEach(function(it){ if(it.d && it.d[habSel]) done++; });
+    return '<div class="hb-g">' +
+      '<div class="hb-gh"><button class="hb-ic" type="button" data-hbic="' + g.id + '">' + esc(g.icon || "⭐") + '</button>' +
+      '<button class="hb-gt" type="button" data-hbg="' + g.id + '">' + esc(g.title) + '<span>' + done + '/' + g.items.length + '</span></button>' +
+      '<button class="hb-plus" type="button" data-hbadd="' + g.id + '" aria-label="add habit">+</button></div>' +
+      (g.items.length ? cols : '<div class="hb-empty">No habits yet: press + to add one.</div>') +
+      g.items.map(function(it){
+        var on = !!(it.d && it.d[habSel]);
+        return '<div class="hb-row' + (on ? " done" : "") + '">' +
+          '<button class="hb-cb' + (on ? " on" : "") + '" type="button" data-hbt="' + g.id + '|' + it.id + '|' + habSel + '"' + (habSel > today ? " disabled" : "") + '>' + (on ? "✓" : "") + '</button>' +
+          '<button class="hb-nm" type="button" data-hbn="' + g.id + '|' + it.id + '">' + esc(it.name) + '</button>' +
+          '<span class="hb-dots">' + week.map(function(iso){
+            var c = (it.d && it.d[iso]) ? "on" : "";
+            if(iso > today) c += " fut";
+            if(iso === habSel) c += " sel";
+            return '<i class="' + c + '" data-hbt="' + g.id + '|' + it.id + '|' + iso + '"></i>';
+          }).join("") + '</span></div>';
+      }).join("") + '</div>';
+  }).join("");
+  var box = document.getElementById("habZone");
+  Array.prototype.forEach.call(box.querySelectorAll("[data-hbd]"), function(b){
+    b.onclick = function(){ habSel = b.getAttribute("data-hbd"); renderHabits(); };
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-hbw]"), function(b){
+    b.onclick = function(){ var d = habDate(habSel); d.setDate(d.getDate() + (+b.getAttribute("data-hbw"))); habSel = habISO(d); renderHabits(); };
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-hbt]"), function(b){
+    b.onclick = function(){
+      var a = b.getAttribute("data-hbt").split("|"), f = habFind(a[0], a[1]);
+      if(!f.it || a[2] > todayISO()) return;
+      if(!f.it.d) f.it.d = {};
+      if(f.it.d[a[2]]) delete f.it.d[a[2]]; else f.it.d[a[2]] = 1;
+      habTouch();
+    };
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-hbn]"), function(b){
+    b.onclick = function(){
+      var a = b.getAttribute("data-hbn").split("|"), f = habFind(a[0], a[1]);
+      if(!f.it) return;
+      var v = window.prompt("Rename the habit. Leave empty to delete it.", f.it.name);
+      if(v === null) return;
+      v = v.trim();
+      if(!v){
+        if(!window.confirm("Delete «" + f.it.name + "» with all its days?")) return;
+        f.g.items = f.g.items.filter(function(x){ return x !== f.it; });
+      } else f.it.name = v.slice(0, 60);
+      habTouch();
+    };
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-hbadd]"), function(b){
+    b.onclick = function(){
+      var f = habFind(b.getAttribute("data-hbadd"));
+      if(!f.g) return;
+      var v = window.prompt("New habit in «" + f.g.title + "»:", "");
+      if(!v || !v.trim()) return;
+      f.g.items.push({id:habId(), name:v.trim().slice(0, 60), d:{}});
+      habTouch();
+    };
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-hbg]"), function(b){
+    b.onclick = function(){
+      var f = habFind(b.getAttribute("data-hbg"));
+      if(!f.g) return;
+      var v = window.prompt("Rename the group. Leave empty to delete it.", f.g.title);
+      if(v === null) return;
+      v = v.trim();
+      if(!v){
+        if(!window.confirm("Delete the group «" + f.g.title + "» and its " + f.g.items.length + " habits?")) return;
+        habData().groups = habData().groups.filter(function(x){ return x !== f.g; });
+      } else f.g.title = v.slice(0, 40);
+      habTouch();
+    };
+  });
+  Array.prototype.forEach.call(box.querySelectorAll("[data-hbic]"), function(b){
+    b.onclick = function(){
+      var f = habFind(b.getAttribute("data-hbic"));
+      if(!f.g) return;
+      var v = window.prompt("Icon for «" + f.g.title + "» (one emoji):", f.g.icon || "");
+      if(v === null || !v.trim()) return;
+      f.g.icon = v.trim().slice(0, 8);
+      habTouch();
+    };
+  });
+  document.getElementById("habAddG").onclick = function(){
+    var v = window.prompt("Name of the new group:", "");
+    if(!v || !v.trim()) return;
+    habData().groups.push({id:habId(), title:v.trim().slice(0, 40), icon:"⭐", items:[]});
+    habTouch();
   };
 }
 function renderPkgPanel(){
