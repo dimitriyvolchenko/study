@@ -12,13 +12,13 @@
   },
   {
    "id": "dad-french",
-   "rev": 2,
+   "rev": 3,
    "title": "Français · блокнот",
    "profiles": [
     "dad"
    ],
    "created": "2026-09-24",
-   "size": 172497
+   "size": 329527
   },
   {
    "id": "mom-ege",
@@ -62,5 +62,5 @@
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-24T20:05:58.611Z"
+ "updated": "2026-09-25T10:14:57.692Z"
 }
