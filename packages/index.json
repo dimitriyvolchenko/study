@@ -42,13 +42,13 @@
   },
   {
    "id": "yulia-spotlight6",
-   "rev": 2,
+   "rev": 3,
    "title": "Spotlight 6 · Module 2",
    "profiles": [
     "yulia"
    ],
    "created": "2026-09-24",
-   "size": 337857
+   "size": 530927
   },
   {
    "id": "mom-starlight9",
@@ -82,5 +82,5 @@
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-25T10:19:37.234Z"
+ "updated": "2026-09-25T10:19:49.194Z"
 }
