@@ -32,13 +32,13 @@
   },
   {
    "id": "serge-spotlight3",
-   "rev": 2,
+   "rev": 3,
    "title": "Spotlight 3 · Module 2",
    "profiles": [
     "serge"
    ],
    "created": "2026-09-24",
-   "size": 147250
+   "size": 305004
   },
   {
    "id": "yulia-spotlight6",
@@ -72,5 +72,5 @@
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-25T10:18:52.776Z"
+ "updated": "2026-09-25T10:19:09.941Z"
 }
