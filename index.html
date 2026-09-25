@@ -535,6 +535,9 @@ body.reading .tabs{display:none}
 /* ---------- читалка ---------- */
 .reader{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:var(--bg);display:none;flex-direction:column}
 .reader.on{display:flex}
+/* iPhone: пока открыт урок, страница под ним не листается. Иначе при открытии клавиатуры Safari
+   сдвигает страницу под неподвижной читалкой, и курсор в поле ввода рисуется ниже поля. */
+body.rlock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .rbar{flex:0 0 auto;padding-top:env(safe-area-inset-top);background:var(--r);color:var(--cream);border-bottom:4px solid var(--y)}
 .rbar-in{height:48px;display:flex;align-items:center;padding:0 8px}
 .rbar .back{display:inline-flex;align-items:center;height:38px;padding:0 10px 0 6px;border-radius:12px;color:var(--cream);
@@ -10677,6 +10680,7 @@ function openLesson(code){
   actMark("study");
   reader.classList.add("on");
   document.body.classList.add("reading");
+  lockPage(true);
   if(PKG_CODE[code]){
     frameWith(pkgNote("Opening…", ""), code);
     pkgLesson(code, function(html){
@@ -10729,9 +10733,26 @@ function closeLesson(){
   stopFit();
   reader.classList.remove("on");
   document.body.classList.remove("reading");
+  lockPage(false);
   var made = freshFrame();
   made.old.parentNode.replaceChild(made.node, made.old);
   rframe = made.node;
+}
+var lockY = 0;
+function lockPage(on){
+  var b = document.body;
+  if(document.documentElement.className.indexOf("lite") >= 0) return;   /* простой режим листает саму страницу */
+  if(on){
+    if(b.className.indexOf("rlock") >= 0) return;
+    lockY = window.pageYOffset || 0;
+    b.style.top = (-lockY) + "px";
+    b.classList.add("rlock");
+  } else {
+    if(b.className.indexOf("rlock") < 0) return;
+    b.classList.remove("rlock");
+    b.style.top = "";
+    window.scrollTo(0, lockY);
+  }
 }
 function backFromLesson(){
   var h = beforeLesson && beforeLesson.indexOf("#/l/")!==0 ? beforeLesson : "#/";
