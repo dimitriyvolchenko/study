@@ -59,8 +59,18 @@
    ],
    "created": "2026-09-24",
    "size": 414840
+  },
+  {
+   "id": "serge-school",
+   "rev": 1,
+   "title": "Школа · 2 класс",
+   "profiles": [
+    "serge"
+   ],
+   "created": "2026-09-25",
+   "size": 150747
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-25T10:18:40.462Z"
+ "updated": "2026-09-25T10:18:52.776Z"
 }
