@@ -8479,10 +8479,6 @@ var PROFILES = [
    secs:"*",
    h:["b4b526cd993dc7140ac56e58304163e74485fc8bc25ebb440d5e00d0b569e57e",
       "e942c5e0884d3e5f43c5ab73ee357d4f19a92cbe8eb0a9d18b438e7aadc1a9db"]},
-  {id:"mom",   name:"Мама",      ko:"엄마",   av:"母", col:"#e2afb6", file:"progress_mama.json",
-   secs:["ba"],          /* английский мамы - только ЕГЭ, раздел приходит проектом mom-ege */
-   h:["21e7ee0b1c2817a2539cdd768253c57da16e8247307cc7f50b6e91f87cc7e4a6",
-      "b6649a45dc9d08ff5b00bd88dbff94f0592b75607dd30d1671a087c30e3b158a"]},
   {id:"yulia", name:"Юля",       ko:"율랴",   av:"柔", col:"#c4bad6", file:"progress_yulia.json",
    secs:[],
    h:["4330039108905e5e74c16f797006ba2628f6036e073583077fe5c061ea40255f",
@@ -8495,6 +8491,9 @@ var PROFILES = [
       "705e782e30f5bb4aa9d241c7c208e1a9ae79b9d8d039431d09cfdb281b4e05de"]}
 ];
 var PBYID = {}; PROFILES.forEach(function(p){ PBYID[p.id]=p; });
+/* Допустимые адресаты project JSON. «mom» оставляем только как технически известный
+   адресат старых пакетов, но отдельного аккаунта в интерфейсе больше нет. */
+var PROJECT_PROFILE_IDS = {dad:1, mom:1, yulia:1, serge:1};
 var PKEY = "study_who_v1";
 function setCookie(k,v){
   try{ document.cookie = k+"="+encodeURIComponent(v)+"; max-age=31536000; path=/; SameSite=Lax"; }catch(e){}
@@ -9431,7 +9430,7 @@ function pkgNormalize(o){
   if((parseInt(o.version, 10) || 1) > 1) throw new Error("The project needs a newer app. Update index.html first.");
   var id = pkgStr(o.id, 64);
   if(!RX_PID.test(id)) throw new Error("The project has no valid id.");
-  var profiles = (Array.isArray(o.profiles) ? o.profiles : ["dad"]).filter(function(x){ return x === "*" || !!PBYID[x]; });
+  var profiles = (Array.isArray(o.profiles) ? o.profiles : ["dad"]).filter(function(x){ return x === "*" || !!PROJECT_PROFILE_IDS[x]; });
   if(!profiles.length) profiles = ["dad"];
   var seen = {};
   var sections = (Array.isArray(o.sections) ? o.sections : []).filter(function(s){
@@ -11514,26 +11513,29 @@ function renderPkgPanel(){
 })();
 
 /* ================= Общий Nintendo: утренний обход дворца памяти (Судак) =================
-   В каждом разделе, по порядку плиток, берем паки слов незакрытых уроков:
-   - первый урок раздела без зеленой батарейки (🔋) - всегда, даже без отметок;
-   - дальше - только уроки, где уже стоит любая другая отметка (🔭, 🏗️, ❤️).
-   Батарейка убирает пак как выученный, и на его место встает следующий урок.
-   Кнопка C у пака - проверка: вбить слова пака по порядку. */
+   В каждом разделе показываем Word Pack только у уроков с активной отметкой 🔭, 🏗️ или ❤️.
+   Единственное исключение: если в разделе вообще еще нет ни одной отметки, показываем
+   первый доступный Word Pack как стартовый. Как только в разделе появляется любая отметка
+   (включая 🔋), этот автоматический стартовый пак больше не добавляется.
+   Кнопка C у пака - проверка слов по порядку. */
 var CHK = {};          /* открытые проверки: код -> {vals:[], res:null, hints:false} */
 function allGroups(){
   var out = [];
   SECTIONS.forEach(function(s){
-    var list = [], first = true, learned = 0, total = 0;
+    var open = [], active = [], anyMark = false, learned = 0, total = 0;
     (s.live || []).forEach(function(it){
       if(it.div || !it.c || it.guide) return;
       var rows = PACKS[it.c];
       if(!rows || !rows.length) return;
       total++;
       var m = markOf(it.c);
+      if(m) anyMark = true;
       if(m === "done"){ learned++; return; }
-      if(first){ first = false; list.push({it:it, m:m}); return; }
-      if(m) list.push({it:it, m:m});
+      var e = {it:it, m:m};
+      open.push(e);
+      if(m) active.push(e);
     });
+    var list = active.length ? active : ((!anyMark && open.length) ? [open[0]] : []);
     if(list.length) out.push({s:s, list:list, learned:learned, total:total});
   });
   return out;
