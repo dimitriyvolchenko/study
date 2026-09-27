@@ -82,15 +82,15 @@
   },
   {
    "id": "dad-ege-advanced",
-   "rev": 1,
+   "rev": 2,
    "title": "English · ЕГЭ C1–C2 · папа",
    "profiles": [
     "dad"
    ],
    "created": "2026-09-27",
-   "size": 44765
+   "size": 51328
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-09-27T13:11:31.881Z"
+ "updated": "2026-09-27T14:15:34.485Z"
 }
