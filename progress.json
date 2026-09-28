@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-09-28T16:19:01.230Z",
+  "updated": "2026-09-28T16:29:28.034Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -419,7 +419,7 @@
     "check": 0
   },
   "habits": {
-    "t": 1790583580856,
+    "t": 1790612965416,
     "groups": [
       {
         "id": "g1",
@@ -449,6 +449,15 @@
         "icon": "🔬",
         "order": 0
       },
+      {
+        "id": "hmuguabk51r1",
+        "items": [],
+        "title": "English",
+        "icon": "⭐",
+        "order": 1
+      }
+    ],
+    "trash": [
       {
         "id": "g2",
         "items": [
@@ -562,17 +571,10 @@
         ],
         "title": "development",
         "icon": "🎧",
-        "order": 1
-      },
-      {
-        "id": "hmuguabk51r1",
-        "items": [],
-        "title": "English",
-        "icon": "⭐",
-        "order": 2
+        "order": 0,
+        "deletedAt": 1790612965414
       }
-    ],
-    "trash": []
+    ]
   },
   "checks": {},
   "split": {
@@ -5725,197 +5727,132 @@
       "v": true,
       "t": 1790583580856
     },
-    "[\"group\",\"g2\"]": {
-      "v": {
-        "title": "development",
-        "icon": "🎧",
-        "order": 1
-      },
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o7hu\"]": {
-      "v": {
-        "name": "🎧 ege Words",
-        "order": 0
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-21\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-28\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o5tk\"]": {
-      "v": {
-        "name": "PhDpr.State&Law",
-        "order": 1
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o5tk\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o41s\"]": {
-      "v": {
-        "name": "ListenPhilosophy",
-        "order": 2
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-21\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o6hn\"]": {
-      "v": {
-        "name": "good read in Speechify",
-        "order": 3
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o6hn\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o344\"]": {
-      "v": {
-        "name": "Criminalistics",
-        "order": 4
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o344\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4of\"]": {
-      "v": {
-        "name": "⬇️ listenForensicEngB",
-        "order": 5
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4of\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o5np\"]": {
-      "v": {
-        "name": "Forensic Expertology",
-        "order": 6
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o5np\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o6g6\"]": {
-      "v": {
-        "name": "⬆️ Schwartz",
-        "order": 7
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o4v5\"]": {
-      "v": {
-        "name": "makeOneExpertise",
-        "order": 8
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-21\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o7dd\"]": {
-      "v": {
-        "name": "⬇️ 10p: Guide to Ethics",
-        "order": 9
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o72l\"]": {
-      "v": {
-        "name": "Max Scheler",
-        "order": 10
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o1uq\"]": {
-      "v": {
-        "name": "⬆️🌃 learn ethics",
-        "order": 11
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
     "[\"group\",\"hmuguabk51r1\"]": {
       "v": {
         "title": "English",
         "icon": "⭐",
-        "order": 2
+        "order": 1
       },
-      "t": 1790333436541
+      "t": 1790612965416
+    },
+    "[\"trashGroup\",\"g2\"]": {
+      "v": {
+        "id": "g2",
+        "items": [
+          {
+            "id": "hmufglk4o7hu",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1,
+              "2026-09-28": 1
+            },
+            "name": "🎧 ege Words",
+            "order": 0
+          },
+          {
+            "id": "hmufglk4o5tk",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "PhDpr.State&Law",
+            "order": 1
+          },
+          {
+            "id": "hmufglk4o41s",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "ListenPhilosophy",
+            "order": 2
+          },
+          {
+            "id": "hmufglk4o6hn",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "good read in Speechify",
+            "order": 3
+          },
+          {
+            "id": "hmufglk4o344",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "Criminalistics",
+            "order": 4
+          },
+          {
+            "id": "hmufglk4of",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "⬇️ listenForensicEngB",
+            "order": 5
+          },
+          {
+            "id": "hmufglk4o5np",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "Forensic Expertology",
+            "order": 6
+          },
+          {
+            "id": "hmufglk4o6g6",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "⬆️ Schwartz",
+            "order": 7
+          },
+          {
+            "id": "hmufglk4o4v5",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "makeOneExpertise",
+            "order": 8
+          },
+          {
+            "id": "hmufglk4o7dd",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "⬇️ 10p: Guide to Ethics",
+            "order": 9
+          },
+          {
+            "id": "hmufglk4o72l",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "Max Scheler",
+            "order": 10
+          },
+          {
+            "id": "hmufglk4o1uq",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "⬆️🌃 learn ethics",
+            "order": 11
+          }
+        ],
+        "title": "development",
+        "icon": "🎧",
+        "order": 0,
+        "deletedAt": 1790612965414
+      },
+      "t": 1790612965416
     },
     "[\"split\",\"B01\"]": {
       "v": 1789050745859,
@@ -6000,6 +5937,150 @@
     "[\"activity\",\"2026-09-28\",\"study\"]": {
       "v": 1790582479879,
       "t": 1790582479879
+    },
+    "[\"group\",\"g2\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o7hu\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-28\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o5tk\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o5tk\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o41s\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o6hn\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o6hn\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o344\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o344\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4of\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4of\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o5np\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o5np\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o6g6\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o4v5\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o7dd\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o72l\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o1uq\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
     }
   }
 }
