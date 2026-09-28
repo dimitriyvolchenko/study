@@ -9629,22 +9629,29 @@ function statusEmoji(s){var st=STATUSES.filter(function(x){return x.id===s;})[0]
 function stageForCodes(codes,day,word){
  var log=state[word?'wordLog':'stageLog']||{},marks=state[word?'wordMarks':'marks']||{},latest=null;
  Object.keys(log).forEach(function(k){var at=k.indexOf('|'),code=k.slice(at+1),r=log[k];if(k.slice(0,at)===day&&codes[code]&&r&&r.s&&(!latest||r.t>latest.t))latest=r;});
- // Current marks without a log entry come from older app versions; show them today.
- if(day===todayISO())Object.keys(codes).forEach(function(code){var r=marks[code];if(r&&r.s&&(!latest||r.t>latest.t))latest=r;});
+ // Older versions stored only the current mark. Place it on its actual date;
+ // never infer that an old mark was made today.
+ Object.keys(codes).forEach(function(code){var r=marks[code];if(r&&r.s&&r.t&&habISO(new Date(r.t))===day&&(!latest||r.t>latest.t))latest=r;});
  return latest;
 }
 function stageForDay(sec,day,word){var codes={};(sec.live||[]).forEach(function(it){if(it.c&&!it.guide)codes[it.c]=true;});return stageForCodes(codes,day,word);}
+function wordDoneOn(code,day){
+ var r=(state.wordLog||{})[day+'|'+code];
+ if(r)return r.s==='done';
+ var m=(state.wordMarks||{})[code];
+ return !!(m&&m.s==='done'&&m.t&&habISO(new Date(m.t))===day);
+}
 function renderStudyTrackers(week){
  [false,true].forEach(function(word){
   var box=document.getElementById(word?'wordTracker':'sectionTracker');if(!box)return;
-  var rows=word?ALL.filter(function(x){return !x.guide&&(PACKS[x.code]||[]).length>0;}):SECTIONS.filter(function(s){return (s.live||[]).some(function(it){return it.c&&!it.guide;});});
+  var rows=word?ALL.filter(function(x){return !x.guide&&(PACKS[x.code]||[]).length>0&&((state.wordMarks||{})[x.code]||Object.keys(state.wordLog||{}).some(function(k){return k.slice(k.indexOf('|')+1)===x.code;}));}):SECTIONS.filter(function(s){return (s.live||[]).some(function(it){return it.c&&!it.guide;});});
   var title=word?'Word Pack':'Sections';
-  box.innerHTML='<div class="h-sign"><h2>'+title+'</h2><span class="ko">'+(word?'단어':'학습')+'</span><span class="rule"></span></div>'+
-   '<p class="tracker-note">'+(word?'Separate pack stages · choose an emoji in Sudak.':'Lesson stages · latest marked stage for each day.')+'</p>'+
-   '<div class="study-tracker'+(word?' word-tracker':'')+'"><div class="tracker-head"><span>'+(word?'Word pack':'Section')+'</span>'+week.map(function(d,i){return '<span>'+HAB_COLS[i]+'</span>';}).join('')+'</div>'+
-   rows.map(function(s){var codes=word?((s.code)?(function(){var o={};o[s.code]=true;return o;})():{}):null;return '<div class="tracker-row"><button class="tracker-name" data-tracker-sec="'+esc(word?s.sec:s.id)+'" data-tracker-word="'+(word?'1':'0')+'">'+esc(word?((SECBYID[s.sec]?SECBYID[s.sec].title+' · ':'')+s.title):s.title)+'</button>'+week.map(function(day){
-    var r=word?stageForCodes(codes,day,true):stageForDay(s,day,false);return '<span class="tracker-cell'+(day===todayISO()?' today':'')+'" title="'+esc(day+(r?' · '+r.s:''))+'"><span class="stage-dot'+(r?' marked':'')+'">'+(r?statusEmoji(r.s):'')+'</span></span>';
-   }).join('')+'</div>';}).join('')+(rows.length?'':'<p class="tip">'+(word?'Word packs will appear here when lessons with packs are available.':'Sections will appear here when courses are added.')+'</p>')+'</div>';
+  box.innerHTML='<div class="hb-g study-hb-g"><div class="hb-gh"><span class="hb-ic" aria-hidden="true">'+(word?'📚':'📖')+'</span><span class="hb-gt">'+title+'</span></div>'+
+   '<div class="hb-cols">'+week.map(function(d,i){return '<i'+(d===habSel?' class="sel"':'')+'>'+HAB_COLS[i]+'</i>';}).join('')+'</div>'+
+   rows.map(function(item){return '<div class="hb-row study-hb-row"><span class="study-hb-check" aria-hidden="true"></span><button class="hb-nm" type="button" data-tracker-sec="'+esc(word?item.sec:item.id)+'" data-tracker-word="'+(word?'1':'0')+'">'+esc(word?item.title:item.title)+'</button><span class="hb-dots">'+week.map(function(day){
+    var on=word?wordDoneOn(item.code,day):datesOf(item.id).indexOf(day)>=0;
+    return '<i class="'+(on?'on ':'')+(day===habSel?'sel ':'')+'" title="'+esc(day+(on?' · Complete':''))+'"></i>';
+   }).join('')+'</span></div>';}).join('')+(rows.length?'':'<div class="hb-empty">'+(word?'Word Packs will appear after a mark in Sudak.':'No sections yet.')+'</div>')+'</div>';
   Array.prototype.forEach.call(box.querySelectorAll('[data-tracker-sec]'),function(b){b.onclick=function(){go(word?'#/all':'#/s/'+b.getAttribute('data-tracker-sec'));};});
  });
 }
@@ -10910,6 +10917,10 @@ function habFind(gid, iid){
   if(g && iid) g.items.forEach(function(x){ if(x.id === iid) it = x; });
   return {g:g, it:it};
 }
+document.addEventListener('click',function(ev){
+ if(ev.target.closest&&ev.target.closest('[data-hbdelete]'))return;
+ if(Object.keys(habDeleteTaps).length){habDeleteTaps={};renderHabits();}
+},true);
 function renderHabits(){
   var zone = document.getElementById("habZone");
   if(!zone) return;
@@ -10945,7 +10956,7 @@ function renderHabits(){
       '<div class="hb-gh"><button class="hb-ic" type="button" data-hbic="' + g.id + '">' + esc(g.icon || "⭐") + '</button>' +
       '<button class="hb-gt" type="button" data-hbg="' + g.id + '">' + esc(g.title) + '<span>' + done + '/' + g.items.length + '</span></button>' +
       '<button class="hb-plus" type="button" data-hbadd="' + g.id + '" aria-label="add habit">+</button>' +
-      '<button class="hb-delete'+((habDeleteTaps[g.id]||0)>=5?' armed':'')+'" type="button" data-hbdelete="'+g.id+'" aria-label="'+((habDeleteTaps[g.id]||0)>=5?'Move section to Cloud trash':'Tap five times to delete section')+'">'+((habDeleteTaps[g.id]||0)>=5?'×':(habDeleteTaps[g.id]||0)+'/5')+'</button></div>' +
+      '<button class="hb-delete" type="button" data-hbdelete="'+g.id+'" aria-label="Tap five times to move section to Cloud trash">×</button></div>' +
       (g.items.length ? cols : '<div class="hb-empty">No habits yet: press + to add one.</div>') +
       g.items.map(function(it){
         var on = !!(it.d && it.d[habSel]);
@@ -11005,7 +11016,7 @@ function renderHabits(){
     b.onclick = function(){
       var f=habFind(b.getAttribute("data-hbdelete"));if(!f.g)return;
       var n=habDeleteTaps[f.g.id]||0;
-      if(n<5){habDeleteTaps[f.g.id]=n+1;renderHabits();return;}
+      if(n<4){habDeleteTaps[f.g.id]=n+1;renderHabits();return;}
       var h=habData();f.g.deletedAt=Date.now();h.trash.push(f.g);h.groups=h.groups.filter(function(x){return x!==f.g;});delete habDeleteTaps[f.g.id];habTouch();
     };
   });
@@ -11163,7 +11174,7 @@ function allGroups(){
       var rows = PACKS[it.c];
       if(!rows || !rows.length) return;
       total++;
-      var m = markOf(it.c);
+      var m = (state.wordMarks||{})[it.c];m=m&&m.s;
       if(m === "done"){ learned++; return; }
       if(first){ first = false; list.push({it:it, m:m}); return; }
       if(m) list.push({it:it, m:m});
@@ -11235,11 +11246,8 @@ function apackHTML(g, e){
     }).join("")+'</ol>'+
     (big ? '<button class="pk-more" data-apmore="'+esc(code)+'">Show all '+rows.length+'</button>' : '');
   }
-  var mk = STATUSES.map(function(s2){
-    return '<button class="mk'+(e.m === s2.id ? " on" : "")+'" data-code="'+esc(code)+'" data-st="'+s2.id+'" aria-label="'+esc(s2.name)+'"><span class="e">'+s2.e+'</span></button>';
-  }).join("");
   return '<div class="lv-pack apack" id="ap-'+esc(code).replace(/\./g, "_")+'" data-apcode="'+esc(code)+'">'+head+body+
-    '<div class="ap-foot"><div class="marks">'+mk+'</div>'+wordPackButtons(code)+
+    '<div class="ap-foot">'+wordPackButtons(code)+
     (STORIES[code] ? '<button class="ap-lv" data-nin="'+esc(code)+'">Level ›</button>' : '')+'</div></div>';
 }
 function renderAllN(){
