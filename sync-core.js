@@ -62,6 +62,20 @@ function materialize(s,ops){
  Object.assign(s,result);s.syncOps=ops;return s;
 }
 function merge(s,remote){var ops=seed(s),rs=seed(remote);Object.keys(rs).forEach(function(k){ops[k]=clone(winner(ops[k],rs[k]));});materialize(s,ops);return s;}
+function installHabitsDateFix(){
+ var original=root.stageForCodes;
+ if(typeof original!=='function'||original.__habitsDateFix)return;
+ var fixed=function(codes,day,word){
+  var s=root.state||{},log=s[word?'wordLog':'stageLog']||{},marks=s[word?'wordMarks':'marks']||{},latest=null;
+  Object.keys(log).forEach(function(k){var at=k.indexOf('|'),code=k.slice(at+1),r=log[k];if(k.slice(0,at)===day&&codes[code]&&r&&r.s&&(!latest||r.t>latest.t))latest=r;});
+  Object.keys(codes).forEach(function(code){var r=marks[code];if(r&&r.s&&r.t){var d=new Date(r.t),iso=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);if(iso===day&&(!latest||r.t>latest.t))latest=r;}});
+  return latest;
+ };
+ fixed.__habitsDateFix=true;
+ root.stageForCodes=fixed;
+}
+if(typeof root.stageForCodes==='function')installHabitsDateFix();
+else if(root.addEventListener)root.addEventListener('DOMContentLoaded',function(){installHabitsDateFix();if(typeof root.renderHabits==='function')root.renderHabits();},{once:true});
 var api={project:project,seed:seed,capture:capture,merge:merge,same:same};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.ProgressSync=api;
 })(typeof window!=='undefined'?window:this);
