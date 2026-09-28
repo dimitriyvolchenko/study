@@ -20,6 +20,7 @@ function project(s){
    Object.keys(it.d||{}).forEach(function(d){if(it.d[d])put(['habitDay',g.id,it.id,d],true,h.t);});
   });
  });
+ (h.trash||[]).forEach(function(g,gi){put(['trashGroup',g.id],Object.assign({},clone(g),{order:gi}),h.t);});
  (s.extra||[]).forEach(function(x){put(['extra',x.c],x,x.t);});
  Object.keys(s.split||{}).forEach(function(k){put(['split',k],s.split[k],s.split[k]);});
  if(s.act&&s.act.d) ['open','study','check'].forEach(function(k){if(s.act[k])put(['activity',s.act.d,k],s.act[k],s.act[k]);});
@@ -38,7 +39,7 @@ function capture(s,previous,stamp){
 function winner(a,b){if(!a)return b;if(!b)return a;if(a.t!==b.t)return a.t>b.t?a:b;return JSON.stringify(a.v)>=JSON.stringify(b.v)?a:b;}
 function materialize(s,ops){
  var result={marks:{},wordMarks:{},stageLog:{},wordLog:{},checks:{},lessonStates:{},secDone:{},nDone:{},duo:{},extra:[],split:{}};
- var groups={},items={},days=[],activity={},maxHabit=0;
+ var groups={},items={},days=[],trashGroups={},activity={},maxHabit=0;
  Object.keys(ops).sort().forEach(function(key){
   var p;try{p=JSON.parse(key);}catch(e){return;}var r=ops[key],v=r.v,f=p[0];
   if(['marks','wordMarks','stageLog','wordLog','checks','lessonStates'].indexOf(f)>=0){if(v!==null)result[f][p[1]]=clone(v);}
@@ -46,6 +47,7 @@ function materialize(s,ops){
   else if(f==='group'){maxHabit=Math.max(maxHabit,r.t);if(v)groups[p[1]]=Object.assign({id:p[1],items:[]},v);}
   else if(f==='habit'){maxHabit=Math.max(maxHabit,r.t);if(v)items[JSON.stringify(p.slice(1))]=Object.assign({id:p[2],gid:p[1],d:{}},v);}
   else if(f==='habitDay'){maxHabit=Math.max(maxHabit,r.t);if(v)days.push(p);}
+  else if(f==='trashGroup'){maxHabit=Math.max(maxHabit,r.t);if(v)trashGroups[p[1]]=clone(v);}
   else if(f==='extra'&&v)result.extra.push(clone(v));
   else if(f==='split'&&v!==null)result.split[p[1]]=v;
   else if(f==='activity'&&v) {var a=activity[p[1]]||(activity[p[1]]={d:p[1],open:0,study:0,check:0});a[p[2]]=v;}
@@ -54,7 +56,8 @@ function materialize(s,ops){
  Object.keys(items).forEach(function(k){var it=items[k],g=groups[it.gid];if(g){delete it.gid;g.items.push(it);}});
  var gs=Object.keys(groups).map(function(k){var g=groups[k];g.items.sort(function(a,b){return a.order-b.order||a.id.localeCompare(b.id);});return g;});
  gs.sort(function(a,b){return a.order-b.order||a.id.localeCompare(b.id);});
- if(s.habits||maxHabit||gs.length)result.habits={t:maxHabit,groups:gs};
+ var trash=Object.keys(trashGroups).map(function(k){return trashGroups[k];});trash.sort(function(a,b){return a.order-b.order;});
+ if(s.habits||maxHabit||gs.length||trash.length)result.habits={t:maxHabit,groups:gs,trash:trash};
  var ad=Object.keys(activity).sort().pop();if(ad)result.act=activity[ad];
  Object.assign(s,result);s.syncOps=ops;return s;
 }
