@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-09-28T17:27:43.222Z",
+  "updated": "2026-09-28T17:28:01.068Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -419,37 +419,8 @@
     "check": 0
   },
   "habits": {
-    "t": 1790612996661,
-    "groups": [
-      {
-        "id": "g1",
-        "items": [
-          {
-            "id": "hmufglk4n4j2",
-            "d": {
-              "2026-09-21": 1,
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "working on Article",
-            "order": 0
-          },
-          {
-            "id": "hmufglk4o6kn",
-            "d": {
-              "2026-09-21": 1,
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "significant amount",
-            "order": 1
-          }
-        ],
-        "title": "work in forensics",
-        "icon": "🔬",
-        "order": 0
-      }
-    ],
+    "t": 1790616478874,
+    "groups": [],
     "trash": [
       {
         "id": "g2",
@@ -574,6 +545,35 @@
         "icon": "⭐",
         "order": 1,
         "deletedAt": 1790612984216
+      },
+      {
+        "id": "g1",
+        "items": [
+          {
+            "id": "hmufglk4n4j2",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "working on Article",
+            "order": 0
+          },
+          {
+            "id": "hmufglk4o6kn",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "significant amount",
+            "order": 1
+          }
+        ],
+        "title": "work in forensics",
+        "icon": "🔬",
+        "order": 2,
+        "deletedAt": 1790616478872
       }
     ]
   },
@@ -6474,52 +6474,6 @@
       "v": true,
       "t": 1790362648109
     },
-    "[\"group\",\"g1\"]": {
-      "v": {
-        "title": "work in forensics",
-        "icon": "🔬",
-        "order": 0
-      },
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g1\",\"hmufglk4n4j2\"]": {
-      "v": {
-        "name": "working on Article",
-        "order": 0
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-21\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habit\",\"g1\",\"hmufglk4o6kn\"]": {
-      "v": {
-        "name": "significant amount",
-        "order": 1
-      },
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-21\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790583580856
-    },
     "[\"trashGroup\",\"g2\"]": {
       "v": {
         "id": "g2",
@@ -6650,6 +6604,38 @@
       },
       "t": 1790612984218
     },
+    "[\"trashGroup\",\"g1\"]": {
+      "v": {
+        "id": "g1",
+        "items": [
+          {
+            "id": "hmufglk4n4j2",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "working on Article",
+            "order": 0
+          },
+          {
+            "id": "hmufglk4o6kn",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "significant amount",
+            "order": 1
+          }
+        ],
+        "title": "work in forensics",
+        "icon": "🔬",
+        "order": 2,
+        "deletedAt": 1790616478872
+      },
+      "t": 1790616478874
+    },
     "[\"split\",\"B01\"]": {
       "v": 1789050745859,
       "t": 1790598706592
@@ -6733,6 +6719,42 @@
     "[\"activity\",\"2026-09-28\",\"study\"]": {
       "v": 1790582479879,
       "t": 1790582479879
+    },
+    "[\"group\",\"g1\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habit\",\"g1\",\"hmufglk4n4j2\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habit\",\"g1\",\"hmufglk4o6kn\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790616478874
     },
     "[\"secDone\",\"en\",\"2026-09-28\"]": {
       "v": null,
