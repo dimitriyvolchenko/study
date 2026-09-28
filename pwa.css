@@ -14,9 +14,20 @@
 .stage-dot.marked{background:none;border-color:transparent}
 .tracker-cell.today{background:var(--paper2);border-radius:8px}
 .word-tracker .stage-dot.marked{background:#171717;border-color:#171717;width:22px;height:22px;font-size:12px}
-.word-pack-controls{width:100%;padding:10px 0 2px;border-top:1px solid var(--line);margin-top:8px}
+.word-pack-controls{flex:0 0 100%;width:100%;box-sizing:border-box;padding:10px 0 2px;border-top:1px solid var(--line);margin-top:8px}
 .word-pack-controls small{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}
-.word-pack-controls .word-stage.on{background:#171717;border-color:#171717}
+.word-stage-marks{display:grid;grid-template-columns:repeat(5,minmax(42px,58px));gap:8px;align-items:center}
+.word-stage-btn{width:50px;height:50px;padding:0;border:2px solid var(--line);border-radius:50%;background:var(--paper2);color:var(--ink);font-size:23px;line-height:1;display:grid;place-items:center;cursor:pointer}
+.word-stage-btn:active{transform:scale(.94)}
+.word-stage-btn.on{background:#171717;border-color:#171717;color:#fff;box-shadow:0 3px 0 var(--edge)}
+.word-stage-btn.clear{font-size:16px;color:var(--muted)}
+.cloud-trash .ph{display:flex;justify-content:space-between;font-weight:700}
+.cloud-trash .pb{padding-top:8px}
+.trash-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.trash-row:first-child{border-top:0}
+.trash-row span{min-width:0}
+.trash-row b,.trash-row small{display:block}
+.trash-row small,.trash-empty{color:var(--muted);font-size:12px;margin:3px 0 0}
 .ap-foot{flex-wrap:wrap}
 #scr-habits{padding-bottom:24px}
 #scr-habits .habzone{margin-top:0}
