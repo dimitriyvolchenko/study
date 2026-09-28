@@ -1,5 +1,5 @@
 /* Versioned, atomic offline installation. Progress/API responses are never cached. */
-const VERSION='2026-09-28-3';
+const VERSION='2026-09-28-4';
 const SHELL='study-pwa-shell-'+VERSION;
 const COURSES='study-pwa-courses-v1';
 const BASE=new URL('./',self.location.href);
