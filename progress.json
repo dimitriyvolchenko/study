@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-09-28T17:16:30.254Z",
+  "updated": "2026-09-28T17:16:35.004Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -955,6 +955,44 @@
         }
       },
       "t": 1790518586450
+    },
+    "brat2_progress_DEG03": {
+      "data": {
+        "v": 3,
+        "t": 1790615793703,
+        "screen": "study",
+        "mode": null,
+        "scrollStudy": 0,
+        "diag": {
+          "order": [
+            4,
+            2,
+            3,
+            0,
+            1
+          ],
+          "i": 0,
+          "res": {},
+          "done": false
+        },
+        "quiz": {
+          "li": 0,
+          "i": 0,
+          "order": [],
+          "res": {
+            "0": {},
+            "1": {},
+            "2": {},
+            "3": {},
+            "4": {}
+          },
+          "queue": [],
+          "retry": false,
+          "doneAll": false,
+          "started": false
+        }
+      },
+      "t": 1790615793703
     },
     "brat2_progress_E00": {
       "data": {
@@ -5709,6 +5747,47 @@
         "t": 1790582544475
       },
       "t": 1790599171605
+    },
+    "[\"lessonStates\",\"brat2_progress_DEG03\"]": {
+      "v": {
+        "data": {
+          "v": 3,
+          "t": 1790615793703,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 0,
+          "diag": {
+            "order": [
+              4,
+              2,
+              3,
+              0,
+              1
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          }
+        },
+        "t": 1790615793703
+      },
+      "t": 1790615793711
     },
     "[\"secDone\",\"ba\",\"2026-09-14\"]": {
       "v": true,
