@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "serge",
-  "updated": "2026-09-29T10:56:25.032Z",
+  "updated": "2026-09-29T10:56:41.318Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -27,10 +27,10 @@
     "brat2_progress_serge_MS01": {
       "data": {
         "v": 4,
-        "t": 1790679384650,
+        "t": 1790679400511,
         "screen": "study",
         "mode": null,
-        "scrollStudy": 0,
+        "scrollStudy": 516,
         "diag": {
           "order": [
             2,
@@ -68,7 +68,7 @@
           "done": false
         }
       },
-      "t": 1790679384650
+      "t": 1790679400511
     }
   },
   "rockets": {},
@@ -79,10 +79,10 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1790679384650,
+          "t": 1790679400511,
           "screen": "study",
           "mode": null,
-          "scrollStudy": 0,
+          "scrollStudy": 516,
           "diag": {
             "order": [
               2,
@@ -120,9 +120,9 @@
             "done": false
           }
         },
-        "t": 1790679384650
+        "t": 1790679400511
       },
-      "t": 1790679385031
+      "t": 1790679400973
     },
     "[\"activity\",\"2026-09-29\",\"open\"]": {
       "v": 1790679370971,
