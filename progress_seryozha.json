@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "serge",
-  "updated": "2026-09-29T10:57:41.300Z",
+  "updated": "2026-09-29T10:57:56.321Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -27,8 +27,8 @@
     "brat2_progress_serge_MS01": {
       "data": {
         "v": 4,
-        "t": 1790679459469,
-        "screen": "quiz",
+        "t": 1790679474933,
+        "screen": "trap",
         "mode": "single",
         "scrollStudy": 0,
         "diag": {
@@ -44,8 +44,8 @@
           "done": false
         },
         "quiz": {
-          "li": 0,
-          "i": 3,
+          "li": 1,
+          "i": 5,
           "order": [
             0,
             2,
@@ -82,25 +82,40 @@
                 "rev": false
               }
             },
-            "4": {}
+            "4": {
+              "L1": {
+                "ok": true,
+                "att": 1,
+                "rev": false
+              }
+            }
           },
-          "queue": [
-            2
-          ],
+          "queue": [],
           "retry": false,
           "doneAll": false,
           "started": true
         },
         "trap": {
-          "order": [],
+          "order": [
+            0,
+            2,
+            3,
+            1
+          ],
           "i": 0,
-          "res": {},
-          "queue": [],
+          "res": {
+            "0": {
+              "ok": false
+            }
+          },
+          "queue": [
+            0
+          ],
           "retry": false,
           "done": false
         }
       },
-      "t": 1790679459469
+      "t": 1790679474933
     }
   },
   "rockets": {},
@@ -111,8 +126,8 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1790679459469,
-          "screen": "quiz",
+          "t": 1790679474933,
+          "screen": "trap",
           "mode": "single",
           "scrollStudy": 0,
           "diag": {
@@ -128,8 +143,8 @@
             "done": false
           },
           "quiz": {
-            "li": 0,
-            "i": 3,
+            "li": 1,
+            "i": 5,
             "order": [
               0,
               2,
@@ -166,27 +181,42 @@
                   "rev": false
                 }
               },
-              "4": {}
+              "4": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              }
             },
-            "queue": [
-              2
-            ],
+            "queue": [],
             "retry": false,
             "doneAll": false,
             "started": true
           },
           "trap": {
-            "order": [],
+            "order": [
+              0,
+              2,
+              3,
+              1
+            ],
             "i": 0,
-            "res": {},
-            "queue": [],
+            "res": {
+              "0": {
+                "ok": false
+              }
+            },
+            "queue": [
+              0
+            ],
             "retry": false,
             "done": false
           }
         },
-        "t": 1790679459469
+        "t": 1790679474933
       },
-      "t": 1790679460977
+      "t": 1790679475981
     },
     "[\"activity\",\"2026-09-29\",\"open\"]": {
       "v": 1790679370971,
