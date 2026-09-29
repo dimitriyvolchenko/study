@@ -44,3 +44,8 @@
 @media(max-width:380px){.stage-rocket{width:30px;height:30px;margin:0 4px}.study-block-head{padding:7px}}
 .stage-code-stack{display:flex;flex:none;flex-direction:column;align-items:center;margin-right:10px;gap:8px}.row .stage-code-stack .code{margin:2px 0 0}.stage-code-stack .stage-rocket{margin:0}
 .build-version{display:block;color:var(--muted);margin-top:6px;font-size:11px}
+
+/* Keep short screens at viewport height so iOS does not retain an undersized
+   layout viewport when navigating from the long Menu page to Rocket. */
+html{min-height:100%}
+html:not(.lite) body{min-height:100vh;min-height:100dvh}

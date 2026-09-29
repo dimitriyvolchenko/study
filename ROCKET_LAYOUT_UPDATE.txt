@@ -1,0 +1,22 @@
+Rocket bottom navigation fix — Build 2026-09-29-8
+
+For an existing v7 installation, replace these three files in the repository root:
+  index.html
+  pwa.css
+  sw.js
+
+Alternatively, extract study-pwa-complete-2026-09-29-v8.zip and copy its contents
+into the repository root, preserving its bundled/ and icons/ folders.
+Do not upload the ZIP itself as the application. Do not delete progress*.json
+or packages already in your repository.
+
+Change: short screens, including empty Rocket, have a minimum height matching
+the viewport. Existing bottom navigation safe-area padding is preserved.
+The service-worker cache and visible build number are updated to 2026-09-29-8.
+
+Checks: Rocket/planner regression checks, offline-cache checks, and service-worker
+syntax validation passed. A rendered iPhone preview could not be run in this
+environment; please confirm the final appearance on the device.
+
+After deployment, reopen the app online and apply its available update.
+Cloud should show Build 2026-09-29-8 · Rocket layout.
