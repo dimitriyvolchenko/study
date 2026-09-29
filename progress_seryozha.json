@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "serge",
-  "updated": "2026-09-29T10:58:11.340Z",
+  "updated": "2026-09-29T10:58:19.323Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -11,7 +11,7 @@
     "d": "2026-09-29",
     "open": 1790679370971,
     "study": 1790679383830,
-    "check": 0
+    "check": 1790679497769
   },
   "habits": {
     "t": 0,
@@ -27,8 +27,8 @@
     "brat2_progress_serge_MS01": {
       "data": {
         "v": 4,
-        "t": 1790679485694,
-        "screen": "trap",
+        "t": 1790679497772,
+        "screen": "final",
         "mode": "single",
         "scrollStudy": 0,
         "diag": {
@@ -92,7 +92,7 @@
           },
           "queue": [],
           "retry": false,
-          "doneAll": false,
+          "doneAll": true,
           "started": true
         },
         "trap": {
@@ -102,10 +102,13 @@
             3,
             1
           ],
-          "i": 2,
+          "i": 4,
           "res": {
             "0": {
               "ok": false
+            },
+            "1": {
+              "ok": true
             },
             "2": {
               "ok": true
@@ -114,14 +117,12 @@
               "ok": true
             }
           },
-          "queue": [
-            0
-          ],
+          "queue": [],
           "retry": false,
-          "done": false
+          "done": true
         }
       },
-      "t": 1790679485694
+      "t": 1790679497772
     }
   },
   "rockets": {},
@@ -132,8 +133,8 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1790679485694,
-          "screen": "trap",
+          "t": 1790679497772,
+          "screen": "final",
           "mode": "single",
           "scrollStudy": 0,
           "diag": {
@@ -197,7 +198,7 @@
             },
             "queue": [],
             "retry": false,
-            "doneAll": false,
+            "doneAll": true,
             "started": true
           },
           "trap": {
@@ -207,10 +208,13 @@
               3,
               1
             ],
-            "i": 2,
+            "i": 4,
             "res": {
               "0": {
                 "ok": false
+              },
+              "1": {
+                "ok": true
               },
               "2": {
                 "ok": true
@@ -219,16 +223,14 @@
                 "ok": true
               }
             },
-            "queue": [
-              0
-            ],
+            "queue": [],
             "retry": false,
-            "done": false
+            "done": true
           }
         },
-        "t": 1790679485694
+        "t": 1790679497772
       },
-      "t": 1790679490984
+      "t": 1790679497780
     },
     "[\"activity\",\"2026-09-29\",\"open\"]": {
       "v": 1790679370971,
@@ -237,6 +239,10 @@
     "[\"activity\",\"2026-09-29\",\"study\"]": {
       "v": 1790679383830,
       "t": 1790679383830
+    },
+    "[\"activity\",\"2026-09-29\",\"check\"]": {
+      "v": 1790679497769,
+      "t": 1790679497769
     },
     "[\"activity\",\"2026-09-27\",\"open\"]": {
       "v": 1790540711634,
