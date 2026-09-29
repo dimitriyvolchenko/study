@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "serge",
-  "updated": "2026-09-29T10:56:11.314Z",
+  "updated": "2026-09-29T10:56:25.032Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -10,7 +10,7 @@
   "act": {
     "d": "2026-09-29",
     "open": 1790679370971,
-    "study": 0,
+    "study": 1790679383830,
     "check": 0
   },
   "habits": {
@@ -23,14 +23,114 @@
   "wordMarks": {},
   "stageLog": {},
   "wordLog": {},
-  "lessonStates": {},
+  "lessonStates": {
+    "brat2_progress_serge_MS01": {
+      "data": {
+        "v": 4,
+        "t": 1790679384650,
+        "screen": "study",
+        "mode": null,
+        "scrollStudy": 0,
+        "diag": {
+          "order": [
+            2,
+            4,
+            0,
+            1,
+            3
+          ],
+          "i": 0,
+          "res": {},
+          "done": false
+        },
+        "quiz": {
+          "li": 0,
+          "i": 0,
+          "order": [],
+          "res": {
+            "0": {},
+            "1": {},
+            "2": {},
+            "3": {},
+            "4": {}
+          },
+          "queue": [],
+          "retry": false,
+          "doneAll": false,
+          "started": false
+        },
+        "trap": {
+          "order": [],
+          "i": 0,
+          "res": {},
+          "queue": [],
+          "retry": false,
+          "done": false
+        }
+      },
+      "t": 1790679384650
+    }
+  },
   "rockets": {},
   "blockOrder": {},
   "blockDim": {},
   "syncOps": {
+    "[\"lessonStates\",\"brat2_progress_serge_MS01\"]": {
+      "v": {
+        "data": {
+          "v": 4,
+          "t": 1790679384650,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 0,
+          "diag": {
+            "order": [
+              2,
+              4,
+              0,
+              1,
+              3
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          },
+          "trap": {
+            "order": [],
+            "i": 0,
+            "res": {},
+            "queue": [],
+            "retry": false,
+            "done": false
+          }
+        },
+        "t": 1790679384650
+      },
+      "t": 1790679385031
+    },
     "[\"activity\",\"2026-09-29\",\"open\"]": {
       "v": 1790679370971,
       "t": 1790679370971
+    },
+    "[\"activity\",\"2026-09-29\",\"study\"]": {
+      "v": 1790679383830,
+      "t": 1790679383830
     },
     "[\"activity\",\"2026-09-27\",\"open\"]": {
       "v": 1790540711634,
