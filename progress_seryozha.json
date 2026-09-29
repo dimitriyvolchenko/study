@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "serge",
-  "updated": "2026-09-29T10:57:11.343Z",
+  "updated": "2026-09-29T10:57:26.340Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -27,7 +27,7 @@
     "brat2_progress_serge_MS01": {
       "data": {
         "v": 4,
-        "t": 1790679430401,
+        "t": 1790679442281,
         "screen": "quiz",
         "mode": "single",
         "scrollStudy": 0,
@@ -45,7 +45,7 @@
         },
         "quiz": {
           "li": 0,
-          "i": 0,
+          "i": 1,
           "order": [
             0,
             2,
@@ -62,11 +62,19 @@
               }
             },
             "1": {},
-            "2": {},
+            "2": {
+              "L1": {
+                "ok": false,
+                "att": 1,
+                "rev": true
+              }
+            },
             "3": {},
             "4": {}
           },
-          "queue": [],
+          "queue": [
+            2
+          ],
           "retry": false,
           "doneAll": false,
           "started": true
@@ -80,7 +88,7 @@
           "done": false
         }
       },
-      "t": 1790679430401
+      "t": 1790679442281
     }
   },
   "rockets": {},
@@ -91,7 +99,7 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1790679430401,
+          "t": 1790679442281,
           "screen": "quiz",
           "mode": "single",
           "scrollStudy": 0,
@@ -109,7 +117,7 @@
           },
           "quiz": {
             "li": 0,
-            "i": 0,
+            "i": 1,
             "order": [
               0,
               2,
@@ -126,11 +134,19 @@
                 }
               },
               "1": {},
-              "2": {},
+              "2": {
+                "L1": {
+                  "ok": false,
+                  "att": 1,
+                  "rev": true
+                }
+              },
               "3": {},
               "4": {}
             },
-            "queue": [],
+            "queue": [
+              2
+            ],
             "retry": false,
             "doneAll": false,
             "started": true
@@ -144,9 +160,9 @@
             "done": false
           }
         },
-        "t": 1790679430401
+        "t": 1790679442281
       },
-      "t": 1790679430973
+      "t": 1790679445974
     },
     "[\"activity\",\"2026-09-29\",\"open\"]": {
       "v": 1790679370971,
