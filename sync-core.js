@@ -7,7 +7,7 @@ function same(a,b){return JSON.stringify(a)===JSON.stringify(b);}
 function project(s){
  var out={};
  function put(parts,v,t){out[JSON.stringify(parts)]={v:clone(v),t:Number(t)||0};}
- ['marks','wordMarks','stageLog','wordLog','checks','lessonStates'].forEach(function(field){
+ ['marks','wordMarks','stageLog','wordLog','checks','lessonStates','rockets','blockOrder','blockDim'].forEach(function(field){
   Object.keys(s[field]||{}).forEach(function(k){var v=s[field][k];put([field,k],v,v&&v.t);});
  });
  ['secDone','nDone','duo'].forEach(function(field){Object.keys(s[field]||{}).forEach(function(k){
@@ -38,11 +38,11 @@ function capture(s,previous,stamp){
 }
 function winner(a,b){if(!a)return b;if(!b)return a;if(a.t!==b.t)return a.t>b.t?a:b;return JSON.stringify(a.v)>=JSON.stringify(b.v)?a:b;}
 function materialize(s,ops){
- var result={marks:{},wordMarks:{},stageLog:{},wordLog:{},checks:{},lessonStates:{},secDone:{},nDone:{},duo:{},extra:[],split:{}};
+ var result={marks:{},wordMarks:{},stageLog:{},wordLog:{},checks:{},lessonStates:{},rockets:{},blockOrder:{},blockDim:{},secDone:{},nDone:{},duo:{},extra:[],split:{}};
  var groups={},items={},days=[],trashGroups={},activity={},maxHabit=0;
  Object.keys(ops).sort().forEach(function(key){
   var p;try{p=JSON.parse(key);}catch(e){return;}var r=ops[key],v=r.v,f=p[0];
-  if(['marks','wordMarks','stageLog','wordLog','checks','lessonStates'].indexOf(f)>=0){if(v!==null)result[f][p[1]]=clone(v);}
+  if(['marks','wordMarks','stageLog','wordLog','checks','lessonStates','rockets','blockOrder','blockDim'].indexOf(f)>=0){if(v!==null)result[f][p[1]]=clone(v);}
   else if(['secDone','nDone','duo'].indexOf(f)>=0){var d=result[f][p[1]]||(result[f][p[1]]={dates:[],t:0});d.t=Math.max(d.t,r.t);if(v)d.dates.push(p[2]);}
   else if(f==='group'){maxHabit=Math.max(maxHabit,r.t);if(v)groups[p[1]]=Object.assign({id:p[1],items:[]},v);}
   else if(f==='habit'){maxHabit=Math.max(maxHabit,r.t);if(v)items[JSON.stringify(p.slice(1))]=Object.assign({id:p[2],gid:p[1],d:{}},v);}

@@ -1056,6 +1056,7 @@ html.lite .tlight i{box-shadow:none!important}
     <div id="allBox"></div>
   </section>
 
+  <section class="screen" id="scr-rocket"><div class="h-sign"><h2>Rocket</h2><span class="rule"></span></div><div id="rocketList"></div></section>
   <section class="screen" id="scr-marks">
     <div class="h-sign" style="margin-top:20px"><h2>Marks</h2><span class="ko">주문서</span><span class="rule"></span></div>
     <p class="lead">Studied offline on the old phone? Come here and tick what is done.</p>
@@ -1070,7 +1071,7 @@ html.lite .tlight i{box-shadow:none!important}
   </section>
 
   <section class="screen" id="scr-sync">
-    <div class="pwa-panel"><b>Offline · PWA</b><p id="offlineState" role="status">Preparing offline access…</p><button class="btn sec" id="offlineRetry">Download for offline use</button><p id="pwaUpdate" hidden>A new version is ready. Your progress is saved locally. <button class="btn" id="applyUpdate">Update app</button></p></div>
+    <div class="pwa-panel"><b>Offline · PWA</b><small class="build-version">Build 2026-09-28-7 · Rocket</small><p id="offlineState" role="status">Preparing offline access…</p><button class="btn sec" id="offlineRetry">Download for offline use</button><p id="pwaUpdate" hidden>A new version is ready. Your progress is saved locally. <button class="btn" id="applyUpdate">Update app</button></p></div>
     <div class="h-sign" style="margin-top:20px"><h2>Cloud</h2><span class="ko">배달</span><span class="rule"></span></div>
     <p class="lead">Marks live in this browser and travel to your own progress file in the repository.</p>
     <div class="panel cloud-trash" id="cloudTrash"></div>
@@ -1226,12 +1227,9 @@ html.lite .tlight i{box-shadow:none!important}
   <button class="tab" data-tab="#/all" id="tabSudak" aria-label="Sudak">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c4 0 5-2 7-6 2-4 6-5 8-2-3-1-5 1-4 3 1 2 4 2 5 0M2 19c5 0 7-2 9-5 2-3 5-2 6 0s3 3 5 2M3 22c5 0 8-3 10-3s5 3 9 1"/></svg>Sudak
   </button>
+  <button class="tab" data-tab="#/rocket" id="tabRocket" aria-label="Rocket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15 5 11C8 4 14 2 21 3c1 7-1 13-8 16l-4-4ZM5 11l-3 2 1 5 5 1 2-3M7 18l-4 3"/><circle cx="15" cy="9" r="2"/></svg><span>Rocket <small id="rocketCount"></small></span></button>
   <button class="tab" data-tab="#/habits" id="tabHabits" aria-label="Habits">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4M16 3v4M4 10h16M8 15l3 3 5-5"/></svg>Habits
-  </button>
-  <button class="tab" data-tab="#/marks" id="tabMarks">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-2-2-2 2-2-2-2 2-2-2-2 2Z"/><path d="M9 8h6M9 12h4"/></svg>
-    Marks
   </button>
   <button class="tab" data-tab="#/sync" id="tabSync">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 1-7.9A6 6 0 0 0 6.5 9 4.5 4.5 0 0 0 7 18Z"/><path d="M12 15v-5M9.5 12.5 12 10l2.5 2.5"/></svg>
@@ -9421,7 +9419,7 @@ function load(){
     var s = JSON.parse(raw);
     if(s && s.v){
       state.marks = s.marks||{};
-      ['syncOps','stageLog','wordLog','wordMarks','lessonStates'].forEach(function(k){state[k]=s[k]||{};});
+      ['syncOps','stageLog','wordLog','wordMarks','lessonStates','rockets','blockOrder','blockDim'].forEach(function(k){state[k]=s[k]||{};});
       state.syncPending=!!s.syncPending;
       state.secDone = s.secDone||{};
       state.nDone = s.nDone||{};
@@ -9460,7 +9458,7 @@ var MKEY = "study_marks_v3" + PSUF;   /* запасная ячейка: отме
 function keepMarks(){
   try{
     localStorage.setItem(MKEY, JSON.stringify({v:3, t:Date.now(),
-      marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra, habits:state.habits, syncOps:state.syncOps, stageLog:state.stageLog, wordLog:state.wordLog, wordMarks:state.wordMarks, checks:state.checks, lessonStates:state.lessonStates}));
+      marks:state.marks, secDone:state.secDone, nDone:state.nDone, duo:state.duo, extra:state.extra, habits:state.habits, syncOps:state.syncOps, stageLog:state.stageLog, wordLog:state.wordLog, wordMarks:state.wordMarks, checks:state.checks, lessonStates:state.lessonStates,rockets:state.rockets,blockOrder:state.blockOrder,blockDim:state.blockDim}));
   }catch(e){}
 }
 function restoreMarks(){
@@ -10060,7 +10058,7 @@ function rowHTML(it, showSec){
   var tag = it.ext ? '<span class="tag ext">added later</span>' : '';
   return '<div class="row'+(it.guide?" guide":"")+'">'+
     '<div class="head">'+
-      '<span class="code">'+esc(it.code)+'</span>'+
+      '<span class="stage-code-stack"><span class="code">'+esc(it.code)+'</span>'+rocketButton(it.code)+'</span>'+
       '<span class="meta"><b>'+esc(it.title)+'</b>'+tag+'<small>'+(showSec? esc(it.secTitle)+" · ":"")+esc(it.desc)+'</small></span>'+
       '<span class="acts"><button class="open" data-open="'+it.code+'">Open</button>'+
       (STORIES[it.code] ? '<button class="nin" data-nin="'+it.code+'" aria-label="Nintendo">'+NMARK+'<span>Nintendo</span></button>' : '')+
@@ -10070,6 +10068,7 @@ function rowHTML(it, showSec){
   '</div>';
 }
 function bindRows(root){
+  bindRockets(root);
   Array.prototype.forEach.call(root.querySelectorAll(".mk"), function(b){
     b.onclick = function(){
       var code=b.getAttribute("data-code"), sid=b.getAttribute("data-st");
@@ -10085,6 +10084,38 @@ function bindRows(root){
   });
 }
 
+function rocketOn(code){return !!((state.rockets||{})[code]&&state.rockets[code].on);}
+function rocketButton(code){return '<button type="button" class="stage-rocket'+(rocketOn(code)?' on':'')+'" data-rocket="'+esc(code)+'" aria-pressed="'+rocketOn(code)+'" aria-label="Select stage for Rocket">🚀</button>';}
+function bindRockets(root){Array.prototype.forEach.call(root.querySelectorAll('[data-rocket]'),function(b){b.onclick=function(){var code=b.getAttribute('data-rocket');state.rockets=state.rockets||{};state.rockets[code]={on:!rocketOn(code),t:Date.now()};save();renderAll();autoSave();};});}
+function sectionBlocks(sec){
+ var groups=[],chunk=[],label='',dim=false,by={};ALL.forEach(function(it){by[it.code]=it;});
+ function flush(){if(chunk.length){groups.push({id:sec.id+'|'+chunk[0].code,label:label,dim:dim,list:chunk});chunk=[];}}
+ (sec.live||[]).forEach(function(it){if(it.div){flush();label=it.div;dim=true;return;}if(by[it.c]){chunk.push(by[it.c]);if(chunk.length===5)flush();}});flush();
+ var order=((state.blockOrder||{})[sec.id]||{}).ids||[];
+ groups.sort(function(a,b){var x=order.indexOf(a.id),y=order.indexOf(b.id);return (x<0?9999:x)-(y<0?9999:y);});return groups;
+}
+function renderRocket(){
+ var el=document.getElementById('rocketList');if(!el)return;
+ var out='';SECTIONS.forEach(function(s){var items=ALL.filter(function(it){return it.sec===s.id&&rocketOn(it.code);});if(items.length)out+='<div class="h-sign"><h2>'+esc(s.title)+'</h2><span class="rule"></span></div>'+items.map(function(it){return rowHTML(it,false);}).join('');});
+ el.innerHTML=out||'<p class="tip">Press 🚀 beside a stage in any section to add it here. Press it again to return the stage to its block.</p>';bindRows(el);
+}
+function updateRocketBadge(){
+ var count=ALL.filter(function(it){return rocketOn(it.code);}).length,el=document.getElementById('rocketCount');if(el)el.textContent=count||'';
+ if(typeof navigator.setAppBadge==='function'){try{var op=count?navigator.setAppBadge(count):navigator.clearAppBadge();if(op&&op.catch)op.catch(function(){});}catch(e){}}
+}
+function switchFamilyProfile(id){if(CURP!=='dad'||!PBYID[id])return;persist();flushSave();writeProfile(id);setTimeout(function(){location.replace(location.pathname+location.search+'#/');location.reload();},150);}
+function setupPlannerUI(){
+ var cloud=document.getElementById('scr-sync'),marks=document.getElementById('scr-marks'),details=document.createElement('details');details.id='cloudMarks';details.className='panel';details.innerHTML='<summary>Marks · Show / Hide</summary>';
+ while(marks.firstChild)details.appendChild(marks.firstChild);cloud.appendChild(details);
+ var token=document.getElementById('ghToken'),box=document.createElement('div');box.className='btnrow';box.innerHTML='<button class="btn sec" type="button" id="saveAppKey">Save key to the app</button><button class="btn ghost" type="button" id="copyAppKey">Copy the key from the app</button><small>Saved only in this browser on this device.</small>';
+ token.parentNode.appendChild(box);
+ document.getElementById('saveAppKey').onclick=function(){syncFields();keepKey();say(document.getElementById('keyStatus'),state.gh.token?'Key saved on this device.':'Enter a key first.',state.gh.token?'ok':'err');};
+ document.getElementById('copyAppKey').onclick=function(){var key=state.gh.token,st=document.getElementById('keyStatus');if(!key){say(st,'No saved key on this device.','err');return;}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(key).then(function(){say(st,'Key copied.','ok');},function(){say(st,'Copy unavailable. Select the token field and copy manually.','err');});else{token.type='text';token.select();say(st,'Select and copy the key from the field.','');}};
+ if(typeof navigator.setAppBadge==='function'&&typeof Notification!=='undefined'){
+  var badge=document.createElement('button');badge.className='btn sec';badge.textContent='Enable Rocket badge';badge.onclick=function(){Notification.requestPermission().then(function(permission){updateRocketBadge();badge.textContent=permission==='granted'?'Rocket badge enabled':'Allow notifications in system settings for the badge';}).catch(function(){badge.textContent='Badge unavailable on this device';});};cloud.insertBefore(badge,cloud.firstChild);
+ }
+}
+
 var curSec = null;
 function renderSec(){
   var s = SECBYID[curSec];
@@ -10096,21 +10127,17 @@ function renderSec(){
     (td ? '<div class="flag'+(duoToday(s.id)?" duo":"")+'">'+CHECK+(duoToday(s.id) ? "Duo today: 10 closed" : "Done today")+(dates.length>1 ? " · "+dates.length+" days in all" : "")+'</div>'
         : (dates.length ? '<div class="prog" style="opacity:.7"><span>Last done: '+esc(niceDate(dates[dates.length-1]))+'</span></div>' : ''))+
     (ss.total ? '<div class="prog"><div class="bar">'+barHTML(ss.by, ss.total)+'</div><span>'+ss.marked+' of '+ss.total+' · '+ss.pct+'%</span></div>' : '');
-  var byCode = {};
-  ALL.forEach(function(i){ if(i.sec===s.id) byCode[i.code]=i; });
-  /* комплекты: новый сверху, выученный ниже за пунктиром и приглушенный */
-  var groups = [], cur = {label:"", dim:false, list:[]};
-  groups.push(cur);
-  s.live.forEach(function(it){
-    if(it.div){ cur = {label:it.div, dim:true, list:[]}; groups.push(cur); return; }
-    if(byCode[it.c]) cur.list.push(byCode[it.c]);
-  });
-  $("#secList").innerHTML = groups.map(function(g){
-    if(!g.list.length) return "";
-    return (g.label ? '<div class="setdiv"><i></i><span>'+esc(g.label)+'</span><i></i></div>' : "")+
-      '<div class="list'+(g.dim?" old":"")+'">'+g.list.map(function(it){ return rowHTML(it,false); }).join("")+'</div>';
-  }).join("");
-  bindRows($("#secList"));
+  var groups=sectionBlocks(s),picked=ALL.filter(function(it){return it.sec===s.id&&rocketOn(it.code);});
+  $('#secList').innerHTML=(picked.length?'<div class="rocket-picked"><div class="h-sign"><h2>🚀 Selected</h2><span class="rule"></span></div>'+picked.map(function(it){return rowHTML(it,false);}).join('')+'</div>':'')+
+   groups.map(function(g,i){
+    var available=g.list.filter(function(it){return !rocketOn(it.code);});
+    var dim=(state.blockDim||{})[g.id];dim=dim?dim.on:g.dim;
+    return '<div class="study-block" data-block="'+esc(g.id)+'"><div class="study-block-head"><label>Block <select aria-label="Block position" data-block-order="'+esc(g.id)+'">'+groups.map(function(_,j){return '<option value="'+j+'"'+(j===i?' selected':'')+'>'+(j+1)+'</option>';}).join('')+'</select></label><b>'+esc(g.label||s.title)+'</b><button class="btn ghost" data-block-toggle="'+esc(g.id)+'" aria-pressed="'+dim+'">Toggle</button></div><div class="list'+(dim?' old':'')+'">'+available.map(function(it){return rowHTML(it,false);}).join('')+(available.length?'':'<p class="tip">All stages in this block are selected above.</p>')+'</div></div>';
+   }).join('');
+  bindRows($('#secList'));
+  Array.prototype.forEach.call($('#secList').querySelectorAll('[data-block-toggle]'),function(b){b.onclick=function(){var id=b.getAttribute('data-block-toggle');state.blockDim=state.blockDim||{};state.blockDim[id]={on:b.getAttribute('aria-pressed')!=='true',t:Date.now()};save();renderSec();autoSave();};});
+  Array.prototype.forEach.call($('#secList').querySelectorAll('[data-block-order]'),function(b){b.onchange=function(){var ids=groups.map(function(g){return g.id;}),id=b.getAttribute('data-block-order');ids.splice(ids.indexOf(id),1);ids.splice(+b.value,0,id);state.blockOrder=state.blockOrder||{};state.blockOrder[s.id]={ids:ids,t:Date.now()};save();renderSec();autoSave();};});
+
 }
 
 var filter = "all";
@@ -10317,7 +10344,7 @@ function renderSync(){
   applyTheme();
 }
 function renderAll(){
-  rebuild(); renderHome(); if(curSec) renderSec(); renderMarks(); renderRing();
+  rebuild(); renderHome(); if(curSec) renderSec(); renderMarks(); renderRing();renderRocket();updateRocketBadge();
   if(curStory && (location.hash||"").indexOf("#/n/")===0) renderStory(curStory);
   renderStrip(); renderBoard(); renderIcons(); refreshSaveMark(); reopenPop(); renderPkgPanel(); renderHabits(); renderHabTrash(); renderWho();
   if((location.hash||"") === "#/all") renderAllN();
@@ -10526,6 +10553,7 @@ function go(hash){ saveScroll(); save(); if(location.hash===hash) route(); else 
 function route(){
   closePops();
   var h = location.hash || "#/";
+  if(h==="#/marks"){h="#/sync";document.getElementById("cloudMarks").open=true;}
   placeHabits(h);
   var back = $("#back"), sub = $("#navSub");
   if(h.indexOf("#/l/")===0){
@@ -10562,6 +10590,8 @@ function route(){
     if(!SECBYID[curSec]){ location.hash="#/"; return; }
     renderSec(); show("sec"); sub.textContent = SECBYID[curSec].title;
     back.style.visibility="visible"; setTab("#/");
+  } else if(h==="#/rocket"){
+    renderRocket();show("rocket");sub.textContent="Rocket · Selected stages";back.style.visibility="visible";setTab("#/rocket");
   } else if(h==="#/habits"){
     renderHabits();show("habits");sub.textContent="Habits · Daily practice";back.style.visibility="visible";setTab("#/habits");
   } else if(h==="#/marks"){
@@ -10716,7 +10746,7 @@ function mergeNDone(remote){
 function payload(){
   captureProgress();
   var out={v:3,profile:CURP,updated:new Date().toISOString()};
-  ['marks','secDone','nDone','duo','extra','act','habits','checks','split','wordMarks','stageLog','wordLog','lessonStates','syncOps'].forEach(function(k){out[k]=state[k];});
+  ['marks','secDone','nDone','duo','extra','act','habits','checks','split','wordMarks','stageLog','wordLog','lessonStates','rockets','blockOrder','blockDim','syncOps'].forEach(function(k){out[k]=state[k];});
   return JSON.stringify(out,null,2);
 }
 $("#btnPull").onclick = function(){
@@ -11166,22 +11196,17 @@ function renderPkgPanel(){
    Кнопка C у пака - проверка: вбить слова пака по порядку. */
 var CHK = {};          /* открытые проверки: код -> {vals:[], res:null, hints:false} */
 function allGroups(){
-  var out = [];
-  SECTIONS.forEach(function(s){
-    var list = [], first = true, learned = 0, total = 0;
-    (s.live || []).forEach(function(it){
-      if(it.div || !it.c || it.guide) return;
-      var rows = PACKS[it.c];
-      if(!rows || !rows.length) return;
-      total++;
-      var m = (state.wordMarks||{})[it.c];m=m&&m.s;
-      if(m === "done"){ learned++; return; }
-      if(first){ first = false; list.push({it:it, m:m}); return; }
-      if(m) list.push({it:it, m:m});
-    });
-    if(list.length) out.push({s:s, list:list, learned:learned, total:total});
+ var out=[];
+ SECTIONS.forEach(function(sec){
+  var list=[],total=0,learned=0;
+  (sec.live||[]).forEach(function(it){
+   if(it.div||!it.c||it.guide||!(PACKS[it.c]||[]).length)return;
+   total++;var source=markOf(it.c);if(source==='done')learned++;
+   if(!source||source==='done')return;
+   var wm=(state.wordMarks||{})[it.c];list.push({it:it,m:wm&&wm.s});
   });
-  return out;
+  if(list.length)out.push({s:sec,list:list,total:total,learned:learned});
+ });return out;
 }
 function allCount(){
   var n = 0;
@@ -11267,7 +11292,7 @@ function renderAllN(){
       '<p>Morning route: walk through the city and leave every pack below in its place. '+
       'Check each pack with the <i class="cmini">C</i> button, then go to the sections.</p></div>';
   if(!groups.length){
-    html += '<div class="tip">No packs today: every lesson with a pack already has a green battery.</div>';
+    html += '<div class="tip">Choose 🔭, 🏗️ or ❤️ on a lesson in its section to show its Word Pack here.</div>';
   }
   groups.forEach(function(g){
     html += '<div class="all-sec"><img src="'+IMG[g.s.img]+'" alt=""><b>'+esc(g.s.title)+'</b>'+
@@ -11432,6 +11457,7 @@ function renderWho(){
       var p = PBYID[b.getAttribute("data-whob")], box = document.getElementById("whoAsk"), st = document.getElementById("whoStatus");
       st.className = "status";
       if(!p || p.id === CURP){ whoSel = null; box.style.display = "none"; renderWho(); return; }
+      if(CURP==="dad"){switchFamilyProfile(p.id);return;}
       whoSel = p;
       document.getElementById("whoLabel").textContent = "Пароль: " + p.name + " (или пароль папы)";
       document.getElementById("whoPw").value = "";
@@ -11541,6 +11567,7 @@ Array.prototype.forEach.call(document.querySelectorAll("#liteSeg button"), funct
   if(!b) return;
   var box = document.getElementById("switchBox"), st = document.getElementById("switchStatus");
   b.onclick = function(){
+    if(CURP==='dad'){go('#/');setTimeout(function(){var row=document.getElementById('whoBottom');if(row&&row.scrollIntoView)row.scrollIntoView({block:'center'});},40);return;}
     var open = box.style.display !== "none";
     box.style.display = open ? "none" : "";
     say(st, "", "");
@@ -11565,6 +11592,7 @@ Array.prototype.forEach.call(document.querySelectorAll("#liteSeg button"), funct
 })();
 
 /* ---------- старт ---------- */
+setupPlannerUI();
 applyTheme();
 applyBun();
 setIcon(state.icon);
