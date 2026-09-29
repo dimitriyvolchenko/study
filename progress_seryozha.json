@@ -1,19 +1,44 @@
 {
   "v": 3,
-  "updated": "2026-09-27T20:28:27.304Z",
+  "profile": "serge",
+  "updated": "2026-09-29T10:56:11.314Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
   "duo": {},
   "extra": [],
   "act": {
-    "d": "2026-09-27",
-    "open": 1790540711634,
-    "study": 1790540905538,
+    "d": "2026-09-29",
+    "open": 1790679370971,
+    "study": 0,
     "check": 0
   },
   "habits": {
     "t": 0,
-    "groups": []
+    "groups": [],
+    "trash": []
+  },
+  "checks": {},
+  "split": {},
+  "wordMarks": {},
+  "stageLog": {},
+  "wordLog": {},
+  "lessonStates": {},
+  "rockets": {},
+  "blockOrder": {},
+  "blockDim": {},
+  "syncOps": {
+    "[\"activity\",\"2026-09-29\",\"open\"]": {
+      "v": 1790679370971,
+      "t": 1790679370971
+    },
+    "[\"activity\",\"2026-09-27\",\"open\"]": {
+      "v": 1790540711634,
+      "t": 1790540711634
+    },
+    "[\"activity\",\"2026-09-27\",\"study\"]": {
+      "v": 1790540905538,
+      "t": 1790540905538
+    }
   }
 }
