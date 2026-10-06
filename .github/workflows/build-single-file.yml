@@ -1,0 +1,55 @@
+name: Build single-file Study
+
+on:
+  push:
+    paths:
+      - "index.html"
+      - "pwa.css"
+      - "sync-core.js"
+      - "packages/**"
+      - "tools/build_single_file.py"
+      - ".github/workflows/build-single-file.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build one-file app
+        run: python tools/build_single_file.py
+
+      - name: Validate repository diff
+        run: |
+          git diff --check
+          test -s index.html
+          ! grep -q 'src="sync-core.js"' index.html
+          ! grep -q 'href="pwa.css"' index.html
+          ! grep -q 'href="manifest.webmanifest"' index.html
+          grep -q 'id="study-inline-manifest"' index.html
+          grep -q 'Single-file mode' index.html
+
+      - name: Commit generated index
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "index.html already matches the single-file build"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Build single-file Study index"
+          git push
