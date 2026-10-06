@@ -42,6 +42,14 @@ jobs:
           grep -q 'id="study-inline-manifest"' index.html
           grep -q 'Single-file mode' index.html
 
+      - name: Archive generated index
+        uses: actions/upload-artifact@v4
+        with:
+          name: study-single-file
+          path: index.html
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Commit generated index
         run: |
           if git diff --quiet -- index.html; then
