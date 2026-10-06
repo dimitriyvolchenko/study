@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-06T18:02:35.109Z",
+  "updated": "2026-10-06T18:02:50.008Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2443,9 +2443,9 @@
     "brat2_progress_G01.2": {
       "data": {
         "v": 4,
-        "t": 1791309751477,
-        "screen": "study",
-        "mode": null,
+        "t": 1791309765662,
+        "screen": "quiz",
+        "mode": "single",
         "scrollStudy": 7110,
         "diag": {
           "order": [
@@ -2462,7 +2462,13 @@
         "quiz": {
           "li": 0,
           "i": 0,
-          "order": [],
+          "order": [
+            1,
+            2,
+            3,
+            0,
+            4
+          ],
           "res": {
             "0": {},
             "1": {},
@@ -2473,7 +2479,7 @@
           "queue": [],
           "retry": false,
           "doneAll": false,
-          "started": false
+          "started": true
         },
         "trap": {
           "order": [],
@@ -2484,7 +2490,7 @@
           "done": false
         }
       },
-      "t": 1791309751477
+      "t": 1791309765662
     },
     "brat2_progress_G02": {
       "data": {
@@ -5993,9 +5999,9 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1791309751477,
-          "screen": "study",
-          "mode": null,
+          "t": 1791309765662,
+          "screen": "quiz",
+          "mode": "single",
           "scrollStudy": 7110,
           "diag": {
             "order": [
@@ -6012,7 +6018,13 @@
           "quiz": {
             "li": 0,
             "i": 0,
-            "order": [],
+            "order": [
+              1,
+              2,
+              3,
+              0,
+              4
+            ],
             "res": {
               "0": {},
               "1": {},
@@ -6023,7 +6035,7 @@
             "queue": [],
             "retry": false,
             "doneAll": false,
-            "started": false
+            "started": true
           },
           "trap": {
             "order": [],
@@ -6034,9 +6046,9 @@
             "done": false
           }
         },
-        "t": 1791309751477
+        "t": 1791309765662
       },
-      "t": 1791309754039
+      "t": 1791309769044
     },
     "[\"lessonStates\",\"brat2_progress_G02\"]": {
       "v": {
