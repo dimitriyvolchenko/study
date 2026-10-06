@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-06T18:10:49.766Z",
+  "updated": "2026-10-06T18:10:54.085Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2665,106 +2665,48 @@
     "brat2_progress_K01.1": {
       "data": {
         "v": 4,
-        "t": 1790192348228,
-        "screen": "final",
-        "mode": "single",
-        "scrollStudy": 7180,
+        "t": 1791310251093,
+        "screen": "study",
+        "mode": null,
+        "scrollStudy": 0,
         "diag": {
           "order": [
-            4,
-            0,
             3,
             1,
-            2
+            0,
+            2,
+            4
           ],
           "i": 0,
           "res": {},
           "done": false
         },
         "quiz": {
-          "li": 1,
-          "i": 5,
-          "order": [
-            1,
-            4,
-            2,
-            3,
-            0
-          ],
+          "li": 0,
+          "i": 0,
+          "order": [],
           "res": {
-            "0": {
-              "L1": {
-                "ok": true,
-                "att": 1,
-                "rev": false
-              }
-            },
-            "1": {
-              "L1": {
-                "ok": false,
-                "att": 1,
-                "rev": true
-              }
-            },
-            "2": {
-              "L1": {
-                "ok": false,
-                "att": 1,
-                "rev": true
-              }
-            },
-            "3": {
-              "L1": {
-                "ok": false,
-                "att": 1,
-                "rev": true
-              }
-            },
-            "4": {
-              "L1": {
-                "ok": false,
-                "att": 1,
-                "rev": true
-              }
-            }
+            "0": {},
+            "1": {},
+            "2": {},
+            "3": {},
+            "4": {}
           },
           "queue": [],
           "retry": false,
-          "doneAll": true,
-          "started": true
+          "doneAll": false,
+          "started": false
         },
         "trap": {
-          "order": [
-            1,
-            0,
-            4,
-            3,
-            2
-          ],
-          "i": 5,
-          "res": {
-            "0": {
-              "ok": true
-            },
-            "1": {
-              "ok": true
-            },
-            "2": {
-              "ok": true
-            },
-            "3": {
-              "ok": true
-            },
-            "4": {
-              "ok": true
-            }
-          },
+          "order": [],
+          "i": 0,
+          "res": {},
           "queue": [],
           "retry": false,
-          "done": true
+          "done": false
         }
       },
-      "t": 1790192348228
+      "t": 1791310251093
     },
     "brat2_progress_M01": {
       "data": {
@@ -6324,108 +6266,50 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1790192348228,
-          "screen": "final",
-          "mode": "single",
-          "scrollStudy": 7180,
+          "t": 1791310251093,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 0,
           "diag": {
             "order": [
-              4,
-              0,
               3,
               1,
-              2
+              0,
+              2,
+              4
             ],
             "i": 0,
             "res": {},
             "done": false
           },
           "quiz": {
-            "li": 1,
-            "i": 5,
-            "order": [
-              1,
-              4,
-              2,
-              3,
-              0
-            ],
+            "li": 0,
+            "i": 0,
+            "order": [],
             "res": {
-              "0": {
-                "L1": {
-                  "ok": true,
-                  "att": 1,
-                  "rev": false
-                }
-              },
-              "1": {
-                "L1": {
-                  "ok": false,
-                  "att": 1,
-                  "rev": true
-                }
-              },
-              "2": {
-                "L1": {
-                  "ok": false,
-                  "att": 1,
-                  "rev": true
-                }
-              },
-              "3": {
-                "L1": {
-                  "ok": false,
-                  "att": 1,
-                  "rev": true
-                }
-              },
-              "4": {
-                "L1": {
-                  "ok": false,
-                  "att": 1,
-                  "rev": true
-                }
-              }
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
             },
             "queue": [],
             "retry": false,
-            "doneAll": true,
-            "started": true
+            "doneAll": false,
+            "started": false
           },
           "trap": {
-            "order": [
-              1,
-              0,
-              4,
-              3,
-              2
-            ],
-            "i": 5,
-            "res": {
-              "0": {
-                "ok": true
-              },
-              "1": {
-                "ok": true
-              },
-              "2": {
-                "ok": true
-              },
-              "3": {
-                "ok": true
-              },
-              "4": {
-                "ok": true
-              }
-            },
+            "order": [],
+            "i": 0,
+            "res": {},
             "queue": [],
             "retry": false,
-            "done": true
+            "done": false
           }
         },
-        "t": 1790192348228
+        "t": 1791310251093
       },
-      "t": 1790599171605
+      "t": 1791310251305
     },
     "[\"lessonStates\",\"brat2_progress_M01\"]": {
       "v": {
@@ -7129,6 +7013,13 @@
       },
       "t": 1791309560718
     },
+    "[\"rockets\",\"K01.1\"]": {
+      "v": {
+        "on": true,
+        "t": 1791310248073
+      },
+      "t": 1791310248075
+    },
     "[\"rockets\",\"M01\"]": {
       "v": {
         "on": true,
@@ -7142,13 +7033,6 @@
         "t": 1790682300402
       },
       "t": 1790682300403
-    },
-    "[\"rockets\",\"K01.1\"]": {
-      "v": {
-        "on": true,
-        "t": 1791310248073
-      },
-      "t": 1791310248075
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
