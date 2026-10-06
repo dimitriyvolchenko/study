@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-06T18:11:39.114Z",
+  "updated": "2026-10-06T18:15:40.961Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2665,7 +2665,7 @@
     "brat2_progress_K01.1": {
       "data": {
         "v": 4,
-        "t": 1791310290530,
+        "t": 1791310540921,
         "screen": "quiz",
         "mode": "single",
         "scrollStudy": 7180,
@@ -2683,7 +2683,7 @@
         },
         "quiz": {
           "li": 0,
-          "i": 0,
+          "i": 1,
           "order": [
             0,
             1,
@@ -2699,12 +2699,20 @@
                 "rev": false
               }
             },
-            "1": {},
+            "1": {
+              "L1": {
+                "ok": false,
+                "att": 1,
+                "rev": true
+              }
+            },
             "2": {},
             "3": {},
             "4": {}
           },
-          "queue": [],
+          "queue": [
+            1
+          ],
           "retry": false,
           "doneAll": false,
           "started": true
@@ -2718,7 +2726,7 @@
           "done": false
         }
       },
-      "t": 1791310290530
+      "t": 1791310540921
     },
     "brat2_progress_M01": {
       "data": {
@@ -6278,7 +6286,7 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1791310290530,
+          "t": 1791310540921,
           "screen": "quiz",
           "mode": "single",
           "scrollStudy": 7180,
@@ -6296,7 +6304,7 @@
           },
           "quiz": {
             "li": 0,
-            "i": 0,
+            "i": 1,
             "order": [
               0,
               1,
@@ -6312,12 +6320,20 @@
                   "rev": false
                 }
               },
-              "1": {},
+              "1": {
+                "L1": {
+                  "ok": false,
+                  "att": 1,
+                  "rev": true
+                }
+              },
               "2": {},
               "3": {},
               "4": {}
             },
-            "queue": [],
+            "queue": [
+              1
+            ],
             "retry": false,
             "doneAll": false,
             "started": true
@@ -6331,9 +6347,9 @@
             "done": false
           }
         },
-        "t": 1791310290530
+        "t": 1791310540921
       },
-      "t": 1791310298658
+      "t": 1791310540953
     },
     "[\"lessonStates\",\"brat2_progress_M01\"]": {
       "v": {
