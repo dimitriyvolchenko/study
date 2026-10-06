@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-06T17:59:22.393Z",
+  "updated": "2026-10-06T17:59:38.046Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2439,6 +2439,52 @@
         }
       },
       "t": 1790364258520
+    },
+    "brat2_progress_G01.2": {
+      "data": {
+        "v": 4,
+        "t": 1791309577781,
+        "screen": "study",
+        "mode": null,
+        "scrollStudy": 184,
+        "diag": {
+          "order": [
+            0,
+            2,
+            4,
+            3,
+            1
+          ],
+          "i": 0,
+          "res": {},
+          "done": false
+        },
+        "quiz": {
+          "li": 0,
+          "i": 0,
+          "order": [],
+          "res": {
+            "0": {},
+            "1": {},
+            "2": {},
+            "3": {},
+            "4": {}
+          },
+          "queue": [],
+          "retry": false,
+          "doneAll": false,
+          "started": false
+        },
+        "trap": {
+          "order": [],
+          "i": 0,
+          "res": {},
+          "queue": [],
+          "retry": false,
+          "done": false
+        }
+      },
+      "t": 1791309577781
     },
     "brat2_progress_G02": {
       "data": {
@@ -6808,6 +6854,55 @@
       },
       "t": 1790599171605
     },
+    "[\"lessonStates\",\"brat2_progress_G01.2\"]": {
+      "v": {
+        "data": {
+          "v": 4,
+          "t": 1791309577781,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 184,
+          "diag": {
+            "order": [
+              0,
+              2,
+              4,
+              3,
+              1
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          },
+          "trap": {
+            "order": [],
+            "i": 0,
+            "res": {},
+            "queue": [],
+            "retry": false,
+            "done": false
+          }
+        },
+        "t": 1791309577781
+      },
+      "t": 1791309578030
+    },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
         "on": false,
@@ -6836,19 +6931,19 @@
       },
       "t": 1791309543414
     },
-    "[\"rockets\",\"P02.2\"]": {
-      "v": {
-        "on": true,
-        "t": 1790682300402
-      },
-      "t": 1790682300403
-    },
     "[\"rockets\",\"G01.2\"]": {
       "v": {
         "on": true,
         "t": 1791309560717
       },
       "t": 1791309560718
+    },
+    "[\"rockets\",\"P02.2\"]": {
+      "v": {
+        "on": true,
+        "t": 1790682300402
+      },
+      "t": 1790682300403
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
