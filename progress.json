@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-06T17:58:53.012Z",
+  "updated": "2026-10-06T17:59:02.445Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2048,8 +2048,8 @@
     "brat2_progress_F01.1": {
       "data": {
         "v": 4,
-        "t": 1791309532638,
-        "screen": "trap",
+        "t": 1791309535148,
+        "screen": "final",
         "mode": "single",
         "scrollStudy": 6630,
         "diag": {
@@ -2113,7 +2113,7 @@
           },
           "queue": [],
           "retry": false,
-          "doneAll": false,
+          "doneAll": true,
           "started": true
         },
         "trap": {
@@ -2143,11 +2143,11 @@
             }
           },
           "queue": [],
-          "retry": true,
-          "done": false
+          "retry": false,
+          "done": true
         }
       },
-      "t": 1791309532638
+      "t": 1791309535148
     },
     "brat2_progress_F07": {
       "data": {
@@ -3285,8 +3285,8 @@
       "t": 1790679351298
     },
     "F01.1": {
-      "on": true,
-      "t": 1791309314951
+      "on": false,
+      "t": 1791309540726
     },
     "P02.2": {
       "on": true,
@@ -5529,8 +5529,8 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1791309532638,
-          "screen": "trap",
+          "t": 1791309535148,
+          "screen": "final",
           "mode": "single",
           "scrollStudy": 6630,
           "diag": {
@@ -5594,7 +5594,7 @@
             },
             "queue": [],
             "retry": false,
-            "doneAll": false,
+            "doneAll": true,
             "started": true
           },
           "trap": {
@@ -5624,13 +5624,13 @@
               }
             },
             "queue": [],
-            "retry": true,
-            "done": false
+            "retry": false,
+            "done": true
           }
         },
-        "t": 1791309532638
+        "t": 1791309535148
       },
-      "t": 1791309532995
+      "t": 1791309535158
     },
     "[\"lessonStates\",\"brat2_progress_F07\"]": {
       "v": {
@@ -6815,10 +6815,10 @@
     },
     "[\"rockets\",\"F01.1\"]": {
       "v": {
-        "on": true,
-        "t": 1791309314951
+        "on": false,
+        "t": 1791309540726
       },
-      "t": 1791309314953
+      "t": 1791309540727
     },
     "[\"rockets\",\"P02.2\"]": {
       "v": {
