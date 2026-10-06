@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-06T18:00:23.101Z",
+  "updated": "2026-10-06T18:00:40.408Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2443,10 +2443,10 @@
     "brat2_progress_G01.2": {
       "data": {
         "v": 4,
-        "t": 1791309618816,
+        "t": 1791309638572,
         "screen": "study",
         "mode": null,
-        "scrollStudy": 1517,
+        "scrollStudy": 1888,
         "diag": {
           "order": [
             0,
@@ -2484,7 +2484,7 @@
           "done": false
         }
       },
-      "t": 1791309618816
+      "t": 1791309638572
     },
     "brat2_progress_G02": {
       "data": {
@@ -5993,10 +5993,10 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1791309618816,
+          "t": 1791309638572,
           "screen": "study",
           "mode": null,
-          "scrollStudy": 1517,
+          "scrollStudy": 1888,
           "diag": {
             "order": [
               0,
@@ -6034,9 +6034,9 @@
             "done": false
           }
         },
-        "t": 1791309618816
+        "t": 1791309638572
       },
-      "t": 1791309622602
+      "t": 1791309640393
     },
     "[\"lessonStates\",\"brat2_progress_G02\"]": {
       "v": {
