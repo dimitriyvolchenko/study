@@ -918,14 +918,6 @@ html.lite .tlight i{box-shadow:none!important}
 html{min-height:100%}
 html:not(.lite) body{min-height:100vh;min-height:100dvh}
 
-/* iOS Safari focus safety: on phones editable controls must stay at 16px or more.
-   Smaller text makes Safari auto-zoom the page on focus, which looks like the
-   whole interface/image jumps. This covers menu date fields, passwords, settings
-   inputs and textareas; lesson iframes get the same rule in frameWith(). */
-@media (max-width:620px){
-  input,textarea,select{font-size:16px!important}
-}
-
 </style>
 <script id="sync-core-inline">
 /* Progress merge engine. Stable profile keys and legacy v3 payloads remain supported. */
