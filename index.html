@@ -863,7 +863,7 @@ html.lite .who-b.on{box-shadow:none}
 .kl-refresh{flex:1 1 100%;height:32px;margin:0 0 8px;border-radius:10px;background:var(--paper2);border:2px solid var(--line);
   font-family:var(--brand);font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
 html.lite .tlight i{box-shadow:none!important}
-</style>
+\n/* iPhone 5 / SE (1st gen): keep menu status controls clear of the main icon on 320px screens. */\n@media (max-width:330px){\n  .menu{grid-gap:8px;gap:8px}\n  .dish{padding:9px 8px 9px;min-height:170px}\n  .dish .ico{width:42px;height:42px}\n  .dish .han{font-size:58px;top:28px;right:0}\n  .dish b{font-size:11.5px;line-height:1.22;margin-top:8px;letter-spacing:-.02em}\n  .dish small{font-size:10.75px;line-height:1.25;margin-top:3px}\n  .ndot,.dot{width:30px;height:30px;top:7px;border-width:2px}\n  .ndot{right:41px}\n  .dot{right:6px}\n  .ndot svg{width:16px;height:16px}\n  .dot svg{width:15px;height:15px}\n  .dish .row2{padding-top:6px}\n  .dish .ko{font-size:11px}\n  .nbadge{width:22px;height:22px;margin-right:4px}\n  .dish .pct{font-size:10px;padding:1px 5px;border-width:2px}\n  .stamp{width:68px;right:6px;top:43px;font-size:10px;letter-spacing:.09em}\n}\n</style>
 <!-- SINGLE-FILE ASSETS START -->
 <style id="pwa-inline">
 .tabs-in .tab{flex:1;min-width:0;font-size:11px;padding-left:2px;padding-right:2px}
@@ -917,6 +917,14 @@ html.lite .tlight i{box-shadow:none!important}
    layout viewport when navigating from the long Menu page to Rocket. */
 html{min-height:100%}
 html:not(.lite) body{min-height:100vh;min-height:100dvh}
+
+/* iOS Safari focus safety: on phones editable controls must stay at 16px or more.
+   Smaller text makes Safari auto-zoom the page on focus, which looks like the
+   whole interface/image jumps. This covers menu date fields, passwords, settings
+   inputs and textareas; lesson iframes get the same rule in frameWith(). */
+@media (max-width:620px){
+  input,textarea,select{font-size:16px!important}
+}
 
 </style>
 <script id="sync-core-inline">
@@ -10226,6 +10234,7 @@ function renderHome(){
       ev.stopPropagation();
       var id = b.getAttribute("data-ncomplete");
       var inp = document.getElementById("ndt-"+id);
+      closePops();
       addNDate(id, (inp && inp.value) ? inp.value : todayISO());
     };
   });
@@ -10250,6 +10259,7 @@ function renderHome(){
       var id = b.getAttribute("data-complete");
       var inp = document.getElementById("dt-"+id);
       var iso = (inp && inp.value) ? inp.value : todayISO();
+      closePops();
       dropDuo(id, iso);                       /* Complete на дне Duo возвращает обычную серую отметку */
       addSecDate(id, iso);
     };
@@ -10259,6 +10269,7 @@ function renderHome(){
       ev.stopPropagation();
       var id = b.getAttribute("data-duo");
       var inp = document.getElementById("dt-"+id);
+      closePops();
       addDuoDate(id, (inp && inp.value) ? inp.value : todayISO());
     };
   });
@@ -10618,11 +10629,30 @@ function freshFrame(){
   return {node:f, old:old};
 }
 var openSeq = 0;     /* номер открытия: поздний ответ памяти не должен подменить другой урок */
+/* На iPhone Safari автоматически масштабирует страницу, если поле меньше 16px.
+   У нескольких старых шаблонов основное поле уже было защищено, но словарь и
+   некоторые будущие поля могли снова стать 13-15px. Вводим правило централизованно
+   для любого урока, включая пакеты и отдельные html-файлы. */
+function focusSafeLessonHTML(html){
+  if(typeof html !== "string" || html.indexOf('id="ios-focus-safe"') >= 0) return html;
+  var css = '<style id="ios-focus-safe">@media (max-width:620px){input,textarea,select{font-size:16px!important}}</style>';
+  return /<\/head>/i.test(html) ? html.replace(/<\/head>/i, css + '</head>') : css + html;
+}
+function focusSafeFrame(frame){
+  try{
+    var d = frame && frame.contentDocument;
+    if(!d || !d.head || d.getElementById("ios-focus-safe")) return;
+    var st = d.createElement("style");
+    st.id = "ios-focus-safe";
+    st.textContent = "@media (max-width:620px){input,textarea,select{font-size:16px!important}}";
+    d.head.appendChild(st);
+  }catch(e){}
+}
 function frameWith(html, code){
   var made = freshFrame();
-  if(html !== null && html !== undefined) made.node.setAttribute("srcdoc", html);
+  if(html !== null && html !== undefined) made.node.setAttribute("srcdoc", focusSafeLessonHTML(html));
   else made.node.setAttribute("src", code + ".html");
-  made.node.onload = function(){ themeFrame(); startFit(); };
+  made.node.onload = function(){ focusSafeFrame(made.node); themeFrame(); startFit(); };
   made.old.parentNode.replaceChild(made.node, made.old);
   rframe = made.node;
   themeFrame();
