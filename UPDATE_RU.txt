@@ -1,0 +1,38 @@
+STUDY v006 · 08.10.2026 · Fix stale cache / Force update
+
+ROOT CAUSE
+The public repository still had an old sw.js (VERSION 2026-09-29-8), which served index.html cache-first.
+Even after uploading v005 to GitHub, the old Service Worker could serve the earlier app indefinitely.
+The GitHub Actions single-file build also removed the v005 CSS block because it lived within the generated
+SINGLE-FILE ASSETS markers. The new CSS block is OUTSIDE these markers.
+
+DEPLOY (3 FILES, WITHOUT ALTERING USER DATA)
+1. Upload index.html, sw.js and refresh.html directly into the ROOT of dimitriyvolchenko/study.
+   Replace index.html and sw.js. Do not touch progress*.json, packages/, tokens, or user data.
+2. Wait for the GitHub commit and automatic single-file build to finish.
+3. On an iPhone open in Safari: https://dimitriyvolchenko.github.io/study/refresh.html
+   Press "Принудительно обновить Study". This link also works through the OLD Service Worker,
+   whose handler uses network-first for previously unknown *.html pages.
+4. After the first repair, use Menu → Force update inside Study whenever changes fail to appear.
+   For the new icon use Menu → App icon → Study (학) or Hanja (學).
+5. The already pinned iOS home-screen icon may not change. First verify the updated app and synced progress,
+   then add a fresh home-screen shortcut from Safari. Do not remove the old shortcut prematurely.
+
+WHAT FORCE UPDATE DOES
+- Captures lesson progress and saves to localStorage; stops if a local save is unsuccessful.
+- Confirms a new sw.js is published and can be fetched over the network.
+- Unregisters ONLY this Study path's Service Worker.
+- Deletes ONLY caches whose names begin study-pwa-shell- or study-pwa-courses-.
+- Navigates to an index.html URL with a fresh query parameter.
+- DOES NOT clear localStorage, cookies, IndexedDB, browser site data or GitHub progress files.
+- If offline or if sw.js was not uploaded, displays an error instead of clearing caches.
+
+PWA FIX
+sw.js v006 uses NETWORK FIRST for index.html and app assets; offline uses the cached copy.
+A newly installed worker uses skipWaiting(), activate cleans old shell caches and claims clients.
+The old course cache is retained on normal updates; Force update deletes it only on explicit action.
+
+LIMITATION
+This cannot update the actual published files on GitHub until you upload the three files.
+A button cannot be retroactively added to an old cached page. The rescue URL refresh.html is the
+bootstrap path for existing stale installations. Existing iOS home-screen graphics may be pinned.

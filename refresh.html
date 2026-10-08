@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ed2359"><title>Study · Обновление</title>
+<style>
+:root{font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#252029;background:#faf7f8}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+main{max-width:430px;width:100%;padding:28px;border-radius:26px;background:white;box-shadow:0 12px 45px rgba(60,26,44,.10)}
+.logo{width:72px;height:72px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(145deg,#ff5d76,#f9004b 75%);box-shadow:0 5px 14px #f9004b30;color:white;font-size:44px;font-weight:800}
+h1{font-size:26px;letter-spacing:-.04em;margin:16px 0 8px}p{margin:10px 0;color:#655c65}
+button{width:100%;padding:15px 16px;border:0;border-radius:16px;background:#e81551;color:white;font-weight:750;font-size:17px;cursor:pointer}
+button:disabled{opacity:.5}small{display:block;margin-top:18px;color:#736b73}#status{min-height:45px;font-size:14px;overflow-wrap:anywhere}
+a{color:#b31548}
+</style></head><body><main>
+<div class="logo" aria-hidden="true">학</div><h1>Обновление Study</h1>
+<p>Эта страница помогает выйти из старого кеша, даже если в приложении ещё нет кнопки обновления.</p>
+<p><strong>Ваши отметки, профили и настройки не удаляются.</strong> Сохрани прогресс в открытой вкладке Study перед продолжением.</p>
+<button id="go" type="button">Принудительно обновить Study</button>
+<p id="status" role="status" aria-live="polite">Для обновления нужен интернет.</p>
+<small>Study v006 · 08.10.2026. Удаляются только кеши файлов приложения и его Service Worker, но не данные Safari.</small>
+<script>
+(function(){
+ var b=document.getElementById('go'),out=document.getElementById('status');
+ b.onclick=async function(){
+  if(b.disabled)return;
+  b.disabled=true;
+  try{
+   if(navigator.onLine===false)throw Error('Нет подключения к интернету.');
+   out.textContent='Проверяю новую версию…';
+   var root=new URL('./',location.href);
+   var response=await fetch(new URL('sw.js?study_check='+Date.now(),root).href,{cache:'no-store'});
+   if(!response.ok)throw Error('Новый sw.js не найден ('+response.status+').');
+   if((await response.text()).indexOf('STUDY-SW-NETWORK-FIRST')<0)
+    throw Error('В репозитории ещё старый sw.js. Сначала загрузи новый файл sw.js из ZIP.');
+   if('serviceWorker' in navigator){
+    var regs=await navigator.serviceWorker.getRegistrations();
+    for(var i=0;i<regs.length;i++)if(regs[i].scope===root.href)await regs[i].unregister();
+   }
+   if('caches' in window){
+    var keys=await caches.keys();
+    for(var j=0;j<keys.length;j++){
+     if(keys[j].indexOf('study-pwa-shell-')===0||keys[j].indexOf('study-pwa-courses-')===0)
+      await caches.delete(keys[j]);
+    }
+   }
+   out.textContent='Открываю обновлённое приложение…';
+   var fresh=new URL('index.html',root);fresh.searchParams.set('study_force',String(Date.now()));
+   location.replace(fresh.href);
+  }catch(e){out.textContent='Обновление не выполнено: '+(e.message||e);b.disabled=false;}
+ };
+})();
+</script></main></body></html>
