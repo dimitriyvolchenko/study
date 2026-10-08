@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-08T13:51:14.951Z",
+  "updated": "2026-10-08T13:51:27.450Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3448,11 +3448,10 @@
   },
   "rockets": {
     "DEG01": {
-      "on": true,
-      "t": 1791456488725,
+      "on": false,
       "day": "2026-10-08",
-      "base": null,
-      "migrated": true
+      "base": "done",
+      "t": 1791467484923
     },
     "DEG02": {
       "on": true,
@@ -3649,12 +3648,12 @@
       "sec": "en",
       "title": "Environment and change · 1",
       "day": "2026-10-08",
-      "selected": true,
+      "selected": false,
       "base": null,
       "mark": "done",
       "done": true,
       "plannedAt": 1791456488725,
-      "t": 1791467472298,
+      "t": 1791467484924,
       "migrated": true
     },
     "2026-10-08|DEG02": {
@@ -4534,19 +4533,19 @@
       },
       "t": 1791311269009
     },
-    "[\"stageLog\",\"2026-10-08|FR02\"]": {
-      "v": {
-        "s": "look",
-        "t": 1791456540418
-      },
-      "t": 1791456540419
-    },
     "[\"stageLog\",\"2026-10-08|DEG01\"]": {
       "v": {
         "s": "done",
         "t": 1791467472298
       },
       "t": 1791467472300
+    },
+    "[\"stageLog\",\"2026-10-08|FR02\"]": {
+      "v": {
+        "s": "look",
+        "t": 1791456540418
+      },
+      "t": 1791456540419
     },
     "[\"wordLog\",\"2026-09-28|A01.1\"]": {
       "v": {
@@ -7387,13 +7386,12 @@
     },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
-        "on": true,
-        "t": 1791456488725,
+        "on": false,
         "day": "2026-10-08",
-        "base": null,
-        "migrated": true
+        "base": "done",
+        "t": 1791467484923
       },
-      "t": 1791467406099
+      "t": 1791467484925
     },
     "[\"rockets\",\"DEG02\"]": {
       "v": {
@@ -7651,15 +7649,15 @@
         "sec": "en",
         "title": "Environment and change · 1",
         "day": "2026-10-08",
-        "selected": true,
+        "selected": false,
         "base": null,
         "mark": "done",
         "done": true,
         "plannedAt": 1791456488725,
-        "t": 1791467472298,
+        "t": 1791467484924,
         "migrated": true
       },
-      "t": 1791467472300
+      "t": 1791467484925
     },
     "[\"rocketDays\",\"2026-10-08|DEG02\"]": {
       "v": {
