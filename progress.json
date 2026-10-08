@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-08T13:50:37.778Z",
+  "updated": "2026-10-08T13:50:45.614Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3707,6 +3707,12 @@
     }
   },
   "uiPrefs": {
+    "sudakPhoto": {
+      "value": {
+        "id": "sudak-evening"
+      },
+      "t": 1791467442782
+    },
     "tabOrder": {
       "value": [
         "#/all",
@@ -7720,6 +7726,15 @@
         "t": 1791467435629
       },
       "t": 1791467435631
+    },
+    "[\"uiPrefs\",\"sudakPhoto\"]": {
+      "v": {
+        "value": {
+          "id": "sudak-evening"
+        },
+        "t": 1791467442782
+      },
+      "t": 1791467442783
     },
     "[\"secDone\",\"ba\",\"2026-09-14\"]": {
       "v": true,
