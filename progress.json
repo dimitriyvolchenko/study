@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-08T13:50:16.952Z",
+  "updated": "2026-10-08T13:50:25.541Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3706,7 +3706,18 @@
       "migrated": true
     }
   },
-  "uiPrefs": {},
+  "uiPrefs": {
+    "tabOrder": {
+      "value": [
+        "#/all",
+        "#/",
+        "#/rocket",
+        "#/habits",
+        "#/sync"
+      ],
+      "t": 1791467423511
+    }
+  },
   "syncOps": {
     "[\"marks\",\"A01.1\"]": {
       "v": {
@@ -7696,6 +7707,19 @@
         "migrated": true
       },
       "t": 1791467406099
+    },
+    "[\"uiPrefs\",\"tabOrder\"]": {
+      "v": {
+        "value": [
+          "#/all",
+          "#/",
+          "#/rocket",
+          "#/habits",
+          "#/sync"
+        ],
+        "t": 1791467423511
+      },
+      "t": 1791467423513
     },
     "[\"secDone\",\"ba\",\"2026-09-14\"]": {
       "v": true,
