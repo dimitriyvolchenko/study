@@ -1,7 +1,7 @@
-/* STUDY-SW-NETWORK-FIRST · v006 · 2026-10-08
+/* STUDY-SW-NETWORK-FIRST · v007 · 2026-10-08
    Always ask the network for the HTML shell. Offline fallback uses the versioned cache.
    Never cache progress responses, wipe storage, or alter profile data. */
-const VERSION='2026-10-08-6';
+const VERSION='2026-10-08-7';
 const SHELL='study-pwa-shell-'+VERSION;
 const COURSES='study-pwa-courses-v1';
 const BASE=new URL('./',self.location.href);
@@ -14,7 +14,14 @@ const FILES=['index.html','sync-core.js','pwa.css','manifest.webmanifest',
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(SHELL);
  try{
-  await cache.addAll(FILES.map(p=>new Request(url(p),{cache:'reload'})));
+  const response=await fetch(new Request(url('index.html'),{cache:'reload'}));
+  if(!response.ok)throw new Error('Study shell unavailable: '+response.status);
+  const text=await response.clone().text();
+  if(!text.includes('v007-2026-10-08-rocket-daily'))throw new Error('Study shell and worker versions do not match');
+  await cache.put(url('index.html'),response);
+  await Promise.all(FILES.filter(p=>p!=='index.html').map(async p=>{
+   try{const r=await fetch(new Request(url(p),{cache:'reload'}));if(r.ok)await cache.put(url(p),r);}catch(e){}
+  }));
   await self.skipWaiting();
  }catch(e){await caches.delete(SHELL);throw e;}
 })()));
@@ -30,8 +37,8 @@ async function networkFirst(req,cacheName,key){
  const cache=await caches.open(cacheName);
  try{
   const response=await fetch(new Request(req,{cache:'no-store'}));
-  if(response.ok)await cache.put(key,response.clone());
-  return response;
+  if(response.ok){try{await cache.put(key,response.clone());}catch(e){}return response;}
+  const saved=await cache.match(key);if(saved)return saved;return response;
  }catch(err){
   const offline=await cache.match(key);
   if(offline)return offline;
