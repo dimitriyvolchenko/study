@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-08T13:23:55.876Z",
+  "updated": "2026-10-08T13:50:03.693Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3465,7 +3465,10 @@
     },
     "F01.2": {
       "on": true,
-      "t": 1791309543413
+      "t": 1791309543413,
+      "day": "2026-10-06",
+      "base": "work",
+      "migrated": true
     },
     "FR01": {
       "on": true,
@@ -3477,23 +3480,38 @@
     },
     "G01.2": {
       "on": true,
-      "t": 1791309560717
+      "t": 1791309560717,
+      "day": "2026-10-06",
+      "base": "learn",
+      "migrated": true
     },
     "K01.1": {
       "on": true,
-      "t": 1791310248073
+      "t": 1791310248073,
+      "day": "2026-10-06",
+      "base": "learn",
+      "migrated": true
     },
     "M01": {
       "on": true,
-      "t": 1791310013394
+      "t": 1791310013394,
+      "day": "2026-10-06",
+      "base": "look",
+      "migrated": true
     },
     "P02.2": {
       "on": true,
-      "t": 1790682300402
+      "t": 1790682300402,
+      "day": "2026-09-29",
+      "base": "learn",
+      "migrated": true
     },
     "S01.1": {
       "on": true,
-      "t": 1791310855972
+      "t": 1791310855972,
+      "day": "2026-10-06",
+      "base": "work",
+      "migrated": true
     }
   },
   "blockOrder": {
@@ -3528,6 +3546,87 @@
       "t": 1790682138303
     }
   },
+  "rocketDays": {
+    "2026-09-29|P02.2": {
+      "code": "P02.2",
+      "sec": "phil-people",
+      "title": "From Bacon to Feyerabend · 2",
+      "day": "2026-09-29",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1790682300402,
+      "t": 1790682300402,
+      "migrated": true
+    },
+    "2026-10-06|F01.2": {
+      "code": "F01.2",
+      "sec": "phil-terms",
+      "title": "Language of philosophy · 2",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1791309543413,
+      "t": 1791309543413,
+      "migrated": true
+    },
+    "2026-10-06|G01.2": {
+      "code": "G01.2",
+      "sec": "law",
+      "title": "State: power, forms, limits · 2",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791309560717,
+      "t": 1791309560717,
+      "migrated": true
+    },
+    "2026-10-06|K01.1": {
+      "code": "K01.1",
+      "sec": "crim",
+      "title": "1. The science and its subject · 1",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791310248073,
+      "t": 1791310248073,
+      "migrated": true
+    },
+    "2026-10-06|M01": {
+      "code": "M01",
+      "sec": "map",
+      "title": "From Socrates to philosophy of science",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791310013394,
+      "t": 1791310013394,
+      "migrated": true
+    },
+    "2026-10-06|S01.1": {
+      "code": "S01.1",
+      "sec": "forensics",
+      "title": "Science, subject, tasks · 1",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1791310855972,
+      "t": 1791310855972,
+      "migrated": true
+    }
+  },
+  "uiPrefs": {},
   "syncOps": {
     "[\"marks\",\"A01.1\"]": {
       "v": {
@@ -7216,9 +7315,12 @@
     "[\"rockets\",\"F01.2\"]": {
       "v": {
         "on": true,
-        "t": 1791309543413
+        "t": 1791309543413,
+        "day": "2026-10-06",
+        "base": "work",
+        "migrated": true
       },
-      "t": 1791309543414
+      "t": 1791467400850
     },
     "[\"rockets\",\"FR01\"]": {
       "v": {
@@ -7237,37 +7339,52 @@
     "[\"rockets\",\"G01.2\"]": {
       "v": {
         "on": true,
-        "t": 1791309560717
+        "t": 1791309560717,
+        "day": "2026-10-06",
+        "base": "learn",
+        "migrated": true
       },
-      "t": 1791309560718
+      "t": 1791467400850
     },
     "[\"rockets\",\"K01.1\"]": {
       "v": {
         "on": true,
-        "t": 1791310248073
+        "t": 1791310248073,
+        "day": "2026-10-06",
+        "base": "learn",
+        "migrated": true
       },
-      "t": 1791310248075
+      "t": 1791467400850
     },
     "[\"rockets\",\"M01\"]": {
       "v": {
         "on": true,
-        "t": 1791310013394
+        "t": 1791310013394,
+        "day": "2026-10-06",
+        "base": "look",
+        "migrated": true
       },
-      "t": 1791310013395
+      "t": 1791467400850
     },
     "[\"rockets\",\"P02.2\"]": {
       "v": {
         "on": true,
-        "t": 1790682300402
+        "t": 1790682300402,
+        "day": "2026-09-29",
+        "base": "learn",
+        "migrated": true
       },
-      "t": 1790682300403
+      "t": 1791467400850
     },
     "[\"rockets\",\"S01.1\"]": {
       "v": {
         "on": true,
-        "t": 1791310855972
+        "t": 1791310855972,
+        "day": "2026-10-06",
+        "base": "work",
+        "migrated": true
       },
-      "t": 1791310855973
+      "t": 1791467400850
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
@@ -7308,6 +7425,102 @@
         "t": 1790682138303
       },
       "t": 1790682138304
+    },
+    "[\"rocketDays\",\"2026-10-06|F01.2\"]": {
+      "v": {
+        "code": "F01.2",
+        "sec": "phil-terms",
+        "title": "Language of philosophy · 2",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "work",
+        "mark": "work",
+        "done": false,
+        "plannedAt": 1791309543413,
+        "t": 1791309543413,
+        "migrated": true
+      },
+      "t": 1791467400850
+    },
+    "[\"rocketDays\",\"2026-10-06|G01.2\"]": {
+      "v": {
+        "code": "G01.2",
+        "sec": "law",
+        "title": "State: power, forms, limits · 2",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791309560717,
+        "t": 1791309560717,
+        "migrated": true
+      },
+      "t": 1791467400850
+    },
+    "[\"rocketDays\",\"2026-10-06|K01.1\"]": {
+      "v": {
+        "code": "K01.1",
+        "sec": "crim",
+        "title": "1. The science and its subject · 1",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791310248073,
+        "t": 1791310248073,
+        "migrated": true
+      },
+      "t": 1791467400850
+    },
+    "[\"rocketDays\",\"2026-10-06|M01\"]": {
+      "v": {
+        "code": "M01",
+        "sec": "map",
+        "title": "From Socrates to philosophy of science",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "look",
+        "mark": "look",
+        "done": false,
+        "plannedAt": 1791310013394,
+        "t": 1791310013394,
+        "migrated": true
+      },
+      "t": 1791467400850
+    },
+    "[\"rocketDays\",\"2026-09-29|P02.2\"]": {
+      "v": {
+        "code": "P02.2",
+        "sec": "phil-people",
+        "title": "From Bacon to Feyerabend · 2",
+        "day": "2026-09-29",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1790682300402,
+        "t": 1790682300402,
+        "migrated": true
+      },
+      "t": 1791467400850
+    },
+    "[\"rocketDays\",\"2026-10-06|S01.1\"]": {
+      "v": {
+        "code": "S01.1",
+        "sec": "forensics",
+        "title": "Science, subject, tasks · 1",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "work",
+        "mark": "work",
+        "done": false,
+        "plannedAt": 1791310855972,
+        "t": 1791310855972,
+        "migrated": true
+      },
+      "t": 1791467400850
     },
     "[\"secDone\",\"ba\",\"2026-09-14\"]": {
       "v": true,
