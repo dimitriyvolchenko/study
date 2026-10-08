@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-08T13:52:02.442Z",
+  "updated": "2026-10-08T13:52:17.181Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3306,7 +3306,7 @@
     "brat2_progress_P02.2": {
       "data": {
         "v": 4,
-        "t": 1791467519838,
+        "t": 1791467523099,
         "screen": "study",
         "mode": null,
         "scrollStudy": 0,
@@ -3347,7 +3347,7 @@
           "done": false
         }
       },
-      "t": 1791467519838
+      "t": 1791467523099
     },
     "brat2_progress_S01.1": {
       "data": {
@@ -6093,6 +6093,55 @@
       },
       "t": 1791309535158
     },
+    "[\"lessonStates\",\"brat2_progress_F01.2\"]": {
+      "v": {
+        "data": {
+          "v": 4,
+          "t": 1791467513444,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 0,
+          "diag": {
+            "order": [
+              0,
+              3,
+              1,
+              4,
+              2
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          },
+          "trap": {
+            "order": [],
+            "i": 0,
+            "res": {},
+            "queue": [],
+            "retry": false,
+            "done": false
+          }
+        },
+        "t": 1791467513444
+      },
+      "t": 1791467513451
+    },
     "[\"lessonStates\",\"brat2_progress_F07\"]": {
       "v": {
         "data": {
@@ -7193,7 +7242,7 @@
       "v": {
         "data": {
           "v": 4,
-          "t": 1791467519838,
+          "t": 1791467523099,
           "screen": "study",
           "mode": null,
           "scrollStudy": 0,
@@ -7234,9 +7283,9 @@
             "done": false
           }
         },
-        "t": 1791467519838
+        "t": 1791467523099
       },
-      "t": 1791467520988
+      "t": 1791467523106
     },
     "[\"lessonStates\",\"brat2_progress_S01.1\"]": {
       "v": {
@@ -7335,55 +7384,6 @@
         "t": 1790582544475
       },
       "t": 1790599171605
-    },
-    "[\"lessonStates\",\"brat2_progress_F01.2\"]": {
-      "v": {
-        "data": {
-          "v": 4,
-          "t": 1791467513444,
-          "screen": "study",
-          "mode": null,
-          "scrollStudy": 0,
-          "diag": {
-            "order": [
-              0,
-              3,
-              1,
-              4,
-              2
-            ],
-            "i": 0,
-            "res": {},
-            "done": false
-          },
-          "quiz": {
-            "li": 0,
-            "i": 0,
-            "order": [],
-            "res": {
-              "0": {},
-              "1": {},
-              "2": {},
-              "3": {},
-              "4": {}
-            },
-            "queue": [],
-            "retry": false,
-            "doneAll": false,
-            "started": false
-          },
-          "trap": {
-            "order": [],
-            "i": 0,
-            "res": {},
-            "queue": [],
-            "retry": false,
-            "done": false
-          }
-        },
-        "t": 1791467513444
-      },
-      "t": 1791467513451
     },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
