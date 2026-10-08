@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-08T13:52:17.181Z",
+  "updated": "2026-10-08T13:53:11.031Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3443,6 +3443,12 @@
     }
   },
   "rockets": {
+    "B01.1": {
+      "on": true,
+      "day": "2026-10-08",
+      "base": "look",
+      "t": 1791467589090
+    },
     "DEG01": {
       "on": false,
       "day": "2026-10-08",
@@ -3638,6 +3644,19 @@
       "plannedAt": 1791310855972,
       "t": 1791310855972,
       "migrated": true
+    },
+    "2026-10-08|B01.1": {
+      "code": "B01.1",
+      "sec": "ba",
+      "title": "Part 1 · 1",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791467589091,
+      "t": 1791467589091,
+      "source": "rocket"
     },
     "2026-10-08|DEG01": {
       "code": "DEG01",
@@ -7508,6 +7527,15 @@
       },
       "t": 1791467400850
     },
+    "[\"rockets\",\"B01.1\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-08",
+        "base": "look",
+        "t": 1791467589090
+      },
+      "t": 1791467589092
+    },
     "[\"blockOrder\",\"en\"]": {
       "v": {
         "ids": [
@@ -7723,6 +7751,22 @@
         "migrated": true
       },
       "t": 1791467406099
+    },
+    "[\"rocketDays\",\"2026-10-08|B01.1\"]": {
+      "v": {
+        "code": "B01.1",
+        "sec": "ba",
+        "title": "Part 1 · 1",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": "look",
+        "mark": "look",
+        "done": false,
+        "plannedAt": 1791467589091,
+        "t": 1791467589091,
+        "source": "rocket"
+      },
+      "t": 1791467589092
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
