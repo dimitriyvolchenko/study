@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-08T13:50:03.693Z",
+  "updated": "2026-10-08T13:50:16.952Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3445,15 +3445,24 @@
   "rockets": {
     "DEG01": {
       "on": true,
-      "t": 1791456488725
+      "t": 1791456488725,
+      "day": "2026-10-08",
+      "base": null,
+      "migrated": true
     },
     "DEG02": {
       "on": true,
-      "t": 1791456501383
+      "t": 1791456501383,
+      "day": "2026-10-08",
+      "base": null,
+      "migrated": true
     },
     "DEG03": {
       "on": true,
-      "t": 1791456507662
+      "t": 1791456507662,
+      "day": "2026-10-08",
+      "base": null,
+      "migrated": true
     },
     "E23Final": {
       "on": false,
@@ -3472,11 +3481,17 @@
     },
     "FR01": {
       "on": true,
-      "t": 1791456535845
+      "t": 1791456535845,
+      "day": "2026-10-08",
+      "base": "learn",
+      "migrated": true
     },
     "FR02": {
       "on": true,
-      "t": 1791456538059
+      "t": 1791456538059,
+      "day": "2026-10-08",
+      "base": "look",
+      "migrated": true
     },
     "G01.2": {
       "on": true,
@@ -3623,6 +3638,71 @@
       "done": false,
       "plannedAt": 1791310855972,
       "t": 1791310855972,
+      "migrated": true
+    },
+    "2026-10-08|DEG01": {
+      "code": "DEG01",
+      "sec": "en",
+      "title": "Environment and change · 1",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791456488725,
+      "t": 1791456488725,
+      "migrated": true
+    },
+    "2026-10-08|DEG02": {
+      "code": "DEG02",
+      "sec": "en",
+      "title": "Society and rights · 2",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791456501383,
+      "t": 1791456501383,
+      "migrated": true
+    },
+    "2026-10-08|DEG03": {
+      "code": "DEG03",
+      "sec": "en",
+      "title": "Thinking and argument · 3",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791456507662,
+      "t": 1791456507662,
+      "migrated": true
+    },
+    "2026-10-08|FR01": {
+      "code": "FR01",
+      "sec": "fr-notes",
+      "title": "At the desk",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791456535845,
+      "t": 1791456535845,
+      "migrated": true
+    },
+    "2026-10-08|FR02": {
+      "code": "FR02",
+      "sec": "fr-notes",
+      "title": "Papers and notes",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791456538059,
+      "t": 1791456538059,
       "migrated": true
     }
   },
@@ -7280,23 +7360,32 @@
     "[\"rockets\",\"DEG01\"]": {
       "v": {
         "on": true,
-        "t": 1791456488725
+        "t": 1791456488725,
+        "day": "2026-10-08",
+        "base": null,
+        "migrated": true
       },
-      "t": 1791456488726
+      "t": 1791467406099
     },
     "[\"rockets\",\"DEG02\"]": {
       "v": {
         "on": true,
-        "t": 1791456501383
+        "t": 1791456501383,
+        "day": "2026-10-08",
+        "base": null,
+        "migrated": true
       },
-      "t": 1791456501384
+      "t": 1791467406099
     },
     "[\"rockets\",\"DEG03\"]": {
       "v": {
         "on": true,
-        "t": 1791456507662
+        "t": 1791456507662,
+        "day": "2026-10-08",
+        "base": null,
+        "migrated": true
       },
-      "t": 1791456507662
+      "t": 1791467406099
     },
     "[\"rockets\",\"E23Final\"]": {
       "v": {
@@ -7325,16 +7414,22 @@
     "[\"rockets\",\"FR01\"]": {
       "v": {
         "on": true,
-        "t": 1791456535845
+        "t": 1791456535845,
+        "day": "2026-10-08",
+        "base": "learn",
+        "migrated": true
       },
-      "t": 1791456535846
+      "t": 1791467406099
     },
     "[\"rockets\",\"FR02\"]": {
       "v": {
         "on": true,
-        "t": 1791456538059
+        "t": 1791456538059,
+        "day": "2026-10-08",
+        "base": "look",
+        "migrated": true
       },
-      "t": 1791456538060
+      "t": 1791467406099
     },
     "[\"rockets\",\"G01.2\"]": {
       "v": {
@@ -7426,6 +7521,22 @@
       },
       "t": 1790682138304
     },
+    "[\"rocketDays\",\"2026-09-29|P02.2\"]": {
+      "v": {
+        "code": "P02.2",
+        "sec": "phil-people",
+        "title": "From Bacon to Feyerabend · 2",
+        "day": "2026-09-29",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1790682300402,
+        "t": 1790682300402,
+        "migrated": true
+      },
+      "t": 1791467400850
+    },
     "[\"rocketDays\",\"2026-10-06|F01.2\"]": {
       "v": {
         "code": "F01.2",
@@ -7490,22 +7601,6 @@
       },
       "t": 1791467400850
     },
-    "[\"rocketDays\",\"2026-09-29|P02.2\"]": {
-      "v": {
-        "code": "P02.2",
-        "sec": "phil-people",
-        "title": "From Bacon to Feyerabend · 2",
-        "day": "2026-09-29",
-        "selected": true,
-        "base": "learn",
-        "mark": "learn",
-        "done": false,
-        "plannedAt": 1790682300402,
-        "t": 1790682300402,
-        "migrated": true
-      },
-      "t": 1791467400850
-    },
     "[\"rocketDays\",\"2026-10-06|S01.1\"]": {
       "v": {
         "code": "S01.1",
@@ -7521,6 +7616,86 @@
         "migrated": true
       },
       "t": 1791467400850
+    },
+    "[\"rocketDays\",\"2026-10-08|DEG01\"]": {
+      "v": {
+        "code": "DEG01",
+        "sec": "en",
+        "title": "Environment and change · 1",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1791456488725,
+        "t": 1791456488725,
+        "migrated": true
+      },
+      "t": 1791467406099
+    },
+    "[\"rocketDays\",\"2026-10-08|DEG02\"]": {
+      "v": {
+        "code": "DEG02",
+        "sec": "en",
+        "title": "Society and rights · 2",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1791456501383,
+        "t": 1791456501383,
+        "migrated": true
+      },
+      "t": 1791467406099
+    },
+    "[\"rocketDays\",\"2026-10-08|DEG03\"]": {
+      "v": {
+        "code": "DEG03",
+        "sec": "en",
+        "title": "Thinking and argument · 3",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1791456507662,
+        "t": 1791456507662,
+        "migrated": true
+      },
+      "t": 1791467406099
+    },
+    "[\"rocketDays\",\"2026-10-08|FR01\"]": {
+      "v": {
+        "code": "FR01",
+        "sec": "fr-notes",
+        "title": "At the desk",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791456535845,
+        "t": 1791456535845,
+        "migrated": true
+      },
+      "t": 1791467406099
+    },
+    "[\"rocketDays\",\"2026-10-08|FR02\"]": {
+      "v": {
+        "code": "FR02",
+        "sec": "fr-notes",
+        "title": "Papers and notes",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": "look",
+        "mark": "look",
+        "done": false,
+        "plannedAt": 1791456538059,
+        "t": 1791456538059,
+        "migrated": true
+      },
+      "t": 1791467406099
     },
     "[\"secDone\",\"ba\",\"2026-09-14\"]": {
       "v": true,
