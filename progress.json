@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T18:26:57.703Z",
+  "updated": "2026-10-09T18:27:13.425Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -1109,8 +1109,8 @@
     "brat2_progress_DEG01": {
       "data": {
         "v": 3,
-        "t": 1791570416982,
-        "screen": "quiz",
+        "t": 1791570427477,
+        "screen": "final",
         "mode": "single",
         "scrollStudy": 0,
         "diag": {
@@ -1126,8 +1126,8 @@
           "done": false
         },
         "quiz": {
-          "li": 0,
-          "i": 3,
+          "li": 1,
+          "i": 5,
           "order": [
             2,
             0,
@@ -1143,7 +1143,13 @@
                 "rev": false
               }
             },
-            "1": {},
+            "1": {
+              "L1": {
+                "ok": true,
+                "att": 1,
+                "rev": false
+              }
+            },
             "2": {
               "L1": {
                 "ok": true,
@@ -1168,11 +1174,11 @@
           },
           "queue": [],
           "retry": false,
-          "doneAll": false,
+          "doneAll": true,
           "started": true
         }
       },
-      "t": 1791570416982
+      "t": 1791570427477
     },
     "brat2_progress_DEG02": {
       "data": {
@@ -3519,10 +3525,10 @@
       "t": 1791518775922
     },
     "DEG01": {
-      "on": true,
+      "on": false,
       "day": "2026-10-09",
       "base": "done",
-      "t": 1791518758478
+      "t": 1791570432321
     },
     "DEG02": {
       "on": true,
@@ -3822,12 +3828,12 @@
       "sec": "en",
       "title": "Environment and change · 1",
       "day": "2026-10-09",
-      "selected": true,
+      "selected": false,
       "base": "done",
       "mark": "done",
       "done": false,
       "plannedAt": 1791518758479,
-      "t": 1791518758479,
+      "t": 1791570432322,
       "source": "rocket"
     },
     "2026-10-09|DEG02": {
@@ -5182,8 +5188,8 @@
       "v": {
         "data": {
           "v": 3,
-          "t": 1791570416982,
-          "screen": "quiz",
+          "t": 1791570427477,
+          "screen": "final",
           "mode": "single",
           "scrollStudy": 0,
           "diag": {
@@ -5199,8 +5205,8 @@
             "done": false
           },
           "quiz": {
-            "li": 0,
-            "i": 3,
+            "li": 1,
+            "i": 5,
             "order": [
               2,
               0,
@@ -5216,7 +5222,13 @@
                   "rev": false
                 }
               },
-              "1": {},
+              "1": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
               "2": {
                 "L1": {
                   "ok": true,
@@ -5241,13 +5253,13 @@
             },
             "queue": [],
             "retry": false,
-            "doneAll": false,
+            "doneAll": true,
             "started": true
           }
         },
-        "t": 1791570416982
+        "t": 1791570427477
       },
-      "t": 1791570417698
+      "t": 1791570427487
     },
     "[\"lessonStates\",\"brat2_progress_DEG02\"]": {
       "v": {
@@ -7692,12 +7704,12 @@
     },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
-        "on": true,
+        "on": false,
         "day": "2026-10-09",
         "base": "done",
-        "t": 1791518758478
+        "t": 1791570432321
       },
-      "t": 1791518758480
+      "t": 1791570432323
     },
     "[\"rockets\",\"DEG02\"]": {
       "v": {
@@ -8085,15 +8097,15 @@
         "sec": "en",
         "title": "Environment and change · 1",
         "day": "2026-10-09",
-        "selected": true,
+        "selected": false,
         "base": "done",
         "mark": "done",
         "done": false,
         "plannedAt": 1791518758479,
-        "t": 1791518758479,
+        "t": 1791570432322,
         "source": "rocket"
       },
-      "t": 1791518758480
+      "t": 1791570432323
     },
     "[\"rocketDays\",\"2026-10-09|DEG02\"]": {
       "v": {
