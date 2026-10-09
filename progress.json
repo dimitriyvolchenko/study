@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T18:29:16.440Z",
+  "updated": "2026-10-09T18:29:30.696Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -24,8 +24,8 @@
       "t": 1791467472298
     },
     "DEG02": {
-      "s": "learn",
-      "t": 1791467492069
+      "s": "done",
+      "t": 1791570567261
     },
     "DEG03": {
       "s": "work",
@@ -800,6 +800,10 @@
       "s": "look",
       "t": 1791456540418
     },
+    "2026-10-09|DEG02": {
+      "s": "done",
+      "t": 1791570567261
+    },
     "2026-10-09|FR01": {
       "s": "done",
       "t": 1791518887518
@@ -1183,8 +1187,8 @@
     "brat2_progress_DEG02": {
       "data": {
         "v": 3,
-        "t": 1791570544797,
-        "screen": "quiz",
+        "t": 1791570566238,
+        "screen": "final",
         "mode": "single",
         "scrollStudy": 0,
         "diag": {
@@ -1200,8 +1204,8 @@
           "done": false
         },
         "quiz": {
-          "li": 0,
-          "i": 2,
+          "li": 1,
+          "i": 5,
           "order": [
             1,
             0,
@@ -1224,7 +1228,13 @@
                 "rev": false
               }
             },
-            "2": {},
+            "2": {
+              "L1": {
+                "ok": true,
+                "att": 1,
+                "rev": false
+              }
+            },
             "3": {
               "L1": {
                 "ok": true,
@@ -1232,15 +1242,21 @@
                 "rev": false
               }
             },
-            "4": {}
+            "4": {
+              "L1": {
+                "ok": true,
+                "att": 1,
+                "rev": false
+              }
+            }
           },
           "queue": [],
           "retry": false,
-          "doneAll": false,
+          "doneAll": true,
           "started": true
         }
       },
-      "t": 1791570544797
+      "t": 1791570566238
     },
     "brat2_progress_DEG03": {
       "data": {
@@ -3555,10 +3571,10 @@
       "t": 1791570432321
     },
     "DEG02": {
-      "on": true,
+      "on": false,
       "day": "2026-10-09",
-      "base": "learn",
-      "t": 1791518756599
+      "base": "done",
+      "t": 1791570568220
     },
     "DEG03": {
       "on": false,
@@ -3865,12 +3881,12 @@
       "sec": "en",
       "title": "Society and rights · 2",
       "day": "2026-10-09",
-      "selected": true,
+      "selected": false,
       "base": "learn",
-      "mark": "learn",
-      "done": false,
+      "mark": "done",
+      "done": true,
       "plannedAt": 1791518756600,
-      "t": 1791518756600,
+      "t": 1791570568221,
       "source": "rocket"
     },
     "2026-10-09|F01.2": {
@@ -3995,10 +4011,10 @@
     },
     "[\"marks\",\"DEG02\"]": {
       "v": {
-        "s": "learn",
-        "t": 1791467492069
+        "s": "done",
+        "t": 1791570567261
       },
-      "t": 1791467492071
+      "t": 1791570567262
     },
     "[\"marks\",\"DEG03\"]": {
       "v": {
@@ -4805,6 +4821,13 @@
       },
       "t": 1791518887520
     },
+    "[\"stageLog\",\"2026-10-09|DEG02\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791570567261
+      },
+      "t": 1791570567262
+    },
     "[\"wordLog\",\"2026-09-28|A01.1\"]": {
       "v": {
         "s": "look",
@@ -5289,8 +5312,8 @@
       "v": {
         "data": {
           "v": 3,
-          "t": 1791570544797,
-          "screen": "quiz",
+          "t": 1791570566238,
+          "screen": "final",
           "mode": "single",
           "scrollStudy": 0,
           "diag": {
@@ -5306,8 +5329,8 @@
             "done": false
           },
           "quiz": {
-            "li": 0,
-            "i": 2,
+            "li": 1,
+            "i": 5,
             "order": [
               1,
               0,
@@ -5330,7 +5353,13 @@
                   "rev": false
                 }
               },
-              "2": {},
+              "2": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
               "3": {
                 "L1": {
                   "ok": true,
@@ -5338,17 +5367,23 @@
                   "rev": false
                 }
               },
-              "4": {}
+              "4": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              }
             },
             "queue": [],
             "retry": false,
-            "doneAll": false,
+            "doneAll": true,
             "started": true
           }
         },
-        "t": 1791570544797
+        "t": 1791570566238
       },
-      "t": 1791570545004
+      "t": 1791570566248
     },
     "[\"lessonStates\",\"brat2_progress_DEG03\"]": {
       "v": {
@@ -7761,12 +7796,12 @@
     },
     "[\"rockets\",\"DEG02\"]": {
       "v": {
-        "on": true,
+        "on": false,
         "day": "2026-10-09",
-        "base": "learn",
-        "t": 1791518756599
+        "base": "done",
+        "t": 1791570568220
       },
-      "t": 1791518756601
+      "t": 1791570568222
     },
     "[\"rockets\",\"DEG03\"]": {
       "v": {
@@ -8161,15 +8196,15 @@
         "sec": "en",
         "title": "Society and rights · 2",
         "day": "2026-10-09",
-        "selected": true,
+        "selected": false,
         "base": "learn",
-        "mark": "learn",
-        "done": false,
+        "mark": "done",
+        "done": true,
         "plannedAt": 1791518756600,
-        "t": 1791518756600,
+        "t": 1791570568221,
         "source": "rocket"
       },
-      "t": 1791518756601
+      "t": 1791570568222
     },
     "[\"rocketDays\",\"2026-10-09|F01.2\"]": {
       "v": {
