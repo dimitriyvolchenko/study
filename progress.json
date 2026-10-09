@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T18:34:02.287Z",
+  "updated": "2026-10-09T18:34:16.826Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2493,7 +2493,7 @@
     "brat2_progress_FR02": {
       "data": {
         "v": 3,
-        "t": 1791570828653,
+        "t": 1791570856465,
         "screen": "quiz",
         "mode": "single",
         "scrollStudy": 4185,
@@ -2511,7 +2511,7 @@
         },
         "quiz": {
           "li": 0,
-          "i": 1,
+          "i": 3,
           "order": [
             3,
             1,
@@ -2520,7 +2520,13 @@
             4
           ],
           "res": {
-            "0": {},
+            "0": {
+              "L1": {
+                "ok": false,
+                "att": 3,
+                "rev": true
+              }
+            },
             "1": {
               "L1": {
                 "ok": true,
@@ -2528,7 +2534,13 @@
                 "rev": false
               }
             },
-            "2": {},
+            "2": {
+              "L1": {
+                "ok": true,
+                "att": 2,
+                "rev": false
+              }
+            },
             "3": {
               "L1": {
                 "ok": true,
@@ -2538,13 +2550,15 @@
             },
             "4": {}
           },
-          "queue": [],
+          "queue": [
+            0
+          ],
           "retry": false,
           "doneAll": false,
           "started": true
         }
       },
-      "t": 1791570828653
+      "t": 1791570856465
     },
     "brat2_progress_G01": {
       "data": {
@@ -6737,7 +6751,7 @@
       "v": {
         "data": {
           "v": 3,
-          "t": 1791570828653,
+          "t": 1791570856465,
           "screen": "quiz",
           "mode": "single",
           "scrollStudy": 4185,
@@ -6755,7 +6769,7 @@
           },
           "quiz": {
             "li": 0,
-            "i": 1,
+            "i": 3,
             "order": [
               3,
               1,
@@ -6764,7 +6778,13 @@
               4
             ],
             "res": {
-              "0": {},
+              "0": {
+                "L1": {
+                  "ok": false,
+                  "att": 3,
+                  "rev": true
+                }
+              },
               "1": {
                 "L1": {
                   "ok": true,
@@ -6772,7 +6792,13 @@
                   "rev": false
                 }
               },
-              "2": {},
+              "2": {
+                "L1": {
+                  "ok": true,
+                  "att": 2,
+                  "rev": false
+                }
+              },
               "3": {
                 "L1": {
                   "ok": true,
@@ -6782,15 +6808,17 @@
               },
               "4": {}
             },
-            "queue": [],
+            "queue": [
+              0
+            ],
             "retry": false,
             "doneAll": false,
             "started": true
           }
         },
-        "t": 1791570828653
+        "t": 1791570856465
       },
-      "t": 1791570840433
+      "t": 1791570856803
     },
     "[\"lessonStates\",\"brat2_progress_G01\"]": {
       "v": {
