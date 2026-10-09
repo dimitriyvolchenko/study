@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T18:27:13.425Z",
+  "updated": "2026-10-09T18:27:28.243Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -1183,17 +1183,17 @@
     "brat2_progress_DEG02": {
       "data": {
         "v": 3,
-        "t": 1791467491133,
-        "screen": "study",
-        "mode": null,
-        "scrollStudy": 176,
+        "t": 1791570446753,
+        "screen": "quiz",
+        "mode": "single",
+        "scrollStudy": 0,
         "diag": {
           "order": [
             3,
             1,
             4,
-            2,
-            0
+            0,
+            2
           ],
           "i": 0,
           "res": {},
@@ -1202,10 +1202,22 @@
         "quiz": {
           "li": 0,
           "i": 0,
-          "order": [],
+          "order": [
+            1,
+            0,
+            3,
+            2,
+            4
+          ],
           "res": {
             "0": {},
-            "1": {},
+            "1": {
+              "L1": {
+                "ok": true,
+                "att": 1,
+                "rev": false
+              }
+            },
             "2": {},
             "3": {},
             "4": {}
@@ -1213,10 +1225,10 @@
           "queue": [],
           "retry": false,
           "doneAll": false,
-          "started": false
+          "started": true
         }
       },
-      "t": 1791467491133
+      "t": 1791570446753
     },
     "brat2_progress_DEG03": {
       "data": {
@@ -5265,17 +5277,17 @@
       "v": {
         "data": {
           "v": 3,
-          "t": 1791467491133,
-          "screen": "study",
-          "mode": null,
-          "scrollStudy": 176,
+          "t": 1791570446753,
+          "screen": "quiz",
+          "mode": "single",
+          "scrollStudy": 0,
           "diag": {
             "order": [
               3,
               1,
               4,
-              2,
-              0
+              0,
+              2
             ],
             "i": 0,
             "res": {},
@@ -5284,10 +5296,22 @@
           "quiz": {
             "li": 0,
             "i": 0,
-            "order": [],
+            "order": [
+              1,
+              0,
+              3,
+              2,
+              4
+            ],
             "res": {
               "0": {},
-              "1": {},
+              "1": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
               "2": {},
               "3": {},
               "4": {}
@@ -5295,12 +5319,12 @@
             "queue": [],
             "retry": false,
             "doneAll": false,
-            "started": false
+            "started": true
           }
         },
-        "t": 1791467491133
+        "t": 1791570446753
       },
-      "t": 1791467491141
+      "t": 1791570446798
     },
     "[\"lessonStates\",\"brat2_progress_DEG03\"]": {
       "v": {
