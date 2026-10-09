@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T04:06:58.367Z",
+  "updated": "2026-10-09T04:07:07.954Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3526,10 +3526,10 @@
       "t": 1791467659627
     },
     "P02.2": {
-      "on": false,
+      "on": true,
       "day": "2026-10-09",
       "base": "learn",
-      "t": 1791518815399
+      "t": 1791518825651
     },
     "S01.1": {
       "on": true,
@@ -3791,6 +3791,19 @@
       "done": false,
       "plannedAt": 1791518791169,
       "t": 1791518791169,
+      "source": "rocket"
+    },
+    "2026-10-09|P02.2": {
+      "code": "P02.2",
+      "sec": "phil-people",
+      "title": "From Bacon to Feyerabend · 2",
+      "day": "2026-10-09",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791518825652,
+      "t": 1791518825652,
       "source": "rocket"
     }
   },
@@ -7600,12 +7613,12 @@
     },
     "[\"rockets\",\"P02.2\"]": {
       "v": {
-        "on": false,
+        "on": true,
         "day": "2026-10-09",
         "base": "learn",
-        "t": 1791518815399
+        "t": 1791518825651
       },
-      "t": 1791518815401
+      "t": 1791518825653
     },
     "[\"rockets\",\"S01.1\"]": {
       "v": {
@@ -7928,6 +7941,22 @@
         "source": "rocket"
       },
       "t": 1791518791170
+    },
+    "[\"rocketDays\",\"2026-10-09|P02.2\"]": {
+      "v": {
+        "code": "P02.2",
+        "sec": "phil-people",
+        "title": "From Bacon to Feyerabend · 2",
+        "day": "2026-10-09",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791518825652,
+        "t": 1791518825652,
+        "source": "rocket"
+      },
+      "t": 1791518825653
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
