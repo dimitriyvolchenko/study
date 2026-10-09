@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T18:26:27.608Z",
+  "updated": "2026-10-09T18:26:42.679Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -1109,9 +1109,9 @@
     "brat2_progress_DEG01": {
       "data": {
         "v": 3,
-        "t": 1791570385920,
-        "screen": "study",
-        "mode": null,
+        "t": 1791570401875,
+        "screen": "quiz",
+        "mode": "single",
         "scrollStudy": 0,
         "diag": {
           "order": [
@@ -1127,22 +1127,40 @@
         },
         "quiz": {
           "li": 0,
-          "i": 0,
-          "order": [],
+          "i": 1,
+          "order": [
+            2,
+            0,
+            3,
+            4,
+            1
+          ],
           "res": {
-            "0": {},
+            "0": {
+              "L1": {
+                "ok": true,
+                "att": 1,
+                "rev": false
+              }
+            },
             "1": {},
-            "2": {},
+            "2": {
+              "L1": {
+                "ok": true,
+                "att": 1,
+                "rev": false
+              }
+            },
             "3": {},
             "4": {}
           },
           "queue": [],
           "retry": false,
           "doneAll": false,
-          "started": false
+          "started": true
         }
       },
-      "t": 1791570385920
+      "t": 1791570401875
     },
     "brat2_progress_DEG02": {
       "data": {
@@ -5152,9 +5170,9 @@
       "v": {
         "data": {
           "v": 3,
-          "t": 1791570385920,
-          "screen": "study",
-          "mode": null,
+          "t": 1791570401875,
+          "screen": "quiz",
+          "mode": "single",
           "scrollStudy": 0,
           "diag": {
             "order": [
@@ -5170,24 +5188,42 @@
           },
           "quiz": {
             "li": 0,
-            "i": 0,
-            "order": [],
+            "i": 1,
+            "order": [
+              2,
+              0,
+              3,
+              4,
+              1
+            ],
             "res": {
-              "0": {},
+              "0": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
               "1": {},
-              "2": {},
+              "2": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
               "3": {},
               "4": {}
             },
             "queue": [],
             "retry": false,
             "doneAll": false,
-            "started": false
+            "started": true
           }
         },
-        "t": 1791570385920
+        "t": 1791570401875
       },
-      "t": 1791570386785
+      "t": 1791570402660
     },
     "[\"lessonStates\",\"brat2_progress_DEG02\"]": {
       "v": {
