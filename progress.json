@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T04:08:14.359Z",
+  "updated": "2026-10-09T04:08:26.211Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3503,10 +3503,9 @@
     },
     "FR02": {
       "on": true,
-      "t": 1791456538059,
-      "day": "2026-10-08",
+      "day": "2026-10-09",
       "base": "look",
-      "migrated": true
+      "t": 1791518905843
     },
     "G01.2": {
       "on": true,
@@ -3814,6 +3813,19 @@
       "plannedAt": 1791518887517,
       "t": 1791518891648,
       "source": "queued-work"
+    },
+    "2026-10-09|FR02": {
+      "code": "FR02",
+      "sec": "fr-notes",
+      "title": "Papers and notes",
+      "day": "2026-10-09",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791518905844,
+      "t": 1791518905844,
+      "source": "rocket"
     },
     "2026-10-09|P02.2": {
       "code": "P02.2",
@@ -7616,12 +7628,11 @@
     "[\"rockets\",\"FR02\"]": {
       "v": {
         "on": true,
-        "t": 1791456538059,
-        "day": "2026-10-08",
+        "day": "2026-10-09",
         "base": "look",
-        "migrated": true
+        "t": 1791518905843
       },
-      "t": 1791467406099
+      "t": 1791518905845
     },
     "[\"rockets\",\"G01.2\"]": {
       "v": {
@@ -8039,6 +8050,22 @@
         "source": "rocket"
       },
       "t": 1791518855384
+    },
+    "[\"rocketDays\",\"2026-10-09|FR02\"]": {
+      "v": {
+        "code": "FR02",
+        "sec": "fr-notes",
+        "title": "Papers and notes",
+        "day": "2026-10-09",
+        "selected": true,
+        "base": "look",
+        "mark": "look",
+        "done": false,
+        "plannedAt": 1791518905844,
+        "t": 1791518905844,
+        "source": "rocket"
+      },
+      "t": 1791518905845
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
