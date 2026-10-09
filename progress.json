@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T04:05:59.317Z",
+  "updated": "2026-10-09T04:06:18.568Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3454,10 +3454,10 @@
       "t": 1791467604548
     },
     "B01.2": {
-      "on": false,
-      "day": "2026-10-08",
+      "on": true,
+      "day": "2026-10-09",
       "base": "look",
-      "t": 1791467600478
+      "t": 1791518775922
     },
     "DEG01": {
       "on": true,
@@ -3742,6 +3742,19 @@
       "plannedAt": 1791456538059,
       "t": 1791456538059,
       "migrated": true
+    },
+    "2026-10-09|B01.2": {
+      "code": "B01.2",
+      "sec": "ba",
+      "title": "Part 1 · 2",
+      "day": "2026-10-09",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791518775923,
+      "t": 1791518775923,
+      "source": "rocket"
     },
     "2026-10-09|DEG01": {
       "code": "DEG01",
@@ -7468,12 +7481,12 @@
     },
     "[\"rockets\",\"B01.2\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-08",
+        "on": true,
+        "day": "2026-10-09",
         "base": "look",
-        "t": 1791467600478
+        "t": 1791518775922
       },
-      "t": 1791467600480
+      "t": 1791518775924
     },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
@@ -7843,6 +7856,22 @@
       },
       "t": 1791467406099
     },
+    "[\"rocketDays\",\"2026-10-09|DEG01\"]": {
+      "v": {
+        "code": "DEG01",
+        "sec": "en",
+        "title": "Environment and change · 1",
+        "day": "2026-10-09",
+        "selected": true,
+        "base": "done",
+        "mark": "done",
+        "done": false,
+        "plannedAt": 1791518758479,
+        "t": 1791518758479,
+        "source": "rocket"
+      },
+      "t": 1791518758480
+    },
     "[\"rocketDays\",\"2026-10-09|DEG02\"]": {
       "v": {
         "code": "DEG02",
@@ -7859,21 +7888,21 @@
       },
       "t": 1791518756601
     },
-    "[\"rocketDays\",\"2026-10-09|DEG01\"]": {
+    "[\"rocketDays\",\"2026-10-09|B01.2\"]": {
       "v": {
-        "code": "DEG01",
-        "sec": "en",
-        "title": "Environment and change · 1",
+        "code": "B01.2",
+        "sec": "ba",
+        "title": "Part 1 · 2",
         "day": "2026-10-09",
         "selected": true,
-        "base": "done",
-        "mark": "done",
+        "base": "look",
+        "mark": "look",
         "done": false,
-        "plannedAt": 1791518758479,
-        "t": 1791518758479,
+        "plannedAt": 1791518775923,
+        "t": 1791518775923,
         "source": "rocket"
       },
-      "t": 1791518758480
+      "t": 1791518775924
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
