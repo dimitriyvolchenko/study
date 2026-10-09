@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T04:07:22.367Z",
+  "updated": "2026-10-09T04:07:38.178Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3532,10 +3532,10 @@
       "t": 1791518825651
     },
     "P03.1": {
-      "on": true,
+      "on": false,
       "day": "2026-10-09",
       "base": null,
-      "t": 1791518839283
+      "t": 1791518855382
     },
     "S01.1": {
       "on": true,
@@ -3817,12 +3817,12 @@
       "sec": "phil-people",
       "title": "Russian philosophy of morals · 1",
       "day": "2026-10-09",
-      "selected": true,
+      "selected": false,
       "base": null,
       "mark": null,
       "done": false,
       "plannedAt": 1791518839284,
-      "t": 1791518839284,
+      "t": 1791518855383,
       "source": "rocket"
     }
   },
@@ -7639,6 +7639,15 @@
       },
       "t": 1791518825653
     },
+    "[\"rockets\",\"P03.1\"]": {
+      "v": {
+        "on": false,
+        "day": "2026-10-09",
+        "base": null,
+        "t": 1791518855382
+      },
+      "t": 1791518855384
+    },
     "[\"rockets\",\"S01.1\"]": {
       "v": {
         "on": true,
@@ -7648,15 +7657,6 @@
         "migrated": true
       },
       "t": 1791467400850
-    },
-    "[\"rockets\",\"P03.1\"]": {
-      "v": {
-        "on": true,
-        "day": "2026-10-09",
-        "base": null,
-        "t": 1791518839283
-      },
-      "t": 1791518839285
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
@@ -7992,15 +7992,15 @@
         "sec": "phil-people",
         "title": "Russian philosophy of morals · 1",
         "day": "2026-10-09",
-        "selected": true,
+        "selected": false,
         "base": null,
         "mark": null,
         "done": false,
         "plannedAt": 1791518839284,
-        "t": 1791518839284,
+        "t": 1791518855383,
         "source": "rocket"
       },
-      "t": 1791518839285
+      "t": 1791518855384
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
