@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-09T18:32:48.091Z",
+  "updated": "2026-10-09T18:33:02.727Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -2493,10 +2493,10 @@
     "brat2_progress_FR02": {
       "data": {
         "v": 3,
-        "t": 1791570767456,
+        "t": 1791570769386,
         "screen": "study",
         "mode": null,
-        "scrollStudy": 0,
+        "scrollStudy": 906,
         "diag": {
           "order": [
             4,
@@ -2526,7 +2526,7 @@
           "started": false
         }
       },
-      "t": 1791570767456
+      "t": 1791570769386
     },
     "brat2_progress_G01": {
       "data": {
@@ -6715,6 +6715,47 @@
       },
       "t": 1790599171605
     },
+    "[\"lessonStates\",\"brat2_progress_FR02\"]": {
+      "v": {
+        "data": {
+          "v": 3,
+          "t": 1791570769386,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 906,
+          "diag": {
+            "order": [
+              4,
+              2,
+              3,
+              1,
+              0
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          }
+        },
+        "t": 1791570769386
+      },
+      "t": 1791570770046
+    },
     "[\"lessonStates\",\"brat2_progress_G01\"]": {
       "v": {
         "data": {
@@ -7821,47 +7862,6 @@
         "t": 1790582544475
       },
       "t": 1790599171605
-    },
-    "[\"lessonStates\",\"brat2_progress_FR02\"]": {
-      "v": {
-        "data": {
-          "v": 3,
-          "t": 1791570767456,
-          "screen": "study",
-          "mode": null,
-          "scrollStudy": 0,
-          "diag": {
-            "order": [
-              4,
-              2,
-              3,
-              1,
-              0
-            ],
-            "i": 0,
-            "res": {},
-            "done": false
-          },
-          "quiz": {
-            "li": 0,
-            "i": 0,
-            "order": [],
-            "res": {
-              "0": {},
-              "1": {},
-              "2": {},
-              "3": {},
-              "4": {}
-            },
-            "queue": [],
-            "retry": false,
-            "doneAll": false,
-            "started": false
-          }
-        },
-        "t": 1791570767456
-      },
-      "t": 1791570768073
     },
     "[\"rockets\",\"B01.1\"]": {
       "v": {
