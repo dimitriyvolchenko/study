@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "yulia",
-  "updated": "2026-10-11T14:41:04.955Z",
+  "updated": "2026-10-11T14:41:20.031Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -73,10 +73,10 @@
     "brat2_progress_yulia_YU01": {
       "data": {
         "v": 3,
-        "t": 1791729656502,
+        "t": 1791729672413,
         "screen": "study",
         "mode": null,
-        "scrollStudy": 816,
+        "scrollStudy": 2090,
         "diag": {
           "order": [
             4,
@@ -106,7 +106,7 @@
           "started": false
         }
       },
-      "t": 1791729656502
+      "t": 1791729672413
     }
   },
   "rockets": {},
@@ -168,10 +168,10 @@
       "v": {
         "data": {
           "v": 3,
-          "t": 1791729656502,
+          "t": 1791729672413,
           "screen": "study",
           "mode": null,
-          "scrollStudy": 816,
+          "scrollStudy": 2090,
           "diag": {
             "order": [
               4,
@@ -201,9 +201,9 @@
             "started": false
           }
         },
-        "t": 1791729656502
+        "t": 1791729672413
       },
-      "t": 1791729664669
+      "t": 1791729672427
     },
     "[\"activity\",\"2026-10-11\",\"open\"]": {
       "v": 1791729619652,
