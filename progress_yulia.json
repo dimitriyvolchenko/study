@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "yulia",
-  "updated": "2026-10-11T14:41:20.031Z",
+  "updated": "2026-10-11T14:41:50.149Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -73,17 +73,17 @@
     "brat2_progress_yulia_YU01": {
       "data": {
         "v": 3,
-        "t": 1791729672413,
-        "screen": "study",
-        "mode": null,
-        "scrollStudy": 2090,
+        "t": 1791729701588,
+        "screen": "quiz",
+        "mode": "single",
+        "scrollStudy": 4528,
         "diag": {
           "order": [
             4,
-            0,
-            2,
             3,
-            1
+            1,
+            2,
+            0
           ],
           "i": 0,
           "res": {},
@@ -92,7 +92,13 @@
         "quiz": {
           "li": 0,
           "i": 0,
-          "order": [],
+          "order": [
+            3,
+            4,
+            2,
+            0,
+            1
+          ],
           "res": {
             "0": {},
             "1": {},
@@ -103,10 +109,10 @@
           "queue": [],
           "retry": false,
           "doneAll": false,
-          "started": false
+          "started": true
         }
       },
-      "t": 1791729672413
+      "t": 1791729701588
     }
   },
   "rockets": {},
@@ -168,17 +174,17 @@
       "v": {
         "data": {
           "v": 3,
-          "t": 1791729672413,
-          "screen": "study",
-          "mode": null,
-          "scrollStudy": 2090,
+          "t": 1791729701588,
+          "screen": "quiz",
+          "mode": "single",
+          "scrollStudy": 4528,
           "diag": {
             "order": [
               4,
-              0,
-              2,
               3,
-              1
+              1,
+              2,
+              0
             ],
             "i": 0,
             "res": {},
@@ -187,7 +193,13 @@
           "quiz": {
             "li": 0,
             "i": 0,
-            "order": [],
+            "order": [
+              3,
+              4,
+              2,
+              0,
+              1
+            ],
             "res": {
               "0": {},
               "1": {},
@@ -198,12 +210,12 @@
             "queue": [],
             "retry": false,
             "doneAll": false,
-            "started": false
+            "started": true
           }
         },
-        "t": 1791729672413
+        "t": 1791729701588
       },
-      "t": 1791729672427
+      "t": 1791729701594
     },
     "[\"activity\",\"2026-10-11\",\"open\"]": {
       "v": 1791729619652,
