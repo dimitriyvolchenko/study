@@ -1,15 +1,15 @@
 {
   "v": 3,
   "profile": "yulia",
-  "updated": "2026-09-29T22:25:35.780Z",
+  "updated": "2026-10-11T14:40:20.101Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
   "duo": {},
   "extra": [],
   "act": {
-    "d": "2026-09-30",
-    "open": 1790720734655,
+    "d": "2026-10-11",
+    "open": 1791729619652,
     "study": 0,
     "check": 0
   },
@@ -74,7 +74,13 @@
   "rockets": {},
   "blockOrder": {},
   "blockDim": {},
+  "rocketDays": {},
+  "uiPrefs": {},
   "syncOps": {
+    "[\"activity\",\"2026-10-11\",\"open\"]": {
+      "v": 1791729619652,
+      "t": 1791729619653
+    },
     "[\"lessonStates\",\"brat2_progress_yulia_CH01\"]": {
       "v": {
         "data": {
