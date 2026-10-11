@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "yulia",
-  "updated": "2026-10-11T14:40:35.065Z",
+  "updated": "2026-10-11T14:40:52.549Z",
   "marks": {},
   "secDone": {},
   "nDone": {},
@@ -10,7 +10,7 @@
   "act": {
     "d": "2026-10-11",
     "open": 1791729619652,
-    "study": 0,
+    "study": 1791729651236,
     "check": 0
   },
   "habits": {
@@ -69,6 +69,44 @@
         }
       },
       "t": 1790714907559
+    },
+    "brat2_progress_yulia_YU01": {
+      "data": {
+        "v": 3,
+        "t": 1791729652185,
+        "screen": "study",
+        "mode": null,
+        "scrollStudy": 0,
+        "diag": {
+          "order": [
+            4,
+            0,
+            2,
+            3,
+            1
+          ],
+          "i": 0,
+          "res": {},
+          "done": false
+        },
+        "quiz": {
+          "li": 0,
+          "i": 0,
+          "order": [],
+          "res": {
+            "0": {},
+            "1": {},
+            "2": {},
+            "3": {},
+            "4": {}
+          },
+          "queue": [],
+          "retry": false,
+          "doneAll": false,
+          "started": false
+        }
+      },
+      "t": 1791729652185
     }
   },
   "rockets": {},
@@ -126,9 +164,54 @@
       },
       "t": 1790714907571
     },
+    "[\"lessonStates\",\"brat2_progress_yulia_YU01\"]": {
+      "v": {
+        "data": {
+          "v": 3,
+          "t": 1791729652185,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 0,
+          "diag": {
+            "order": [
+              4,
+              0,
+              2,
+              3,
+              1
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          }
+        },
+        "t": 1791729652185
+      },
+      "t": 1791729652545
+    },
     "[\"activity\",\"2026-10-11\",\"open\"]": {
       "v": 1791729619652,
       "t": 1791729619653
+    },
+    "[\"activity\",\"2026-10-11\",\"study\"]": {
+      "v": 1791729651236,
+      "t": 1791729651236
     },
     "[\"activity\",\"2026-09-30\",\"open\"]": {
       "v": 1790720734655,
