@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-12T20:28:45.944Z",
+  "updated": "2026-10-12T20:28:52.397Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3694,16 +3694,22 @@
       "t": 1791729774863
     },
     "FR01": {
-      "on": true,
+      "on": false,
       "day": "2026-10-12",
       "base": "done",
-      "t": 1791836923859
+      "t": 1791836926226
     },
     "FR02": {
       "on": false,
       "day": "2026-10-09",
       "base": "done",
       "t": 1791570907886
+    },
+    "FR03": {
+      "on": true,
+      "day": "2026-10-12",
+      "base": null,
+      "t": 1791836930685
     },
     "G01.2": {
       "on": false,
@@ -4092,12 +4098,25 @@
       "sec": "fr-notes",
       "title": "At the desk",
       "day": "2026-10-12",
-      "selected": true,
+      "selected": false,
       "base": "done",
       "mark": "done",
       "done": false,
       "plannedAt": 1791836923860,
-      "t": 1791836923860,
+      "t": 1791836926227,
+      "source": "rocket"
+    },
+    "2026-10-12|FR03": {
+      "code": "FR03",
+      "sec": "fr-notes",
+      "title": "The computer",
+      "day": "2026-10-12",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791836930686,
+      "t": 1791836930686,
       "source": "rocket"
     }
   },
@@ -8092,12 +8111,12 @@
     },
     "[\"rockets\",\"FR01\"]": {
       "v": {
-        "on": true,
+        "on": false,
         "day": "2026-10-12",
         "base": "done",
-        "t": 1791836923859
+        "t": 1791836926226
       },
-      "t": 1791836923861
+      "t": 1791836926228
     },
     "[\"rockets\",\"FR02\"]": {
       "v": {
@@ -8161,6 +8180,15 @@
         "t": 1791729771782
       },
       "t": 1791729771784
+    },
+    "[\"rockets\",\"FR03\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-12",
+        "base": null,
+        "t": 1791836930685
+      },
+      "t": 1791836930687
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
@@ -8592,15 +8620,31 @@
         "sec": "fr-notes",
         "title": "At the desk",
         "day": "2026-10-12",
-        "selected": true,
+        "selected": false,
         "base": "done",
         "mark": "done",
         "done": false,
         "plannedAt": 1791836923860,
-        "t": 1791836923860,
+        "t": 1791836926227,
         "source": "rocket"
       },
-      "t": 1791836923861
+      "t": 1791836926228
+    },
+    "[\"rocketDays\",\"2026-10-12|FR03\"]": {
+      "v": {
+        "code": "FR03",
+        "sec": "fr-notes",
+        "title": "The computer",
+        "day": "2026-10-12",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1791836930686,
+        "t": 1791836930686,
+        "source": "rocket"
+      },
+      "t": 1791836930687
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
