@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-12T20:24:21.544Z",
+  "updated": "2026-10-12T20:24:27.267Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3650,10 +3650,10 @@
       "t": 1791467604548
     },
     "B01.2": {
-      "on": false,
-      "day": "2026-10-11",
-      "base": "look",
-      "t": 1791729774107
+      "on": true,
+      "day": "2026-10-12",
+      "base": "learn",
+      "t": 1791836665567
     },
     "DEG01": {
       "on": false,
@@ -4040,6 +4040,19 @@
       "done": false,
       "plannedAt": 1791518839284,
       "t": 1791518855383,
+      "source": "rocket"
+    },
+    "2026-10-12|B01.2": {
+      "code": "B01.2",
+      "sec": "ba",
+      "title": "Part 1 · 2",
+      "day": "2026-10-12",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791836665568,
+      "t": 1791836665568,
       "source": "rocket"
     },
     "2026-10-12|DEG03": {
@@ -7979,12 +7992,12 @@
     },
     "[\"rockets\",\"B01.2\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-11",
-        "base": "look",
-        "t": 1791729774107
+        "on": true,
+        "day": "2026-10-12",
+        "base": "learn",
+        "t": 1791836665567
       },
-      "t": 1791729774109
+      "t": 1791836665569
     },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
@@ -8499,6 +8512,22 @@
         "source": "rocket"
       },
       "t": 1791777404006
+    },
+    "[\"rocketDays\",\"2026-10-12|B01.2\"]": {
+      "v": {
+        "code": "B01.2",
+        "sec": "ba",
+        "title": "Part 1 · 2",
+        "day": "2026-10-12",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791836665568,
+        "t": 1791836665568,
+        "source": "rocket"
+      },
+      "t": 1791836665569
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
