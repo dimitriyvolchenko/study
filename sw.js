@@ -1,7 +1,7 @@
-/* STUDY-SW-NETWORK-FIRST · v007 · 2026-10-08
+/* STUDY-SW-NETWORK-FIRST · v008 · 2026-10-17
    Always ask the network for the HTML shell. Offline fallback uses the versioned cache.
    Never cache progress responses, wipe storage, or alter profile data. */
-const VERSION='2026-10-08-7';
+const VERSION='2026-10-17-8';
 const SHELL='study-pwa-shell-'+VERSION;
 const COURSES='study-pwa-courses-v1';
 const BASE=new URL('./',self.location.href);
@@ -17,7 +17,7 @@ self.addEventListener('install',event=>event.waitUntil((async()=>{
   const response=await fetch(new Request(url('index.html'),{cache:'reload'}));
   if(!response.ok)throw new Error('Study shell unavailable: '+response.status);
   const text=await response.clone().text();
-  if(!text.includes('v007-2026-10-08-rocket-daily'))throw new Error('Study shell and worker versions do not match');
+  if(!text.includes('v008-2026-10-17-touch-freeze'))throw new Error('Study shell and worker versions do not match');
   await cache.put(url('index.html'),response);
   await Promise.all(FILES.filter(p=>p!=='index.html').map(async p=>{
    try{const r=await fetch(new Request(url(p),{cache:'reload'}));if(r.ok)await cache.put(url(p),r);}catch(e){}
