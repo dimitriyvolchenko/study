@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-22T16:37:47.224Z",
+  "updated": "2026-10-22T16:39:39.618Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -451,7 +451,7 @@
   "act": {
     "d": "2026-10-22",
     "open": 1792672822770,
-    "study": 0,
+    "study": 1792687169627,
     "check": 0
   },
   "habits": {
@@ -1346,6 +1346,44 @@
         }
       },
       "t": 1791777415957
+    },
+    "brat2_progress_DEG04": {
+      "data": {
+        "v": 3,
+        "t": 1792687175503,
+        "screen": "study",
+        "mode": null,
+        "scrollStudy": 927,
+        "diag": {
+          "order": [
+            2,
+            4,
+            0,
+            1,
+            3
+          ],
+          "i": 0,
+          "res": {},
+          "done": false
+        },
+        "quiz": {
+          "li": 0,
+          "i": 0,
+          "order": [],
+          "res": {
+            "0": {},
+            "1": {},
+            "2": {},
+            "3": {},
+            "4": {}
+          },
+          "queue": [],
+          "retry": false,
+          "doneAll": false,
+          "started": false
+        }
+      },
+      "t": 1792687175503
     },
     "brat2_progress_E00": {
       "data": {
@@ -8313,6 +8351,47 @@
       },
       "t": 1790599171605
     },
+    "[\"lessonStates\",\"brat2_progress_DEG04\"]": {
+      "v": {
+        "data": {
+          "v": 3,
+          "t": 1792687175503,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 927,
+          "diag": {
+            "order": [
+              2,
+              4,
+              0,
+              1,
+              3
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          }
+        },
+        "t": 1792687175503
+      },
+      "t": 1792687175510
+    },
     "[\"rockets\",\"B01.1\"]": {
       "v": {
         "on": false,
@@ -9587,6 +9666,10 @@
     "[\"activity\",\"2026-10-22\",\"open\"]": {
       "v": 1792672822770,
       "t": 1792672822770
+    },
+    "[\"activity\",\"2026-10-22\",\"study\"]": {
+      "v": 1792687169627,
+      "t": 1792687169628
     },
     "[\"activity\",\"2026-10-19\",\"open\"]": {
       "v": null,
