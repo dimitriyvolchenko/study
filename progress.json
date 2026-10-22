@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-22T12:40:24.561Z",
+  "updated": "2026-10-22T16:37:28.843Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3758,10 +3758,10 @@
       "t": 1791729773282
     },
     "K01.1": {
-      "on": false,
-      "day": "2026-10-11",
+      "on": true,
+      "day": "2026-10-22",
       "base": "learn",
-      "t": 1791729770994
+      "t": 1792687045980
     },
     "M01": {
       "on": false,
@@ -4301,6 +4301,19 @@
       "plannedAt": 1792122342251,
       "t": 1792122342252,
       "source": "queued-work"
+    },
+    "2026-10-22|K01.1": {
+      "code": "K01.1",
+      "sec": "crim",
+      "title": "1. The science and its subject · 1",
+      "day": "2026-10-22",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1792687045981,
+      "t": 1792687045981,
+      "source": "rocket"
     }
   },
   "uiPrefs": {
@@ -8424,12 +8437,12 @@
     },
     "[\"rockets\",\"K01.1\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-11",
+        "on": true,
+        "day": "2026-10-22",
         "base": "learn",
-        "t": 1791729770994
+        "t": 1792687045980
       },
-      "t": 1791729770995
+      "t": 1792687045982
     },
     "[\"rockets\",\"M01\"]": {
       "v": {
@@ -9098,6 +9111,22 @@
         "source": "queued-work"
       },
       "t": 1792122342253
+    },
+    "[\"rocketDays\",\"2026-10-22|K01.1\"]": {
+      "v": {
+        "code": "K01.1",
+        "sec": "crim",
+        "title": "1. The science and its subject · 1",
+        "day": "2026-10-22",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1792687045981,
+        "t": 1792687045981,
+        "source": "rocket"
+      },
+      "t": 1792687045982
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
