@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-22T16:37:28.843Z",
+  "updated": "2026-10-22T16:37:47.224Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -4319,9 +4319,9 @@
   "uiPrefs": {
     "sudakPhoto": {
       "value": {
-        "id": "sudak-promenade"
+        "id": "original"
       },
-      "t": 1791835910436
+      "t": 1792687065510
     },
     "tabOrder": {
       "value": [
@@ -9131,11 +9131,11 @@
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
         "value": {
-          "id": "sudak-promenade"
+          "id": "original"
         },
-        "t": 1791835910436
+        "t": 1792687065510
       },
-      "t": 1791835910438
+      "t": 1792687065511
     },
     "[\"uiPrefs\",\"tabOrder\"]": {
       "v": {
