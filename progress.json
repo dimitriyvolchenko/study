@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-25T05:31:33.367Z",
+  "updated": "2026-10-25T08:24:52.509Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -460,7 +460,7 @@
   "extra": [],
   "act": {
     "d": "2026-10-25",
-    "open": 1792906211502,
+    "open": 1792916691066,
     "study": 0,
     "check": 0
   },
@@ -3956,624 +3956,6 @@
     "en|E23Final": {
       "on": true,
       "t": 1790682138303
-    }
-  },
-  "rocketDays": {
-    "2026-09-29|P02.2": {
-      "code": "P02.2",
-      "sec": "phil-people",
-      "title": "From Bacon to Feyerabend · 2",
-      "day": "2026-09-29",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1790682300402,
-      "t": 1790682300402,
-      "migrated": true
-    },
-    "2026-10-06|F01.2": {
-      "code": "F01.2",
-      "sec": "phil-terms",
-      "title": "Language of philosophy · 2",
-      "day": "2026-10-06",
-      "selected": true,
-      "base": "work",
-      "mark": "work",
-      "done": false,
-      "plannedAt": 1791309543413,
-      "t": 1791309543413,
-      "migrated": true
-    },
-    "2026-10-06|G01.2": {
-      "code": "G01.2",
-      "sec": "law",
-      "title": "State: power, forms, limits · 2",
-      "day": "2026-10-06",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1791309560717,
-      "t": 1791309560717,
-      "migrated": true
-    },
-    "2026-10-06|K01.1": {
-      "code": "K01.1",
-      "sec": "crim",
-      "title": "1. The science and its subject · 1",
-      "day": "2026-10-06",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1791310248073,
-      "t": 1791310248073,
-      "migrated": true
-    },
-    "2026-10-06|M01": {
-      "code": "M01",
-      "sec": "map",
-      "title": "From Socrates to philosophy of science",
-      "day": "2026-10-06",
-      "selected": true,
-      "base": "look",
-      "mark": "look",
-      "done": false,
-      "plannedAt": 1791310013394,
-      "t": 1791310013394,
-      "migrated": true
-    },
-    "2026-10-06|S01.1": {
-      "code": "S01.1",
-      "sec": "forensics",
-      "title": "Science, subject, tasks · 1",
-      "day": "2026-10-06",
-      "selected": true,
-      "base": "work",
-      "mark": "work",
-      "done": false,
-      "plannedAt": 1791310855972,
-      "t": 1791310855972,
-      "migrated": true
-    },
-    "2026-10-08|B01.1": {
-      "code": "B01.1",
-      "sec": "ba",
-      "title": "Part 1 · 1",
-      "day": "2026-10-08",
-      "selected": false,
-      "base": "look",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1791467589091,
-      "t": 1791467604549,
-      "source": "rocket"
-    },
-    "2026-10-08|B01.2": {
-      "code": "B01.2",
-      "sec": "ba",
-      "title": "Part 1 · 2",
-      "day": "2026-10-08",
-      "selected": false,
-      "base": "look",
-      "mark": "look",
-      "done": false,
-      "plannedAt": 1791467591600,
-      "t": 1791467600479,
-      "source": "rocket"
-    },
-    "2026-10-08|DEG01": {
-      "code": "DEG01",
-      "sec": "en",
-      "title": "Environment and change · 1",
-      "day": "2026-10-08",
-      "selected": false,
-      "base": null,
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1791456488725,
-      "t": 1791467484924,
-      "migrated": true
-    },
-    "2026-10-08|DEG02": {
-      "code": "DEG02",
-      "sec": "en",
-      "title": "Society and rights · 2",
-      "day": "2026-10-08",
-      "selected": true,
-      "base": null,
-      "mark": "learn",
-      "done": true,
-      "plannedAt": 1791456501383,
-      "t": 1791467492069,
-      "migrated": true
-    },
-    "2026-10-08|DEG03": {
-      "code": "DEG03",
-      "sec": "en",
-      "title": "Thinking and argument · 3",
-      "day": "2026-10-08",
-      "selected": true,
-      "base": null,
-      "mark": "work",
-      "done": true,
-      "plannedAt": 1791456507662,
-      "t": 1791467500246,
-      "migrated": true
-    },
-    "2026-10-08|FR01": {
-      "code": "FR01",
-      "sec": "fr-notes",
-      "title": "At the desk",
-      "day": "2026-10-08",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1791456535845,
-      "t": 1791456535845,
-      "migrated": true
-    },
-    "2026-10-08|FR02": {
-      "code": "FR02",
-      "sec": "fr-notes",
-      "title": "Papers and notes",
-      "day": "2026-10-08",
-      "selected": true,
-      "base": "look",
-      "mark": "look",
-      "done": false,
-      "plannedAt": 1791456538059,
-      "t": 1791456538059,
-      "migrated": true
-    },
-    "2026-10-09|B01.2": {
-      "code": "B01.2",
-      "sec": "ba",
-      "title": "Part 1 · 2",
-      "day": "2026-10-09",
-      "selected": true,
-      "base": "look",
-      "mark": "look",
-      "done": false,
-      "plannedAt": 1791518775923,
-      "t": 1791518775923,
-      "source": "rocket"
-    },
-    "2026-10-09|DEG01": {
-      "code": "DEG01",
-      "sec": "en",
-      "title": "Environment and change · 1",
-      "day": "2026-10-09",
-      "selected": false,
-      "base": "done",
-      "mark": "done",
-      "done": false,
-      "plannedAt": 1791518758479,
-      "t": 1791570432322,
-      "source": "rocket"
-    },
-    "2026-10-09|DEG02": {
-      "code": "DEG02",
-      "sec": "en",
-      "title": "Society and rights · 2",
-      "day": "2026-10-09",
-      "selected": false,
-      "base": "learn",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1791518756600,
-      "t": 1791570568221,
-      "source": "rocket"
-    },
-    "2026-10-09|F01.2": {
-      "code": "F01.2",
-      "sec": "phil-terms",
-      "title": "Language of philosophy · 2",
-      "day": "2026-10-09",
-      "selected": true,
-      "base": "work",
-      "mark": "work",
-      "done": false,
-      "plannedAt": 1791518791169,
-      "t": 1791518791169,
-      "source": "rocket"
-    },
-    "2026-10-09|FR01": {
-      "code": "FR01",
-      "sec": "fr-notes",
-      "title": "At the desk",
-      "day": "2026-10-09",
-      "selected": false,
-      "base": "learn",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1791518887517,
-      "t": 1791518891648,
-      "source": "queued-work"
-    },
-    "2026-10-09|FR02": {
-      "code": "FR02",
-      "sec": "fr-notes",
-      "title": "Papers and notes",
-      "day": "2026-10-09",
-      "selected": false,
-      "base": "look",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1791518905844,
-      "t": 1791570907887,
-      "source": "rocket"
-    },
-    "2026-10-09|P02.2": {
-      "code": "P02.2",
-      "sec": "phil-people",
-      "title": "From Bacon to Feyerabend · 2",
-      "day": "2026-10-09",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1791518825652,
-      "t": 1791518825652,
-      "source": "rocket"
-    },
-    "2026-10-09|P03.1": {
-      "code": "P03.1",
-      "sec": "phil-people",
-      "title": "Russian philosophy of morals · 1",
-      "day": "2026-10-09",
-      "selected": false,
-      "base": null,
-      "mark": null,
-      "done": false,
-      "plannedAt": 1791518839284,
-      "t": 1791518855383,
-      "source": "rocket"
-    },
-    "2026-10-12|B01.2": {
-      "code": "B01.2",
-      "sec": "ba",
-      "title": "Part 1 · 2",
-      "day": "2026-10-12",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1791836665568,
-      "t": 1791836665568,
-      "source": "rocket"
-    },
-    "2026-10-12|B02.1": {
-      "code": "B02.1",
-      "sec": "ba",
-      "title": "Part 2 · 1",
-      "day": "2026-10-12",
-      "selected": true,
-      "base": null,
-      "mark": null,
-      "done": false,
-      "plannedAt": 1791836670164,
-      "t": 1791836670164,
-      "source": "rocket"
-    },
-    "2026-10-12|DEG03": {
-      "code": "DEG03",
-      "sec": "en",
-      "title": "Thinking and argument · 3",
-      "day": "2026-10-12",
-      "selected": true,
-      "base": "work",
-      "mark": "work",
-      "done": false,
-      "plannedAt": 1791777404005,
-      "t": 1791777404005,
-      "source": "rocket"
-    },
-    "2026-10-12|FR01": {
-      "code": "FR01",
-      "sec": "fr-notes",
-      "title": "At the desk",
-      "day": "2026-10-12",
-      "selected": false,
-      "base": "done",
-      "mark": "done",
-      "done": false,
-      "plannedAt": 1791836923860,
-      "t": 1791836926227,
-      "source": "rocket"
-    },
-    "2026-10-12|FR03": {
-      "code": "FR03",
-      "sec": "fr-notes",
-      "title": "The computer",
-      "day": "2026-10-12",
-      "selected": true,
-      "base": null,
-      "mark": null,
-      "done": false,
-      "plannedAt": 1791836930686,
-      "t": 1791836930686,
-      "source": "rocket"
-    },
-    "2026-10-13|FR02": {
-      "code": "FR02",
-      "sec": "fr-notes",
-      "title": "Papers and notes",
-      "day": "2026-10-13",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1791894793722,
-      "t": 1791894793722,
-      "source": "rocket"
-    },
-    "2026-10-13|FR03": {
-      "code": "FR03",
-      "sec": "fr-notes",
-      "title": "The computer",
-      "day": "2026-10-13",
-      "selected": true,
-      "base": null,
-      "mark": "look",
-      "done": true,
-      "plannedAt": 1791894801479,
-      "t": 1791894801480,
-      "source": "queued-work"
-    },
-    "2026-10-13|P02.2": {
-      "code": "P02.2",
-      "sec": "phil-people",
-      "title": "From Bacon to Feyerabend · 2",
-      "day": "2026-10-13",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1791894832753,
-      "t": 1791894832753,
-      "source": "rocket"
-    },
-    "2026-10-13|P03.1": {
-      "code": "P03.1",
-      "sec": "phil-people",
-      "title": "Russian philosophy of morals · 1",
-      "day": "2026-10-13",
-      "selected": true,
-      "base": null,
-      "mark": null,
-      "done": false,
-      "plannedAt": 1791894840942,
-      "t": 1791894840942,
-      "source": "rocket"
-    },
-    "2026-10-16|B01.2": {
-      "code": "B01.2",
-      "sec": "ba",
-      "title": "Part 1 · 2",
-      "day": "2026-10-16",
-      "selected": false,
-      "base": "learn",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1792122366028,
-      "t": 1792122416607,
-      "source": "queued-work"
-    },
-    "2026-10-16|B02.1": {
-      "code": "B02.1",
-      "sec": "ba",
-      "title": "Part 2 · 1",
-      "day": "2026-10-16",
-      "selected": true,
-      "base": null,
-      "mark": "work",
-      "done": true,
-      "plannedAt": 1792122368980,
-      "t": 1792122420044,
-      "source": "queued-work"
-    },
-    "2026-10-16|DEG03": {
-      "code": "DEG03",
-      "sec": "en",
-      "title": "Thinking and argument · 3",
-      "day": "2026-10-16",
-      "selected": false,
-      "base": "work",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1792122317063,
-      "t": 1792122397515,
-      "source": "queued-work"
-    },
-    "2026-10-16|DEG04": {
-      "code": "DEG04",
-      "sec": "en",
-      "title": "Science and method · 4",
-      "day": "2026-10-16",
-      "selected": true,
-      "base": "work",
-      "mark": "work",
-      "done": false,
-      "plannedAt": 1792122326786,
-      "t": 1792122326786,
-      "source": "rocket"
-    },
-    "2026-10-16|F01.2": {
-      "code": "F01.2",
-      "sec": "phil-terms",
-      "title": "Language of philosophy · 2",
-      "day": "2026-10-16",
-      "selected": true,
-      "base": "work",
-      "mark": "work",
-      "done": false,
-      "plannedAt": 1792122352111,
-      "t": 1792122352111,
-      "source": "rocket"
-    },
-    "2026-10-16|P02.2": {
-      "code": "P02.2",
-      "sec": "phil-people",
-      "title": "From Bacon to Feyerabend · 2",
-      "day": "2026-10-16",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1792122339747,
-      "t": 1792122340221,
-      "source": "queued-work"
-    },
-    "2026-10-16|P03.1": {
-      "code": "P03.1",
-      "sec": "phil-people",
-      "title": "Russian philosophy of morals · 1",
-      "day": "2026-10-16",
-      "selected": true,
-      "base": null,
-      "mark": "look",
-      "done": true,
-      "plannedAt": 1792122342251,
-      "t": 1792122342252,
-      "source": "queued-work"
-    },
-    "2026-10-22|K01.1": {
-      "code": "K01.1",
-      "sec": "crim",
-      "title": "1. The science and its subject · 1",
-      "day": "2026-10-22",
-      "selected": true,
-      "base": "learn",
-      "mark": "learn",
-      "done": false,
-      "plannedAt": 1792687045981,
-      "t": 1792687045981,
-      "source": "rocket"
-    },
-    "2026-10-23|B02.1": {
-      "code": "B02.1",
-      "sec": "ba",
-      "title": "Part 2 · 1",
-      "day": "2026-10-23",
-      "selected": false,
-      "base": "work",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1792759176706,
-      "t": 1792759178664,
-      "source": "queued-work"
-    },
-    "2026-10-23|DEG04": {
-      "code": "DEG04",
-      "sec": "en",
-      "title": "Science and method · 4",
-      "day": "2026-10-23",
-      "selected": false,
-      "base": "work",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1792759298597,
-      "t": 1792759300492,
-      "source": "queued-work"
-    },
-    "2026-10-23|FR02": {
-      "code": "FR02",
-      "sec": "fr-notes",
-      "title": "Papers and notes",
-      "day": "2026-10-23",
-      "selected": false,
-      "base": "learn",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1792767419320,
-      "t": 1792767423156,
-      "source": "queued-work"
-    },
-    "2026-10-23|FR03": {
-      "code": "FR03",
-      "sec": "fr-notes",
-      "title": "The computer",
-      "day": "2026-10-23",
-      "selected": false,
-      "base": "look",
-      "mark": "done",
-      "done": true,
-      "plannedAt": 1792767421500,
-      "t": 1792767423885,
-      "source": "queued-work"
-    },
-    "2026-10-25|B02.2": {
-      "code": "B02.2",
-      "sec": "ba",
-      "title": "Part 2 · 2",
-      "day": "2026-10-25",
-      "selected": true,
-      "base": null,
-      "mark": null,
-      "done": false,
-      "plannedAt": 1792906254712,
-      "t": 1792906254712,
-      "source": "rocket"
-    },
-    "2026-10-25|DEG05": {
-      "code": "DEG05",
-      "sec": "en",
-      "title": "Evaluation and precision · 5",
-      "day": "2026-10-25",
-      "selected": true,
-      "base": null,
-      "mark": null,
-      "done": false,
-      "plannedAt": 1792906243354,
-      "t": 1792906243354,
-      "source": "rocket"
-    },
-    "2026-10-25|FR04": {
-      "code": "FR04",
-      "sec": "fr-notes",
-      "title": "Letters and lists",
-      "day": "2026-10-25",
-      "selected": true,
-      "base": null,
-      "mark": null,
-      "done": false,
-      "plannedAt": 1792906268632,
-      "t": 1792906268632,
-      "source": "rocket"
-    },
-    "2026-10-25|K01.2": {
-      "code": "K01.2",
-      "sec": "crim",
-      "title": "1. The science and its subject · 2",
-      "day": "2026-10-25",
-      "selected": true,
-      "base": "look",
-      "mark": "look",
-      "done": false,
-      "plannedAt": 1792906291688,
-      "t": 1792906291688,
-      "source": "rocket"
-    }
-  },
-  "uiPrefs": {
-    "sudakPhoto": {
-      "value": {
-        "id": "original"
-      },
-      "t": 1792687065510
-    },
-    "tabOrder": {
-      "value": [
-        "#/all",
-        "#/rocket",
-        "#/",
-        "#/habits",
-        "#/sync"
-      ],
-      "t": 1791467699507
     }
   },
   "syncOps": {
@@ -8865,6 +8247,15 @@
       },
       "t": 1792783894015
     },
+    "[\"rockets\",\"K01.2\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-25",
+        "base": "look",
+        "t": 1792906291687
+      },
+      "t": 1792906291689
+    },
     "[\"rockets\",\"M01\"]": {
       "v": {
         "on": false,
@@ -8900,15 +8291,6 @@
         "t": 1791729771782
       },
       "t": 1791729771784
-    },
-    "[\"rockets\",\"K01.2\"]": {
-      "v": {
-        "on": true,
-        "day": "2026-10-25",
-        "base": "look",
-        "t": 1792906291687
-      },
-      "t": 1792906291689
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
@@ -8949,6 +8331,692 @@
         "t": 1790682138303
       },
       "t": 1790682138304
+    },
+    "[\"secDone\",\"ba\",\"2026-09-14\"]": {
+      "v": true,
+      "t": 1789395307927
+    },
+    "[\"secDone\",\"ba\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791308362156
+    },
+    "[\"secDone\",\"ba\",\"2026-10-07\"]": {
+      "v": true,
+      "t": 1791375525061
+    },
+    "[\"secDone\",\"ba\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465829104
+    },
+    "[\"secDone\",\"ba\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792759328326
+    },
+    "[\"secDone\",\"crim\",\"2026-09-18\"]": {
+      "v": true,
+      "t": 1790192357146
+    },
+    "[\"secDone\",\"crim\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790192357146
+    },
+    "[\"secDone\",\"crim\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791310845885
+    },
+    "[\"secDone\",\"crim\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465833256
+    },
+    "[\"secDone\",\"crim\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792783892209
+    },
+    "[\"secDone\",\"en\",\"2026-09-14\"]": {
+      "v": true,
+      "t": 1790362648109
+    },
+    "[\"secDone\",\"en\",\"2026-09-21\"]": {
+      "v": true,
+      "t": 1790362648109
+    },
+    "[\"secDone\",\"en\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790362648109
+    },
+    "[\"secDone\",\"en\",\"2026-09-24\"]": {
+      "v": true,
+      "t": 1790362648109
+    },
+    "[\"secDone\",\"en\",\"2026-09-25\"]": {
+      "v": true,
+      "t": 1790362648109
+    },
+    "[\"secDone\",\"en\",\"2026-09-29\"]": {
+      "v": true,
+      "t": 1790682176926
+    },
+    "[\"secDone\",\"en\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791308352433
+    },
+    "[\"secDone\",\"en\",\"2026-10-07\"]": {
+      "v": true,
+      "t": 1791375522845
+    },
+    "[\"secDone\",\"en\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465824967
+    },
+    "[\"secDone\",\"en\",\"2026-10-09\"]": {
+      "v": true,
+      "t": 1791570593466
+    },
+    "[\"secDone\",\"en\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792759330025
+    },
+    "[\"secDone\",\"forensics\",\"2026-09-10\"]": {
+      "v": true,
+      "t": 1789040425111
+    },
+    "[\"secDone\",\"forensics\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791311278079
+    },
+    "[\"secDone\",\"fr-notes\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790190441434
+    },
+    "[\"secDone\",\"fr-notes\",\"2026-10-07\"]": {
+      "v": true,
+      "t": 1791377851555
+    },
+    "[\"secDone\",\"fr-notes\",\"2026-10-09\"]": {
+      "v": true,
+      "t": 1791570898989
+    },
+    "[\"secDone\",\"fr-notes\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792767386359
+    },
+    "[\"secDone\",\"law\",\"2026-09-18\"]": {
+      "v": true,
+      "t": 1790364265600
+    },
+    "[\"secDone\",\"law\",\"2026-09-25\"]": {
+      "v": true,
+      "t": 1790364265600
+    },
+    "[\"secDone\",\"law\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791310010940
+    },
+    "[\"secDone\",\"map\",\"2026-09-18\"]": {
+      "v": true,
+      "t": 1790191916859
+    },
+    "[\"secDone\",\"map\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790191916859
+    },
+    "[\"secDone\",\"map\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791310219349
+    },
+    "[\"secDone\",\"phil-people\",\"2026-09-10\"]": {
+      "v": true,
+      "t": 1790363341609
+    },
+    "[\"secDone\",\"phil-people\",\"2026-09-14\"]": {
+      "v": true,
+      "t": 1790363341609
+    },
+    "[\"secDone\",\"phil-people\",\"2026-09-18\"]": {
+      "v": true,
+      "t": 1790363341609
+    },
+    "[\"secDone\",\"phil-people\",\"2026-09-21\"]": {
+      "v": true,
+      "t": 1790363341609
+    },
+    "[\"secDone\",\"phil-people\",\"2026-09-22\"]": {
+      "v": true,
+      "t": 1790363341609
+    },
+    "[\"secDone\",\"phil-people\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790363341609
+    },
+    "[\"secDone\",\"phil-people\",\"2026-09-25\"]": {
+      "v": true,
+      "t": 1790363341609
+    },
+    "[\"secDone\",\"phil-people\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791309311312
+    },
+    "[\"secDone\",\"phil-terms\",\"2026-09-18\"]": {
+      "v": true,
+      "t": 1790363582047
+    },
+    "[\"secDone\",\"phil-terms\",\"2026-09-22\"]": {
+      "v": true,
+      "t": 1790363582047
+    },
+    "[\"secDone\",\"phil-terms\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790363582047
+    },
+    "[\"secDone\",\"phil-terms\",\"2026-09-25\"]": {
+      "v": true,
+      "t": 1790363582047
+    },
+    "[\"secDone\",\"phil-terms\",\"2026-10-06\"]": {
+      "v": true,
+      "t": 1791309547008
+    },
+    "[\"nDone\",\"en\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790182068953
+    },
+    "[\"nDone\",\"phil-people\",\"2026-09-22\"]": {
+      "v": true,
+      "t": 1790057473318
+    },
+    "[\"duo\",\"en\",\"2026-09-23\"]": {
+      "v": true,
+      "t": 1790362648109
+    },
+    "[\"duo\",\"en\",\"2026-09-25\"]": {
+      "v": true,
+      "t": 1790362648109
+    },
+    "[\"duo\",\"en\",\"2026-09-29\"]": {
+      "v": true,
+      "t": 1790682176926
+    },
+    "[\"duo\",\"en\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465824967
+    },
+    "[\"duo\",\"en\",\"2026-10-09\"]": {
+      "v": true,
+      "t": 1791570593466
+    },
+    "[\"duo\",\"fr-notes\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792767386359
+    },
+    "[\"trashGroup\",\"g2\"]": {
+      "v": {
+        "id": "g2",
+        "items": [
+          {
+            "id": "hmufglk4o7hu",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1,
+              "2026-09-28": 1
+            },
+            "name": "🎧 ege Words",
+            "order": 0
+          },
+          {
+            "id": "hmufglk4o5tk",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "PhDpr.State&Law",
+            "order": 1
+          },
+          {
+            "id": "hmufglk4o41s",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "ListenPhilosophy",
+            "order": 2
+          },
+          {
+            "id": "hmufglk4o6hn",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "good read in Speechify",
+            "order": 3
+          },
+          {
+            "id": "hmufglk4o344",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "Criminalistics",
+            "order": 4
+          },
+          {
+            "id": "hmufglk4of",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "⬇️ listenForensicEngB",
+            "order": 5
+          },
+          {
+            "id": "hmufglk4o5np",
+            "d": {
+              "2026-09-23": 1
+            },
+            "name": "Forensic Expertology",
+            "order": 6
+          },
+          {
+            "id": "hmufglk4o6g6",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "⬆️ Schwartz",
+            "order": 7
+          },
+          {
+            "id": "hmufglk4o4v5",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "makeOneExpertise",
+            "order": 8
+          },
+          {
+            "id": "hmufglk4o7dd",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "⬇️ 10p: Guide to Ethics",
+            "order": 9
+          },
+          {
+            "id": "hmufglk4o72l",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "Max Scheler",
+            "order": 10
+          },
+          {
+            "id": "hmufglk4o1uq",
+            "d": {
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "⬆️🌃 learn ethics",
+            "order": 11
+          }
+        ],
+        "title": "development",
+        "icon": "🎧",
+        "order": 0,
+        "deletedAt": 1790612965414
+      },
+      "t": 1790612965416
+    },
+    "[\"trashGroup\",\"hmuguabk51r1\"]": {
+      "v": {
+        "id": "hmuguabk51r1",
+        "items": [],
+        "title": "English",
+        "icon": "⭐",
+        "order": 1,
+        "deletedAt": 1790612984216
+      },
+      "t": 1790612984218
+    },
+    "[\"trashGroup\",\"g1\"]": {
+      "v": {
+        "id": "g1",
+        "items": [
+          {
+            "id": "hmufglk4n4j2",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "working on Article",
+            "order": 0
+          },
+          {
+            "id": "hmufglk4o6kn",
+            "d": {
+              "2026-09-21": 1,
+              "2026-09-22": 1,
+              "2026-09-23": 1
+            },
+            "name": "significant amount",
+            "order": 1
+          }
+        ],
+        "title": "work in forensics",
+        "icon": "🔬",
+        "order": 2,
+        "deletedAt": 1790616478872
+      },
+      "t": 1790616478874
+    },
+    "[\"split\",\"B01\"]": {
+      "v": 1789050745859,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E07\"]": {
+      "v": 1789395276258,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E08\"]": {
+      "v": 1789395277354,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E09\"]": {
+      "v": 1789395278260,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E10\"]": {
+      "v": 1789395279256,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E11\"]": {
+      "v": 1789395280091,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E12\"]": {
+      "v": 1789395281019,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E13\"]": {
+      "v": 1789395281896,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E14\"]": {
+      "v": 1789395282796,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E15\"]": {
+      "v": 1789395284072,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E16\"]": {
+      "v": 1789395285377,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E18\"]": {
+      "v": 1789981490787,
+      "t": 1790755407513
+    },
+    "[\"split\",\"E19\"]": {
+      "v": 1789981493123,
+      "t": 1790755407513
+    },
+    "[\"split\",\"F01\"]": {
+      "v": 1790057878448,
+      "t": 1790755407513
+    },
+    "[\"split\",\"G01\"]": {
+      "v": 1789713076686,
+      "t": 1790755407513
+    },
+    "[\"split\",\"K01\"]": {
+      "v": 1789713409672,
+      "t": 1790755407513
+    },
+    "[\"split\",\"P01\"]": {
+      "v": 1790057439734,
+      "t": 1790755407513
+    },
+    "[\"split\",\"P02\"]": {
+      "v": 1790006692176,
+      "t": 1790755407513
+    },
+    "[\"split\",\"S01\"]": {
+      "v": 1789071488988,
+      "t": 1790755407513
+    },
+    "[\"activity\",\"2026-10-25\",\"open\"]": {
+      "v": 1792916691066,
+      "t": 1792916691067
+    },
+    "[\"activity\",\"2026-09-30\",\"open\"]": {
+      "v": null,
+      "t": 1792916691067
+    },
+    "[\"activity\",\"2026-09-29\",\"open\"]": {
+      "v": null,
+      "t": 1790796980928
+    },
+    "[\"group\",\"g1\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habit\",\"g1\",\"hmufglk4n4j2\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habit\",\"g1\",\"hmufglk4o6kn\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790616478874
+    },
+    "[\"group\",\"g2\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o7hu\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-28\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o5tk\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o5tk\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o41s\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o6hn\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o6hn\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o344\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o344\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4of\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4of\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o5np\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o5np\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o6g6\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o4v5\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-21\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o7dd\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o72l\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habit\",\"g2\",\"hmufglk4o1uq\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-22\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-23\"]": {
+      "v": null,
+      "t": 1790612965416
+    },
+    "[\"group\",\"hmuguabk51r1\"]": {
+      "v": null,
+      "t": 1790612984218
+    },
+    "[\"activity\",\"2026-09-28\",\"open\"]": {
+      "v": null,
+      "t": 1792051132608
+    },
+    "[\"activity\",\"2026-09-28\",\"study\"]": {
+      "v": null,
+      "t": 1790678492727
+    },
+    "[\"activity\",\"2026-09-23\",\"open\"]": {
+      "v": 1790180678324,
+      "t": 1790180678324
+    },
+    "[\"activity\",\"2026-09-23\",\"study\"]": {
+      "v": 1790190373440,
+      "t": 1790190373440
+    },
+    "[\"activity\",\"2026-09-23\",\"check\"]": {
+      "v": 1790190434221,
+      "t": 1790190434221
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-28\"]": {
+      "v": null,
+      "t": 1790612996023
+    },
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-28\"]": {
+      "v": null,
+      "t": 1790612996661
+    },
+    "[\"secDone\",\"en\",\"2026-09-28\"]": {
+      "v": null,
+      "t": 1790616461507
+    },
+    "[\"activity\",\"2026-09-29\",\"study\"]": {
+      "v": null,
+      "t": 1790767979403
     },
     "[\"rocketDays\",\"2026-09-29|P02.2\"]": {
       "v": {
@@ -9708,464 +9776,6 @@
       },
       "t": 1791467699509
     },
-    "[\"secDone\",\"ba\",\"2026-09-14\"]": {
-      "v": true,
-      "t": 1789395307927
-    },
-    "[\"secDone\",\"ba\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791308362156
-    },
-    "[\"secDone\",\"ba\",\"2026-10-07\"]": {
-      "v": true,
-      "t": 1791375525061
-    },
-    "[\"secDone\",\"ba\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465829104
-    },
-    "[\"secDone\",\"ba\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792759328326
-    },
-    "[\"secDone\",\"crim\",\"2026-09-18\"]": {
-      "v": true,
-      "t": 1790192357146
-    },
-    "[\"secDone\",\"crim\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790192357146
-    },
-    "[\"secDone\",\"crim\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791310845885
-    },
-    "[\"secDone\",\"crim\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465833256
-    },
-    "[\"secDone\",\"crim\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792783892209
-    },
-    "[\"secDone\",\"en\",\"2026-09-14\"]": {
-      "v": true,
-      "t": 1790362648109
-    },
-    "[\"secDone\",\"en\",\"2026-09-21\"]": {
-      "v": true,
-      "t": 1790362648109
-    },
-    "[\"secDone\",\"en\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790362648109
-    },
-    "[\"secDone\",\"en\",\"2026-09-24\"]": {
-      "v": true,
-      "t": 1790362648109
-    },
-    "[\"secDone\",\"en\",\"2026-09-25\"]": {
-      "v": true,
-      "t": 1790362648109
-    },
-    "[\"secDone\",\"en\",\"2026-09-29\"]": {
-      "v": true,
-      "t": 1790682176926
-    },
-    "[\"secDone\",\"en\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791308352433
-    },
-    "[\"secDone\",\"en\",\"2026-10-07\"]": {
-      "v": true,
-      "t": 1791375522845
-    },
-    "[\"secDone\",\"en\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465824967
-    },
-    "[\"secDone\",\"en\",\"2026-10-09\"]": {
-      "v": true,
-      "t": 1791570593466
-    },
-    "[\"secDone\",\"en\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792759330025
-    },
-    "[\"secDone\",\"forensics\",\"2026-09-10\"]": {
-      "v": true,
-      "t": 1789040425111
-    },
-    "[\"secDone\",\"forensics\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791311278079
-    },
-    "[\"secDone\",\"fr-notes\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790190441434
-    },
-    "[\"secDone\",\"fr-notes\",\"2026-10-07\"]": {
-      "v": true,
-      "t": 1791377851555
-    },
-    "[\"secDone\",\"fr-notes\",\"2026-10-09\"]": {
-      "v": true,
-      "t": 1791570898989
-    },
-    "[\"secDone\",\"fr-notes\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792767386359
-    },
-    "[\"secDone\",\"law\",\"2026-09-18\"]": {
-      "v": true,
-      "t": 1790364265600
-    },
-    "[\"secDone\",\"law\",\"2026-09-25\"]": {
-      "v": true,
-      "t": 1790364265600
-    },
-    "[\"secDone\",\"law\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791310010940
-    },
-    "[\"secDone\",\"map\",\"2026-09-18\"]": {
-      "v": true,
-      "t": 1790191916859
-    },
-    "[\"secDone\",\"map\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790191916859
-    },
-    "[\"secDone\",\"map\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791310219349
-    },
-    "[\"secDone\",\"phil-people\",\"2026-09-10\"]": {
-      "v": true,
-      "t": 1790363341609
-    },
-    "[\"secDone\",\"phil-people\",\"2026-09-14\"]": {
-      "v": true,
-      "t": 1790363341609
-    },
-    "[\"secDone\",\"phil-people\",\"2026-09-18\"]": {
-      "v": true,
-      "t": 1790363341609
-    },
-    "[\"secDone\",\"phil-people\",\"2026-09-21\"]": {
-      "v": true,
-      "t": 1790363341609
-    },
-    "[\"secDone\",\"phil-people\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790363341609
-    },
-    "[\"secDone\",\"phil-people\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790363341609
-    },
-    "[\"secDone\",\"phil-people\",\"2026-09-25\"]": {
-      "v": true,
-      "t": 1790363341609
-    },
-    "[\"secDone\",\"phil-people\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791309311312
-    },
-    "[\"secDone\",\"phil-terms\",\"2026-09-18\"]": {
-      "v": true,
-      "t": 1790363582047
-    },
-    "[\"secDone\",\"phil-terms\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790363582047
-    },
-    "[\"secDone\",\"phil-terms\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790363582047
-    },
-    "[\"secDone\",\"phil-terms\",\"2026-09-25\"]": {
-      "v": true,
-      "t": 1790363582047
-    },
-    "[\"secDone\",\"phil-terms\",\"2026-10-06\"]": {
-      "v": true,
-      "t": 1791309547008
-    },
-    "[\"nDone\",\"en\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790182068953
-    },
-    "[\"nDone\",\"phil-people\",\"2026-09-22\"]": {
-      "v": true,
-      "t": 1790057473318
-    },
-    "[\"duo\",\"en\",\"2026-09-23\"]": {
-      "v": true,
-      "t": 1790362648109
-    },
-    "[\"duo\",\"en\",\"2026-09-25\"]": {
-      "v": true,
-      "t": 1790362648109
-    },
-    "[\"duo\",\"en\",\"2026-09-29\"]": {
-      "v": true,
-      "t": 1790682176926
-    },
-    "[\"duo\",\"en\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465824967
-    },
-    "[\"duo\",\"en\",\"2026-10-09\"]": {
-      "v": true,
-      "t": 1791570593466
-    },
-    "[\"duo\",\"fr-notes\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792767386359
-    },
-    "[\"trashGroup\",\"g2\"]": {
-      "v": {
-        "id": "g2",
-        "items": [
-          {
-            "id": "hmufglk4o7hu",
-            "d": {
-              "2026-09-21": 1,
-              "2026-09-22": 1,
-              "2026-09-23": 1,
-              "2026-09-28": 1
-            },
-            "name": "🎧 ege Words",
-            "order": 0
-          },
-          {
-            "id": "hmufglk4o5tk",
-            "d": {
-              "2026-09-23": 1
-            },
-            "name": "PhDpr.State&Law",
-            "order": 1
-          },
-          {
-            "id": "hmufglk4o41s",
-            "d": {
-              "2026-09-21": 1,
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "ListenPhilosophy",
-            "order": 2
-          },
-          {
-            "id": "hmufglk4o6hn",
-            "d": {
-              "2026-09-23": 1
-            },
-            "name": "good read in Speechify",
-            "order": 3
-          },
-          {
-            "id": "hmufglk4o344",
-            "d": {
-              "2026-09-23": 1
-            },
-            "name": "Criminalistics",
-            "order": 4
-          },
-          {
-            "id": "hmufglk4of",
-            "d": {
-              "2026-09-23": 1
-            },
-            "name": "⬇️ listenForensicEngB",
-            "order": 5
-          },
-          {
-            "id": "hmufglk4o5np",
-            "d": {
-              "2026-09-23": 1
-            },
-            "name": "Forensic Expertology",
-            "order": 6
-          },
-          {
-            "id": "hmufglk4o6g6",
-            "d": {
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "⬆️ Schwartz",
-            "order": 7
-          },
-          {
-            "id": "hmufglk4o4v5",
-            "d": {
-              "2026-09-21": 1,
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "makeOneExpertise",
-            "order": 8
-          },
-          {
-            "id": "hmufglk4o7dd",
-            "d": {
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "⬇️ 10p: Guide to Ethics",
-            "order": 9
-          },
-          {
-            "id": "hmufglk4o72l",
-            "d": {
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "Max Scheler",
-            "order": 10
-          },
-          {
-            "id": "hmufglk4o1uq",
-            "d": {
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "⬆️🌃 learn ethics",
-            "order": 11
-          }
-        ],
-        "title": "development",
-        "icon": "🎧",
-        "order": 0,
-        "deletedAt": 1790612965414
-      },
-      "t": 1790612965416
-    },
-    "[\"trashGroup\",\"hmuguabk51r1\"]": {
-      "v": {
-        "id": "hmuguabk51r1",
-        "items": [],
-        "title": "English",
-        "icon": "⭐",
-        "order": 1,
-        "deletedAt": 1790612984216
-      },
-      "t": 1790612984218
-    },
-    "[\"trashGroup\",\"g1\"]": {
-      "v": {
-        "id": "g1",
-        "items": [
-          {
-            "id": "hmufglk4n4j2",
-            "d": {
-              "2026-09-21": 1,
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "working on Article",
-            "order": 0
-          },
-          {
-            "id": "hmufglk4o6kn",
-            "d": {
-              "2026-09-21": 1,
-              "2026-09-22": 1,
-              "2026-09-23": 1
-            },
-            "name": "significant amount",
-            "order": 1
-          }
-        ],
-        "title": "work in forensics",
-        "icon": "🔬",
-        "order": 2,
-        "deletedAt": 1790616478872
-      },
-      "t": 1790616478874
-    },
-    "[\"split\",\"B01\"]": {
-      "v": 1789050745859,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E07\"]": {
-      "v": 1789395276258,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E08\"]": {
-      "v": 1789395277354,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E09\"]": {
-      "v": 1789395278260,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E10\"]": {
-      "v": 1789395279256,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E11\"]": {
-      "v": 1789395280091,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E12\"]": {
-      "v": 1789395281019,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E13\"]": {
-      "v": 1789395281896,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E14\"]": {
-      "v": 1789395282796,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E15\"]": {
-      "v": 1789395284072,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E16\"]": {
-      "v": 1789395285377,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E18\"]": {
-      "v": 1789981490787,
-      "t": 1790755407513
-    },
-    "[\"split\",\"E19\"]": {
-      "v": 1789981493123,
-      "t": 1790755407513
-    },
-    "[\"split\",\"F01\"]": {
-      "v": 1790057878448,
-      "t": 1790755407513
-    },
-    "[\"split\",\"G01\"]": {
-      "v": 1789713076686,
-      "t": 1790755407513
-    },
-    "[\"split\",\"K01\"]": {
-      "v": 1789713409672,
-      "t": 1790755407513
-    },
-    "[\"split\",\"P01\"]": {
-      "v": 1790057439734,
-      "t": 1790755407513
-    },
-    "[\"split\",\"P02\"]": {
-      "v": 1790006692176,
-      "t": 1790755407513
-    },
-    "[\"split\",\"S01\"]": {
-      "v": 1789071488988,
-      "t": 1790755407513
-    },
-    "[\"activity\",\"2026-10-25\",\"open\"]": {
-      "v": 1792906211502,
-      "t": 1792906211502
-    },
     "[\"activity\",\"2026-10-24\",\"open\"]": {
       "v": null,
       "t": 1792906211502
@@ -10282,237 +9892,9 @@
       "v": null,
       "t": 1791223504682
     },
-    "[\"activity\",\"2026-09-30\",\"open\"]": {
-      "v": null,
-      "t": 1791431079825
-    },
     "[\"activity\",\"2026-09-30\",\"study\"]": {
       "v": null,
       "t": 1791431079825
-    },
-    "[\"activity\",\"2026-09-29\",\"open\"]": {
-      "v": null,
-      "t": 1790796980928
-    },
-    "[\"activity\",\"2026-09-29\",\"study\"]": {
-      "v": null,
-      "t": 1790767979403
-    },
-    "[\"activity\",\"2026-09-28\",\"open\"]": {
-      "v": null,
-      "t": 1792051132608
-    },
-    "[\"activity\",\"2026-09-28\",\"study\"]": {
-      "v": null,
-      "t": 1790678492727
-    },
-    "[\"group\",\"g1\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habit\",\"g1\",\"hmufglk4n4j2\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-21\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habit\",\"g1\",\"hmufglk4o6kn\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-21\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790616478874
-    },
-    "[\"secDone\",\"en\",\"2026-09-28\"]": {
-      "v": null,
-      "t": 1790616461507
-    },
-    "[\"group\",\"g2\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o7hu\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-21\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7hu\",\"2026-09-28\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o5tk\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o5tk\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o41s\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-21\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o41s\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o6hn\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o6hn\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o344\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o344\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4of\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4of\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o5np\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o5np\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o6g6\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o6g6\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o4v5\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-21\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o4v5\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o7dd\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o7dd\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o72l\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o72l\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habit\",\"g2\",\"hmufglk4o1uq\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-22\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"habitDay\",\"g2\",\"hmufglk4o1uq\",\"2026-09-23\"]": {
-      "v": null,
-      "t": 1790612965416
-    },
-    "[\"group\",\"hmuguabk51r1\"]": {
-      "v": null,
-      "t": 1790612984218
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-28\"]": {
-      "v": null,
-      "t": 1790612996023
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-28\"]": {
-      "v": null,
-      "t": 1790612996661
-    },
-    "[\"activity\",\"2026-09-23\",\"open\"]": {
-      "v": 1790180678324,
-      "t": 1790180678324
-    },
-    "[\"activity\",\"2026-09-23\",\"study\"]": {
-      "v": 1790190373440,
-      "t": 1790190373440
-    },
-    "[\"activity\",\"2026-09-23\",\"check\"]": {
-      "v": 1790190434221,
-      "t": 1790190434221
     },
     "[\"activity\",\"2026-10-15\",\"open\"]": {
       "v": 1792051132608,
