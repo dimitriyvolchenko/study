@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-25T05:31:10.413Z",
+  "updated": "2026-10-25T05:31:33.367Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3895,6 +3895,12 @@
       "base": "learn",
       "t": 1792783894013
     },
+    "K01.2": {
+      "on": true,
+      "day": "2026-10-25",
+      "base": "look",
+      "t": 1792906291687
+    },
     "M01": {
       "on": false,
       "day": "2026-10-08",
@@ -4536,6 +4542,19 @@
       "done": false,
       "plannedAt": 1792906268632,
       "t": 1792906268632,
+      "source": "rocket"
+    },
+    "2026-10-25|K01.2": {
+      "code": "K01.2",
+      "sec": "crim",
+      "title": "1. The science and its subject · 2",
+      "day": "2026-10-25",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1792906291688,
+      "t": 1792906291688,
       "source": "rocket"
     }
   },
@@ -8819,6 +8838,15 @@
       },
       "t": 1792767423886
     },
+    "[\"rockets\",\"FR04\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-25",
+        "base": null,
+        "t": 1792906268631
+      },
+      "t": 1792906268633
+    },
     "[\"rockets\",\"G01.2\"]": {
       "v": {
         "on": false,
@@ -8873,14 +8901,14 @@
       },
       "t": 1791729771784
     },
-    "[\"rockets\",\"FR04\"]": {
+    "[\"rockets\",\"K01.2\"]": {
       "v": {
         "on": true,
         "day": "2026-10-25",
-        "base": null,
-        "t": 1792906268631
+        "base": "look",
+        "t": 1792906291687
       },
-      "t": 1792906268633
+      "t": 1792906291689
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
@@ -9641,6 +9669,22 @@
         "source": "rocket"
       },
       "t": 1792906268633
+    },
+    "[\"rocketDays\",\"2026-10-25|K01.2\"]": {
+      "v": {
+        "code": "K01.2",
+        "sec": "crim",
+        "title": "1. The science and its subject · 2",
+        "day": "2026-10-25",
+        "selected": true,
+        "base": "look",
+        "mark": "look",
+        "done": false,
+        "plannedAt": 1792906291688,
+        "t": 1792906291688,
+        "source": "rocket"
+      },
+      "t": 1792906291689
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
