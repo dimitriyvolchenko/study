@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-25T05:30:56.431Z",
+  "updated": "2026-10-25T05:31:10.413Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3877,6 +3877,12 @@
       "base": "done",
       "t": 1792767423884
     },
+    "FR04": {
+      "on": true,
+      "day": "2026-10-25",
+      "base": null,
+      "t": 1792906268631
+    },
     "G01.2": {
       "on": false,
       "day": "2026-10-11",
@@ -4517,6 +4523,19 @@
       "done": false,
       "plannedAt": 1792906243354,
       "t": 1792906243354,
+      "source": "rocket"
+    },
+    "2026-10-25|FR04": {
+      "code": "FR04",
+      "sec": "fr-notes",
+      "title": "Letters and lists",
+      "day": "2026-10-25",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1792906268632,
+      "t": 1792906268632,
       "source": "rocket"
     }
   },
@@ -8696,6 +8715,15 @@
       },
       "t": 1792759178665
     },
+    "[\"rockets\",\"B02.2\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-25",
+        "base": null,
+        "t": 1792906254711
+      },
+      "t": 1792906254713
+    },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
         "on": false,
@@ -8845,14 +8873,14 @@
       },
       "t": 1791729771784
     },
-    "[\"rockets\",\"B02.2\"]": {
+    "[\"rockets\",\"FR04\"]": {
       "v": {
         "on": true,
         "day": "2026-10-25",
         "base": null,
-        "t": 1792906254711
+        "t": 1792906268631
       },
-      "t": 1792906254713
+      "t": 1792906268633
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
@@ -9566,6 +9594,22 @@
       },
       "t": 1792767423886
     },
+    "[\"rocketDays\",\"2026-10-25|B02.2\"]": {
+      "v": {
+        "code": "B02.2",
+        "sec": "ba",
+        "title": "Part 2 · 2",
+        "day": "2026-10-25",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1792906254712,
+        "t": 1792906254712,
+        "source": "rocket"
+      },
+      "t": 1792906254713
+    },
     "[\"rocketDays\",\"2026-10-25|DEG05\"]": {
       "v": {
         "code": "DEG05",
@@ -9582,21 +9626,21 @@
       },
       "t": 1792906243355
     },
-    "[\"rocketDays\",\"2026-10-25|B02.2\"]": {
+    "[\"rocketDays\",\"2026-10-25|FR04\"]": {
       "v": {
-        "code": "B02.2",
-        "sec": "ba",
-        "title": "Part 2 · 2",
+        "code": "FR04",
+        "sec": "fr-notes",
+        "title": "Letters and lists",
         "day": "2026-10-25",
         "selected": true,
         "base": null,
         "mark": null,
         "done": false,
-        "plannedAt": 1792906254712,
-        "t": 1792906254712,
+        "plannedAt": 1792906268632,
+        "t": 1792906268632,
         "source": "rocket"
       },
-      "t": 1792906254713
+      "t": 1792906268633
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
