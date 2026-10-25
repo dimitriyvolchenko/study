@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-25T10:46:29.962Z",
+  "updated": "2026-10-25T10:46:36.580Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3870,11 +3870,10 @@
       "t": 1791309540726
     },
     "F01.2": {
-      "on": true,
-      "t": 1791309543413,
-      "day": "2026-10-06",
+      "on": false,
+      "day": "2026-10-25",
       "base": "work",
-      "migrated": true
+      "t": 1792925196390
     },
     "FR01": {
       "on": true,
@@ -3930,11 +3929,10 @@
       "migrated": true
     },
     "P02.2": {
-      "on": true,
-      "t": 1790682300402,
-      "day": "2026-09-29",
+      "on": false,
+      "day": "2026-10-25",
       "base": "learn",
-      "migrated": true
+      "t": 1792925194918
     },
     "P03.1": {
       "on": false,
@@ -4560,12 +4558,12 @@
       "sec": "phil-terms",
       "title": "Language of philosophy · 2",
       "day": "2026-10-25",
-      "selected": true,
+      "selected": false,
       "base": "work",
       "mark": "work",
       "done": false,
       "plannedAt": 1792925187320,
-      "t": 1792925188272,
+      "t": 1792925196391,
       "source": "queued-work"
     },
     "2026-10-25|FR04": {
@@ -8869,13 +8867,12 @@
     },
     "[\"rockets\",\"F01.2\"]": {
       "v": {
-        "on": true,
-        "t": 1791309543413,
-        "day": "2026-10-06",
+        "on": false,
+        "day": "2026-10-25",
         "base": "work",
-        "migrated": true
+        "t": 1792925196390
       },
-      "t": 1792925077264
+      "t": 1792925196392
     },
     "[\"rockets\",\"FR01\"]": {
       "v": {
@@ -8956,13 +8953,12 @@
     },
     "[\"rockets\",\"P02.2\"]": {
       "v": {
-        "on": true,
-        "t": 1790682300402,
-        "day": "2026-09-29",
+        "on": false,
+        "day": "2026-10-25",
         "base": "learn",
-        "migrated": true
+        "t": 1792925194918
       },
-      "t": 1792925077264
+      "t": 1792925194920
     },
     "[\"rockets\",\"P03.1\"]": {
       "v": {
@@ -9727,6 +9723,22 @@
       },
       "t": 1792925174563
     },
+    "[\"rocketDays\",\"2026-10-25|F01.2\"]": {
+      "v": {
+        "code": "F01.2",
+        "sec": "phil-terms",
+        "title": "Language of philosophy · 2",
+        "day": "2026-10-25",
+        "selected": false,
+        "base": "work",
+        "mark": "work",
+        "done": false,
+        "plannedAt": 1792925187320,
+        "t": 1792925196391,
+        "source": "queued-work"
+      },
+      "t": 1792925196392
+    },
     "[\"rocketDays\",\"2026-10-25|FR04\"]": {
       "v": {
         "code": "FR04",
@@ -9758,22 +9770,6 @@
         "source": "rocket"
       },
       "t": 1792906291689
-    },
-    "[\"rocketDays\",\"2026-10-25|F01.2\"]": {
-      "v": {
-        "code": "F01.2",
-        "sec": "phil-terms",
-        "title": "Language of philosophy · 2",
-        "day": "2026-10-25",
-        "selected": true,
-        "base": "work",
-        "mark": "work",
-        "done": false,
-        "plannedAt": 1792925187320,
-        "t": 1792925188272,
-        "source": "queued-work"
-      },
-      "t": 1792925188274
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
