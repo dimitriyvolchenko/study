@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-25T10:46:45.743Z",
+  "updated": "2026-10-25T10:46:51.226Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3908,17 +3908,16 @@
       "t": 1792925202243
     },
     "K01.1": {
-      "on": true,
-      "t": 1791310248073,
-      "day": "2026-10-06",
-      "base": "learn",
-      "migrated": true
+      "on": false,
+      "day": "2026-10-25",
+      "base": "done",
+      "t": 1792925209580
     },
     "K01.2": {
-      "on": true,
+      "on": false,
       "day": "2026-10-25",
       "base": "look",
-      "t": 1792906291687
+      "t": 1792925211155
     },
     "M01": {
       "on": false,
@@ -4581,12 +4580,12 @@
       "sec": "crim",
       "title": "1. The science and its subject · 2",
       "day": "2026-10-25",
-      "selected": true,
+      "selected": false,
       "base": "look",
       "mark": "look",
       "done": false,
       "plannedAt": 1792906291688,
-      "t": 1792906291688,
+      "t": 1792925211156,
       "source": "rocket"
     }
   },
@@ -8920,22 +8919,21 @@
     },
     "[\"rockets\",\"K01.1\"]": {
       "v": {
-        "on": true,
-        "t": 1791310248073,
-        "day": "2026-10-06",
-        "base": "learn",
-        "migrated": true
+        "on": false,
+        "day": "2026-10-25",
+        "base": "done",
+        "t": 1792925209580
       },
-      "t": 1792925077264
+      "t": 1792925209582
     },
     "[\"rockets\",\"K01.2\"]": {
       "v": {
-        "on": true,
+        "on": false,
         "day": "2026-10-25",
         "base": "look",
-        "t": 1792906291687
+        "t": 1792925211155
       },
-      "t": 1792906291689
+      "t": 1792925211157
     },
     "[\"rockets\",\"M01\"]": {
       "v": {
@@ -9755,15 +9753,15 @@
         "sec": "crim",
         "title": "1. The science and its subject · 2",
         "day": "2026-10-25",
-        "selected": true,
+        "selected": false,
         "base": "look",
         "mark": "look",
         "done": false,
         "plannedAt": 1792906291688,
-        "t": 1792906291688,
+        "t": 1792925211156,
         "source": "rocket"
       },
-      "t": 1792906291689
+      "t": 1792925211157
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
