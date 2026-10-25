@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-25T08:24:52.509Z",
+  "updated": "2026-10-25T10:44:38.845Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -460,7 +460,7 @@
   "extra": [],
   "act": {
     "d": "2026-10-25",
-    "open": 1792916691066,
+    "open": 1792925077335,
     "study": 0,
     "check": 0
   },
@@ -3816,22 +3816,25 @@
       "t": 1792906254711
     },
     "DEG01": {
-      "on": false,
-      "day": "2026-10-09",
-      "base": "done",
-      "t": 1791570432321
+      "on": true,
+      "t": 1791456488725,
+      "day": "2026-10-08",
+      "base": null,
+      "migrated": true
     },
     "DEG02": {
-      "on": false,
-      "day": "2026-10-09",
-      "base": "done",
-      "t": 1791570568220
+      "on": true,
+      "t": 1791456501383,
+      "day": "2026-10-08",
+      "base": null,
+      "migrated": true
     },
     "DEG03": {
-      "on": false,
-      "day": "2026-10-16",
-      "base": "done",
-      "t": 1792122397514
+      "on": true,
+      "t": 1791456507662,
+      "day": "2026-10-08",
+      "base": null,
+      "migrated": true
     },
     "DEG04": {
       "on": false,
@@ -3854,22 +3857,25 @@
       "t": 1791309540726
     },
     "F01.2": {
-      "on": false,
-      "day": "2026-10-25",
+      "on": true,
+      "t": 1791309543413,
+      "day": "2026-10-06",
       "base": "work",
-      "t": 1792906227923
+      "migrated": true
     },
     "FR01": {
-      "on": false,
-      "day": "2026-10-12",
-      "base": "done",
-      "t": 1791836926226
+      "on": true,
+      "t": 1791456535845,
+      "day": "2026-10-08",
+      "base": "learn",
+      "migrated": true
     },
     "FR02": {
-      "on": false,
-      "day": "2026-10-23",
-      "base": "done",
-      "t": 1792767423155
+      "on": true,
+      "t": 1791456538059,
+      "day": "2026-10-08",
+      "base": "look",
+      "migrated": true
     },
     "FR03": {
       "on": false,
@@ -3884,16 +3890,18 @@
       "t": 1792906268631
     },
     "G01.2": {
-      "on": false,
-      "day": "2026-10-11",
+      "on": true,
+      "t": 1791309560717,
+      "day": "2026-10-06",
       "base": "learn",
-      "t": 1791729773282
+      "migrated": true
     },
     "K01.1": {
-      "on": false,
-      "day": "2026-10-23",
+      "on": true,
+      "t": 1791310248073,
+      "day": "2026-10-06",
       "base": "learn",
-      "t": 1792783894013
+      "migrated": true
     },
     "K01.2": {
       "on": true,
@@ -3902,16 +3910,18 @@
       "t": 1792906291687
     },
     "M01": {
-      "on": false,
-      "day": "2026-10-08",
+      "on": true,
+      "t": 1791310013394,
+      "day": "2026-10-06",
       "base": "look",
-      "t": 1791467659627
+      "migrated": true
     },
     "P02.2": {
-      "on": false,
-      "day": "2026-10-25",
+      "on": true,
+      "t": 1790682300402,
+      "day": "2026-09-29",
       "base": "learn",
-      "t": 1792906228661
+      "migrated": true
     },
     "P03.1": {
       "on": false,
@@ -3920,10 +3930,11 @@
       "t": 1792906229225
     },
     "S01.1": {
-      "on": false,
-      "day": "2026-10-11",
+      "on": true,
+      "t": 1791310855972,
+      "day": "2026-10-06",
       "base": "work",
-      "t": 1791729771782
+      "migrated": true
     }
   },
   "blockOrder": {
@@ -3958,6 +3969,624 @@
       "t": 1790682138303
     }
   },
+  "rocketDays": {
+    "2026-09-29|P02.2": {
+      "code": "P02.2",
+      "sec": "phil-people",
+      "title": "From Bacon to Feyerabend · 2",
+      "day": "2026-09-29",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1790682300402,
+      "t": 1790682300402,
+      "migrated": true
+    },
+    "2026-10-06|F01.2": {
+      "code": "F01.2",
+      "sec": "phil-terms",
+      "title": "Language of philosophy · 2",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1791309543413,
+      "t": 1791309543413,
+      "migrated": true
+    },
+    "2026-10-06|G01.2": {
+      "code": "G01.2",
+      "sec": "law",
+      "title": "State: power, forms, limits · 2",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791309560717,
+      "t": 1791309560717,
+      "migrated": true
+    },
+    "2026-10-06|K01.1": {
+      "code": "K01.1",
+      "sec": "crim",
+      "title": "1. The science and its subject · 1",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791310248073,
+      "t": 1791310248073,
+      "migrated": true
+    },
+    "2026-10-06|M01": {
+      "code": "M01",
+      "sec": "map",
+      "title": "From Socrates to philosophy of science",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791310013394,
+      "t": 1791310013394,
+      "migrated": true
+    },
+    "2026-10-06|S01.1": {
+      "code": "S01.1",
+      "sec": "forensics",
+      "title": "Science, subject, tasks · 1",
+      "day": "2026-10-06",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1791310855972,
+      "t": 1791310855972,
+      "migrated": true
+    },
+    "2026-10-08|B01.1": {
+      "code": "B01.1",
+      "sec": "ba",
+      "title": "Part 1 · 1",
+      "day": "2026-10-08",
+      "selected": false,
+      "base": "look",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1791467589091,
+      "t": 1791467604549,
+      "source": "rocket"
+    },
+    "2026-10-08|B01.2": {
+      "code": "B01.2",
+      "sec": "ba",
+      "title": "Part 1 · 2",
+      "day": "2026-10-08",
+      "selected": false,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791467591600,
+      "t": 1791467600479,
+      "source": "rocket"
+    },
+    "2026-10-08|DEG01": {
+      "code": "DEG01",
+      "sec": "en",
+      "title": "Environment and change · 1",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791456488725,
+      "t": 1791456488725,
+      "migrated": true
+    },
+    "2026-10-08|DEG02": {
+      "code": "DEG02",
+      "sec": "en",
+      "title": "Society and rights · 2",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791456501383,
+      "t": 1791456501383,
+      "migrated": true
+    },
+    "2026-10-08|DEG03": {
+      "code": "DEG03",
+      "sec": "en",
+      "title": "Thinking and argument · 3",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791456507662,
+      "t": 1791456507662,
+      "migrated": true
+    },
+    "2026-10-08|FR01": {
+      "code": "FR01",
+      "sec": "fr-notes",
+      "title": "At the desk",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791456535845,
+      "t": 1791456535845,
+      "migrated": true
+    },
+    "2026-10-08|FR02": {
+      "code": "FR02",
+      "sec": "fr-notes",
+      "title": "Papers and notes",
+      "day": "2026-10-08",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791456538059,
+      "t": 1791456538059,
+      "migrated": true
+    },
+    "2026-10-09|B01.2": {
+      "code": "B01.2",
+      "sec": "ba",
+      "title": "Part 1 · 2",
+      "day": "2026-10-09",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1791518775923,
+      "t": 1791518775923,
+      "source": "rocket"
+    },
+    "2026-10-09|DEG01": {
+      "code": "DEG01",
+      "sec": "en",
+      "title": "Environment and change · 1",
+      "day": "2026-10-09",
+      "selected": false,
+      "base": "done",
+      "mark": "done",
+      "done": false,
+      "plannedAt": 1791518758479,
+      "t": 1791570432322,
+      "source": "rocket"
+    },
+    "2026-10-09|DEG02": {
+      "code": "DEG02",
+      "sec": "en",
+      "title": "Society and rights · 2",
+      "day": "2026-10-09",
+      "selected": false,
+      "base": "learn",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1791518756600,
+      "t": 1791570568221,
+      "source": "rocket"
+    },
+    "2026-10-09|F01.2": {
+      "code": "F01.2",
+      "sec": "phil-terms",
+      "title": "Language of philosophy · 2",
+      "day": "2026-10-09",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1791518791169,
+      "t": 1791518791169,
+      "source": "rocket"
+    },
+    "2026-10-09|FR01": {
+      "code": "FR01",
+      "sec": "fr-notes",
+      "title": "At the desk",
+      "day": "2026-10-09",
+      "selected": false,
+      "base": "learn",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1791518887517,
+      "t": 1791518891648,
+      "source": "queued-work"
+    },
+    "2026-10-09|FR02": {
+      "code": "FR02",
+      "sec": "fr-notes",
+      "title": "Papers and notes",
+      "day": "2026-10-09",
+      "selected": false,
+      "base": "look",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1791518905844,
+      "t": 1791570907887,
+      "source": "rocket"
+    },
+    "2026-10-09|P02.2": {
+      "code": "P02.2",
+      "sec": "phil-people",
+      "title": "From Bacon to Feyerabend · 2",
+      "day": "2026-10-09",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791518825652,
+      "t": 1791518825652,
+      "source": "rocket"
+    },
+    "2026-10-09|P03.1": {
+      "code": "P03.1",
+      "sec": "phil-people",
+      "title": "Russian philosophy of morals · 1",
+      "day": "2026-10-09",
+      "selected": false,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791518839284,
+      "t": 1791518855383,
+      "source": "rocket"
+    },
+    "2026-10-12|B01.2": {
+      "code": "B01.2",
+      "sec": "ba",
+      "title": "Part 1 · 2",
+      "day": "2026-10-12",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791836665568,
+      "t": 1791836665568,
+      "source": "rocket"
+    },
+    "2026-10-12|B02.1": {
+      "code": "B02.1",
+      "sec": "ba",
+      "title": "Part 2 · 1",
+      "day": "2026-10-12",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791836670164,
+      "t": 1791836670164,
+      "source": "rocket"
+    },
+    "2026-10-12|DEG03": {
+      "code": "DEG03",
+      "sec": "en",
+      "title": "Thinking and argument · 3",
+      "day": "2026-10-12",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1791777404005,
+      "t": 1791777404005,
+      "source": "rocket"
+    },
+    "2026-10-12|FR01": {
+      "code": "FR01",
+      "sec": "fr-notes",
+      "title": "At the desk",
+      "day": "2026-10-12",
+      "selected": false,
+      "base": "done",
+      "mark": "done",
+      "done": false,
+      "plannedAt": 1791836923860,
+      "t": 1791836926227,
+      "source": "rocket"
+    },
+    "2026-10-12|FR03": {
+      "code": "FR03",
+      "sec": "fr-notes",
+      "title": "The computer",
+      "day": "2026-10-12",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791836930686,
+      "t": 1791836930686,
+      "source": "rocket"
+    },
+    "2026-10-13|FR02": {
+      "code": "FR02",
+      "sec": "fr-notes",
+      "title": "Papers and notes",
+      "day": "2026-10-13",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791894793722,
+      "t": 1791894793722,
+      "source": "rocket"
+    },
+    "2026-10-13|FR03": {
+      "code": "FR03",
+      "sec": "fr-notes",
+      "title": "The computer",
+      "day": "2026-10-13",
+      "selected": true,
+      "base": null,
+      "mark": "look",
+      "done": true,
+      "plannedAt": 1791894801479,
+      "t": 1791894801480,
+      "source": "queued-work"
+    },
+    "2026-10-13|P02.2": {
+      "code": "P02.2",
+      "sec": "phil-people",
+      "title": "From Bacon to Feyerabend · 2",
+      "day": "2026-10-13",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1791894832753,
+      "t": 1791894832753,
+      "source": "rocket"
+    },
+    "2026-10-13|P03.1": {
+      "code": "P03.1",
+      "sec": "phil-people",
+      "title": "Russian philosophy of morals · 1",
+      "day": "2026-10-13",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1791894840942,
+      "t": 1791894840942,
+      "source": "rocket"
+    },
+    "2026-10-16|B01.2": {
+      "code": "B01.2",
+      "sec": "ba",
+      "title": "Part 1 · 2",
+      "day": "2026-10-16",
+      "selected": false,
+      "base": "learn",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1792122366028,
+      "t": 1792122416607,
+      "source": "queued-work"
+    },
+    "2026-10-16|B02.1": {
+      "code": "B02.1",
+      "sec": "ba",
+      "title": "Part 2 · 1",
+      "day": "2026-10-16",
+      "selected": true,
+      "base": null,
+      "mark": "work",
+      "done": true,
+      "plannedAt": 1792122368980,
+      "t": 1792122420044,
+      "source": "queued-work"
+    },
+    "2026-10-16|DEG03": {
+      "code": "DEG03",
+      "sec": "en",
+      "title": "Thinking and argument · 3",
+      "day": "2026-10-16",
+      "selected": false,
+      "base": "work",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1792122317063,
+      "t": 1792122397515,
+      "source": "queued-work"
+    },
+    "2026-10-16|DEG04": {
+      "code": "DEG04",
+      "sec": "en",
+      "title": "Science and method · 4",
+      "day": "2026-10-16",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1792122326786,
+      "t": 1792122326786,
+      "source": "rocket"
+    },
+    "2026-10-16|F01.2": {
+      "code": "F01.2",
+      "sec": "phil-terms",
+      "title": "Language of philosophy · 2",
+      "day": "2026-10-16",
+      "selected": true,
+      "base": "work",
+      "mark": "work",
+      "done": false,
+      "plannedAt": 1792122352111,
+      "t": 1792122352111,
+      "source": "rocket"
+    },
+    "2026-10-16|P02.2": {
+      "code": "P02.2",
+      "sec": "phil-people",
+      "title": "From Bacon to Feyerabend · 2",
+      "day": "2026-10-16",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1792122339747,
+      "t": 1792122340221,
+      "source": "queued-work"
+    },
+    "2026-10-16|P03.1": {
+      "code": "P03.1",
+      "sec": "phil-people",
+      "title": "Russian philosophy of morals · 1",
+      "day": "2026-10-16",
+      "selected": true,
+      "base": null,
+      "mark": "look",
+      "done": true,
+      "plannedAt": 1792122342251,
+      "t": 1792122342252,
+      "source": "queued-work"
+    },
+    "2026-10-22|K01.1": {
+      "code": "K01.1",
+      "sec": "crim",
+      "title": "1. The science and its subject · 1",
+      "day": "2026-10-22",
+      "selected": true,
+      "base": "learn",
+      "mark": "learn",
+      "done": false,
+      "plannedAt": 1792687045981,
+      "t": 1792687045981,
+      "source": "rocket"
+    },
+    "2026-10-23|B02.1": {
+      "code": "B02.1",
+      "sec": "ba",
+      "title": "Part 2 · 1",
+      "day": "2026-10-23",
+      "selected": false,
+      "base": "work",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1792759176706,
+      "t": 1792759178664,
+      "source": "queued-work"
+    },
+    "2026-10-23|DEG04": {
+      "code": "DEG04",
+      "sec": "en",
+      "title": "Science and method · 4",
+      "day": "2026-10-23",
+      "selected": false,
+      "base": "work",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1792759298597,
+      "t": 1792759300492,
+      "source": "queued-work"
+    },
+    "2026-10-23|FR02": {
+      "code": "FR02",
+      "sec": "fr-notes",
+      "title": "Papers and notes",
+      "day": "2026-10-23",
+      "selected": false,
+      "base": "learn",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1792767419320,
+      "t": 1792767423156,
+      "source": "queued-work"
+    },
+    "2026-10-23|FR03": {
+      "code": "FR03",
+      "sec": "fr-notes",
+      "title": "The computer",
+      "day": "2026-10-23",
+      "selected": false,
+      "base": "look",
+      "mark": "done",
+      "done": true,
+      "plannedAt": 1792767421500,
+      "t": 1792767423885,
+      "source": "queued-work"
+    },
+    "2026-10-25|B02.2": {
+      "code": "B02.2",
+      "sec": "ba",
+      "title": "Part 2 · 2",
+      "day": "2026-10-25",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1792906254712,
+      "t": 1792906254712,
+      "source": "rocket"
+    },
+    "2026-10-25|DEG05": {
+      "code": "DEG05",
+      "sec": "en",
+      "title": "Evaluation and precision · 5",
+      "day": "2026-10-25",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1792906243354,
+      "t": 1792906243354,
+      "source": "rocket"
+    },
+    "2026-10-25|FR04": {
+      "code": "FR04",
+      "sec": "fr-notes",
+      "title": "Letters and lists",
+      "day": "2026-10-25",
+      "selected": true,
+      "base": null,
+      "mark": null,
+      "done": false,
+      "plannedAt": 1792906268632,
+      "t": 1792906268632,
+      "source": "rocket"
+    },
+    "2026-10-25|K01.2": {
+      "code": "K01.2",
+      "sec": "crim",
+      "title": "1. The science and its subject · 2",
+      "day": "2026-10-25",
+      "selected": true,
+      "base": "look",
+      "mark": "look",
+      "done": false,
+      "plannedAt": 1792906291688,
+      "t": 1792906291688,
+      "source": "rocket"
+    }
+  },
+  "uiPrefs": {
+    "sudakPhoto": {
+      "value": {
+        "id": "original"
+      },
+      "t": 1792687065510
+    },
+    "tabOrder": {
+      "value": [
+        "#/all",
+        "#/rocket",
+        "#/",
+        "#/habits",
+        "#/sync"
+      ],
+      "t": 1791467699507
+    }
+  },
   "syncOps": {
     "[\"marks\",\"A01.1\"]": {
       "v": {
@@ -3986,13 +4615,6 @@
         "t": 1792122415928
       },
       "t": 1792122415929
-    },
-    "[\"marks\",\"B02.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792759176706
-      },
-      "t": 1792759176708
     },
     "[\"marks\",\"DEG01\"]": {
       "v": {
@@ -4386,13 +5008,6 @@
       },
       "t": 1792767419322
     },
-    "[\"marks\",\"FR03\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792767421500
-      },
-      "t": 1792767421502
-    },
     "[\"marks\",\"G01\"]": {
       "v": {
         "s": "look",
@@ -4491,13 +5106,6 @@
       },
       "t": 1792122340223
     },
-    "[\"marks\",\"P03.1\"]": {
-      "v": {
-        "s": "look",
-        "t": 1792122342251
-      },
-      "t": 1792122342253
-    },
     "[\"marks\",\"S01\"]": {
       "v": {
         "s": "look",
@@ -4554,13 +5162,6 @@
       },
       "t": 1791894772839
     },
-    "[\"wordMarks\",\"B02.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792755526602
-      },
-      "t": 1792755526604
-    },
     "[\"wordMarks\",\"DEG01\"]": {
       "v": {
         "s": "done",
@@ -4616,20 +5217,6 @@
         "t": 1790615822014
       },
       "t": 1790615822015
-    },
-    "[\"wordMarks\",\"FR02\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792767330280
-      },
-      "t": 1792767330282
-    },
-    "[\"wordMarks\",\"FR03\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792767378179
-      },
-      "t": 1792767378180
     },
     "[\"wordMarks\",\"G01.1\"]": {
       "v": {
@@ -4806,166 +5393,12 @@
       },
       "t": 1791311269009
     },
-    "[\"stageLog\",\"2026-10-08|B01.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791467601517
-      },
-      "t": 1791467601518
-    },
-    "[\"stageLog\",\"2026-10-08|DEG01\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791467472298
-      },
-      "t": 1791467472300
-    },
-    "[\"stageLog\",\"2026-10-08|DEG02\"]": {
-      "v": {
-        "s": "learn",
-        "t": 1791467492069
-      },
-      "t": 1791467492071
-    },
-    "[\"stageLog\",\"2026-10-08|DEG03\"]": {
-      "v": {
-        "s": "work",
-        "t": 1791467500246
-      },
-      "t": 1791467500248
-    },
     "[\"stageLog\",\"2026-10-08|FR02\"]": {
       "v": {
         "s": "look",
         "t": 1791456540418
       },
       "t": 1791456540419
-    },
-    "[\"stageLog\",\"2026-10-09|DEG02\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791570567261
-      },
-      "t": 1791570567262
-    },
-    "[\"stageLog\",\"2026-10-09|FR01\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791518887518
-      },
-      "t": 1791518887520
-    },
-    "[\"stageLog\",\"2026-10-09|FR02\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791570902414
-      },
-      "t": 1791570902416
-    },
-    "[\"stageLog\",\"2026-10-12|B01.2\"]": {
-      "v": {
-        "s": "learn",
-        "t": 1791836659829
-      },
-      "t": 1791836659831
-    },
-    "[\"stageLog\",\"2026-10-13|FR02\"]": {
-      "v": {
-        "s": "learn",
-        "t": 1791894792313
-      },
-      "t": 1791894792315
-    },
-    "[\"stageLog\",\"2026-10-13|FR03\"]": {
-      "v": {
-        "s": "look",
-        "t": 1791894801479
-      },
-      "t": 1791894801481
-    },
-    "[\"stageLog\",\"2026-10-13|P02.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791894828065
-      },
-      "t": 1791894828065
-    },
-    "[\"stageLog\",\"2026-10-16|B01.2\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792122415928
-      },
-      "t": 1792122415929
-    },
-    "[\"stageLog\",\"2026-10-16|B02.1\"]": {
-      "v": {
-        "s": "work",
-        "t": 1792122420044
-      },
-      "t": 1792122420046
-    },
-    "[\"stageLog\",\"2026-10-16|DEG03\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792122396336
-      },
-      "t": 1792122396338
-    },
-    "[\"stageLog\",\"2026-10-16|DEG04\"]": {
-      "v": {
-        "s": "work",
-        "t": 1792122325862
-      },
-      "t": 1792122325870
-    },
-    "[\"stageLog\",\"2026-10-16|P02.2\"]": {
-      "v": {
-        "s": "learn",
-        "t": 1792122340221
-      },
-      "t": 1792122340223
-    },
-    "[\"stageLog\",\"2026-10-16|P03.1\"]": {
-      "v": {
-        "s": "look",
-        "t": 1792122342251
-      },
-      "t": 1792122342253
-    },
-    "[\"stageLog\",\"2026-10-23|B02.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792759176706
-      },
-      "t": 1792759176708
-    },
-    "[\"stageLog\",\"2026-10-23|DEG04\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792759298597
-      },
-      "t": 1792759298599
-    },
-    "[\"stageLog\",\"2026-10-23|FR02\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792767419320
-      },
-      "t": 1792767419322
-    },
-    "[\"stageLog\",\"2026-10-23|FR03\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792767421500
-      },
-      "t": 1792767421502
-    },
-    "[\"stageLog\",\"2026-10-23|K01.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792783896543
-      },
-      "t": 1792783896543
     },
     "[\"wordLog\",\"2026-09-28|A01.1\"]": {
       "v": {
@@ -5120,146 +5553,6 @@
         "t": 1791460004029
       },
       "t": 1791460004031
-    },
-    "[\"wordLog\",\"2026-10-09|B01.2\"]": {
-      "v": {
-        "s": "work",
-        "t": 1791518934371
-      },
-      "t": 1791518934373
-    },
-    "[\"wordLog\",\"2026-10-09|DEG01\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791570377841
-      },
-      "t": 1791570377843
-    },
-    "[\"wordLog\",\"2026-10-09|DEG02\"]": {
-      "v": {
-        "s": "done",
-        "t": 1791570379029
-      },
-      "t": 1791570379030
-    },
-    "[\"wordLog\",\"2026-10-13|B01.2\"]": {
-      "v": {
-        "s": "learn",
-        "t": 1791894772838
-      },
-      "t": 1791894772839
-    },
-    "[\"wordLog\",\"2026-10-13|B02.1\"]": {
-      "v": {
-        "s": "learn",
-        "t": 1791894774457
-      },
-      "t": 1791894774458
-    },
-    "[\"wordLog\",\"2026-10-17|DEG04\"]": {
-      "v": {
-        "s": "learn",
-        "t": 1792235906784
-      },
-      "t": 1792235906786
-    },
-    "[\"wordLog\",\"2026-10-23|B02.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792755526602
-      },
-      "t": 1792755526604
-    },
-    "[\"wordLog\",\"2026-10-23|DEG04\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792759282658
-      },
-      "t": 1792759282659
-    },
-    "[\"wordLog\",\"2026-10-23|FR02\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792767330280
-      },
-      "t": 1792767330282
-    },
-    "[\"wordLog\",\"2026-10-23|FR03\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792767378179
-      },
-      "t": 1792767378180
-    },
-    "[\"wordLog\",\"2026-10-23|K01.1\"]": {
-      "v": {
-        "s": "done",
-        "t": 1792783885268
-      },
-      "t": 1792783885270
-    },
-    "[\"checks\",\"B02.1\"]": {
-      "v": {
-        "d": "2026-10-23",
-        "ok": 3,
-        "n": 5,
-        "t": 1792755514443
-      },
-      "t": 1792755514445
-    },
-    "[\"checks\",\"DEG01\"]": {
-      "v": {
-        "d": "2026-10-09",
-        "ok": 5,
-        "n": 5,
-        "t": 1791570168078
-      },
-      "t": 1791570168079
-    },
-    "[\"checks\",\"DEG02\"]": {
-      "v": {
-        "d": "2026-10-09",
-        "ok": 5,
-        "n": 5,
-        "t": 1791570371280
-      },
-      "t": 1791570371282
-    },
-    "[\"checks\",\"DEG04\"]": {
-      "v": {
-        "d": "2026-10-23",
-        "ok": 5,
-        "n": 5,
-        "t": 1792759279394
-      },
-      "t": 1792759279395
-    },
-    "[\"checks\",\"FR02\"]": {
-      "v": {
-        "d": "2026-10-23",
-        "ok": 5,
-        "n": 5,
-        "t": 1792767327574
-      },
-      "t": 1792767327575
-    },
-    "[\"checks\",\"FR03\"]": {
-      "v": {
-        "d": "2026-10-23",
-        "ok": 5,
-        "n": 5,
-        "t": 1792767372346
-      },
-      "t": 1792767372347
-    },
-    "[\"checks\",\"K01.1\"]": {
-      "v": {
-        "d": "2026-10-23",
-        "ok": 5,
-        "n": 5,
-        "t": 1792783882601
-      },
-      "t": 1792783882602
     },
     "[\"lessonStates\",\"brat2_progress_A01\"]": {
       "v": {
@@ -5629,47 +5922,6 @@
         "t": 1791777415957
       },
       "t": 1791777415969
-    },
-    "[\"lessonStates\",\"brat2_progress_DEG04\"]": {
-      "v": {
-        "data": {
-          "v": 3,
-          "t": 1792687175503,
-          "screen": "study",
-          "mode": null,
-          "scrollStudy": 927,
-          "diag": {
-            "order": [
-              2,
-              4,
-              0,
-              1,
-              3
-            ],
-            "i": 0,
-            "res": {},
-            "done": false
-          },
-          "quiz": {
-            "li": 0,
-            "i": 0,
-            "order": [],
-            "res": {
-              "0": {},
-              "1": {},
-              "2": {},
-              "3": {},
-              "4": {}
-            },
-            "queue": [],
-            "retry": false,
-            "doneAll": false,
-            "started": false
-          }
-        },
-        "t": 1792687175503
-      },
-      "t": 1792687175510
     },
     "[\"lessonStates\",\"brat2_progress_E00\"]": {
       "v": {
@@ -6720,55 +6972,6 @@
       },
       "t": 1791309535158
     },
-    "[\"lessonStates\",\"brat2_progress_F01.2\"]": {
-      "v": {
-        "data": {
-          "v": 4,
-          "t": 1791467513444,
-          "screen": "study",
-          "mode": null,
-          "scrollStudy": 0,
-          "diag": {
-            "order": [
-              0,
-              3,
-              1,
-              4,
-              2
-            ],
-            "i": 0,
-            "res": {},
-            "done": false
-          },
-          "quiz": {
-            "li": 0,
-            "i": 0,
-            "order": [],
-            "res": {
-              "0": {},
-              "1": {},
-              "2": {},
-              "3": {},
-              "4": {}
-            },
-            "queue": [],
-            "retry": false,
-            "doneAll": false,
-            "started": false
-          },
-          "trap": {
-            "order": [],
-            "i": 0,
-            "res": {},
-            "queue": [],
-            "retry": false,
-            "done": false
-          }
-        },
-        "t": 1791467513444
-      },
-      "t": 1791467513451
-    },
     "[\"lessonStates\",\"brat2_progress_F07\"]": {
       "v": {
         "data": {
@@ -6904,83 +7107,6 @@
         "t": 1790190434225
       },
       "t": 1790599171605
-    },
-    "[\"lessonStates\",\"brat2_progress_FR02\"]": {
-      "v": {
-        "data": {
-          "v": 3,
-          "t": 1791570892367,
-          "screen": "final",
-          "mode": "single",
-          "scrollStudy": 4185,
-          "diag": {
-            "order": [
-              4,
-              2,
-              3,
-              1,
-              0
-            ],
-            "i": 0,
-            "res": {},
-            "done": false
-          },
-          "quiz": {
-            "li": 1,
-            "i": 5,
-            "order": [
-              2,
-              1,
-              0,
-              4,
-              3
-            ],
-            "res": {
-              "0": {
-                "L1": {
-                  "ok": true,
-                  "att": 1,
-                  "rev": false
-                }
-              },
-              "1": {
-                "L1": {
-                  "ok": true,
-                  "att": 1,
-                  "rev": false
-                }
-              },
-              "2": {
-                "L1": {
-                  "ok": true,
-                  "att": 1,
-                  "rev": false
-                }
-              },
-              "3": {
-                "L1": {
-                  "ok": true,
-                  "att": 1,
-                  "rev": false
-                }
-              },
-              "4": {
-                "L1": {
-                  "ok": true,
-                  "att": 1,
-                  "rev": false
-                }
-              }
-            },
-            "queue": [],
-            "retry": false,
-            "doneAll": true,
-            "started": true
-          }
-        },
-        "t": 1791570892367
-      },
-      "t": 1791570892375
     },
     "[\"lessonStates\",\"brat2_progress_G01\"]": {
       "v": {
@@ -8089,86 +8215,35 @@
       },
       "t": 1790599171605
     },
-    "[\"rockets\",\"B01.1\"]": {
-      "v": {
-        "on": false,
-        "day": "2026-10-08",
-        "base": "done",
-        "t": 1791467604548
-      },
-      "t": 1791467604550
-    },
-    "[\"rockets\",\"B01.2\"]": {
-      "v": {
-        "on": false,
-        "day": "2026-10-16",
-        "base": "done",
-        "t": 1792122416606
-      },
-      "t": 1792122416608
-    },
-    "[\"rockets\",\"B02.1\"]": {
-      "v": {
-        "on": false,
-        "day": "2026-10-23",
-        "base": "done",
-        "t": 1792759178663
-      },
-      "t": 1792759178665
-    },
-    "[\"rockets\",\"B02.2\"]": {
-      "v": {
-        "on": true,
-        "day": "2026-10-25",
-        "base": null,
-        "t": 1792906254711
-      },
-      "t": 1792906254713
-    },
     "[\"rockets\",\"DEG01\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-09",
-        "base": "done",
-        "t": 1791570432321
+        "on": true,
+        "t": 1791456488725,
+        "day": "2026-10-08",
+        "base": null,
+        "migrated": true
       },
-      "t": 1791570432323
+      "t": 1792925077264
     },
     "[\"rockets\",\"DEG02\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-09",
-        "base": "done",
-        "t": 1791570568220
+        "on": true,
+        "t": 1791456501383,
+        "day": "2026-10-08",
+        "base": null,
+        "migrated": true
       },
-      "t": 1791570568222
+      "t": 1792925077264
     },
     "[\"rockets\",\"DEG03\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-16",
-        "base": "done",
-        "t": 1792122397514
-      },
-      "t": 1792122397516
-    },
-    "[\"rockets\",\"DEG04\"]": {
-      "v": {
-        "on": false,
-        "day": "2026-10-23",
-        "base": "done",
-        "t": 1792759300491
-      },
-      "t": 1792759300493
-    },
-    "[\"rockets\",\"DEG05\"]": {
-      "v": {
         "on": true,
-        "day": "2026-10-25",
+        "t": 1791456507662,
+        "day": "2026-10-08",
         "base": null,
-        "t": 1792906243353
+        "migrated": true
       },
-      "t": 1792906243355
+      "t": 1792925077264
     },
     "[\"rockets\",\"E23Final\"]": {
       "v": {
@@ -8186,111 +8261,83 @@
     },
     "[\"rockets\",\"F01.2\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-25",
+        "on": true,
+        "t": 1791309543413,
+        "day": "2026-10-06",
         "base": "work",
-        "t": 1792906227923
+        "migrated": true
       },
-      "t": 1792906227924
+      "t": 1792925077264
     },
     "[\"rockets\",\"FR01\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-12",
-        "base": "done",
-        "t": 1791836926226
+        "on": true,
+        "t": 1791456535845,
+        "day": "2026-10-08",
+        "base": "learn",
+        "migrated": true
       },
-      "t": 1791836926228
+      "t": 1792925077264
     },
     "[\"rockets\",\"FR02\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-23",
-        "base": "done",
-        "t": 1792767423155
-      },
-      "t": 1792767423157
-    },
-    "[\"rockets\",\"FR03\"]": {
-      "v": {
-        "on": false,
-        "day": "2026-10-23",
-        "base": "done",
-        "t": 1792767423884
-      },
-      "t": 1792767423886
-    },
-    "[\"rockets\",\"FR04\"]": {
-      "v": {
         "on": true,
-        "day": "2026-10-25",
-        "base": null,
-        "t": 1792906268631
+        "t": 1791456538059,
+        "day": "2026-10-08",
+        "base": "look",
+        "migrated": true
       },
-      "t": 1792906268633
+      "t": 1792925077264
     },
     "[\"rockets\",\"G01.2\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-11",
+        "on": true,
+        "t": 1791309560717,
+        "day": "2026-10-06",
         "base": "learn",
-        "t": 1791729773282
+        "migrated": true
       },
-      "t": 1791729773284
+      "t": 1792925077264
     },
     "[\"rockets\",\"K01.1\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-23",
-        "base": "learn",
-        "t": 1792783894013
-      },
-      "t": 1792783894015
-    },
-    "[\"rockets\",\"K01.2\"]": {
-      "v": {
         "on": true,
-        "day": "2026-10-25",
-        "base": "look",
-        "t": 1792906291687
+        "t": 1791310248073,
+        "day": "2026-10-06",
+        "base": "learn",
+        "migrated": true
       },
-      "t": 1792906291689
+      "t": 1792925077264
     },
     "[\"rockets\",\"M01\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-08",
+        "on": true,
+        "t": 1791310013394,
+        "day": "2026-10-06",
         "base": "look",
-        "t": 1791467659627
+        "migrated": true
       },
-      "t": 1791467659628
+      "t": 1792925077264
     },
     "[\"rockets\",\"P02.2\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-25",
+        "on": true,
+        "t": 1790682300402,
+        "day": "2026-09-29",
         "base": "learn",
-        "t": 1792906228661
+        "migrated": true
       },
-      "t": 1792906228662
-    },
-    "[\"rockets\",\"P03.1\"]": {
-      "v": {
-        "on": false,
-        "day": "2026-10-25",
-        "base": "look",
-        "t": 1792906229225
-      },
-      "t": 1792906229226
+      "t": 1792925077264
     },
     "[\"rockets\",\"S01.1\"]": {
       "v": {
-        "on": false,
-        "day": "2026-10-11",
+        "on": true,
+        "t": 1791310855972,
+        "day": "2026-10-06",
         "base": "work",
-        "t": 1791729771782
+        "migrated": true
       },
-      "t": 1791729771784
+      "t": 1792925077264
     },
     "[\"blockOrder\",\"en\"]": {
       "v": {
@@ -8332,6 +8379,182 @@
       },
       "t": 1790682138304
     },
+    "[\"rocketDays\",\"2026-10-08|DEG01\"]": {
+      "v": {
+        "code": "DEG01",
+        "sec": "en",
+        "title": "Environment and change · 1",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1791456488725,
+        "t": 1791456488725,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-08|DEG02\"]": {
+      "v": {
+        "code": "DEG02",
+        "sec": "en",
+        "title": "Society and rights · 2",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1791456501383,
+        "t": 1791456501383,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-08|DEG03\"]": {
+      "v": {
+        "code": "DEG03",
+        "sec": "en",
+        "title": "Thinking and argument · 3",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": null,
+        "mark": null,
+        "done": false,
+        "plannedAt": 1791456507662,
+        "t": 1791456507662,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-06|F01.2\"]": {
+      "v": {
+        "code": "F01.2",
+        "sec": "phil-terms",
+        "title": "Language of philosophy · 2",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "work",
+        "mark": "work",
+        "done": false,
+        "plannedAt": 1791309543413,
+        "t": 1791309543413,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-08|FR01\"]": {
+      "v": {
+        "code": "FR01",
+        "sec": "fr-notes",
+        "title": "At the desk",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791456535845,
+        "t": 1791456535845,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-08|FR02\"]": {
+      "v": {
+        "code": "FR02",
+        "sec": "fr-notes",
+        "title": "Papers and notes",
+        "day": "2026-10-08",
+        "selected": true,
+        "base": "look",
+        "mark": "look",
+        "done": false,
+        "plannedAt": 1791456538059,
+        "t": 1791456538059,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-06|G01.2\"]": {
+      "v": {
+        "code": "G01.2",
+        "sec": "law",
+        "title": "State: power, forms, limits · 2",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791309560717,
+        "t": 1791309560717,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-06|K01.1\"]": {
+      "v": {
+        "code": "K01.1",
+        "sec": "crim",
+        "title": "1. The science and its subject · 1",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1791310248073,
+        "t": 1791310248073,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-06|M01\"]": {
+      "v": {
+        "code": "M01",
+        "sec": "map",
+        "title": "From Socrates to philosophy of science",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "look",
+        "mark": "look",
+        "done": false,
+        "plannedAt": 1791310013394,
+        "t": 1791310013394,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-09-29|P02.2\"]": {
+      "v": {
+        "code": "P02.2",
+        "sec": "phil-people",
+        "title": "From Bacon to Feyerabend · 2",
+        "day": "2026-09-29",
+        "selected": true,
+        "base": "learn",
+        "mark": "learn",
+        "done": false,
+        "plannedAt": 1790682300402,
+        "t": 1790682300402,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
+    "[\"rocketDays\",\"2026-10-06|S01.1\"]": {
+      "v": {
+        "code": "S01.1",
+        "sec": "forensics",
+        "title": "Science, subject, tasks · 1",
+        "day": "2026-10-06",
+        "selected": true,
+        "base": "work",
+        "mark": "work",
+        "done": false,
+        "plannedAt": 1791310855972,
+        "t": 1791310855972,
+        "migrated": true
+      },
+      "t": 1792925077264
+    },
     "[\"secDone\",\"ba\",\"2026-09-14\"]": {
       "v": true,
       "t": 1789395307927
@@ -8344,14 +8567,6 @@
       "v": true,
       "t": 1791375525061
     },
-    "[\"secDone\",\"ba\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465829104
-    },
-    "[\"secDone\",\"ba\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792759328326
-    },
     "[\"secDone\",\"crim\",\"2026-09-18\"]": {
       "v": true,
       "t": 1790192357146
@@ -8363,14 +8578,6 @@
     "[\"secDone\",\"crim\",\"2026-10-06\"]": {
       "v": true,
       "t": 1791310845885
-    },
-    "[\"secDone\",\"crim\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465833256
-    },
-    "[\"secDone\",\"crim\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792783892209
     },
     "[\"secDone\",\"en\",\"2026-09-14\"]": {
       "v": true,
@@ -8404,18 +8611,6 @@
       "v": true,
       "t": 1791375522845
     },
-    "[\"secDone\",\"en\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465824967
-    },
-    "[\"secDone\",\"en\",\"2026-10-09\"]": {
-      "v": true,
-      "t": 1791570593466
-    },
-    "[\"secDone\",\"en\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792759330025
-    },
     "[\"secDone\",\"forensics\",\"2026-09-10\"]": {
       "v": true,
       "t": 1789040425111
@@ -8431,14 +8626,6 @@
     "[\"secDone\",\"fr-notes\",\"2026-10-07\"]": {
       "v": true,
       "t": 1791377851555
-    },
-    "[\"secDone\",\"fr-notes\",\"2026-10-09\"]": {
-      "v": true,
-      "t": 1791570898989
-    },
-    "[\"secDone\",\"fr-notes\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792767386359
     },
     "[\"secDone\",\"law\",\"2026-09-18\"]": {
       "v": true,
@@ -8535,18 +8722,6 @@
     "[\"duo\",\"en\",\"2026-09-29\"]": {
       "v": true,
       "t": 1790682176926
-    },
-    "[\"duo\",\"en\",\"2026-10-08\"]": {
-      "v": true,
-      "t": 1791465824967
-    },
-    "[\"duo\",\"en\",\"2026-10-09\"]": {
-      "v": true,
-      "t": 1791570593466
-    },
-    "[\"duo\",\"fr-notes\",\"2026-10-23\"]": {
-      "v": true,
-      "t": 1792767386359
     },
     "[\"trashGroup\",\"g2\"]": {
       "v": {
@@ -8787,16 +8962,36 @@
       "t": 1790755407513
     },
     "[\"activity\",\"2026-10-25\",\"open\"]": {
-      "v": 1792916691066,
-      "t": 1792916691067
+      "v": 1792925077335,
+      "t": 1792925077335
+    },
+    "[\"activity\",\"2026-10-08\",\"open\"]": {
+      "v": null,
+      "t": 1792925077335
+    },
+    "[\"activity\",\"2026-10-08\",\"study\"]": {
+      "v": null,
+      "t": 1792925077335
     },
     "[\"activity\",\"2026-09-30\",\"open\"]": {
       "v": null,
       "t": 1792916691067
     },
+    "[\"activity\",\"2026-09-30\",\"study\"]": {
+      "v": null,
+      "t": 1791431079825
+    },
     "[\"activity\",\"2026-09-29\",\"open\"]": {
       "v": null,
       "t": 1790796980928
+    },
+    "[\"activity\",\"2026-09-28\",\"open\"]": {
+      "v": null,
+      "t": 1792051132608
+    },
+    "[\"activity\",\"2026-09-28\",\"study\"]": {
+      "v": null,
+      "t": 1790678492727
     },
     "[\"group\",\"g1\"]": {
       "v": null,
@@ -8833,6 +9028,10 @@
     "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-23\"]": {
       "v": null,
       "t": 1790616478874
+    },
+    "[\"secDone\",\"en\",\"2026-09-28\"]": {
+      "v": null,
+      "t": 1790616461507
     },
     "[\"group\",\"g2\"]": {
       "v": null,
@@ -8982,13 +9181,13 @@
       "v": null,
       "t": 1790612984218
     },
-    "[\"activity\",\"2026-09-28\",\"open\"]": {
+    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-28\"]": {
       "v": null,
-      "t": 1792051132608
+      "t": 1790612996023
     },
-    "[\"activity\",\"2026-09-28\",\"study\"]": {
+    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-28\"]": {
       "v": null,
-      "t": 1790678492727
+      "t": 1790612996661
     },
     "[\"activity\",\"2026-09-23\",\"open\"]": {
       "v": 1790180678324,
@@ -9002,117 +9201,678 @@
       "v": 1790190434221,
       "t": 1790190434221
     },
-    "[\"habitDay\",\"g1\",\"hmufglk4n4j2\",\"2026-09-28\"]": {
-      "v": null,
-      "t": 1790612996023
-    },
-    "[\"habitDay\",\"g1\",\"hmufglk4o6kn\",\"2026-09-28\"]": {
-      "v": null,
-      "t": 1790612996661
-    },
-    "[\"secDone\",\"en\",\"2026-09-28\"]": {
-      "v": null,
-      "t": 1790616461507
-    },
     "[\"activity\",\"2026-09-29\",\"study\"]": {
       "v": null,
       "t": 1790767979403
     },
-    "[\"rocketDays\",\"2026-09-29|P02.2\"]": {
-      "v": {
-        "code": "P02.2",
-        "sec": "phil-people",
-        "title": "From Bacon to Feyerabend · 2",
-        "day": "2026-09-29",
-        "selected": true,
-        "base": "learn",
-        "mark": "learn",
-        "done": false,
-        "plannedAt": 1790682300402,
-        "t": 1790682300402,
-        "migrated": true
-      },
-      "t": 1791467400850
+    "[\"activity\",\"2026-10-07\",\"open\"]": {
+      "v": null,
+      "t": 1791448663831
     },
-    "[\"rocketDays\",\"2026-10-06|F01.2\"]": {
-      "v": {
-        "code": "F01.2",
-        "sec": "phil-terms",
-        "title": "Language of philosophy · 2",
-        "day": "2026-10-06",
-        "selected": true,
-        "base": "work",
-        "mark": "work",
-        "done": false,
-        "plannedAt": 1791309543413,
-        "t": 1791309543413,
-        "migrated": true
-      },
-      "t": 1791467400850
+    "[\"activity\",\"2026-10-06\",\"open\"]": {
+      "v": null,
+      "t": 1791375515387
     },
-    "[\"rocketDays\",\"2026-10-06|G01.2\"]": {
-      "v": {
-        "code": "G01.2",
-        "sec": "law",
-        "title": "State: power, forms, limits · 2",
-        "day": "2026-10-06",
-        "selected": true,
-        "base": "learn",
-        "mark": "learn",
-        "done": false,
-        "plannedAt": 1791309560717,
-        "t": 1791309560717,
-        "migrated": true
-      },
-      "t": 1791467400850
+    "[\"activity\",\"2026-10-06\",\"study\"]": {
+      "v": null,
+      "t": 1791375515387
     },
-    "[\"rocketDays\",\"2026-10-06|K01.1\"]": {
-      "v": {
-        "code": "K01.1",
-        "sec": "crim",
-        "title": "1. The science and its subject · 1",
-        "day": "2026-10-06",
-        "selected": true,
-        "base": "learn",
-        "mark": "learn",
-        "done": false,
-        "plannedAt": 1791310248073,
-        "t": 1791310248073,
-        "migrated": true
-      },
-      "t": 1791467400850
+    "[\"activity\",\"2026-10-06\",\"check\"]": {
+      "v": null,
+      "t": 1791375515387
     },
-    "[\"rocketDays\",\"2026-10-06|M01\"]": {
+    "[\"activity\",\"2026-10-05\",\"open\"]": {
+      "v": null,
+      "t": 1791266535646
+    },
+    "[\"activity\",\"2026-10-01\",\"open\"]": {
+      "v": null,
+      "t": 1791223504682
+    },
+    "[\"activity\",\"2026-10-01\",\"study\"]": {
+      "v": null,
+      "t": 1791223504682
+    },
+    "[\"marks\",\"B02.1\"]": {
       "v": {
-        "code": "M01",
-        "sec": "map",
-        "title": "From Socrates to philosophy of science",
-        "day": "2026-10-06",
-        "selected": true,
+        "s": "done",
+        "t": 1792759176706
+      },
+      "t": 1792759176708
+    },
+    "[\"marks\",\"FR03\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792767421500
+      },
+      "t": 1792767421502
+    },
+    "[\"marks\",\"P03.1\"]": {
+      "v": {
+        "s": "look",
+        "t": 1792122342251
+      },
+      "t": 1792122342253
+    },
+    "[\"wordMarks\",\"B02.1\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792755526602
+      },
+      "t": 1792755526604
+    },
+    "[\"wordMarks\",\"FR02\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792767330280
+      },
+      "t": 1792767330282
+    },
+    "[\"wordMarks\",\"FR03\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792767378179
+      },
+      "t": 1792767378180
+    },
+    "[\"stageLog\",\"2026-10-08|B01.1\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791467601517
+      },
+      "t": 1791467601518
+    },
+    "[\"stageLog\",\"2026-10-08|DEG01\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791467472298
+      },
+      "t": 1791467472300
+    },
+    "[\"stageLog\",\"2026-10-08|DEG02\"]": {
+      "v": {
+        "s": "learn",
+        "t": 1791467492069
+      },
+      "t": 1791467492071
+    },
+    "[\"stageLog\",\"2026-10-08|DEG03\"]": {
+      "v": {
+        "s": "work",
+        "t": 1791467500246
+      },
+      "t": 1791467500248
+    },
+    "[\"stageLog\",\"2026-10-09|DEG02\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791570567261
+      },
+      "t": 1791570567262
+    },
+    "[\"stageLog\",\"2026-10-09|FR01\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791518887518
+      },
+      "t": 1791518887520
+    },
+    "[\"stageLog\",\"2026-10-09|FR02\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791570902414
+      },
+      "t": 1791570902416
+    },
+    "[\"stageLog\",\"2026-10-12|B01.2\"]": {
+      "v": {
+        "s": "learn",
+        "t": 1791836659829
+      },
+      "t": 1791836659831
+    },
+    "[\"stageLog\",\"2026-10-13|FR02\"]": {
+      "v": {
+        "s": "learn",
+        "t": 1791894792313
+      },
+      "t": 1791894792315
+    },
+    "[\"stageLog\",\"2026-10-13|FR03\"]": {
+      "v": {
+        "s": "look",
+        "t": 1791894801479
+      },
+      "t": 1791894801481
+    },
+    "[\"stageLog\",\"2026-10-13|P02.1\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791894828065
+      },
+      "t": 1791894828065
+    },
+    "[\"stageLog\",\"2026-10-16|B01.2\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792122415928
+      },
+      "t": 1792122415929
+    },
+    "[\"stageLog\",\"2026-10-16|B02.1\"]": {
+      "v": {
+        "s": "work",
+        "t": 1792122420044
+      },
+      "t": 1792122420046
+    },
+    "[\"stageLog\",\"2026-10-16|DEG03\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792122396336
+      },
+      "t": 1792122396338
+    },
+    "[\"stageLog\",\"2026-10-16|DEG04\"]": {
+      "v": {
+        "s": "work",
+        "t": 1792122325862
+      },
+      "t": 1792122325870
+    },
+    "[\"stageLog\",\"2026-10-16|P02.2\"]": {
+      "v": {
+        "s": "learn",
+        "t": 1792122340221
+      },
+      "t": 1792122340223
+    },
+    "[\"stageLog\",\"2026-10-16|P03.1\"]": {
+      "v": {
+        "s": "look",
+        "t": 1792122342251
+      },
+      "t": 1792122342253
+    },
+    "[\"stageLog\",\"2026-10-23|B02.1\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792759176706
+      },
+      "t": 1792759176708
+    },
+    "[\"stageLog\",\"2026-10-23|DEG04\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792759298597
+      },
+      "t": 1792759298599
+    },
+    "[\"stageLog\",\"2026-10-23|FR02\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792767419320
+      },
+      "t": 1792767419322
+    },
+    "[\"stageLog\",\"2026-10-23|FR03\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792767421500
+      },
+      "t": 1792767421502
+    },
+    "[\"stageLog\",\"2026-10-23|K01.1\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792783896543
+      },
+      "t": 1792783896543
+    },
+    "[\"wordLog\",\"2026-10-09|B01.2\"]": {
+      "v": {
+        "s": "work",
+        "t": 1791518934371
+      },
+      "t": 1791518934373
+    },
+    "[\"wordLog\",\"2026-10-09|DEG01\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791570377841
+      },
+      "t": 1791570377843
+    },
+    "[\"wordLog\",\"2026-10-09|DEG02\"]": {
+      "v": {
+        "s": "done",
+        "t": 1791570379029
+      },
+      "t": 1791570379030
+    },
+    "[\"wordLog\",\"2026-10-13|B01.2\"]": {
+      "v": {
+        "s": "learn",
+        "t": 1791894772838
+      },
+      "t": 1791894772839
+    },
+    "[\"wordLog\",\"2026-10-13|B02.1\"]": {
+      "v": {
+        "s": "learn",
+        "t": 1791894774457
+      },
+      "t": 1791894774458
+    },
+    "[\"wordLog\",\"2026-10-17|DEG04\"]": {
+      "v": {
+        "s": "learn",
+        "t": 1792235906784
+      },
+      "t": 1792235906786
+    },
+    "[\"wordLog\",\"2026-10-23|B02.1\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792755526602
+      },
+      "t": 1792755526604
+    },
+    "[\"wordLog\",\"2026-10-23|DEG04\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792759282658
+      },
+      "t": 1792759282659
+    },
+    "[\"wordLog\",\"2026-10-23|FR02\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792767330280
+      },
+      "t": 1792767330282
+    },
+    "[\"wordLog\",\"2026-10-23|FR03\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792767378179
+      },
+      "t": 1792767378180
+    },
+    "[\"wordLog\",\"2026-10-23|K01.1\"]": {
+      "v": {
+        "s": "done",
+        "t": 1792783885268
+      },
+      "t": 1792783885270
+    },
+    "[\"checks\",\"B02.1\"]": {
+      "v": {
+        "d": "2026-10-23",
+        "ok": 3,
+        "n": 5,
+        "t": 1792755514443
+      },
+      "t": 1792755514445
+    },
+    "[\"checks\",\"DEG01\"]": {
+      "v": {
+        "d": "2026-10-09",
+        "ok": 5,
+        "n": 5,
+        "t": 1791570168078
+      },
+      "t": 1791570168079
+    },
+    "[\"checks\",\"DEG02\"]": {
+      "v": {
+        "d": "2026-10-09",
+        "ok": 5,
+        "n": 5,
+        "t": 1791570371280
+      },
+      "t": 1791570371282
+    },
+    "[\"checks\",\"DEG04\"]": {
+      "v": {
+        "d": "2026-10-23",
+        "ok": 5,
+        "n": 5,
+        "t": 1792759279394
+      },
+      "t": 1792759279395
+    },
+    "[\"checks\",\"FR02\"]": {
+      "v": {
+        "d": "2026-10-23",
+        "ok": 5,
+        "n": 5,
+        "t": 1792767327574
+      },
+      "t": 1792767327575
+    },
+    "[\"checks\",\"FR03\"]": {
+      "v": {
+        "d": "2026-10-23",
+        "ok": 5,
+        "n": 5,
+        "t": 1792767372346
+      },
+      "t": 1792767372347
+    },
+    "[\"checks\",\"K01.1\"]": {
+      "v": {
+        "d": "2026-10-23",
+        "ok": 5,
+        "n": 5,
+        "t": 1792783882601
+      },
+      "t": 1792783882602
+    },
+    "[\"lessonStates\",\"brat2_progress_DEG04\"]": {
+      "v": {
+        "data": {
+          "v": 3,
+          "t": 1792687175503,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 927,
+          "diag": {
+            "order": [
+              2,
+              4,
+              0,
+              1,
+              3
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          }
+        },
+        "t": 1792687175503
+      },
+      "t": 1792687175510
+    },
+    "[\"lessonStates\",\"brat2_progress_F01.2\"]": {
+      "v": {
+        "data": {
+          "v": 4,
+          "t": 1791467513444,
+          "screen": "study",
+          "mode": null,
+          "scrollStudy": 0,
+          "diag": {
+            "order": [
+              0,
+              3,
+              1,
+              4,
+              2
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 0,
+            "i": 0,
+            "order": [],
+            "res": {
+              "0": {},
+              "1": {},
+              "2": {},
+              "3": {},
+              "4": {}
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": false,
+            "started": false
+          },
+          "trap": {
+            "order": [],
+            "i": 0,
+            "res": {},
+            "queue": [],
+            "retry": false,
+            "done": false
+          }
+        },
+        "t": 1791467513444
+      },
+      "t": 1791467513451
+    },
+    "[\"lessonStates\",\"brat2_progress_FR02\"]": {
+      "v": {
+        "data": {
+          "v": 3,
+          "t": 1791570892367,
+          "screen": "final",
+          "mode": "single",
+          "scrollStudy": 4185,
+          "diag": {
+            "order": [
+              4,
+              2,
+              3,
+              1,
+              0
+            ],
+            "i": 0,
+            "res": {},
+            "done": false
+          },
+          "quiz": {
+            "li": 1,
+            "i": 5,
+            "order": [
+              2,
+              1,
+              0,
+              4,
+              3
+            ],
+            "res": {
+              "0": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
+              "1": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
+              "2": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
+              "3": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              },
+              "4": {
+                "L1": {
+                  "ok": true,
+                  "att": 1,
+                  "rev": false
+                }
+              }
+            },
+            "queue": [],
+            "retry": false,
+            "doneAll": true,
+            "started": true
+          }
+        },
+        "t": 1791570892367
+      },
+      "t": 1791570892375
+    },
+    "[\"rockets\",\"B01.1\"]": {
+      "v": {
+        "on": false,
+        "day": "2026-10-08",
+        "base": "done",
+        "t": 1791467604548
+      },
+      "t": 1791467604550
+    },
+    "[\"rockets\",\"B01.2\"]": {
+      "v": {
+        "on": false,
+        "day": "2026-10-16",
+        "base": "done",
+        "t": 1792122416606
+      },
+      "t": 1792122416608
+    },
+    "[\"rockets\",\"B02.1\"]": {
+      "v": {
+        "on": false,
+        "day": "2026-10-23",
+        "base": "done",
+        "t": 1792759178663
+      },
+      "t": 1792759178665
+    },
+    "[\"rockets\",\"B02.2\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-25",
+        "base": null,
+        "t": 1792906254711
+      },
+      "t": 1792906254713
+    },
+    "[\"rockets\",\"DEG04\"]": {
+      "v": {
+        "on": false,
+        "day": "2026-10-23",
+        "base": "done",
+        "t": 1792759300491
+      },
+      "t": 1792759300493
+    },
+    "[\"rockets\",\"DEG05\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-25",
+        "base": null,
+        "t": 1792906243353
+      },
+      "t": 1792906243355
+    },
+    "[\"rockets\",\"FR03\"]": {
+      "v": {
+        "on": false,
+        "day": "2026-10-23",
+        "base": "done",
+        "t": 1792767423884
+      },
+      "t": 1792767423886
+    },
+    "[\"rockets\",\"FR04\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-25",
+        "base": null,
+        "t": 1792906268631
+      },
+      "t": 1792906268633
+    },
+    "[\"rockets\",\"K01.2\"]": {
+      "v": {
+        "on": true,
+        "day": "2026-10-25",
         "base": "look",
-        "mark": "look",
-        "done": false,
-        "plannedAt": 1791310013394,
-        "t": 1791310013394,
-        "migrated": true
+        "t": 1792906291687
       },
-      "t": 1791467400850
+      "t": 1792906291689
     },
-    "[\"rocketDays\",\"2026-10-06|S01.1\"]": {
+    "[\"rockets\",\"P03.1\"]": {
       "v": {
-        "code": "S01.1",
-        "sec": "forensics",
-        "title": "Science, subject, tasks · 1",
-        "day": "2026-10-06",
-        "selected": true,
-        "base": "work",
-        "mark": "work",
-        "done": false,
-        "plannedAt": 1791310855972,
-        "t": 1791310855972,
-        "migrated": true
+        "on": false,
+        "day": "2026-10-25",
+        "base": "look",
+        "t": 1792906229225
       },
-      "t": 1791467400850
+      "t": 1792906229226
+    },
+    "[\"secDone\",\"ba\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465829104
+    },
+    "[\"secDone\",\"ba\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792759328326
+    },
+    "[\"secDone\",\"crim\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465833256
+    },
+    "[\"secDone\",\"crim\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792783892209
+    },
+    "[\"secDone\",\"en\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465824967
+    },
+    "[\"secDone\",\"en\",\"2026-10-09\"]": {
+      "v": true,
+      "t": 1791570593466
+    },
+    "[\"secDone\",\"en\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792759330025
+    },
+    "[\"secDone\",\"fr-notes\",\"2026-10-09\"]": {
+      "v": true,
+      "t": 1791570898989
+    },
+    "[\"secDone\",\"fr-notes\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792767386359
+    },
+    "[\"duo\",\"en\",\"2026-10-08\"]": {
+      "v": true,
+      "t": 1791465824967
+    },
+    "[\"duo\",\"en\",\"2026-10-09\"]": {
+      "v": true,
+      "t": 1791570593466
+    },
+    "[\"duo\",\"fr-notes\",\"2026-10-23\"]": {
+      "v": true,
+      "t": 1792767386359
     },
     "[\"rocketDays\",\"2026-10-08|B01.1\"]": {
       "v": {
@@ -9145,86 +9905,6 @@
         "source": "rocket"
       },
       "t": 1791467600480
-    },
-    "[\"rocketDays\",\"2026-10-08|DEG01\"]": {
-      "v": {
-        "code": "DEG01",
-        "sec": "en",
-        "title": "Environment and change · 1",
-        "day": "2026-10-08",
-        "selected": false,
-        "base": null,
-        "mark": "done",
-        "done": true,
-        "plannedAt": 1791456488725,
-        "t": 1791467484924,
-        "migrated": true
-      },
-      "t": 1791467484925
-    },
-    "[\"rocketDays\",\"2026-10-08|DEG02\"]": {
-      "v": {
-        "code": "DEG02",
-        "sec": "en",
-        "title": "Society and rights · 2",
-        "day": "2026-10-08",
-        "selected": true,
-        "base": null,
-        "mark": "learn",
-        "done": true,
-        "plannedAt": 1791456501383,
-        "t": 1791467492069,
-        "migrated": true
-      },
-      "t": 1791467492071
-    },
-    "[\"rocketDays\",\"2026-10-08|DEG03\"]": {
-      "v": {
-        "code": "DEG03",
-        "sec": "en",
-        "title": "Thinking and argument · 3",
-        "day": "2026-10-08",
-        "selected": true,
-        "base": null,
-        "mark": "work",
-        "done": true,
-        "plannedAt": 1791456507662,
-        "t": 1791467500246,
-        "migrated": true
-      },
-      "t": 1791467500248
-    },
-    "[\"rocketDays\",\"2026-10-08|FR01\"]": {
-      "v": {
-        "code": "FR01",
-        "sec": "fr-notes",
-        "title": "At the desk",
-        "day": "2026-10-08",
-        "selected": true,
-        "base": "learn",
-        "mark": "learn",
-        "done": false,
-        "plannedAt": 1791456535845,
-        "t": 1791456535845,
-        "migrated": true
-      },
-      "t": 1791467406099
-    },
-    "[\"rocketDays\",\"2026-10-08|FR02\"]": {
-      "v": {
-        "code": "FR02",
-        "sec": "fr-notes",
-        "title": "Papers and notes",
-        "day": "2026-10-08",
-        "selected": true,
-        "base": "look",
-        "mark": "look",
-        "done": false,
-        "plannedAt": 1791456538059,
-        "t": 1791456538059,
-        "migrated": true
-      },
-      "t": 1791467406099
     },
     "[\"rocketDays\",\"2026-10-09|B01.2\"]": {
       "v": {
@@ -9855,46 +10535,6 @@
     "[\"activity\",\"2026-10-09\",\"check\"]": {
       "v": null,
       "t": 1791729605004
-    },
-    "[\"activity\",\"2026-10-08\",\"open\"]": {
-      "v": null,
-      "t": 1791518658794
-    },
-    "[\"activity\",\"2026-10-08\",\"study\"]": {
-      "v": null,
-      "t": 1791518658794
-    },
-    "[\"activity\",\"2026-10-07\",\"open\"]": {
-      "v": null,
-      "t": 1791448663831
-    },
-    "[\"activity\",\"2026-10-06\",\"open\"]": {
-      "v": null,
-      "t": 1791375515387
-    },
-    "[\"activity\",\"2026-10-06\",\"study\"]": {
-      "v": null,
-      "t": 1791375515387
-    },
-    "[\"activity\",\"2026-10-06\",\"check\"]": {
-      "v": null,
-      "t": 1791375515387
-    },
-    "[\"activity\",\"2026-10-05\",\"open\"]": {
-      "v": null,
-      "t": 1791266535646
-    },
-    "[\"activity\",\"2026-10-01\",\"open\"]": {
-      "v": null,
-      "t": 1791223504682
-    },
-    "[\"activity\",\"2026-10-01\",\"study\"]": {
-      "v": null,
-      "t": 1791223504682
-    },
-    "[\"activity\",\"2026-09-30\",\"study\"]": {
-      "v": null,
-      "t": 1791431079825
     },
     "[\"activity\",\"2026-10-15\",\"open\"]": {
       "v": 1792051132608,
