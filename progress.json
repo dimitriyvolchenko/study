@@ -1,7 +1,7 @@
 {
   "v": 3,
   "profile": "dad",
-  "updated": "2026-10-26T11:22:00.663Z",
+  "updated": "2026-10-26T12:12:37.969Z",
   "marks": {
     "A01.1": {
       "s": "look",
@@ -3882,10 +3882,10 @@
       "t": 1790679351298
     },
     "E24.1": {
-      "on": true,
+      "on": false,
       "day": "2026-10-26",
-      "base": null,
-      "t": 1793013715732
+      "base": "look",
+      "t": 1793016756087
     },
     "F01.1": {
       "on": false,
@@ -4613,12 +4613,12 @@
       "sec": "en",
       "title": "Online life and digital evidence · 1",
       "day": "2026-10-26",
-      "selected": true,
+      "selected": false,
       "base": null,
       "mark": "look",
       "done": true,
       "plannedAt": 1793013715733,
-      "t": 1793013718791,
+      "t": 1793016756088,
       "source": "rocket"
     }
   },
@@ -8917,12 +8917,12 @@
     },
     "[\"rockets\",\"E24.1\"]": {
       "v": {
-        "on": true,
+        "on": false,
         "day": "2026-10-26",
-        "base": null,
-        "t": 1793013715732
+        "base": "look",
+        "t": 1793016756087
       },
-      "t": 1793013715734
+      "t": 1793016756089
     },
     "[\"rockets\",\"F01.1\"]": {
       "v": {
@@ -9837,15 +9837,15 @@
         "sec": "en",
         "title": "Online life and digital evidence · 1",
         "day": "2026-10-26",
-        "selected": true,
+        "selected": false,
         "base": null,
         "mark": "look",
         "done": true,
         "plannedAt": 1793013715733,
-        "t": 1793013718791,
+        "t": 1793016756088,
         "source": "rocket"
       },
-      "t": 1793013718792
+      "t": 1793016756089
     },
     "[\"uiPrefs\",\"sudakPhoto\"]": {
       "v": {
