@@ -79,4 +79,3 @@ else if(root.addEventListener)root.addEventListener('DOMContentLoaded',function(
 var api={project:project,seed:seed,capture:capture,merge:merge,same:same};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.ProgressSync=api;
 })(typeof window!=='undefined'?window:this);
-

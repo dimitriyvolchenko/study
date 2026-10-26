@@ -1,0 +1,26 @@
+{
+  "README_UPDATE_EN.txt": {
+    "bytes": 7820,
+    "sha256": "d88c9a84821e988a6a16275f45144c0b5b5540ac5a608c4c702c4057e9724ea8"
+  },
+  "TEST_REPORT.md": {
+    "bytes": 10382,
+    "sha256": "e8441d36b457c32afcb8ac425a580129d64df5161aaea60845a308fab601e86a"
+  },
+  "index.html": {
+    "bytes": 17470210,
+    "sha256": "afd6a94f845152f5b988d195d480d090876accc516d5408d78e7e012af32234a"
+  },
+  "refresh.html": {
+    "bytes": 5882,
+    "sha256": "e7b4e690dc23fb9c4864b4fb271763a96cafeac8c580af8b743eb15dd005ccf5"
+  },
+  "sw.js": {
+    "bytes": 3101,
+    "sha256": "b4def035b0bb7f981f301cb942e6f2eff67f1170912e3a256b2d5f37fb582184"
+  },
+  "sync-core.js": {
+    "bytes": 5966,
+    "sha256": "3db73482b60cbb3c4d8f3d3ce4250501865fe107e7b2ecc29f64cd2381219015"
+  }
+}
