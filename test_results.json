@@ -1,0 +1,792 @@
+[
+  {
+    "suite": "gesture_results",
+    "checks": [
+      {
+        "test": "Initial summary is collapsed",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Korean collapsed caption",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Korean expand label and instruction",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Quick click does not expand",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Hold shorter than three seconds stays collapsed",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Early release cancels pending expansion",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Three-second hold expands",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Long hold followed by release does not instantly collapse",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Korean collapse label",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Rerender retains explicitly opened summary",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Collapse happens with one click",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Moving away cancels hold",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Keyboard hold supports expansion",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Keyboard-triggered summary can collapse normally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Returning to Sudak defaults to collapsed summary",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Summary interactions leave progress and selection unchanged",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "No JavaScript runtime errors",
+        "pass": true,
+        "details": []
+      }
+    ]
+  },
+  {
+    "suite": "touch_results",
+    "checks": [
+      {
+        "test": "Second finger cancels expansion",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Real touch hold expands",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Returning to Sudak defaults to collapsed summary",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Summary interactions leave progress and selection unchanged",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "No JavaScript runtime errors",
+        "pass": true,
+        "details": []
+      }
+    ]
+  },
+  {
+    "suite": "layout_results",
+    "checks": [
+      {
+        "test": "dark 320: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 320: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 320: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 393: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 393: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 393: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 393: each sample five-word card <= 470 CSS pixels",
+        "pass": true,
+        "details": [
+          442.5,
+          442.5,
+          436.1
+        ]
+      },
+      {
+        "test": "dark 416: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 416: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 416: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 416: each sample five-word card <= 470 CSS pixels",
+        "pass": true,
+        "details": [
+          442.5,
+          442.5,
+          436.1
+        ]
+      },
+      {
+        "test": "dark 430: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 430: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 430: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 430: each sample five-word card <= 470 CSS pixels",
+        "pass": true,
+        "details": [
+          442.5,
+          442.5,
+          429.7
+        ]
+      },
+      {
+        "test": "dark 768: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 768: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 768: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 1024: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 1024: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "dark 1024: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 320: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 320: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 320: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 393: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 393: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 393: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 393: each sample five-word card <= 470 CSS pixels",
+        "pass": true,
+        "details": [
+          442.5,
+          442.5,
+          436.1
+        ]
+      },
+      {
+        "test": "light 416: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 416: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 416: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 416: each sample five-word card <= 470 CSS pixels",
+        "pass": true,
+        "details": [
+          442.5,
+          442.5,
+          436.1
+        ]
+      },
+      {
+        "test": "light 430: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 430: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 430: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 430: each sample five-word card <= 470 CSS pixels",
+        "pass": true,
+        "details": [
+          442.5,
+          442.5,
+          429.7
+        ]
+      },
+      {
+        "test": "light 768: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 768: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 768: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 1024: no horizontal overflow",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 1024: all five words and original etymologies intact",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "light 1024: opaque header has reserved top space",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "416x903 model: complete card fits between PiP and bottom menu",
+        "pass": true,
+        "details": {
+          "card": {
+            "x": 18,
+            "y": 299.828125,
+            "width": 380,
+            "height": 442.546875,
+            "top": 299.828125,
+            "right": 398,
+            "bottom": 742.375,
+            "left": 18
+          },
+          "tabs": {
+            "x": 0,
+            "y": 803,
+            "width": 416,
+            "height": 100,
+            "top": 803,
+            "right": 416,
+            "bottom": 903,
+            "left": 0
+          },
+          "pip": {
+            "x": 12,
+            "y": 58,
+            "width": 392,
+            "height": 224,
+            "top": 58,
+            "right": 404,
+            "bottom": 282,
+            "left": 12
+          }
+        }
+      },
+      {
+        "test": "Layout run: no JavaScript errors",
+        "pass": true,
+        "details": []
+      }
+    ]
+  },
+  {
+    "suite": "lesson_results",
+    "checks": [
+      {
+        "test": "E07.1: shared dark lesson skin loaded",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "E07.1: no white main lesson card surfaces",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "E07.1: lesson viewport fits horizontally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "E07.1: dictionary bar has no blur",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "E12.1: shared dark lesson skin loaded",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "E12.1: no white main lesson card surfaces",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "E12.1: lesson viewport fits horizontally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "E12.1: dictionary bar has no blur",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "F01.1: shared dark lesson skin loaded",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "F01.1: no white main lesson card surfaces",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "F01.1: lesson viewport fits horizontally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "F01.1: dictionary bar has no blur",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "P01.1: shared dark lesson skin loaded",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "P01.1: no white main lesson card surfaces",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "P01.1: lesson viewport fits horizontally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "P01.1: dictionary bar has no blur",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "M01: shared dark lesson skin loaded",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "M01: no white main lesson card surfaces",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "M01: lesson viewport fits horizontally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "M01: dictionary bar has no blur",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "T01.1: shared dark lesson skin loaded",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "T01.1: no white main lesson card surfaces",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "T01.1: lesson viewport fits horizontally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "T01.1: dictionary bar has no blur",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: shared dark lesson skin loaded",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: no white main lesson card surfaces",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: lesson viewport fits horizontally",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: dictionary bar has no blur",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: both before/after checks retain five cards",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: tap still reveals translation",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: actual resume card rendered after work",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "FR04: resume card uses warm brown",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Light theme still works in open lesson",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Switching back restores warm resume card",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Two Hard save buttons still exist",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Lesson red header keeps the added cap",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "No lesson JavaScript errors",
+        "pass": true,
+        "details": []
+      }
+    ]
+  },
+  {
+    "suite": "regression_results",
+    "checks": [
+      {
+        "test": "Etymology can still expand fully",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Expanded etymology is not clamped",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Etymology can collapse to phone preview",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Sudak arrow reorders one list",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Sudak custom order survives rerender",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Moving list leaves marks, Rocket and history unchanged",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "C recall still opens five inputs",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "C recall scores five correct answers",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "C recall returns to compact word list",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Freeze activates",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Freezing leaves header and bottom menu fixed",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Frozen taps and scrolling cannot navigate or move page",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Quick unlock tap is ignored",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Two-second hold and release unlocks",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Unlock restores same scroll and menu coordinates",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Revealed translation contrast uses warm accent",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Freeze also works while a lesson is open",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Lesson position survives unlocking",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "No regression JavaScript errors",
+        "pass": true,
+        "details": []
+      }
+    ]
+  },
+  {
+    "suite": "static_results",
+    "checks": [
+      {
+        "test": "All 334 inert data/template/package/media blocks are byte-for-byte unchanged",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "sync-core.js unchanged",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Base matches current GitHub index blob",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Generated ASSETS region untouched",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Generated PACKAGES region untouched",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Original freeze controller unchanged",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "HTML build marker is v012",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Worker validates v012 shell and uses a new cache version",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Refresh rescue page shows v012",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "No test PiP overlay or test-only safe area in release",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Presentation patch is outside replaceable asset block",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Executable script 0 passes node syntax check",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Executable script 1 passes node syntax check",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Executable script 336 passes node syntax check",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Executable script 337 passes node syntax check",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Executable script 338 passes node syntax check",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "sw.js passes node syntax check",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "sync-core.js passes node syntax check",
+        "pass": true,
+        "details": null
+      },
+      {
+        "test": "Refresh script 0 passes node syntax check",
+        "pass": true,
+        "details": null
+      }
+    ]
+  }
+]

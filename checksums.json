@@ -1,29 +1,49 @@
 {
-  "build": "v011-2026-10-26-cozy-sudak",
+  "build": "v012-2026-10-26-pip-dark",
   "files": {
-    "README_UPDATE_EN.txt": {
-      "bytes": 4085,
-      "sha256": "8adf49ce311777fa0607d15133df54db77bbc3fbf9459bc96e6dfd2c831d8294"
+    "README_UPDATE_RU.txt": {
+      "bytes": 7591,
+      "sha256": "bbf69fe554ee046349a071735f0835e9557266429eec96fa6c6f170b7f19ea86"
     },
     "TEST_REPORT.md": {
-      "bytes": 8466,
-      "sha256": "d0bf532cd7bd42ad0ec3d509dfd022046cee32ab7ef4ecffa9e3363375428b67"
+      "bytes": 7759,
+      "sha256": "27f992b2910df73d24e96c20d64124f866c3c7aa17be027ac237d3a057968940"
     },
     "index.html": {
-      "bytes": 17485053,
-      "sha256": "f07d8f2c41908749ed94fefe5df1de136b505a98efb00f61fdb18335d4449df8"
+      "bytes": 17506618,
+      "sha256": "91d3ebfd6f440cc0f233d05a240a9fc836dffd499ecaa4870d81354768e45d4a"
+    },
+    "previews/collapsed.png": {
+      "bytes": 240504,
+      "sha256": "f0333683cda1eb47c1d8c8a7e9b5b96a705393c2e95050472f6da01f1b98607c"
+    },
+    "previews/lesson.png": {
+      "bytes": 175035,
+      "sha256": "3eec8ce31c41c21219d98098bfa201a5c627bf5d5f14609be349cf3dd0f3f571"
+    },
+    "previews/pip.png": {
+      "bytes": 196726,
+      "sha256": "cd82cd049c5fc0e4fde9edb507979cebdc3de90bbd391c19c450c60f18bfab8c"
+    },
+    "previews/resume.png": {
+      "bytes": 226985,
+      "sha256": "c881949ac374ec6edcf6e1343984ec662e3ffde97f65cb43cf10a46ae48ca639"
     },
     "refresh.html": {
       "bytes": 5882,
-      "sha256": "56c0cc4addc02c91abb3a0dbff17370e51b9f42a7995f6aa1e98aefd368dfff7"
+      "sha256": "1cecd654824eea590b1a89be2e3fb1af09b9786334fe99bd7fb9a5e170cf52b9"
     },
     "sw.js": {
-      "bytes": 3092,
-      "sha256": "0cd20c872072014e9dbc9755082fd41e175c4b4ced2e7b165138f91e71f1d9cc"
+      "bytes": 3090,
+      "sha256": "92ffc6ca13d4606ee01ee16623ea25366f553220ffc13261610f36d78edcbdec"
     },
     "sync-core.js": {
       "bytes": 5966,
       "sha256": "3db73482b60cbb3c4d8f3d3ce4250501865fe107e7b2ecc29f64cd2381219015"
+    },
+    "test_results.json": {
+      "bytes": 18850,
+      "sha256": "07893d3dff255b33c608175a08618811f42d203ed1fe89b10b397420a1fc0ecf"
     }
   }
 }
