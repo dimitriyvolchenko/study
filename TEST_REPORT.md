@@ -1,90 +1,41 @@
-# Study v012 — проверка сборки
+# Study v014 test notes
 
-Дата: 26.10.2026. Сборка: `v012-2026-10-26-pip-dark`.
+Build: `Study v014 · 29.10.2026 · Exact W source + templates`
 
-## Источник и границы изменений
+## Implemented changes
+- Reworked W tab.
+- Switched the main W wallpaper source from the generic internal template to the user's exact attached clean Walkman wallpaper file.
+- Added a thumbnail template gallery inside the W tab.
+- Added template selection state persistence.
+- Added recreated retro wallpaper assets in iPhone 15 Pro Max proportion:
+  - Walkman variants
+  - Nokia-style variants
+  - Retro/Kodak-style variants
+- Kept W1 / W2 generation logic.
+- Added per-template placement zones for generated word blocks.
+- Updated build labels from v013 to v014.
 
-База — v011, чей Git blob `7ce475bc6cf9c422d170b282d137b0b514fabfeb`
-точно совпал с `index.html` коммита
-`489cd826e2835c1b25ff888c4e91e625b509e28b`, полученным живым чтением GitHub.
-Новые стили находятся за пределами заменяемых областей сборщика.
-Изменены только отображение/жест раскрытия, номер сборки и служебные файлы обновления.
-`sync-core.js` побайтно совпадает с v011. Реальный репозиторий и данные пользователя
-не изменялись. Все 334 инертных script-блока (данные, шаблоны, пакеты, медиа)
-совпадают с базой, как и блоки SINGLE-FILE ASSETS/PACKAGES.
+## Reference grounding
+- Dribbble pages were checked successfully.
+- The Walkman page states the series includes classic yellow Sports Walkman variations and recolored interpretations.
+- The Nokia 3310 page explicitly notes high-resolution wallpapers at 2358x5112 px.
+- The Retro Wallpaper Pack page describes a collection of retro-inspired wallpapers.
 
-## Среда
+## Validation performed
+- Verified that the exact attached clean Walkman file is available in the environment and used as the main source.
+- Generated a local asset pack under `Study_v014/assets`.
+- Verified the new W module parses successfully as JavaScript.
+- Verified the updated build/version strings in `index.html`.
+- Verified the new template gallery markup and template metadata insertion.
 
-Playwright + установленный Chromium 144.0.7559.96, Node.js для проверки синтаксиса.
-Приложение запускалось через `set_content` с изолированным хранилищем в памяти;
-сервис-воркеры в браузерных тестах отключены, внешние запросы блокированы.
-Для теста возврата в урок моделировалось общее same-origin localStorage родителя
-и iframe. Ключи GitHub и реальные файлы прогресса не использовались.
-Настоящие touch-события отправлялись через Chromium DevTools Protocol.
-Это не физический iPhone, не Safari/WebKit и не реальное воспроизведение видео PiP.
+## Files to deploy
+- `index.html`
+- `refresh.html`
+- `assets/` directory
 
-## Итог
 
-141 проверка текущей итоговой сборки — PASS:
-- 17 проверок основного жеста раскрытия;
-- 5 проверок touch и отмены вторым пальцем;
-- 44 проверки компоновки/источников на разных размерах и в двух темах;
-- 37 проверок уроков;
-- 19 проверок обратной совместимости интерфейса;
-- 19 статических проверок исходников, версий и синтаксиса.
-
-Полные названия проверок и результаты — в `test_results.json`.
-Числа ниже описывают измеренную модель, а не гарантию для любого размера PiP.
-
-## Компоновка
-
-Проверены ширины 320, 393, 416, 430, 768, 1024 CSS px в тёмной и светлой темах:
-горизонтального переполнения в Судаке нет; пять исходных слов и точные полные
-этимологии сохранены. На телефоне этимология визуально свёрнута в одну строку.
-Слова/переводы не усечены; данные доступны полностью.
-
-На ширинах 393/416/430 три образца E24.1, B01.1, FR04 имеют высоту 430–443 px.
-В модели 416×903, соответствующей пропорциям пользовательского скриншота:
-PiP top=58, bottom=282; карточка E24.1 top=299,83, bottom=742,38;
-нижнее меню top=803. Вся карточка, включая нижние управляющие кнопки, помещается.
-Эта модель прокручена к карточке. Реальное внешнее PiP приложение не распознаёт,
-не перемещает и не добавляет. Тестовый прямоугольник видео не включён в релиз.
-
-## Жесты и доступность
-
-Проверены: начальное свёрнутое состояние, корейские надписи, короткий tap,
-удержание 2750 ms без раскрытия, 3150 ms с раскрытием, длительное удержание после
-срабатывания без повторного сворачивания при отпускании, сворачивание одним
-нажатием, отмена при движении/втором пальце, клавиатура Space, новый вход в Судак.
-Ререндер сохраняет уже открытый список в пределах текущего посещения; возвращение
-после выхода снова сворачивает. Отметки, очередь, проверки и история не меняются.
-
-## Уроки
-
-Проверены представители всех шести семейств шаблонов:
-E07.1, E12.1, F01.1, P01.1, M01, T01.1, плюс FR04 со скриншотов пользователя.
-Проверены отсутствие белых основных поверхностей в тёмной теме, отсутствие
-горизонтального переполнения и CSS-blur словарной панели.
-В FR04 оба списка быстрой проверки сохранили по пять элементов; нажатие раскрывает
-перевод. Реальная карточка «Продолжить» появляется после возвращения в урок
-и имеет тёплый тёмный фон. Светлая тема и возврат к тёмной работают.
-Отдельная inline-белая вставка в P01.1 также переоформлена.
-Низкоконтрастные inline-синие переводы на тёмном фоне заменены светлым акцентом.
-
-## Сохранённое поведение
-
-Проверены раскрытие полного исходного происхождения слова, сворачивание,
-перестановка списка и сохранение порядка при ререндере без изменения очереди,
-отметок или истории; C-тест с пятью правильными ответами; заморозка и двухсекундная
-разблокировка в Судаке и внутри урока, отсутствие сдвига шапки/нижней навигации,
-сохранение прокрутки. Проверено наличие обеих кнопок Hard save.
-Новых ошибок JavaScript в этих сценариях не зарегистрировано.
-
-## Не проверялось
-
-Физический iPhone/iPad, системный blur iOS, Safari, управление реальным PiP,
-системный значок-бейдж, публикация GitHub Pages и реальные облачные push/pull.
-Изменения не затрагивают алгоритм синхронизации. Синтаксис service worker и updater
-проверен, но полный сценарий их установки в этой итерации не воспроизводился.
-Более длинные переводы, системное увеличение текста или увеличенное PiP могут
-потребовать прокрутки; содержимое не скрывается ради искусственного вписывания.
+## Flat archive variant
+- Created a special flat build with no assets directory.
+- All wallpaper PNG files were moved next to index.html.
+- All `assets/...` references in `index.html` were rewritten to plain filenames.
+- This build is intended for GitHub uploads where files are copied in bulk without preserving folders.
