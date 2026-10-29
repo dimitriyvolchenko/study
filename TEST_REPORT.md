@@ -39,3 +39,12 @@ Build: `Study v014 · 29.10.2026 · Exact W source + templates`
 - All wallpaper PNG files were moved next to index.html.
 - All `assets/...` references in `index.html` were rewritten to plain filenames.
 - This build is intended for GitHub uploads where files are copied in bulk without preserving folders.
+
+
+## v015 wallpaper update
+- Reworked W with improved text placement.
+- Added a dedicated Download button under Preview.
+- Kept Force update the app in the build.
+- Removed the weak custom wallpaper options from the W selector.
+- Added original templates provided by the user: Walkman Sports, Sony Beta L-500, iPod black, and iPod red.
+- Versioned wallpaper assets with `v015_` filenames so old repository files should not interfere.
