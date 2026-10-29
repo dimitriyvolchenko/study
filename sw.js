@@ -1,7 +1,7 @@
-/* STUDY-SW-NETWORK-FIRST · v012 · 2026-10-26
+/* STUDY-SW-NETWORK-FIRST · v016 · 2026-10-29
    Always ask the network for the HTML shell. Offline fallback uses the versioned cache.
    Never cache progress responses, wipe storage, or alter profile data. */
-const VERSION='2026-10-26-12';
+const VERSION='2026-10-29-16';
 const SHELL='study-pwa-shell-'+VERSION;
 const COURSES='study-pwa-courses-v1';
 const BASE=new URL('./',self.location.href);
@@ -10,14 +10,15 @@ const FILES=['index.html','sync-core.js','pwa.css','manifest.webmanifest',
  'icons/icon-180.png','icons/icon-192.png','icons/icon-512.png',
  'bundled/index.json','bundled/dad-french.json','bundled/mom-ege.json',
  'bundled/mom-starlight9.json','bundled/serge-spotlight3.json',
- 'bundled/yulia-spotlight6.json'];
+ 'bundled/yulia-spotlight6.json',
+ 'v016_beta_l500.jpg','v016_ipod_black.jpg','v016_ipod_red.jpg','v016_thumb_beta_l500.png','v016_thumb_ipod_black.png','v016_thumb_ipod_red.png','v016_thumb_walkman_sports.png','v016_thumb_walkman_yellow.png','v016_walkman_sports.jpg','v016_walkman_yellow.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(SHELL);
  try{
   const response=await fetch(new Request(url('index.html'),{cache:'reload'}));
   if(!response.ok)throw new Error('Study shell unavailable: '+response.status);
   const text=await response.clone().text();
-  if(!text.includes('v012-2026-10-26-pip-dark'))throw new Error('Study shell and worker versions do not match');
+  if(!text.includes('v016-2026-10-29-compact-photos'))throw new Error('Study shell and worker versions do not match');
   await cache.put(url('index.html'),response);
   await Promise.all(FILES.filter(p=>p!=='index.html').map(async p=>{
    try{const r=await fetch(new Request(url(p),{cache:'reload'}));if(r.ok)await cache.put(url(p),r);}catch(e){}
