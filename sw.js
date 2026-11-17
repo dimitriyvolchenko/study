@@ -1,27 +1,56 @@
-/* STUDY-SW-NETWORK-FIRST · v016 · 2026-10-29
+/* STUDY-SW-NETWORK-FIRST · v016 flat · 2026-11-17
    Always ask the network for the HTML shell. Offline fallback uses the versioned cache.
    Never cache progress responses, wipe storage, or alter profile data. */
-const VERSION='2026-10-29-16';
+const VERSION='2026-11-17-flat1';
 const SHELL='study-pwa-shell-'+VERSION;
-const COURSES='study-pwa-courses-v1';
+const COURSES='study-pwa-courses-flat-v1';
 const BASE=new URL('./',self.location.href);
 const url=p=>new URL(p,BASE).href;
-const FILES=['index.html','sync-core.js','pwa.css','manifest.webmanifest',
- 'icons/icon-180.png','icons/icon-192.png','icons/icon-512.png',
- 'bundled/index.json','bundled/dad-french.json','bundled/mom-ege.json',
- 'bundled/mom-starlight9.json','bundled/serge-spotlight3.json',
- 'bundled/yulia-spotlight6.json',
- 'v016_beta_l500.jpg','v016_ipod_black.jpg','v016_ipod_red.jpg','v016_thumb_beta_l500.png','v016_thumb_ipod_black.png','v016_thumb_ipod_red.png','v016_thumb_walkman_sports.png','v016_thumb_walkman_yellow.png','v016_walkman_sports.jpg','v016_walkman_yellow.png'];
+const FILES=[
+ "bundled_dad-french.json",
+ "bundled_index.json",
+ "bundled_mom-ege.json",
+ "bundled_mom-starlight9.json",
+ "bundled_serge-spotlight3.json",
+ "bundled_yulia-spotlight6.json",
+ "icons_icon-180.png",
+ "icons_icon-192.png",
+ "icons_icon-512.png",
+ "index.html",
+ "manifest.webmanifest",
+ "packages_dad-ege-advanced.json",
+ "packages_dad-french.json",
+ "packages_icon-singer.json",
+ "packages_index.json",
+ "packages_mom-ege.json",
+ "packages_mom-starlight9.json",
+ "packages_serge-school.json",
+ "packages_serge-spotlight3.json",
+ "packages_yulia-school.json",
+ "packages_yulia-spotlight6.json",
+ "pwa.css",
+ "sync-core.js",
+ "v016_beta_l500.jpg",
+ "v016_ipod_black.jpg",
+ "v016_ipod_red.jpg",
+ "v016_thumb_beta_l500.png",
+ "v016_thumb_ipod_black.png",
+ "v016_thumb_ipod_red.png",
+ "v016_thumb_walkman_sports.png",
+ "v016_thumb_walkman_yellow.png",
+ "v016_walkman_sports.jpg",
+ "v016_walkman_yellow.png"
+];
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(SHELL);
  try{
   const response=await fetch(new Request(url('index.html'),{cache:'reload'}));
   if(!response.ok)throw new Error('Study shell unavailable: '+response.status);
   const text=await response.clone().text();
-  if(!text.includes('v016-2026-10-29-compact-photos'))throw new Error('Study shell and worker versions do not match');
+  if(!text.includes('v016-flat-2026-11-17'))throw new Error('Study shell and worker versions do not match');
   await cache.put(url('index.html'),response);
   await Promise.all(FILES.filter(p=>p!=='index.html').map(async p=>{
-   try{const r=await fetch(new Request(url(p),{cache:'reload'}));if(r.ok)await cache.put(url(p),r);}catch(e){}
+   try{const r=await fetch(new Request(url(p),{cache:'reload'}));if(r.ok)await (p.startsWith('packages_')?await caches.open(COURSES):cache).put(url(p),r);}catch(e){}
   }));
   await self.skipWaiting();
  }catch(e){await caches.delete(SHELL);throw e;}
@@ -63,10 +92,10 @@ self.addEventListener('fetch',event=>{
   return;
  }
  if(FILES.includes(rel)){
-  event.respondWith(networkFirst(req,SHELL,url(rel)));
+  event.respondWith(networkFirst(req,rel.startsWith('packages_')?COURSES:SHELL,url(rel)));
   return;
  }
- if(rel.startsWith('packages/')||/^[A-Za-z0-9._-]+\.html$/.test(rel)){
+ if(/^packages_[A-Za-z0-9._-]+\.json$/i.test(rel)||/^[A-Za-z0-9._-]+\.html$/.test(rel)){
   event.respondWith(networkFirst(req,COURSES,url(rel)));
  }
 });

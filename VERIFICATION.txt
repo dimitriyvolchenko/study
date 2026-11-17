@@ -1,0 +1,31 @@
+STUDY FLAT PACKAGE VERIFICATION — 17 NOVEMBER 2026
+
+Package contains 35 app/runtime files plus two optional imports and five supporting files.
+Every archive entry is a file at the ZIP root; no subfolders or wrapper folder.
+
+Checks passed:
+- Every extracted archive member is a root-level file
+- Flat package/bundle manifests and install icons resolve
+- Every JSON is valid
+- pkgSync reads flat manifest and all Dad courses
+- pkgSync resolves all four family profile course sets
+- Mock GitHub project upload and manifest update use flat root paths
+- Mock GitHub project deletion keeps flat root paths
+- Service worker installs and precaches using only flat /study/ URLs
+- All current courses are available in the offline cache
+- Worker activation removes only old Study shell caches
+- Offline navigation and all course reads return cached content
+- Progress requests bypass the service worker
+- Profile keys PKEY/PSUF/LSKEY/LKEY and all four progress filenames unchanged
+- All 14 prior literal study_* names retained
+- All 5 executable inline scripts plus sw.js and sync-core.js compile
+- Safe updater: one executable script passes syntax checking.
+- Existing GitHub builder leaves the entire modified index byte-for-byte unchanged.
+- Gallery reads flat catalog first, falls back to legacy catalog on 404 only.
+- First flat catalog write preserves existing legacy photo entries and excludes legacy SHA.
+- Concurrent gallery update retries preserve all existing/new entries; failed reads do not write.
+- New photo and gallery writes use flat root filenames; pending state is cleared correctly.
+- ZIP CRC and SHA-256 checksums validated; no progress files included.
+
+Boundaries: JavaScript logic executed with mocked browser, cache and GitHub services.
+No live-browser, physical-device or real cloud-sync test was performed. No GitHub writes.
