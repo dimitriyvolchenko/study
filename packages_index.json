@@ -99,8 +99,18 @@
    ],
    "created": "2026-10-29",
    "size": 537407
+  },
+  {
+   "id": "pooh_expertology_full_book",
+   "rev": 1,
+   "title": "Экспертология с Винни-Пухом · весь учебник",
+   "profiles": [
+    "dad"
+   ],
+   "created": "2026-11-03",
+   "size": 1189099
   }
  ],
  "format": "ramyeon-projects",
- "updated": "2026-11-19T13:18:36.481Z"
+ "updated": "2026-11-19T13:38:07.448Z"
 }
