@@ -4,7 +4,7 @@
 
   var grades = {
     look: ['初', 'Ознакомление'], work: ['固', 'Закрепление'],
-    learn: ['習', 'Заучивание'], done: ['憶', 'Запоминание'], '': ['消', 'Отмена отметки']
+    learn: ['習', 'Заучивание'], done: ['憶', 'Запоминание'], '': ['×', 'Снять отметку. Удерживайте 2 секунды']
   };
   var active = null;
 
@@ -21,7 +21,96 @@
     button.setAttribute('aria-expanded', String(opened));
   }
 
-  function enhance(box) {
+  function updateGrade(row, stage) {
+    row.querySelectorAll('[data-word-stage]').forEach(function (button) {
+      var value = button.getAttribute('data-word-stage');
+      if (!value) return;
+      var current = value === stage;
+      button.classList.toggle('on', current);
+      button.setAttribute('aria-pressed', String(current));
+    });
+    var caption = row.parentElement.querySelector('small');
+    if (caption) {
+      var label = stage && grades[stage];
+      caption.textContent = label ? 'Word Pack · ' + label[1] : 'Word Pack';
+    }
+  }
+
+  function bindHoldToClear(button, applyGrade) {
+    var timer = null, pointer = null, key = null, x = 0, y = 0;
+    button.onclick = null;
+    function stop() {
+      if (timer === null) return;
+      clearTimeout(timer);
+      timer = null;
+      key = null;
+      var captured = pointer;
+      pointer = null;
+      if (captured !== null && button.hasPointerCapture && button.hasPointerCapture(captured)) {
+        button.releasePointerCapture(captured);
+      }
+      button.classList.remove('sg-holding');
+      window.removeEventListener('blur', stop);
+      window.removeEventListener('pagehide', stop);
+      window.removeEventListener('hashchange', stop);
+      document.removeEventListener('visibilitychange', stop);
+      window.removeEventListener('pointerdown', otherPointer, true);
+    }
+    function otherPointer(event) {
+      if (event.pointerId !== pointer) stop();
+    }
+    function start() {
+      button.classList.add('sg-holding');
+      window.addEventListener('blur', stop);
+      window.addEventListener('pagehide', stop);
+      window.addEventListener('hashchange', stop);
+      document.addEventListener('visibilitychange', stop);
+      window.addEventListener('pointerdown', otherPointer, true);
+      timer = setTimeout(function () {
+        stop();
+        if (button.isConnected && button.getClientRects().length && !document.hidden) applyGrade(button);
+      }, 2000);
+    }
+    button.addEventListener('pointerdown', function (event) {
+      if (!event.isPrimary || event.button !== 0 || timer !== null) return;
+      pointer = event.pointerId;
+      x = event.clientX;
+      y = event.clientY;
+      try { button.setPointerCapture(pointer); } catch (e) {}
+      start();
+    });
+    button.addEventListener('pointermove', function (event) {
+      if (pointer !== event.pointerId) return;
+      var bounds = button.getBoundingClientRect();
+      if (Math.hypot(event.clientX - x, event.clientY - y) > 12 ||
+          event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom) stop();
+    });
+    ['pointerup', 'pointercancel', 'pointerleave', 'lostpointercapture'].forEach(function (name) {
+      button.addEventListener(name, function (event) { if (event.pointerId === pointer) stop(); });
+    });
+    button.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') { stop(); return; }
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      if (timer !== null || event.repeat) return;
+      key = event.key;
+      start();
+    });
+    button.addEventListener('keyup', function (event) {
+      if (event.key === ' ' || event.key === 'Enter') event.preventDefault();
+      if (event.key === key) stop();
+    });
+    button.addEventListener('blur', stop);
+    button.addEventListener('contextmenu', function (event) { event.preventDefault(); });
+    button.addEventListener('click', function (event) {
+      // A short tap or a synthesized click must never invoke the old clear handler.
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }, true);
+  }
+
+  function enhance(box, applyGrade) {
     if (!box) return;
     var cards = Array.from(box.querySelectorAll('.apack[data-apcode]'));
     cards.forEach(function (card) {
@@ -30,20 +119,21 @@
       row.classList.add('sg-grade-row');
       row.setAttribute('role', 'group');
       row.setAttribute('aria-label', 'Стадия повторения');
-      var caption = row.parentElement.querySelector('small');
+      var selected = row.querySelector('[data-word-stage].on');
       row.querySelectorAll('[data-word-stage]').forEach(function (button) {
         var stage = button.getAttribute('data-word-stage'), grade = grades[stage];
         if (!grade) return;
         var glyph = document.createElement('span');
-        glyph.lang = 'zh-Hant';
+        if (stage) glyph.lang = 'zh-Hant';
+        glyph.setAttribute('aria-hidden', 'true');
         glyph.textContent = grade[0];
         button.replaceChildren(glyph);
         button.lang = 'ru';
-        if (stage && caption && button.classList.contains('on')) caption.textContent += ' · ' + grade[1];
         button.setAttribute('aria-label', grade[1]);
         button.title = grade[1];
-        if (stage) button.setAttribute('aria-pressed', String(button.classList.contains('on')));
+        if (!stage) bindHoldToClear(button, applyGrade);
       });
+      updateGrade(row, selected ? selected.getAttribute('data-word-stage') : '');
       var button = document.createElement('button');
       button.className = 'word-stage-btn sudak-glass-toggle';
       button.type = 'button';
@@ -60,7 +150,7 @@
       });
       row.appendChild(button);
     });
-    // Grading and the C button re-render Sudak. Keep reading the fresh card.
+    // A full Sudak refresh can replace an open card, such as when starting a recall check.
     if (active && !active.dialog.isConnected) {
       var code = active.code, stage = active.lastStage;
       close(false);
@@ -196,6 +286,7 @@
       if (event.target === dialog) { close(true); return; }
       var grade = event.target.closest('[data-word-stage]');
       a.lastStage = grade ? grade.getAttribute('data-word-stage') : null;
+      if (grade) return;
       // Return the card to its siblings before the existing list handles reordering.
       if (event.target.closest('[data-v9-step]')) close(false);
       else requestFit();
@@ -206,5 +297,5 @@
   }
 
   window.addEventListener('hashchange', function () { if (active && location.hash !== '#/all') close(false); });
-  window.SudakGlass = {enhance: enhance, close: function () { close(true); }};
+  window.SudakGlass = {enhance: enhance, updateGrade: updateGrade, close: function () { close(true); }};
 })();

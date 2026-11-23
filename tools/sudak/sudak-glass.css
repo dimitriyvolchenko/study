@@ -33,12 +33,6 @@
 @supports (width: 1cqw) {
   #allBox .v11-cozy-pack .sg-grade-row > button.word-stage-btn { --grade-size: clamp(24px, calc((100cqw - 40px) / 6), 44px); }
 }
-#allBox .v11-cozy-pack .sg-grade-row > button.word-stage-btn.on {
-  color: var(--paper);
-  background: var(--ink);
-  border-color: var(--ink);
-  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--sd-accent, var(--ink));
-}
 #allBox .v11-cozy-pack .sg-grade-row > button.sudak-glass-toggle {
   margin-left: auto;
   border-color: var(--muted);
@@ -129,11 +123,75 @@ html.sg-view-open, html.sg-view-open body { overflow: hidden !important; overscr
   color: #f0e8df;
   box-shadow: inset .6px .9px .8px rgba(255,255,255,.28), inset -.5px -.8px .8px rgba(255,255,255,.10), 0 1px 5px rgba(0,0,0,.18);
 }
-#allBox #sudak-glass-dialog .v11-cozy-pack .word-stage-btn.on,
 #allBox #sudak-glass-dialog .sudak-glass-toggle {
   background: linear-gradient(145deg,rgba(255,255,255,.35),rgba(255,255,255,.14));
   border-color: rgba(255,255,255,.75);
   box-shadow: inset 1px 1px 1px rgba(255,255,255,.45), 0 0 0 2px #18191c, 0 0 0 3px rgba(255,255,255,.30);
+}
+/* The five stage circles retain their own fill in light, dark and glass views. */
+.sg-grade-row [data-word-stage="look"]  { --grade-fill: #fff;    --grade-ink: #332a26; --grade-edge: #998f89; }
+.sg-grade-row [data-word-stage="work"]  { --grade-fill: #f5ca45; --grade-ink: #332600; --grade-edge: #a47c15; }
+.sg-grade-row [data-word-stage="learn"] { --grade-fill: #b7353e; --grade-ink: #fff;    --grade-edge: #99222f; }
+.sg-grade-row [data-word-stage="done"]  { --grade-fill: #34764e; --grade-ink: #fff;    --grade-edge: #24613d; }
+.sg-grade-row [data-word-stage=""]      { --grade-fill: #78543e; --grade-ink: #fff;    --grade-edge: #62422f; }
+#allBox .v11-cozy-pack .sg-grade-row > button[data-word-stage],
+#allBox #sudak-glass-dialog .sg-grade-row > button[data-word-stage] {
+  background: var(--grade-fill);
+  color: var(--grade-ink);
+  border-color: var(--grade-edge);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.24);
+  transform: none;
+  -webkit-tap-highlight-color: transparent;
+}
+#allBox #sudak-glass-dialog .sg-grade-row > button[data-word-stage] {
+  background-image: linear-gradient(145deg,rgba(255,255,255,.13),transparent 58%);
+  border-color: rgba(255,255,255,.38);
+}
+#allBox .v11-cozy-pack .sg-grade-row > button[aria-pressed="true"],
+#allBox #sudak-glass-dialog .sg-grade-row > button[aria-pressed="true"] {
+  box-shadow: 0 0 0 1px var(--paper), 0 0 0 3px var(--ink), inset 0 1px 1px rgba(255,255,255,.25);
+}
+#allBox .v11-cozy-pack > .kh .mnow {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 1.35em;
+  width: 1.35em;
+  height: 1.35em;
+  line-height: 1;
+}
+#allBox .v11-cozy-pack .word-pack-controls > small {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#allBox .sg-grade-row button[data-word-stage=""] {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+#allBox .sg-grade-row button[data-word-stage=""] > span {
+  font: 500 1.22em/1 system-ui, sans-serif;
+}
+@property --sg-hold-sweep {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+#allBox .sg-grade-row .sg-holding::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(white 0deg var(--sg-hold-sweep), transparent var(--sg-hold-sweep) 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  animation: sg-hold-sweep 2s linear forwards;
+}
+@keyframes sg-hold-sweep { to { --sg-hold-sweep: 360deg; } }
+@media (prefers-reduced-motion: reduce) {
+  #allBox .sg-grade-row .sg-holding::after { animation: none; background: white; }
 }
 #allBox #sudak-glass-dialog button:disabled { opacity: .4; }
 #allBox #sudak-glass-dialog .chk-l .ok input { color: #a7eab9; }
