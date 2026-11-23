@@ -1,0 +1,146 @@
+/* Scoped to the Word Pack row. Keep the five grade buttons and the glass circular. */
+#allBox .v11-cozy-pack .sg-grade-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 1.35vw, 8px);
+  padding: 3px 0;
+  container-type: inline-size;
+}
+#allBox .v11-cozy-pack .sg-grade-row > button.word-stage-btn {
+  --grade-size: clamp(31px, 10vw, 44px);
+  flex: 0 0 var(--grade-size);
+  width: var(--grade-size);
+  height: var(--grade-size);
+  min-width: var(--grade-size);
+  min-height: var(--grade-size);
+  max-width: var(--grade-size);
+  max-height: var(--grade-size);
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  display: inline-grid;
+  place-items: center;
+  font: 500 clamp(17px, 4.8vw, 22px)/1 'PingFang TC', 'Hiragino Sans', 'Noto Sans CJK TC', sans-serif;
+  color: var(--ink);
+  background: var(--paper2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+@supports (width: 1cqw) {
+  #allBox .v11-cozy-pack .sg-grade-row > button.word-stage-btn { --grade-size: clamp(24px, calc((100cqw - 40px) / 6), 44px); }
+}
+#allBox .v11-cozy-pack .sg-grade-row > button.word-stage-btn.on {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--sd-accent, var(--ink));
+}
+#allBox .v11-cozy-pack .sg-grade-row > button.sudak-glass-toggle {
+  margin-left: auto;
+  border-color: var(--muted);
+  background: linear-gradient(145deg, rgba(255,255,255,.22), transparent 56%), var(--paper2);
+  box-shadow: inset 1px 1px 1px rgba(255,255,255,.35), inset -1px -1px 2px rgba(0,0,0,.17);
+}
+#allBox .v11-cozy-pack .sg-grade-row > button.word-stage-btn:focus-visible { outline: 2px solid var(--sd-accent, currentColor); outline-offset: 2px; }
+
+html.sg-view-open, html.sg-view-open body { overflow: hidden !important; overscroll-behavior: none; }
+#allBox #sudak-glass-dialog {
+  --ink: #fff6e8;
+  --paper: #1a1b1e;
+  --paper2: rgba(255,255,255,.07);
+  --edge: #777a80;
+  --line: rgba(255,255,255,.18);
+  --muted: #c3bdba;
+  --sd-accent: #f2b9a6;
+  --sg-control: linear-gradient(148deg, rgba(255,255,255,.18), rgba(255,255,255,.045) 48%, rgba(255,255,255,.07));
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 2147483646;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  border: 0;
+  margin: 0;
+  padding: 14px;
+  padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  background: #000;
+  color: var(--ink);
+  overflow: hidden;
+  overscroll-behavior: none;
+  isolation: isolate;
+  color-scheme: dark;
+}
+#sudak-glass-dialog[open] { display: grid; grid-template: minmax(0,1fr) / minmax(0,1fr); place-items: center; }
+#sudak-glass-dialog::backdrop { background: #000; }
+#sudak-glass-dialog .sg-fit-stage { position: relative; }
+#sudak-glass-dialog .sg-fit-canvas { position: absolute; top: 0; left: 0; transform-origin: top left; }
+#allBox #sudak-glass-dialog .v11-cozy-pack {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at -10% -18%, rgba(255,255,255,.19), transparent 55%),
+    radial-gradient(ellipse at 110% 112%, rgba(255,255,255,.09), transparent 53%),
+    linear-gradient(132deg, rgba(56,58,64,.5), rgba(32,34,38,.5) 47%, rgba(46,48,54,.5));
+  box-shadow: inset 1px 1.2px 1px rgba(255,255,255,.58), inset -1px -1.3px 1px rgba(255,255,255,.28),
+      inset 0 0 18px rgba(255,255,255,.045), 0 9px 40px rgba(255,255,255,.055);
+  -webkit-backdrop-filter: blur(24px) saturate(0);
+  backdrop-filter: blur(24px) saturate(0);
+}
+#sudak-glass-dialog .sg-forming::after {
+  content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(117deg, transparent 33%, rgba(255,255,255,.22) 47%, transparent 59%);
+  background-size: 260% 100%;
+  animation: sg-specular .72s ease-out forwards;
+}
+@keyframes sg-specular { from { background-position: 105% 0; opacity: .8; } to { background-position: -15% 0; opacity: 0; } }
+#allBox #sudak-glass-dialog .v11-section-head { padding: 14px 15px 5px; }
+#allBox #sudak-glass-dialog .v11-cozy-pack > .kh { padding: 2px 15px 9px; }
+#allBox #sudak-glass-dialog .v11-word-list { padding: 0 15px; column-gap: 17px; }
+#allBox #sudak-glass-dialog .v11-word-list > li { break-inside: avoid; border-color: var(--line); }
+#allBox #sudak-glass-dialog .v11-section-icon, #allBox #sudak-glass-dialog .mnow { filter: grayscale(1); }
+#allBox #sudak-glass-dialog .v11-section-name, #allBox #sudak-glass-dialog .v11-russian { color: var(--ink); }
+#allBox #sudak-glass-dialog .v11-target, #allBox #sudak-glass-dialog .v11-etym-label { color: var(--sd-accent); }
+#allBox #sudak-glass-dialog .v11-number { color: #f5d29c; background: rgba(255,255,255,.05); }
+#allBox #sudak-glass-dialog .v11-note-text { color: #d1c9c4; }
+#allBox #sudak-glass-dialog .v11-cozy-pack > .v9-sort-controls {
+  background: rgba(255,255,255,.03); border-radius: 0 0 25px 25px; border-color: var(--line);
+}
+#allBox #sudak-glass-dialog .v11-cozy-pack button,
+#allBox #sudak-glass-dialog .v11-cozy-pack input,
+#allBox #sudak-glass-dialog .v11-count,
+#allBox #sudak-glass-dialog .kh .code,
+#allBox #sudak-glass-dialog .kh .cdone {
+  background: var(--sg-control);
+  border: 1px solid rgba(255,255,255,.22);
+  color: #f0e8df;
+  box-shadow: inset .6px .9px .8px rgba(255,255,255,.28), inset -.5px -.8px .8px rgba(255,255,255,.10), 0 1px 5px rgba(0,0,0,.18);
+}
+#allBox #sudak-glass-dialog .v11-cozy-pack .word-stage-btn.on,
+#allBox #sudak-glass-dialog .sudak-glass-toggle {
+  background: linear-gradient(145deg,rgba(255,255,255,.35),rgba(255,255,255,.14));
+  border-color: rgba(255,255,255,.75);
+  box-shadow: inset 1px 1px 1px rgba(255,255,255,.45), 0 0 0 2px #18191c, 0 0 0 3px rgba(255,255,255,.30);
+}
+#allBox #sudak-glass-dialog button:disabled { opacity: .4; }
+#allBox #sudak-glass-dialog .chk-l .ok input { color: #a7eab9; }
+#allBox #sudak-glass-dialog .chk-l .near input { color: #f5d29c; }
+#allBox #sudak-glass-dialog .chk-l .bad input { color: #ffb7b5; }
+@media (prefers-reduced-motion: reduce) { #sudak-glass-dialog .sg-forming::after { display: none; } }
+@media (prefers-contrast: more) {
+  #allBox #sudak-glass-dialog .v11-cozy-pack { border-color: #eee; --line: rgba(255,255,255,.48); }
+  #allBox #sudak-glass-dialog .v11-note-text { color: #fff; }
+}

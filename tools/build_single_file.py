@@ -6,6 +6,8 @@ import re
 import sys
 from pathlib import Path
 
+from sudak.embed import embed_sudak
+
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
 PWA_CSS = ROOT / "pwa.css"
@@ -182,6 +184,7 @@ if "meta.origin='inline'" not in html:
 if file_mode not in html:
     raise RuntimeError("Local-file mode marker missing")
 
+html = embed_sudak(html)
 INDEX.write_text(html, encoding="utf-8")
 print("Single-file Study build complete")
 print("Embedded packages:", expected)

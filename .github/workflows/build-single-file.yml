@@ -8,6 +8,7 @@ on:
       - "sync-core.js"
       - "packages/**"
       - "tools/build_single_file.py"
+      - "tools/sudak/**"
       - ".github/workflows/build-single-file.yml"
   workflow_dispatch:
 
