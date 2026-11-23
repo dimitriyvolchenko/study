@@ -1,7 +1,7 @@
-/* STUDY-SW-NETWORK-FIRST · v017 Sudak · 2026-11-23
+/* STUDY-SW-NETWORK-FIRST · v018 Sudak · 2026-11-23
    Always ask the network for the HTML shell. Offline fallback uses the versioned cache.
    Never cache progress responses, wipe storage, or alter profile data. */
-const VERSION='2026-11-23-sudak1';
+const VERSION='2026-11-23-sudak2';
 const SHELL='study-pwa-shell-'+VERSION;
 const COURSES='study-pwa-courses-flat-v1';
 const BASE=new URL('./',self.location.href);
@@ -64,7 +64,7 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 self.addEventListener('message',event=>{
  if(event.data&&event.data.type==='ACTIVATE')self.skipWaiting();
 });
-const SHELL_BUILD = 'v017-sudak-2026-11-23';
+const SHELL_BUILD = 'v018-sudak-2026-11-23';
 
 // The release marker precedes the inline app icon. Only inspect the first 4 KiB.
 async function readShellBuild(response) {

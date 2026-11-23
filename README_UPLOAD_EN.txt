@@ -1,12 +1,13 @@
-STUDY v017 · SUDAK · 23 NOVEMBER 2026
+STUDY v018 · SUDAK · 23 NOVEMBER 2026
 
 Open Study at https://dimitriyvolchenko.github.io/study/ on your existing device.
-If v016 is still shown, use Cloud > Force update the app or open
+If an earlier version is still shown, use Cloud > Force update the app or open
 https://dimitriyvolchenko.github.io/study/refresh.html. The app keeps the existing profile
 and progress keys. Open the updated app online once before using it without a connection.
 
 SUDAK
-Use 初, 固, 習 and 憶 to mark the stage of a Word Pack. 消 clears its stage.
+Tap white 初, yellow 固, red 習 or green 憶 to change a Word Pack’s stage in place.
+Hold the brown × for two seconds to clear the mark. Releasing early cancels the reset.
 Tap 璃 to open a pack on a black glass screen. Tap it again to return to Sudak.
 Hold 십자말풀이 for two seconds to open the crossword for the current Sudak list.
 Choose a cell or clue, enter the answer in its original language and check it.

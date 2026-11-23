@@ -1,8 +1,10 @@
-STUDY v017 · 23 NOVEMBER 2026
+STUDY v018 · 23 NOVEMBER 2026
 
 44 flat files, including the two original expertology imports.
 All files from the previous flat release are present. The current project manifest resolves at the ZIP root.
 The app includes its crossword engine, play screen, and glass view in index.html.
 The repository single-file builder reproduces the index byte for byte.
-The service worker validates the matching v017 build before activating.
+At a 390 × 750 viewport, the row and card kept their positions during stage changes.
+Tested ordinary and glass views, early release, canceled touches, keyboard hold, sync, and reload.
+The service worker validates the matching v018 build before activating.
 The archive contains no profile progress files. FILES_SHA256.json covers each other member.
