@@ -1,7 +1,7 @@
-/* STUDY-SW-NETWORK-FIRST · v016 flat · 2026-11-17
+/* STUDY-SW-NETWORK-FIRST · v017 Sudak · 2026-11-23
    Always ask the network for the HTML shell. Offline fallback uses the versioned cache.
    Never cache progress responses, wipe storage, or alter profile data. */
-const VERSION='2026-11-17-flat1';
+const VERSION='2026-11-23-sudak1';
 const SHELL='study-pwa-shell-'+VERSION;
 const COURSES='study-pwa-courses-flat-v1';
 const BASE=new URL('./',self.location.href);
@@ -24,6 +24,8 @@ const FILES=[
  "packages_index.json",
  "packages_mom-ege.json",
  "packages_mom-starlight9.json",
+ "packages_pooh_expertology_full_book.json",
+ "packages_se2001_full_unit_1.json",
  "packages_serge-school.json",
  "packages_serge-spotlight3.json",
  "packages_yulia-school.json",
@@ -46,8 +48,7 @@ self.addEventListener('install',event=>event.waitUntil((async()=>{
  try{
   const response=await fetch(new Request(url('index.html'),{cache:'reload'}));
   if(!response.ok)throw new Error('Study shell unavailable: '+response.status);
-  const text=await response.clone().text();
-  if(!text.includes('v016-flat-2026-11-17'))throw new Error('Study shell and worker versions do not match');
+  if(await readShellBuild(response)!==SHELL_BUILD)throw new Error('Study shell and worker versions do not match');
   await cache.put(url('index.html'),response);
   await Promise.all(FILES.filter(p=>p!=='index.html').map(async p=>{
    try{const r=await fetch(new Request(url(p),{cache:'reload'}));if(r.ok)await (p.startsWith('packages_')?await caches.open(COURSES):cache).put(url(p),r);}catch(e){}
@@ -63,16 +64,61 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 self.addEventListener('message',event=>{
  if(event.data&&event.data.type==='ACTIVATE')self.skipWaiting();
 });
-async function networkFirst(req,cacheName,key){
- const cache=await caches.open(cacheName);
- try{
-  const response=await fetch(new Request(req,{cache:'no-store'}));
-  if(response.ok){try{await cache.put(key,response.clone());}catch(e){}return response;}
-  const saved=await cache.match(key);if(saved)return saved;return response;
- }catch(err){
-  const offline=await cache.match(key);
-  if(offline)return offline;
-  throw err;
+const SHELL_BUILD = 'v017-sudak-2026-11-23';
+
+// The release marker precedes the inline app icon. Only inspect the first 4 KiB.
+async function readShellBuild(response) {
+ const probe = response.clone();
+ if (!probe.body) return '';
+ const reader = probe.body.getReader();
+ const decoder = new TextDecoder();
+ let header = '', remaining = 4096;
+ try {
+  while (remaining > 0) {
+   const {value, done} = await reader.read();
+   if (done) break;
+   const count = Math.min(remaining, value.byteLength);
+   header += decoder.decode(value.subarray(0, count), {stream:true});
+   remaining -= count;
+   const marker = header.match(/<meta\s+name=["']study-build["']\s+content=["']([^"']+)["']/i);
+   if (marker) return marker[1];
+  }
+  return '';
+ } finally {
+  // Cancellation of one half of a tee may wait for the original response.
+  reader.cancel().catch(() => {});
+  reader.releaseLock();
+ }
+}
+
+function shellGeneration(build) {
+ const version = /^v(\d+)(?:-|$)/i.exec(build);
+ return version ? Number(version[1]) : -1;
+}
+async function networkFirst(req, cacheName, key) {
+ const cache = await caches.open(cacheName);
+ try {
+  const response = await fetch(new Request(req, {cache:'no-store'}));
+  if (!response.ok) return await cache.match(key) || response;
+  if (key === url('index.html')) {
+   const build = await readShellBuild(response);
+   if (build !== SHELL_BUILD) {
+    // A later release has its own worker and offline cache.
+    if (shellGeneration(build) > shellGeneration(SHELL_BUILD)) return response;
+    const installed = await cache.match(key);
+    if (installed) {
+     if (response.body) response.body.cancel().catch(() => {});
+     return installed;
+    }
+    return response;
+   }
+  }
+  try { await cache.put(key, response.clone()); } catch (e) {}
+  return response;
+ } catch (error) {
+  const offline = await cache.match(key);
+  if (offline) return offline;
+  throw error;
  }
 }
 self.addEventListener('fetch',event=>{
