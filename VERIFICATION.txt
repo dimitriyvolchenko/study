@@ -1,10 +1,24 @@
-STUDY v018 · 23 NOVEMBER 2026
+STUDY v019 · 27 NOVEMBER 2026
 
-44 flat files, including the two original expertology imports.
-All files from the previous flat release are present. The current project manifest resolves at the ZIP root.
-The app includes its crossword engine, play screen, and glass view in index.html.
-The repository single-file builder reproduces the index byte for byte.
-At a 390 × 750 viewport, the row and card kept their positions during stage changes.
-Tested ordinary and glass views, early release, canceled touches, keyboard hold, sync, and reload.
-The service worker validates the matching v018 build before activating.
-The archive contains no profile progress files. FILES_SHA256.json covers each other member.
+The flat ZIP contains 45 files. FILES_SHA256.json covers its other 44 members.
+Both original expertology imports are included. No profile progress is packaged.
+The reproducible single-file shell embeds all 11 packages in the flat catalog.
+The service worker checks the matching HTML build before replacing the offline shell.
+
+Sudak: select/remove a book chapter or a case in Rocket, open its source, and
+read its terms. POOHBK01 contributes three terms and the final glossary six.
+The four memory stages were switched in ordinary and glass views; other buttons
+turn gray, their positions stay fixed and the two-second clear gesture works.
+
+Crossword: new grids fit within 13 columns. Checked empty, single, mixed and
+630-entry lists, active cell input, paste, deletion, crossing direction and old
+v018 archive replay. A saved grid keeps its original coordinates.
+
+Sony Walkman Yellow and Sports: checked both sets of body and clock slots across
+619 five-word packs. Four-block PNGs are 1290 x 2796 with clear space for the
+standard iPhone clock. Wallpaper and widget display on a physical device may
+depend on the iPhone's layout.
+
+Widgets: checked both iScreen PNG sizes. Exercised Scriptable import and rotation
+with API test doubles, including invalid and empty lists, six widget sizes and
+the link back to Sudak. Native iOS installation was not tested.
