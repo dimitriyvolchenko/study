@@ -22,6 +22,7 @@
   }
 
   function updateGrade(row, stage) {
+    row.classList.toggle('sg-has-stage', Boolean(stage && grades[stage]));
     row.querySelectorAll('[data-word-stage]').forEach(function (button) {
       var value = button.getAttribute('data-word-stage');
       if (!value) return;

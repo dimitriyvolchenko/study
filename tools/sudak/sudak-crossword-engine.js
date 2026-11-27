@@ -208,8 +208,8 @@
     return !!first.sound && first.sound === second.sound;
   }
 
-  function makeComponent() {
-    return {grid:new Map(), index:new Map(), entries:[], left:0, right:0, top:0, bottom:0};
+  function makeComponent(maxColumns) {
+    return {maxColumns, grid:new Map(), index:new Map(), entries:[], left:0, right:0, top:0, bottom:0};
   }
 
   function indexKeys(token) {
@@ -243,6 +243,8 @@
   function scorePosition(board, entry, x, y, vertical) {
     const dx = vertical ? 0 : 1, dy = vertical ? 1 : 0;
     const length = entry.tokens.length;
+    const width = Math.max(board.right, x + (length - 1) * dx) - Math.min(board.left, x) + 1;
+    if (width > board.maxColumns) return -Infinity;
     const at = (cx, cy) => board.grid.get(coord(cx, cy));
     if (at(x - dx, y - dy) || at(x + dx * length, y + dy * length)) return -Infinity;
     let intersections = 0;
@@ -254,12 +256,14 @@
         intersections++;
       } else if (at(cx + dy, cy + dx) || at(cx - dy, cy - dx)) return -Infinity;
     }
-    const width = Math.max(board.right, x + (length - 1) * dx) - Math.min(board.left, x) + 1;
     const height = Math.max(board.bottom, y + (length - 1) * dy) - Math.min(board.top, y) + 1;
-    return intersections * 10 - (width + height) - Math.abs(width - height) * 0.4;
+    // Once the column limit is satisfied, use crossings and minimize unnecessary vertical gaps.
+    return intersections * 10 - height - width * 0.45;
   }
 
   function findPosition(board, entry, random) {
+    const downOnly = entry.tokens.length > board.maxColumns;
+    if (downOnly && board.entries.length === 1 && board.entries[0].direction === 'down') return null;
     const tried = new Set();
     let best = null, high = -Infinity;
     for (let i = 0; i < entry.tokens.length; i++) {
@@ -272,7 +276,7 @@
         const start = Math.floor(random() * anchors.length);
         for (let j = 0; j < count; j++) {
           const anchor = anchors[(start + Math.floor(j * anchors.length / count)) % anchors.length];
-          if (anchor.crossed || !compatible(token, anchor.token)) continue;
+          if (anchor.crossed || (downOnly && anchor.vertical) || !compatible(token, anchor.token)) continue;
           const vertical = !anchor.vertical;
           const x = anchor.x - (vertical ? 0 : i), y = anchor.y - (vertical ? i : 0);
           const signature = coord(x, y) + (vertical ? 'd' : 'a');
@@ -286,15 +290,22 @@
     return best;
   }
 
-  function pack(components) {
+  function pack(components, maxColumns) {
     const area = components.reduce((sum, c) => sum + (c.right-c.left+2) * (c.bottom-c.top+2), 0);
-    const wrap = Math.max(1, Math.ceil(Math.sqrt(area)));
+    const wrap = Math.min(maxColumns, Math.max(1, Math.ceil(Math.sqrt(area * 0.6))));
     let x = 0, y = 0, rowHeight = 0, width = 0, height = 0;
     const entries = [];
     for (const board of components) {
-      const w = board.right - board.left + 1, h = board.bottom - board.top + 1;
+      const across = board.right - board.left + 1, down = board.bottom - board.top + 1;
+      // Transpose wide components into tall ones. Every shared square moves with both words.
+      const transpose = down < across;
+      const w = transpose ? down : across, h = transpose ? across : down;
       if (x && x + w > wrap) { x = 0; y += rowHeight + 1; rowHeight = 0; }
-      for (const entry of board.entries) entries.push({...entry, x:x + entry.x - board.left, y:y + entry.y - board.top});
+      for (const entry of board.entries) {
+        const cx = entry.x - board.left, cy = entry.y - board.top;
+        const vertical = (entry.direction === 'down') !== transpose;
+        entries.push({...entry, x:x + (transpose ? cy : cx), y:y + (transpose ? cx : cy), direction:vertical ? 'down' : 'across'});
+      }
       width = Math.max(width, x + w);
       height = Math.max(height, y + h);
       rowHeight = Math.max(rowHeight, h);
@@ -311,36 +322,41 @@
     return {width,height,entries};
   }
 
-  function build(source, seed) {
+  function build(source, seed, options = {}) {
+    const maxColumns = Number.isInteger(options.maxColumns) ? Math.max(1, options.maxColumns) : 13;
     const random = makeRandom(seed);
-    let waiting = [];
+    const words = [];
     for (let i = 0; i < source.length; i++) {
       const data = source[i], word = normalizeAnswer(data.answer);
       if (!word) continue;
       const letters = [...word], lang = languageFor(data.lang, word);
       const sounds = soundKeys(data.answer, lang, data.ipa);
       const tokens = letters.map((letter, j) => ({letter, lang, sound:sounds[j]}));
-      waiting.push({data:{...data, id:data.id ?? String(i)}, letters, tokens});
+      words.push({data:{...data, id:data.id ?? String(i)}, letters, tokens});
     }
     const components = [];
-    while (waiting.length) {
-      const board = makeComponent();
-      components.push(board);
-      place(board, waiting[0], 0, 0, false);
-      waiting = waiting.slice(1);
-      let previousSize;
-      do {
-        previousSize = waiting.length;
-        waiting = waiting.filter(entry => {
-          const position = findPosition(board, entry, random);
-          if (!position) return true;
-          place(board, entry, position.x, position.y, position.vertical);
-          return false;
-        });
-      } while (waiting.length && waiting.length < previousSize);
-      // Disjoint alphabets and words without a legal crossing form separate islands.
+    // Keep very large selections responsive even when few words share an eligible sound.
+    // A divider row between components still belongs to the same numbered crossword.
+    for (let start = 0; start < words.length; start += 64) {
+      let waiting = words.slice(start, start + 64);
+      while (waiting.length) {
+        const board = makeComponent(maxColumns);
+        components.push(board);
+        const first = waiting.shift();
+        place(board, first, 0, 0, first.letters.length > maxColumns);
+        let previousSize;
+        do {
+          previousSize = waiting.length;
+          waiting = waiting.filter(entry => {
+            const position = findPosition(board, entry, random);
+            if (!position) return true;
+            place(board, entry, position.x, position.y, position.vertical);
+            return false;
+          });
+        } while (waiting.length && waiting.length < previousSize);
+      }
     }
-    return pack(components);
+    return pack(components, maxColumns);
   }
 
   globalThis.SudakCrosswordEngine = Object.freeze({build, normalizeAnswer, soundKeys});

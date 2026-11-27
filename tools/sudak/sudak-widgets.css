@@ -1,0 +1,19 @@
+#allBox .swid-launch { width:100%; margin:12px 0 2px; min-height:44px; color:var(--ink); }
+.swid-tabs { display:flex; gap:7px; margin:11px 0 16px; }
+.swid-tabs button { flex:1; min-height:42px; }
+.swid-tabs [aria-pressed="true"] { background:var(--ink); color:var(--paper); }
+.swid-content { color:var(--ink); line-height:1.45; }
+.swid-content p { margin:12px 0; }
+.swid-fields { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:10px; align-items:end; }
+.swid-fields label { display:grid; min-width:0; gap:4px; font-weight:650; }
+.swid-fields select { min-width:0; width:100%; min-height:40px; border:1px solid var(--line); border-radius:10px; padding:6px; color:var(--ink); background:var(--paper); font:inherit; }
+.swid-preview { display:block; max-width:min(100%,420px); max-height:230px; width:auto; height:auto; border:1px solid #766955; border-radius:17px; margin:14px auto; }
+.swid-guide { margin:10px 0; padding-left:1.35em; }
+.swid-guide li { margin:7px 0; }
+.swid-install { margin-bottom:14px; }
+.swid-install summary { cursor:pointer; font-weight:700; padding:7px 0; }
+.swid-content .swid-actions { display:flex; align-items:stretch; gap:8px; flex-wrap:wrap; }
+.swid-content .swid-actions a,.swid-content .swid-actions button { display:inline-flex; align-items:center; justify-content:center; min-height:42px; text-decoration:none; }
+.swid-status { font-size:14px; overflow-wrap:anywhere; }
+.swid-status:empty { display:none; }
+.swid-status textarea { box-sizing:border-box; width:100%; min-height:80px; margin:10px 0; font-size:16px; }

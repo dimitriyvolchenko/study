@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
 PWA_CSS = ROOT / "pwa.css"
 SYNC_JS = ROOT / "sync-core.js"
-PKG_MANIFEST = ROOT / "packages" / "index.json"
+PKG_MANIFEST = ROOT / "packages_index.json"
 
 ASSET_START = "<!-- SINGLE-FILE ASSETS START -->"
 ASSET_END = "<!-- SINGLE-FILE ASSETS END -->"
@@ -27,7 +27,7 @@ INLINE_INSTALLER = r'''function installBundledCourses(){
   if(!e||!RX_PID.test(e.id||''))return;
   var pr=(Array.isArray(e.profiles)&&e.profiles.length)?e.profiles:['dad'];
   if(pr.indexOf('*')<0&&pr.indexOf(CURP)<0)return;
-  if(ABSORBED.indexOf(e.id)>=0)return;
+  if(ABSORBED.indexOf(e.id)>=0 || (PKG.hidden[e.id]||0)>=(e.rev||1))return;
   var el=document.querySelector('script[data-study-package="'+e.id+'"]'),o=null,n=null;
   if(!el)return;
   try{o=JSON.parse(el.textContent);n=pkgNormalize(o);}catch(x){return;}
@@ -77,7 +77,7 @@ manifest = json.loads(manifest_text)
 packages = []
 for entry in manifest.get("list", []):
     pid = entry["id"]
-    path = ROOT / "packages" / (pid + ".json")
+    path = ROOT / ("packages_" + pid + ".json")
     raw = read(path)
     obj = json.loads(raw)
     if obj.get("id") != pid:

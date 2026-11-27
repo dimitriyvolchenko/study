@@ -97,6 +97,18 @@
     refreshSaveMark();
   };
 
+  var startNavigation = v7StartNavigation;
+  v7StartNavigation = function () {
+    var url = new URL(location.href);
+    if (url.searchParams.get('open') !== 'sudak-widget' || url.hash !== '#/all') {
+      return startNavigation();
+    }
+    v7ApplyPrefs();
+    url.searchParams.delete('open');
+    history.replaceState(null, '', url.href);
+    state.route = '#/all';
+  };
+
   var drawSudak = renderAllN;
   renderAllN = function () {
     drawSudak();
@@ -112,6 +124,7 @@
       });
     });
     paintedOps = Object.assign({}, state.syncOps);
+    SudakWidgets.mount(panel, crosswordEntries);
     var launch = document.createElement('button');
     launch.type = 'button';
     panel.appendChild(launch);

@@ -1,0 +1,20 @@
+.s19-expertology .v11-note.is-missing { display: none; }
+.s19-expertology .s19-reading-text,
+.s19-expertology .s19-reading-title {
+  margin: 2px 14px 9px;
+  color: inherit;
+  font-size: .87rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.s19-expertology .s19-reading-title { font-weight: 700; }
+.s19-expertology .s19-source-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: start;
+  min-height: 36px;
+  margin: 0 14px 5px;
+  color: inherit;
+  font-size: .8rem;
+  text-underline-offset: .18em;
+}

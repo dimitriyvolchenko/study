@@ -3,6 +3,7 @@
   const mounted = new WeakSet();
   const memory = new Map();
   let source, launcher, dialog, view, game, entriesById, boardCells, selected;
+  let cursor = 0;
   let profile, sessionId = 0, databasePromise, storageIssue = false, refs = {};
   const engine = () => window.SudakCrosswordEngine;
   const wordKey = entry => 'w:' + entry.id;
@@ -172,7 +173,7 @@
     saveProgress();
   }
   function loadCurrent(force) {
-    const currentProfile = readKey(), entries = canonicalEntries(), id = signature(entries);
+    const currentProfile = readKey(), entries = canonicalEntries(), id = 'vertical-' + signature(entries);
     if (!force && game && !game.archived && game.id === id && profile === currentProfile) return;
     profile = currentProfile;
     const grid = engine().build(entries, id);
@@ -181,6 +182,7 @@
   }
   function clearView(next) {
     ++sessionId;
+    if(refs.boardObserver) refs.boardObserver.disconnect();
     view = next;
     dialog.replaceChildren();
     dialog.dataset.view = next;
@@ -299,157 +301,298 @@
     board.addEventListener('click', evt => {
       const cell = evt.target.closest('[data-xy]');
       if (!cell) return;
-      const related = boardCells.get(cell.dataset.xy).refs;
-      const at = related.findIndex(r => r.entry === selected);
-      activate(related[(at + 1) % related.length].entry, {focus: true, center: false});
+      const refsHere=boardCells.get(cell.dataset.xy).refs;
+      const active=refsHere.find(r=>r.entry===selected);
+      const target=active && active.offset===cursor && refsHere.length===2
+        ? refsHere.find(r=>r!==active) : active || refsHere.find(r=>!solved(r.entry)) || refsHere[0];
+      activate(target.entry,{focus:true,offset:target.offset});
     });
-    scroll.append(board);
+    const frame = element('div', 'sdx-grid-frame');
+    frame.append(board);
+    scroll.append(frame);
     refs.scroll = scroll; refs.board = board;
+    // Fit the exact stored geometry, including wide legacy archives, without horizontal panning.
+    const resize = () => {
+      if (!scroll.isConnected) return;
+      const styles=getComputedStyle(scroll);
+      const available=scroll.clientWidth-parseFloat(styles.paddingLeft)-parseFloat(styles.paddingRight)-2;
+      const px=Math.min(43,Math.max(1,available/Math.max(1,game.grid.width)));
+      board.style.setProperty('--sdx-measured-cell',px+'px');
+      board.classList.toggle('sdx-dense',px<19);
+    };
+    refs.fitBoard=resize;
+    if(window.ResizeObserver){ refs.boardObserver=new ResizeObserver(resize);refs.boardObserver.observe(scroll); }
+    requestAnimationFrame(resize);
     return scroll;
   }
-  function centerSelected() {
-    if (!selected || !refs.scroll) return;
-    const [x, y] = locationOf(selected, 0), cell = boardCells.get(x + ',' + y);
-    if (!cell) return;
-    const pane = refs.scroll, box = pane.getBoundingClientRect(), tile = cell.el.getBoundingClientRect();
-    // A long answer starts inside the viewport; pan within the grid without moving the page.
-    const leadX = Math.min(box.width / 3, 2 * tile.width);
-    const leadY = Math.min(box.height / 3, 2 * tile.height);
-    if (tile.left < box.left || tile.right > box.right || tile.top < box.top || tile.bottom > box.bottom) {
-      pane.scrollLeft += tile.left - box.left - leadX;
-      pane.scrollTop += tile.top - box.top - leadY;
+  function draftSlots(e) {
+    const draft = game.progress.drafts[wordKey(e)];
+    if (!draft || draft[0] !== e.letters.join('')) return [];
+    // Old versions saved the native input string. New drafts preserve holes after editing a cell.
+    return Array.isArray(draft[2]) ? draft[2] : Array.from(engine().normalizeAnswer(draft[1] || ''));
+  }
+
+  function refAt(entry, i) { return boardCells.get(locationOf(entry, i).join(',')); }
+  function confirmed(cell) { return cell.refs.find(r => solved(r.entry)); }
+  function displayedLetter(entry, i) {
+    if (confirmed(refAt(entry, i))) return entry.letters[i];
+    return draftSlots(entry)[i] || '';
+  }
+  function nextWritable(start, step, emptyOnly) {
+    for (let i=start; i>=0 && i<selected.letters.length; i+=step) {
+      if (!confirmed(refAt(selected,i)) && (!emptyOnly || !draftSlots(selected)[i])) return i;
     }
+    return -1;
   }
   function paintCells(cells) {
-    const drafts = game.progress.drafts;
-    const activeDraft = selected && drafts[wordKey(selected)];
-    const typed = activeDraft ? Array.from(engine().normalizeAnswer(activeDraft[1])) : [];
-    cells.forEach(cell => {
-      const active = selected && cell.refs.find(r => r.entry === selected);
-      const known = cell.refs.find(r => solved(r.entry));
-      const display = active || known;
-      let glyph = '';
-      if (known && display) glyph = display.entry.letters[display.offset];
-      else if (active && typed[active.offset]) glyph = typed[active.offset];
+    for (const cell of cells) {
+      const active = cell.refs.find(r => r.entry === selected);
+      const checked = confirmed(cell);
+      const ownDraft = active || cell.refs.find(r => draftSlots(r.entry)[r.offset]);
+      const glyph = checked ? (active || checked).entry.letters[(active || checked).offset] :
+        ownDraft ? draftSlots(ownDraft.entry)[ownDraft.offset] || '' : '';
       if (cell.glyph.textContent !== glyph) cell.glyph.textContent = glyph;
       cell.el.classList.toggle('sdx-active', !!active);
-      cell.el.classList.toggle('sdx-known', !!known);
-    });
+      cell.el.classList.toggle('sdx-cursor', !!active && active.offset===cursor && !solved(selected));
+      cell.el.classList.toggle('sdx-known', !!checked);
+    }
   }
-  function progressLabel() {
-    const n = Object.keys(game.progress.solved).length;
-    return n + ' / ' + game.grid.entries.length;
+  function keepCursorVisible() {
+    if (!selected || !refs.scroll) return;
+    const cell = refAt(selected,cursor);
+    if (!cell) return;
+    const pane=refs.scroll, viewport=pane.getBoundingClientRect(), square=cell.el.getBoundingClientRect(), inset=8;
+    if (square.top < viewport.top+inset) pane.scrollTop += square.top-viewport.top-inset;
+    else if (square.bottom > viewport.bottom-inset) pane.scrollTop += square.bottom-viewport.bottom+inset;
+  }
+  function changeCursor(offset, follow) {
+    const old=cursor;
+    cursor=Math.max(0,Math.min(selected.letters.length-1,offset));
+    paintCells([refAt(selected,old),refAt(selected,cursor)].filter(Boolean));
+    if (follow) keepCursorVisible();
+  }
+  function nativeOffset(index) {
+    return Array.from(refs.input.value).slice(0,index).join('').length;
+  }
+  function selectionOffsets() {
+    const input=refs.input;
+    return [input.selectionStart,input.selectionEnd].map(pos=>Array.from(input.value.slice(0,pos == null ? input.value.length : pos)).length);
+  }
+  function showInput() {
+    const input=refs.input;
+    input.value=selected.letters.map((_,i)=>displayedLetter(selected,i)||'·').join('');
+    input.setSelectionRange(nativeOffset(cursor),nativeOffset(cursor+1));
+  }
+  function rememberSlots(slots) {
+    const key=wordKey(selected);
+    if (slots.some(Boolean)) game.progress.drafts[key]=[selected.letters.join(''),slots.join(''),slots];
+    else delete game.progress.drafts[key];
+    saveProgress();
+  }
+  function writeLetters(text,start,end,advance) {
+    const letters=Array.from(engine().normalizeAnswer(text));
+    if (!letters.length || solved(selected)) { showInput(); return; }
+    const n=selected.letters.length, slots=Array.from({length:n},(_,i)=>draftSlots(selected)[i]||'');
+    let i=Math.min(start,n-1),written=i;
+    if (letters.length===n) {
+      letters.forEach((ch,j)=>{if(!confirmed(refAt(selected,j))) slots[j]=ch;});
+      written=n-1;
+    } else {
+      if(end-start>1) for(let j=start;j<Math.min(end,n);j++) slots[j]='';
+      for (const letter of letters) {
+        i=nextWritable(i,1,false);
+        if(i<0)break;
+        slots[i]=letter; written=i; i++;
+      }
+    }
+    rememberSlots(slots);
+    const next=nextWritable(written+1,1,true), first=nextWritable(0,1,true);
+    changeCursor(next>=0?next:first>=0?first:written,true);
+    showInput(); paintCells(selected.letters.map((_,j)=>refAt(selected,j)));
+    showMessage('');
+    if(advance && selected.letters.every((ch,j)=>displayedLetter(selected,j)===ch)) acceptWord();
+  }
+  function eraseLetters(start,end,backward) {
+    if (solved(selected)) return;
+    const slots=Array.from({length:selected.letters.length},(_,i)=>draftSlots(selected)[i]||'');
+    let pos=Math.min(start,slots.length-1);
+    if(end-start>1){
+      for(let i=start; i<Math.min(end,slots.length); i++) slots[i]='';
+    } else {
+      if (backward && (!slots[pos] || confirmed(refAt(selected,pos)))) pos=nextWritable(pos-1,-1,false);
+      else if (!backward && confirmed(refAt(selected,pos))) pos=nextWritable(pos+1,1,false);
+      if(pos<0)return;
+      slots[pos]='';
+    }
+    rememberSlots(slots);
+    changeCursor(pos,true);showInput();paintCells(selected.letters.map((_,j)=>refAt(selected,j)));
+    showMessage('');
+  }
+  function switchWord(delta, focus) {
+    const entries=game.grid.entries, i=entries.indexOf(selected);
+    if(i<0||entries.length<2)return;
+    activate(entries[(i+delta+entries.length)%entries.length],{center:true,focus});
   }
   function optionLabel(e) {
-    return (solved(e) ? '✓ ' : '') + e.number + (e.direction === 'down' ? ' ↓ ' : ' → ') + (languageNames[e.lang] ? languageNames[e.lang] + ' · ' : '') + (e.clue || 'Без подсказки');
+    return (solved(e)?'✓ ':'')+e.number+(e.direction==='down'?' ↓ ':' → ')+(languageNames[e.lang]||'')+' · '+(e.clue||'Без подсказки');
   }
-  function activate(entry, opts) {
-    if (!entry) return;
-    selected = entry;
-    const draft = game.progress.drafts[wordKey(entry)];
-    refs.input.value = solved(entry) ? entry.answer : draft ? draft[1] : '';
-    refs.input.readOnly = solved(entry);
-    refs.input.lang = ['ru','en','ba','fr'].includes(entry.lang) ? entry.lang : '';
-    refs.submit.disabled = solved(entry);
-    refs.keys.hidden = !specialLetters[entry.lang] || solved(entry);
-    refs.chars.hidden = true; refs.keys.setAttribute('aria-expanded','false');
-    refs.keys.textContent = entry.lang === 'ba' ? 'Ә' : 'É';
-    refs.keys.setAttribute('aria-label', entry.lang === 'ba' ? 'Башкирские буквы' : 'Французские буквы');
+  function showPalette(entry) {
+    refs.keys.hidden=!specialLetters[entry.lang]||solved(entry);
+    refs.chars.hidden=true; refs.keys.setAttribute('aria-expanded','false');
+    refs.keys.textContent=entry.lang==='ba'?'Ә':'É';
+    refs.keys.setAttribute('aria-label',entry.lang==='ba'?'Башкирские буквы':'Французские буквы');
     refs.chars.replaceChildren();
-    for (const ch of (specialLetters[entry.lang] || '')) {
-      const key = button(ch, 'sdx-char', () => {
-        const field = refs.input;
-        const begin = field.selectionStart == null ? field.value.length : field.selectionStart;
-        field.setRangeText(ch, begin, field.selectionEnd == null ? begin : field.selectionEnd, 'end');
-        field.dispatchEvent(new Event('input', {bubbles:true})); field.focus({preventScroll:true});
+    for(const ch of specialLetters[entry.lang]||''){
+      const key=button(ch,'sdx-char',()=>{
+        refs.input.focus({preventScroll:true});
+        writeLetters(ch,cursor,cursor+1,true);
       });
-      key.addEventListener('pointerdown', evt => evt.preventDefault());
+      key.addEventListener('pointerdown',e=>e.preventDefault());
       refs.chars.append(key);
     }
-    refs.select.value = String(entry.id);
-    refs.number.textContent = entry.number + ' ' + direction(entry);
-    refs.language.textContent = languageNames[entry.lang] || entry.section || '';
-    refs.clue.textContent = entry.clue || 'Подсказка отсутствует в Судаке.';
-    refs.length.textContent = plural(entry.letters.length, ['буква','буквы','букв']);
-    refs.progress.textContent = progressLabel();
-    showMessage(finished() ? 'Все слова разгаданы.' : solved(entry) ? 'Слово разгадано.' : '', solved(entry) ? 'ok' : '');
-    paintCells(boardCells);
-    saveProgress();
-    if (opts && opts.center) centerSelected();
-    if (opts && opts.focus && !solved(entry)) refs.input.focus({preventScroll:true});
   }
-  function submit(evt) {
-    evt.preventDefault();
-    if (!selected || solved(selected)) return;
-    if (engine().normalizeAnswer(refs.input.value) !== selected.letters.join('')) {
-      showMessage('Пока не сходится. Проверьте написание слова.', 'error');
-      refs.input.focus({preventScroll:true}); return;
+  function activate(entry, opts={}) {
+    if(!entry)return;
+    const previous = selected;
+    selected=entry;
+    const first=nextWritable(0,1,true);
+    cursor=Number.isInteger(opts.offset)?opts.offset:first>=0?first:0;
+    refs.input.readOnly=solved(entry);
+    refs.input.lang=languageNames[entry.lang]?entry.lang:'';
+    refs.submit.disabled=solved(entry);
+    refs.select.value=String(entry.id);
+    refs.number.textContent=entry.number+' '+direction(entry);
+    refs.language.textContent=languageNames[entry.lang]||entry.section||'';
+    refs.length.textContent=plural(entry.letters.length,['буква','буквы','букв']);
+    refs.clue.textContent=entry.clue||'Подсказка отсутствует в Судаке.';
+    const total=game.grid.entries.length, done=Object.keys(game.progress.solved).length;
+    refs.progress.textContent=done+' / '+total;
+    refs.meter.value=done; refs.meter.max=total;
+    refs.meter.setAttribute('aria-label','Разгадано '+done+' из '+total);
+    showMessage(finished()?'Все слова разгаданы.':solved(entry)?'Слово разгадано.':'',solved(entry)?'ok':'');
+    if (refs.painted && previous) {
+      const changed = new Set();
+      for (const word of [previous, entry]) {
+        word.letters.forEach((_, offset) => changed.add(refAt(word, offset)));
+      }
+      paintCells(changed);
+    } else {
+      paintCells(boardCells.values());
+      refs.painted = true;
     }
-    const k = wordKey(selected);
-    game.progress.solved[k] = selected.letters.join('');
+    showPalette(entry);showInput();saveProgress();
+    if(opts.center)keepCursorVisible();
+    if(opts.focus&&!solved(entry)){refs.input.focus({preventScroll:true});showInput();}
+  }
+  function acceptWord() {
+    if(!selected||solved(selected))return;
+    const k=wordKey(selected);
+    game.progress.solved[k]=selected.letters.join('');
     delete game.progress.drafts[k];
-    refs.select.options[refs.select.selectedIndex].textContent = optionLabel(selected);
-    const complete = finished();
-    const choices = Array.from(refs.select.options).map(o => entriesById.get(o.value));
-    const i = choices.indexOf(selected);
-    const next = complete ? selected : choices.slice(i + 1).concat(choices.slice(0, i)).find(e => !solved(e));
-    activate(next, {center:true, focus:!complete});
-    if (!complete) showMessage('Верно. Следующая подсказка открыта.', 'ok');
-    else {
+    refs.select.options[refs.select.selectedIndex].textContent=optionLabel(selected);
+    const all=game.grid.entries,i=all.indexOf(selected);
+    const next=all.slice(i+1).concat(all.slice(0,i)).find(e=>!solved(e));
+    activate(next||selected,{center:true,focus:!!next && document.activeElement===refs.input});
+    if(next)showMessage('Верно. Следующее слово.','ok');
+    else{
       refs.input.blur();
-      if (!game.archived && !game.progress.archived) archiveCurrent();
-      else showMessage('Все слова разгаданы.', 'ok');
+      if(!game.archived&&!game.progress.archived)archiveCurrent();
+      else showMessage('Все слова разгаданы.','ok');
     }
+  }
+  function submit(event) {
+    event.preventDefault();
+    if(!selected||solved(selected))return;
+    if(selected.letters.every((ch,i)=>displayedLetter(selected,i)===ch)){acceptWord();return;}
+    const blank=nextWritable(0,1,true);
+    if(blank>=0){changeCursor(blank,true);showMessage('Остались пустые клетки.','error');}
+    else showMessage('Проверьте написание слова.','error');
+    refs.input.focus({preventScroll:true});showInput();
+  }
+  function bindTyping(input) {
+    let composing=false;
+    input.addEventListener('beforeinput',event=>{
+      if(composing||event.isComposing||!event.cancelable||solved(selected))return;
+      const [start,end]=selectionOffsets();
+      if(event.inputType.startsWith('delete')){
+        event.preventDefault();eraseLetters(start,end,event.inputType.includes('Backward'));
+      } else if(event.inputType.startsWith('insert') && event.data!=null){
+        event.preventDefault();writeLetters(event.data,start,end,true);
+      }
+    });
+    input.addEventListener('paste',event=>{
+      if(!event.clipboardData||solved(selected))return;
+      const text=event.clipboardData.getData('text');
+      if(!text)return;
+      event.preventDefault();
+      const [start,end]=selectionOffsets();
+      writeLetters(text,start,end,true);
+    });
+    // Some keyboards commit composed accents or dictation without cancelable beforeinput.
+    function syncNative() {
+      if(!selected||solved(selected)||composing)return;
+      const segments=input.value.normalize('NFC').toUpperCase().split('·');
+      const slots=segments.flatMap((part,i)=>(i?['']:[]).concat(Array.from(engine().normalizeAnswer(part)))).slice(0,selected.letters.length);
+      const caret=selectionOffsets()[0];
+      rememberSlots(slots);changeCursor(Math.min(caret,selected.letters.length-1),true);
+      showInput();paintCells(selected.letters.map((_,i)=>refAt(selected,i)));showMessage('');
+    }
+    input.addEventListener('input',event=>{if(!event.isComposing)syncNative();});
+    input.addEventListener('compositionstart',()=>{composing=true;});
+    input.addEventListener('compositionend',()=>{composing=false;syncNative();});
+    input.addEventListener('click',()=>{
+      if(solved(selected))return;
+      const [start,end]=selectionOffsets();
+      if(end-start>1)return;
+      changeCursor(start,true);showInput();
+    });
+    input.addEventListener('keydown',event=>{
+      if(composing||event.isComposing)return;
+      const backwards=event.key==='ArrowLeft'||event.key==='ArrowUp';
+      if(backwards||event.key==='ArrowRight'||event.key==='ArrowDown'){
+        if(event.shiftKey||event.metaKey||event.ctrlKey||event.altKey)return;
+        event.preventDefault();changeCursor(cursor+(backwards?-1:1),true);showInput();
+      }
+    });
   }
   function makeEditor() {
-    const editor = element('section','sdx-editor');
-    const navigation = element('div','sdx-navigation'), selectLabel = element('label','sdx-picker');
-    const humanLabel = element('span','','Подсказки');
-    const select = element('select','sdx-select');
-    select.setAttribute('aria-label','Выбрать подсказку');
-    game.grid.entries.slice().sort(byNumber).forEach(e => {
-      const option = element('option','',optionLabel(e));
-      option.value = String(e.id); select.append(option);
+    const editor=element('section','sdx-editor');
+    const bar=element('div','sdx-cluebar'), labels=element('div','sdx-clue-labels');
+    refs.number=element('strong','sdx-number');
+    const meta=element('span','sdx-meta');
+    refs.language=element('span');refs.length=element('span');meta.append(refs.language,refs.length);
+    labels.append(refs.number,meta);
+    const navigation=element('div','sdx-direction-controls');
+    const prev=button('‹','sdx-step',()=>switchWord(-1,false)),next=button('›','sdx-step',()=>switchWord(1,false));
+    for (const step of [prev, next]) {
+      step.addEventListener('pointerdown', event => {
+        if (document.activeElement === refs.input) event.preventDefault();
+      });
+    }
+    prev.setAttribute('aria-label','Предыдущая подсказка');next.setAttribute('aria-label','Следующая подсказка');
+    const picker=element('label','sdx-picker');
+    picker.append(element('span','','Подсказки'));
+    refs.select=element('select','sdx-select');refs.select.setAttribute('aria-label','Выбрать подсказку');
+    for(const entry of game.grid.entries){const opt=element('option','',optionLabel(entry));opt.value=String(entry.id);refs.select.append(opt);}
+    refs.select.addEventListener('change',()=>activate(entriesById.get(refs.select.value),{center:true}));
+    picker.append(refs.select);navigation.append(prev,picker,next);
+    prev.disabled=next.disabled=game.grid.entries.length<2;
+    bar.append(labels,navigation);
+    refs.clue=element('p','sdx-clue');refs.clue.id='sdx-current-clue';
+    const form=element('form','sdx-form');
+    refs.input=element('input','sdx-answer');
+    Object.assign(refs.input,{type:'text',autocomplete:'off',spellcheck:false,enterKeyHint:'go'});
+    refs.input.setAttribute('autocorrect','off');refs.input.setAttribute('autocapitalize','off');
+    refs.input.setAttribute('aria-label','Буквы выбранного слова');refs.input.setAttribute('aria-describedby',refs.clue.id);
+    bindTyping(refs.input);form.addEventListener('submit',submit);
+    refs.submit=element('button','sdx-solid-btn','Проверить');refs.submit.type='submit';
+    refs.chars=element('div','sdx-chars');refs.chars.hidden=true;
+    refs.keys=button('É','sdx-keys',()=>{
+      refs.chars.hidden=!refs.chars.hidden;refs.keys.setAttribute('aria-expanded',String(!refs.chars.hidden));
     });
-    select.addEventListener('change', () => activate(entriesById.get(select.value), {center:true}));
-    selectLabel.append(humanLabel, select);
-    refs.progress = element('strong','sdx-progress');
-    refs.progress.setAttribute('aria-label','Разгадано слов');
-    refs.select = select;
-    navigation.append(selectLabel, refs.progress);
-    const info = element('div','sdx-meta');
-    refs.number = element('strong'); refs.language = element('span'); refs.length = element('span');
-    info.append(refs.number, refs.language, refs.length);
-    refs.clue = element('p','sdx-clue');
-    refs.clue.id = 'sdx-current-clue';
-    const form = element('form','sdx-form');
-    refs.input = element('input','sdx-answer');
-    refs.input.type = 'text';
-    refs.input.placeholder = 'Ваш ответ';
-    refs.input.enterKeyHint = 'go';
-    refs.input.autocomplete = 'off';
-    refs.input.setAttribute('autocorrect','off'); refs.input.setAttribute('autocapitalize','off');
-    refs.input.spellcheck = false;
-    refs.input.setAttribute('aria-label','Ответ на подсказку');
-    refs.input.setAttribute('aria-describedby',refs.clue.id);
-    refs.input.addEventListener('input', () => {
-      const key = wordKey(selected), raw = refs.input.value;
-      if (raw) game.progress.drafts[key] = [selected.letters.join(''), raw];
-      else delete game.progress.drafts[key];
-      showMessage('');
-      paintCells(selected.letters.map((_, i) => boardCells.get(locationOf(selected, i).join(','))));
-      saveProgress();
-    });
-    form.addEventListener('submit', submit);
-    refs.submit = element('button','sdx-solid-btn','Проверить'); refs.submit.type = 'submit';
-    refs.chars = element('div','sdx-chars'); refs.chars.hidden = true;
-    refs.keys = button('É', 'sdx-keys', () => {
-      refs.chars.hidden = !refs.chars.hidden; refs.keys.setAttribute('aria-expanded', String(!refs.chars.hidden));
-    });
-    form.append(refs.input, refs.keys, refs.submit);
-    refs.status = element('p','sdx-feedback');
-    refs.status.setAttribute('role','status');
-    editor.append(navigation, info, refs.clue, form, refs.chars, refs.status);
+    form.append(refs.input,refs.keys,refs.submit);
+    refs.status=element('p','sdx-feedback');refs.status.setAttribute('role','status');
+    editor.append(bar,refs.clue,form,refs.chars,refs.status);
     return editor;
   }
   function renderPuzzle() {
@@ -460,7 +603,11 @@
       return;
     }
     const tools = element('div','sdx-grid-tools');
-    tools.append(element('span','',game.archived ? 'Из архива' : 'Слова из Судака'));
+    const summary=element('div','sdx-summary');
+    summary.append(element('span','',game.archived ? 'Из архива' : 'Решено'));
+    refs.progress=element('strong','sdx-progress');
+    refs.meter=element('progress','sdx-meter');
+    summary.append(refs.progress,refs.meter);tools.append(summary);
     if (!game.archived) {
       refs.save = button(game.progress.archived ? 'В архиве' : 'Сохранить в архив','sdx-link',archiveCurrent);
       refs.save.disabled = !!game.progress.archived; tools.append(refs.save);
@@ -469,7 +616,7 @@
     main.append(makeBoard(),makeEditor()); dialog.append(tools, main);
     activate(selected);
     const token = sessionId;
-    requestAnimationFrame(() => { if (sessionId === token) centerSelected(); });
+    requestAnimationFrame(() => { if (sessionId === token) { refs.fitBoard(); keepCursorVisible(); } });
   }
 
   function fitViewport() {
@@ -479,6 +626,7 @@
     dialog.dataset.compact = String(height < 480);
     dialog.style.setProperty('--sdx-vh', height + 'px');
     dialog.style.setProperty('--sdx-top', (vp ? vp.offsetTop : 0) + 'px');
+    if (refs.fitBoard) refs.fitBoard();
   }
   function ensureDialog() {
     if (dialog) return;
@@ -495,6 +643,7 @@
   }
   function afterClose() {
     ++sessionId;
+    if(refs.boardObserver) refs.boardObserver.disconnect();
     view = null; game = null; entriesById = null; boardCells = null; selected = null; refs = {};
     document.documentElement.classList.remove('sdx-open');
     if (dialog) dialog.replaceChildren();

@@ -128,12 +128,17 @@ html.sg-view-open, html.sg-view-open body { overflow: hidden !important; overscr
   border-color: rgba(255,255,255,.75);
   box-shadow: inset 1px 1px 1px rgba(255,255,255,.45), 0 0 0 2px #18191c, 0 0 0 3px rgba(255,255,255,.30);
 }
-/* The five stage circles retain their own fill in light, dark and glass views. */
+/* Show the full palette until a stage is selected. The clear action restores it. */
 .sg-grade-row [data-word-stage="look"]  { --grade-fill: #fff;    --grade-ink: #332a26; --grade-edge: #998f89; }
 .sg-grade-row [data-word-stage="work"]  { --grade-fill: #f5ca45; --grade-ink: #332600; --grade-edge: #a47c15; }
 .sg-grade-row [data-word-stage="learn"] { --grade-fill: #b7353e; --grade-ink: #fff;    --grade-edge: #99222f; }
 .sg-grade-row [data-word-stage="done"]  { --grade-fill: #34764e; --grade-ink: #fff;    --grade-edge: #24613d; }
 .sg-grade-row [data-word-stage=""]      { --grade-fill: #78543e; --grade-ink: #fff;    --grade-edge: #62422f; }
+.sg-grade-row.sg-has-stage [data-word-stage]:not([aria-pressed="true"]) {
+  --grade-fill: #626264;
+  --grade-ink: #f8f8f8;
+  --grade-edge: #818184;
+}
 #allBox .v11-cozy-pack .sg-grade-row > button[data-word-stage],
 #allBox #sudak-glass-dialog .sg-grade-row > button[data-word-stage] {
   background: var(--grade-fill);
@@ -201,4 +206,17 @@ html.sg-view-open, html.sg-view-open body { overflow: hidden !important; overscr
 @media (prefers-contrast: more) {
   #allBox #sudak-glass-dialog .v11-cozy-pack { border-color: #eee; --line: rgba(255,255,255,.48); }
   #allBox #sudak-glass-dialog .v11-note-text { color: #fff; }
+}
+
+/* Keep a continuous milk-colored edge around each Sudak block in either theme. */
+#allBox { --sudak-frame: #f2eadb; }
+#allBox .lv.all > .lv-hud,
+#allBox .lv.all > .lv-sign.palace,
+#allBox .lv.all > .v12-summary-shell,
+#allBox .lv.all > .tip,
+#allBox .lv.all > .sdx-launch,
+#allBox .lv.all > .swid-launch,
+#allBox #sudakSortList > .v9-sort-card,
+#allBox #sudak-glass-dialog .v11-cozy-pack {
+  border: 1.5px solid var(--sudak-frame);
 }
